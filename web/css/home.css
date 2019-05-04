@@ -101,19 +101,7 @@ footer p {
 	margin-bottom: 5px;
 }
 
-div.dishwithimageright {
-	display: flex;
-	flex-direction: row;
-	margin: 15px;
-	margin-top: 5px;
-	margin-bottom: 5px;
-}
 
-div.dishwithimageleft {
-	display: flex;
-	flex-direction: row-reverse;
-	margin: 15px;
-}
 
 div.dishwithimageright p, div.dishwithimageleft p {
 	max-width: 50%;
@@ -139,5 +127,17 @@ footer p {
 /************************************************************************************/
 
 @media only screen and (min-width: 64em) {
+	div.dishwithimageright {
+	display: flex;
+	flex-direction: row;
+	margin: 15px;
+	margin-top: 5px;
+}
+
+div.dishwithimageleft {
+	display: flex;
+	flex-direction: row-reverse;
+	margin: 15px;
+}
 	
 }
