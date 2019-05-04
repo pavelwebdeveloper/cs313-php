@@ -1,0 +1,1 @@
+<p>&copy; Pavel Shvets, All rights reserved. <?php echo date("l")." "." ".date("m/d/Y"); ?></p>
