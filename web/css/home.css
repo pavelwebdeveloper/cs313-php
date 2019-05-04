@@ -57,13 +57,13 @@ section {
 
 div.dishwithimageright {
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	margin: auto;
 }
 
 div.dishwithimageleft {
 	display: flex;
-	flex-direction: row-reverse;
+	flex-direction: column;
 	margin: auto;
 }
 
@@ -92,15 +92,17 @@ img {
 
 @media only screen and (min-width: 37.5em) {
 	
-	div.dishwithimageright {
+	
+
+div.dishwithimageright {
 	display: flex;
-	flex-direction: column;
+	flex-direction: row;
 	margin: auto;
 }
 
 div.dishwithimageleft {
 	display: flex;
-	flex-direction: column;
+	flex-direction: row-reverse;
 	margin: auto;
 }
 	
