@@ -70,7 +70,7 @@ div.dishwithimageleft {
 div.dishwithimageright p, div.dishwithimageleft p {
 	text-align: center;
 	padding: 50px;
-	width: 50%;
+	width: 100%;
 	vertical-align: center;
 	font-size: 20px;
 	vertical-align: middle;
@@ -104,6 +104,11 @@ div.dishwithimageleft {
 	display: flex;
 	flex-direction: row-reverse;
 	margin: auto;
+}
+
+div.dishwithimageright p, div.dishwithimageleft p {
+	width: 100%;
+	
 }
 	
 }
