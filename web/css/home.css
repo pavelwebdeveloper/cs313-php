@@ -17,6 +17,7 @@ footer p {
 
 nav {
 	height: 50px;
+	vertical-align: middle;
 }
 
 nav a {
@@ -25,7 +26,7 @@ nav a {
 	height: 50px;
 	font-size: 25px;
 	margin-left: 10px;
-	vertical-align: middle;
+	
 }
 
 nav a:hover {
