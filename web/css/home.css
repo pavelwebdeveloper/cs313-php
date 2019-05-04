@@ -31,10 +31,12 @@ div.dish {
 }
 
 div.dish p {
+	padding: 50px;
 	width: 50%;
 }
 
 img {
+	padding: 50px;
 	width: 400px;
-	height: auto;
+	height: 267px;
 }
