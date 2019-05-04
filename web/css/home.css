@@ -1,7 +1,6 @@
 header {
 background-color: #008000;
 height: 50px;
-vertical-align: center;
 }
 
 footer {
@@ -23,8 +22,10 @@ nav {
 nav a {
 	text-decoration: none;
 	color: white;
+	height: 50px;
 	font-size: 25px;
 	margin-left: 10px;
+	vertical-align: center;
 }
 
 nav a:hover {
