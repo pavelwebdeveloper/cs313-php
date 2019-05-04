@@ -1,11 +1,11 @@
 header {
 background-color: #008000;
-height: 200px;
+height: 100px;
 }
 
 footer {
 background-color: #5F9EA0;
-height: 200px;
+height: 100px;
 }
 
 nav a {
@@ -24,8 +24,12 @@ section {
 	margin: auto;
 }
 
-article {
+div.dish {
 	display: flex;
 	flex-direction: row;
 	margin: auto;
+}
+
+img {
+	width: 400px;
 }

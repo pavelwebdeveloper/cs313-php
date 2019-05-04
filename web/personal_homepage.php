@@ -13,8 +13,15 @@
  <h2>These are some of the dishes of the Ukrainian Cousine</h2>
  <section>
  <article>
- <p></p>
+ <h3>Borscht</h3>
+ <div class="dish">
+ <p>Borscht is a sour soup that is made with beetroots which are the main ingredients of this dish and give it the distinctive red color. 
+ Also there are some kinds of borscht that are made without beetroots and they are not red in color. Its ingredients also include meat or 
+ bone stock and such vegatables as white cabbage, carrots, parsley root, potatoes, onions, tomatoes. It may also be cooked with beans, tart apples, 
+ turnip, celeriac, zucchini, bell peppers. The soup is typically flavoured with a wide selection of herbs, spices and condiments. 
+ It can be served with sour cream. There are different variations of Borscht.</p>
  <img src="/images/borsch-642964_1920.jpg">
+ </div>
  </article>
  <article>
  <p></p>
