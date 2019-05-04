@@ -28,6 +28,9 @@ div.dish {
 	display: flex;
 	flex-direction: row;
 	margin: auto;
+}
+
+div.dish p, div.dish img {
 	flex: 0 1 auto;
 }
 
