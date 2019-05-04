@@ -43,11 +43,6 @@ section {
 	margin: auto;
 }
 
-article {
-	border: 3px solid black;
-	box-shadow: 0 3
-}
-
 div.dishwithimageright {
 	display: flex;
 	flex-direction: column;
@@ -99,18 +94,25 @@ footer p {
 
 @media only screen and (min-width: 37.5em) {
 	
-	
+	article {
+	border: 1px solid black;
+	box-shadow: 5px 5px 3px grey;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
 
 div.dishwithimageright {
 	display: flex;
 	flex-direction: row;
-	margin: 10px;
+	margin: 15px;
+	margin-top: 5px;
+	margin-bottom: 5px;
 }
 
 div.dishwithimageleft {
 	display: flex;
 	flex-direction: row-reverse;
-	margin: 10px;
+	margin: 15px;
 }
 
 div.dishwithimageright p, div.dishwithimageleft p {
