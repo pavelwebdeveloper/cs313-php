@@ -16,7 +16,9 @@ footer p {
 	margin: 0px;
 }
 
-
+nav {
+	height: 50px;
+}
 
 nav a {
 	text-decoration: none;
