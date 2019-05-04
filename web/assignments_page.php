@@ -8,7 +8,9 @@
  <header>
  <?php include $_SERVER[ 'DOCUMENT_ROOT' ].'/common/header.php'; ?>
  </header>
-  <p>Hello World</p>
+  <main>
+  <h1 id="assignmentsheading">Comming soon</h1>
+  </main>
   <footer>
   <?php include $_SERVER[ 'DOCUMENT_ROOT' ].'/common/footer.php'; ?>
   </footer>
