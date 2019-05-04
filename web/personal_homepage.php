@@ -2,9 +2,7 @@
 <html lang="en-us">
  <head>
   <title>Personal Homepage</title>
-  <link href="css/small.css" rel="stylesheet" media="screen">
-  <link href="css/medium.css" rel="stylesheet" media="screen">
-  <link href="css/large.css" rel="stylesheet" media="screen">
+  <link href="css/home.css" rel="stylesheet" media="screen">
  </head>
  <body>
  <header>
