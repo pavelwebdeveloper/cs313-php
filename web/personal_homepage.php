@@ -14,7 +14,7 @@
  <section>
  <article>
  <h3>Borscht</h3>
- <div class="dish">
+ <div class="dishwithimageright">
  <p>Borscht is a sour soup that is made with beetroots which are the main ingredients of this dish and give it the distinctive red color. 
  Also there are some kinds of borscht that are made without beetroots and they are not red in color. Its ingredients also include meat or 
  bone stock and such vegatables as white cabbage, carrots, parsley root, potatoes, onions, tomatoes. It may also be cooked with beans, tart apples, 
@@ -24,8 +24,12 @@
  </div>
  </article>
  <article>
- <p></p>
+ <h3>Vareniki</h3>
+ <div class="dishwithimageleft">
+ <p>Vareniki are made by wrapping unleavened dough around a savory or sweet filling and cooking in boiling water. Usually fillings include potato, 
+ cabbage, ground meat, cheese and fruits. They can be served with butter, sour cream or fried onion.</p>
  <img src="/images/cooking-2132874_1920.jpg">
+ </div>
  </article>
  </section>
  </main>

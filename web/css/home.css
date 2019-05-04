@@ -42,7 +42,7 @@ h1 {
 }
 
 h2 {
-	font-size: 40px;
+	font-size: 35px;
 }
 
 h3 {
@@ -55,17 +55,25 @@ section {
 	margin: auto;
 }
 
-div.dish {
+div.dishwithimageright {
 	display: flex;
 	flex-direction: row;
 	margin: auto;
 }
 
-div.dish p {
+div.dishwithimageleft {
+	display: flex;
+	flex-direction: row-reverse;
+	margin: auto;
+}
+
+div.dishwithimageright p, div.dishwithimageleft p {
 	text-align: center;
 	padding: 50px;
 	width: 50%;
 	vertical-align: center;
+	font-size: 16px;
+	vertical-align: middle;
 }
 
 img {
