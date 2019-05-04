@@ -12,12 +12,11 @@ vertical-align: center;
 footer p {
 	font-size: 25px;
 	text-align: center;
-	margin: 0px;
+	margin-top: 10px;
 }
 
 nav {
 	height: 50px;
-	vertical-align: middle;
 }
 
 nav a {
@@ -26,6 +25,7 @@ nav a {
 	height: 50px;
 	font-size: 25px;
 	margin-left: 10px;
+	margin-top: 10px;
 	
 }
 
