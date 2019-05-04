@@ -31,9 +31,10 @@ div.dish {
 }
 
 div.dish p {
-	flex: 0 2 auto;
+	width: 50%;
 }
 
 img {
 	width: 400px;
+	height: auto;
 }
