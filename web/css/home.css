@@ -1,7 +1,31 @@
 header {
 background-color: #008000;
+height: 200px;
 }
 
 footer {
 background-color: #5F9EA0;
+height: 200px;
+}
+
+nav a {
+	text-decoration: none;
+	color: white;
+	font-size: 25px;
+}
+
+nav a:hover {
+	text-decoration: underline;
+}
+
+section {
+	display: flex;
+	flex-direction: column;
+	margin: auto;
+}
+
+article {
+	display: flex;
+	flex-direction: row;
+	margin: auto;
 }
