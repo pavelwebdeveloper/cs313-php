@@ -17,6 +17,7 @@ footer p {
 
 nav {
 	height: 50px;
+	padding-top: 10px;
 }
 
 nav a {
@@ -25,7 +26,6 @@ nav a {
 	height: 50px;
 	font-size: 25px;
 	margin-left: 10px;
-	padding-top: 10px;
 	
 }
 
