@@ -10,7 +10,7 @@ vertical-align: center;
 }
 
 footer p {
-	font-size: 25px;
+	font-size: 15px;
 	text-align: center;
 	padding-top: 10px;
 }
@@ -112,7 +112,7 @@ div.dishwithimageright p, div.dishwithimageleft p {
 }
 
 footer p {
-	font-size: 15px;
+	font-size: 25px;
 }
 	
 }
