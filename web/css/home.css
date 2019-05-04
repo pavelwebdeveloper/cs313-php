@@ -108,7 +108,7 @@ div.dishwithimageleft {
 
 div.dishwithimageright p, div.dishwithimageleft p {
 	max-width: 50%;
-	
+	padding: 10px;
 }
 	
 }
