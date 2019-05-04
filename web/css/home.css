@@ -104,13 +104,13 @@ footer p {
 div.dishwithimageright {
 	display: flex;
 	flex-direction: row;
-	margin: auto;
+	margin: 10px;
 }
 
 div.dishwithimageleft {
 	display: flex;
 	flex-direction: row-reverse;
-	margin: auto;
+	margin: 10px;
 }
 
 div.dishwithimageright p, div.dishwithimageleft p {
