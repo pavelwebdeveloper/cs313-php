@@ -12,7 +12,7 @@ var_dump($_POST);
 $name = $email = $major = $comment = "1";
 
 var_dump($major);
-/*
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$name = test_input($_POST["name"]);
 	// Check if name contains only letters and whitespace
@@ -27,6 +27,10 @@ function test_input($data) {
 	$data = htmlspecialchars($data);
 	return $data;
 }
+
+var_dump($major);
+
+/*
 echo "<label for="name">Name: ".$name."</label>
 <br>
 <label for="email">E-mail: "$email."</label>
