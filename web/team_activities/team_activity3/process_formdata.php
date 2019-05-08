@@ -37,7 +37,7 @@ echo "<label for="name">Name: ".$name."</label>
 <br>
 <label for="major">Major: ".$major."</label>
 <br>
-<label for="comment">Comments: ".$comment."</label>"
+<label for="comment">Comments: ".$comment."</label>";
 ?>
 
 </body>
