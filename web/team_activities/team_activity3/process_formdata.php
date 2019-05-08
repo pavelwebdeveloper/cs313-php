@@ -16,9 +16,9 @@ var_dump($major);
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$name = test_input($_POST["name"]);
 	// Check if name contains only letters and whitespace
-	$name = test_input($_POST["email"]);
-	$name = test_input($_POST["major"]);
-	$name = test_input($_POST["comment"]);
+	$email = test_input($_POST["email"]);
+	$major = test_input($_POST["major"]);
+	$comment = test_input($_POST["comment"]);
 }
 
 function test_input($data) {
