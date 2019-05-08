@@ -28,9 +28,6 @@ function test_input($data) {
 	return $data;
 }
 */
-?>
-
-<?php 
 echo "<label for="name">Name: ".$name."</label>
 <br>
 <label for="email">E-mail: "$email."</label>
