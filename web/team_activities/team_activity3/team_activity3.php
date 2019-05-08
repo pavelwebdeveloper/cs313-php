@@ -19,6 +19,14 @@
 <br>
 <input type="radio" name="major" value="computer engineering">Computer Engineering
 <br>
+<label for="covisited continents">I have visited the following continents:</label>
+<input type="checkbox" name="continent1" value="North America">North America<br>
+<input type="checkbox" name="continent2" value="South America">South America<br>
+<input type="checkbox" name="continent3" value="Europe">Europe<br>
+<input type="checkbox" name="continent4" value="Asia">Asia<br>
+<input type="checkbox" name="continent5" value="Australia">Australia<br>
+<input type="checkbox" name="continent5" value="Africa">Africa<br>
+<input type="checkbox" name="continent5" value="Antarctica">Antarctica<br>
 <label for="comment">Comments:</label>
 <textarea name="comment" rows="10" cols="50"></textarea>
 <br>

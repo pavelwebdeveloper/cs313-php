@@ -10,7 +10,7 @@
 
 var_dump($_POST);
 // define variables and set to empty values
-$name = $email = $major = $comment = "1";
+$name = $email = $major = $comment = $continent = "";
 
 //var_dump($major);
 
