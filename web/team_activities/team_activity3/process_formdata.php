@@ -6,9 +6,8 @@
 <body>
 <?php
 echo "Hello";
-/*
+
 var_dump($_POST);
-*/
 // define variables and set to empty values
 /*
 $name = $email = $major = $comment = "1";
@@ -36,9 +35,10 @@ echo "<label for="name">Name: ".$name."</label>
 <br>
 <label for="major">Major: ".$major."</label>
 <br>
-<label for="comment">Comments: ".$comment."</label>";
-?>
+<label for="comment">Comments: ".$comment."</label>
 */
+?>
+
 
 </body>
 </html>
