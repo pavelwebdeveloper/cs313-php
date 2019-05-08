@@ -12,6 +12,9 @@ var_dump($_POST);
 // define variables and set to empty values
 $name = $email = $major = $comment = $continent1 = $continent2 = $continent3 = $continent4 = $continent5 = $continent6 = $continent7 = "";
 
+$continents = array("na" => "$_POST["continent1"]", "sa" => "$_POST["continent2"]", "eu" => "$_POST["continent3"]", 
+"as" => "$_POST["continent4"]", "au" => "$_POST["continent5"]", "af" => "$_POST["continent6"]", "an" => "$_POST["continent7"]"); 
+
 //var_dump($major);
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -44,7 +47,11 @@ var_dump($_SERVER["REQUEST_METHOD"]);
 <?php
 echo "<h1>Sibmitted information</h1><br><br>";
 echo "Name: ".$name."<br>E-mail: ".$email."<br>Major: ".$major."<br>Comment: ".$comment."<br>";
-echo "<h3>Visited continents:</h3>".$continent1." ".$continent2." ".$continent3." ".$continent4." ".$continent5." ".$continent6." ".$continent7;
+//echo "<h3>Visited continents:</h3>".$continent1." ".$continent2." ".$continent3." ".$continent4." ".$continent5." ".$continent6." ".$continent7;
+echo "<h3>Visited continents:</h3>";
+foreach($continents as $continent) {
+	echo $continent;
+}
 
 /*
 echo "<label for='name'>Name: ".$name."</label><br><label for='email'>E-mail: "$email."</label><br><label for='major'>Major: ".$major."</label><br><label for='comment'>Comments: ".$comment."</label>";
