@@ -12,6 +12,7 @@ var_dump($_POST);
 // define variables and set to empty values
 $name = $email = $major = $comment = "1";
 
+var_dump($major);
 /*
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$name = test_input($_POST["name"]);
@@ -27,7 +28,6 @@ function test_input($data) {
 	$data = htmlspecialchars($data);
 	return $data;
 }
-*/
 echo "<label for="name">Name: ".$name."</label>
 <br>
 <label for="email">E-mail: "$email."</label>
@@ -36,6 +36,7 @@ echo "<label for="name">Name: ".$name."</label>
 <br>
 <label for="comment">Comments: ".$comment."</label>";
 ?>
+*/
 
 </body>
 </html>
