@@ -8,10 +8,11 @@
 echo "Hello";
 
 var_dump($_POST);
-/*
-// define variables and set to empty values
-$name = $email = $major = $comment = "";
 
+// define variables and set to empty values
+$name = $email = $major = $comment = "1";
+
+/*
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$name = test_input($_POST["name"]);
 	// Check if name contains only letters and whitespace
@@ -30,7 +31,6 @@ function test_input($data) {
 ?>
 
 <?php 
-/*
 echo "<label for="name">Name: ".$name."</label>
 <br>
 <label for="email">E-mail: "$email."</label>
@@ -38,7 +38,6 @@ echo "<label for="name">Name: ".$name."</label>
 <label for="major">Major: ".$major."</label>
 <br>
 <label for="comment">Comments: ".$comment."</label>"
-*/
 ?>
 
 </body>
