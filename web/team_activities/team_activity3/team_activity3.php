@@ -11,6 +11,9 @@
 <label for="email">E-mail:</label>
 <input type="text" name="email"><br>
 <label for="major">Major:</label><br>
+<?php $majors = array("CS" => "Computer Science", "WDD" => "Web Design and Development", "CIT" => "Computer information Technology", 
+"CE" => "Computer Engineering"); ?>
+var_dump($majors);
 <input type="radio" name="major" value="computer science">Computer Science
 <br>
 <input type="radio" name="major" value="web design and development">Web Design and Development
