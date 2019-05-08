@@ -29,6 +29,7 @@ function test_input($data) {
 }
 
 var_dump($major);
+var_dump($_SERVER["REQUEST_METHOD"]);
 
 /*
 echo "<label for="name">Name: ".$name."</label>
