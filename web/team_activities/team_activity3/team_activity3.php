@@ -19,25 +19,25 @@ foreach($majors as $major) {
 	echo "<input type='radio' name='major' value='".$major."'>".$major."<br>";
 }
 ?>
-<input type="radio" name="major" value="computer science">Computer Science
+<!--<input type="radio" name="major" value="computer science">Computer Science
 <br>
 <input type="radio" name="major" value="web design and development">Web Design and Development
 <br>
 <input type="radio" name="major" value="computer information technology">Computer information Technology
 <br>
 <input type="radio" name="major" value="computer engineering">Computer Engineering
-<br>
+<br>-->
 <label for="comment">Comments:</label>
 <textarea name="comment" rows="10" cols="50"></textarea>
 <br>
 <label for="covisited continents">I have visited the following continents:</label><br>
-<input type="checkbox" name="continent1" value="North America">North America<br>
-<input type="checkbox" name="continent2" value="South America">South America<br>
-<input type="checkbox" name="continent3" value="Europe">Europe<br>
-<input type="checkbox" name="continent4" value="Asia">Asia<br>
-<input type="checkbox" name="continent5" value="Australia">Australia<br>
-<input type="checkbox" name="continent6" value="Africa">Africa<br>
-<input type="checkbox" name="continent7" value="Antarctica">Antarctica<br>
+<input type="checkbox" name="continent1" value="na">North America<br>
+<input type="checkbox" name="continent2" value="sa">South America<br>
+<input type="checkbox" name="continent3" value="eu">Europe<br>
+<input type="checkbox" name="continent4" value="as">Asia<br>
+<input type="checkbox" name="continent5" value="au">Australia<br>
+<input type="checkbox" name="continent6" value="af">Africa<br>
+<input type="checkbox" name="continent7" value="an">Antarctica<br>
 <input type="submit" value="Submit">
 </form>
 
