@@ -1,3 +1,9 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Submittied form results</title>
+</head>
+<body>
 <?php
 // define variables and set to empty values
 $name = $email = $major = $comment = "";
@@ -29,3 +35,6 @@ echo "<label for="name">Name: ".$name."</label>
 <label for="comment">Comments: ".$comment."</label>"
 
 ?>
+
+</body>
+</html>
