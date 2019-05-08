@@ -52,9 +52,9 @@ echo "<h1>Sibmitted information</h1><br><br>";
 echo "Name: ".$name."<br>E-mail: ".$email."<br>Major: ".$major."<br>Comment: ".$comment."<br>";
 //echo "<h3>Visited continents:</h3>".$continent1." ".$continent2." ".$continent3." ".$continent4." ".$continent5." ".$continent6." ".$continent7;
 echo "<h3>Visited continents:</h3>";
-/*foreach($continents as $continent) {
+foreach($continents as $continent) {
 	echo $continent;
-}*/
+}
 
 /*
 echo "<label for='name'>Name: ".$name."</label><br><label for='email'>E-mail: "$email."</label><br><label for='major'>Major: ".$major."</label><br><label for='comment'>Comments: ".$comment."</label>";
