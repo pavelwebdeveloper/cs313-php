@@ -10,11 +10,9 @@
 
 var_dump($_POST);
 // define variables and set to empty values
-$name = $email = $major = $comment = "";
-//$continent1 = $continent2 = $continent3 = $continent4 = $continent5 = $continent6 = $continent7 = "";
+$name = $email = $major = $comment = $continent1 = $continent2 = $continent3 = $continent4 = $continent5 = $continent6 = $continent7 = "";
 
-$continents = array("$_POST['continent1']" => "North America", "$_POST['continent2']" => "South America", "$_POST['continent3']" => "Europe", 
-"$_POST['continent4']" => "Asia", "$_POST['continent5']" => "Australia", "$_POST['continent6']" => "Africa", "$_POST['continent7']" => "Antarctica"); 
+
 
 //var_dump($major);
 
@@ -24,7 +22,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$email = test_input($_POST["email"]);
 	$major = test_input($_POST["major"]);
 	$comment = test_input($_POST["comment"]);
-	/*
 	$continent1 = test_input($_POST["continent1"]);
 	$continent2 = test_input($_POST["continent2"]);
 	$continent3 = test_input($_POST["continent3"]);
@@ -32,7 +29,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$continent5 = test_input($_POST["continent5"]);
 	$continent6 = test_input($_POST["continent6"]);
 	$continent7 = test_input($_POST["continent7"]);
-	*/
+	
+	$continents = array("$continent1" => "North America", "$continent2" => "South America", "$continent3" => "Europe", 
+"$continent4" => "Asia", "$continent5" => "Australia", "$continent6" => "Africa", "$continent7" => "Antarctica"); 
+	
 }
 
 function test_input($data) {
