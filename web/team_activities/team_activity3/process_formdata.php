@@ -9,7 +9,6 @@ echo "Hello";
 
 var_dump($_POST);
 // define variables and set to empty values
-/
 $name = $email = $major = $comment = "1";
 
 var_dump($major);
