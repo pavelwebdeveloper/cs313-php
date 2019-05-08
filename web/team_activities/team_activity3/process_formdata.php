@@ -5,13 +5,14 @@
 </head>
 <body>
 <?php
-echo "Hello";
+
+//echo "Hello";
 
 var_dump($_POST);
 // define variables and set to empty values
 $name = $email = $major = $comment = "1";
 
-var_dump($major);
+//var_dump($major);
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$name = test_input($_POST["name"]);
@@ -27,12 +28,14 @@ function test_input($data) {
 	$data = htmlspecialchars($data);
 	return $data;
 }
-
+/*
 var_dump($major);
 var_dump($_SERVER["REQUEST_METHOD"]);
+*/
 ?>
 
 <?php
+echo "<h1>Sibmitted information</h1><br><br>";
 echo "Name: ".$name."<br>E-mail: ".$email."<br>Major: ".$major."<br>Comment: ".$comment."<br>";
 
 /*
