@@ -12,8 +12,8 @@ var_dump($_POST);
 // define variables and set to empty values
 $name = $email = $major = $comment = $continent1 = $continent2 = $continent3 = $continent4 = $continent5 = $continent6 = $continent7 = "";
 
-$continents = array("na" => "$_POST['continent1']", "sa" => "$_POST['continent2']", "eu" => "$_POST['continent3']", 
-"as" => "$_POST['continent4']", "au" => "$_POST['continent5']", "af" => "$_POST['continent6']", "an" => "$_POST['continent7']"); 
+$continents = array("$_POST['continent1']" => "North America", "$_POST['continent2']" => "South America", "$_POST['continent3']" => "Europe", 
+"$_POST['continent4']" => "Asia", "$_POST['continent5']" => "Australia", "$_POST['continent6']" => "Africa", "$_POST['continent7']" => "Antarctica"); 
 
 //var_dump($major);
 
