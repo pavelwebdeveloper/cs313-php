@@ -5,6 +5,8 @@
 </head>
 <body>
 <?php
+echo "Hello";
+/*
 // define variables and set to empty values
 $name = $email = $major = $comment = "";
 
@@ -22,10 +24,11 @@ function test_input($data) {
 	$data = htmlspecialchars($data);
 	return $data;
 }
-
+*/
 ?>
 
 <?php 
+/*
 echo "<label for="name">Name: ".$name."</label>
 <br>
 <label for="email">E-mail: "$email."</label>
@@ -33,7 +36,7 @@ echo "<label for="name">Name: ".$name."</label>
 <label for="major">Major: ".$major."</label>
 <br>
 <label for="comment">Comments: ".$comment."</label>"
-
+*/
 ?>
 
 </body>
