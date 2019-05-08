@@ -33,7 +33,10 @@ var_dump($_SERVER["REQUEST_METHOD"]);
 ?>
 
 <?php
+echo "Name: ".$name;
+/*
 echo "<label for='name'>Name: ".$name."</label><br><label for='email'>E-mail: "$email."</label><br><label for='major'>Major: ".$major."</label><br><label for='comment'>Comments: ".$comment."</label>";
+*/
 ?>
 
 
