@@ -52,6 +52,7 @@ echo "<h1>Sibmitted information</h1><br><br>";
 echo "Name: ".$name."<br>E-mail: ".$email."<br>Major: ".$major."<br>Comment: ".$comment."<br>";
 //echo "<h3>Visited continents:</h3>".$continent1." ".$continent2." ".$continent3." ".$continent4." ".$continent5." ".$continent6." ".$continent7;
 echo "<h3>Visited continents:</h3>";
+var_dump($continents);
 foreach($continents as $continent) {
 	echo $continent;
 }
