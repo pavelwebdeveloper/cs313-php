@@ -31,8 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$continent7 = $_POST["continent7"];
 	
 	$continents = array("$continent1" => "North America", "$continent2" => "South America", "$continent3" => "Europe", 
-"$continent4" => "Asia", "$continent5" => "Australia", "$continent6" => "Africa", "$continent7" => "Antarctica"); 
-array_shift($continents);
+"$continent4" => "Asia", "$continent5" => "Australia", "$continent6" => "Africa", "$continent7" => "Antarctica");
 	
 }
 /*
