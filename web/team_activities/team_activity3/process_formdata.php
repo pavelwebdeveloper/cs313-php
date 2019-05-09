@@ -17,30 +17,23 @@ $name = $email = $major = $comment = $continent1 = $continent2 = $continent3 = $
 //var_dump($major);
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-	$name = test_input($_POST["name"]);
+	$name = $_POST["name"];
 	// Check if name contains only letters and whitespace
-	$email = test_input($_POST["email"]);
-	$major = test_input($_POST["major"]);
-	$comment = test_input($_POST["comment"]);
-	$continent1 = test_input($_POST["continent1"]);
-	$continent2 = test_input($_POST["continent2"]);
-	$continent3 = test_input($_POST["continent3"]);
-	$continent4 = test_input($_POST["continent4"]);
-	$continent5 = test_input($_POST["continent5"]);
-	$continent6 = test_input($_POST["continent6"]);
-	$continent7 = test_input($_POST["continent7"]);
+	$email = $_POST["email"];
+	$major = $_POST["major"];
+	$comment = $_POST["comment"];
+	$continent1 = $_POST["continent1"];
+	$continent2 = $_POST["continent2"];
+	$continent3 = $_POST["continent3"];
+	$continent4 = $_POST["continent4"];
+	$continent5 = $_POST["continent5"];
+	$continent6 = $_POST["continent6"];
+	$continent7 = $_POST["continent7"];
 	
 	$continents = array("$continent1" => "North America", "$continent2" => "South America", "$continent3" => "Europe", 
 "$continent4" => "Asia", "$continent5" => "Australia", "$continent6" => "Africa", "$continent7" => "Antarctica"); 
 array_shift($continents);
 	
-}
-
-function test_input($data) {
-	$data = trim($data);
-	$data = stripslashes($data);
-	$data = htmlspecialchars($data);
-	return $data;
 }
 /*
 var_dump($major);
