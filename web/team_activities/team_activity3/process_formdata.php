@@ -8,7 +8,7 @@
 
 //echo "Hello";
 
-var_dump($_POST);
+//var_dump($_POST);
 // define variables and set to empty values
 $name = $email = $major = $comment = $continent1 = $continent2 = $continent3 = $continent4 = $continent5 = $continent6 = $continent7 = "";
 
@@ -44,11 +44,11 @@ var_dump($_SERVER["REQUEST_METHOD"]);
 <?php
 echo "<h1>Sibmitted information</h1><br><br>";
 echo "Name: ".$name;
-echo "<br>E-mail: <a href='mailto:".$email."'>".$email."</a>";
+echo "<br>E-mail: <a href='mailto:".$email."'> mailto".$email."</a>";
 echo "<br>Major: ".$major."<br>Comment: ".$comment."<br>";
 //echo "<h3>Visited continents:</h3>".$continent1." ".$continent2." ".$continent3." ".$continent4." ".$continent5." ".$continent6." ".$continent7;
 echo "<h3>Visited continents:</h3>";
-var_dump($continents);
+//var_dump($continents);
 foreach($continents as $continent) {
 	echo $continent;
 }
