@@ -85,15 +85,15 @@ session_start();
  
  var_dump($productDetail);
  
-	echo "<section><h2>".$productDetails["title"]."</h2><article><div><img src=".$productDetails["image"]."></div><div><p class='price'><span>Price: </span>".
-	$productDetails["price"]."</p><p><span>Description: </span>".$productDetails["description"]."</p><p><span>Stock: </span>".$productDetails["stock"].
+	echo "<section><h2>".$productDetail["title"]."</h2><article><div><img src=".$productDetail["image"]."></div><div><p class='price'><span>Price: </span>".
+	$productDetail["price"]."</p><p><span>Description: </span>".$productDetail["description"]."</p><p><span>Stock: </span>".$productDetail["stock"].
 	"</p><form action='product_details.php' method='post'><input type='submit' name='addToShoppingCart' value='Add to Shopping Cart'></form></div></article></section>";
 	
 	if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['addToShoppingCart'])) {
 		addToShoppingCart();
 	}
 	function addToShoppingCart(){
-		$_SESSION['shoppingCart'][] = $productDetails;
+		$_SESSION['shoppingCart'][] = $productDetail;
 	}
 	
 	
