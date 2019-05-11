@@ -74,7 +74,7 @@ session_start();
  $product["stock"] = $_POST["stock"];
  }
  
- 
+ copyProduct();
  
  var_dump($product);
  
