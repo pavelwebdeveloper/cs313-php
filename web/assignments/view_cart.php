@@ -83,15 +83,25 @@ if (!isset($_SESSION['shoppingCart'])) {
  echo "<br>";
  echo "<br>";
  
- 
+ if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['removeFromShoppingCart'])) {
+		/*$product = array();
+		$product[] = $_SESSION['productNumber'];
+		$product[] = $_SESSION['image'];
+		$cars = array("BMW", "Mercedez");*/
+		$_SESSION['products'][0][$productNumber - 1]['stock'] += 1 ;
+		$_SESSION['products'][0][$productNumber - 1]['addedToCart'] -= 1 ;
+		if ($_SESSION['products'][0][$productNumber - 1]['addedToCart'] == 1) {
+		unset($_SESSION['products'][0][$productNumber - 1]);
+		}
+		
+		//$_SESSION['stock'] -= 1;
+	}
  
  foreach ($_SESSION['shoppingCart'] as $product) {
 	echo '<section><h2>'.$product["title"].'</h2><article><div><img src='.$product["image"].'></div><div><p class="price"><span>Price: </span>'.$product["price"].
 	'</p><p><span>Description: </span>'.$product["description"].'</p><p><span>Stock: </span>'.$product["stock"].
-	'</p><form method="post" action="product_details.php"><input type="hidden" name="title" value="'.$product["title"].
-	'"><input type="hidden" name="image" value="'.$product["image"].'"><input type="hidden" name="price" value="'.$product["price"].
-	'"><input type="hidden" name="description" value="'.$product["description"].
-	'"><form action="view_cart.php" method="post"><input type="submit" name="removeFromShoppingCart" value="Remove from Shopping Cart"></form></div></article></section>';
+	'</p><p><span>Added to Cart: </span>'.$product["addedToCart"].
+	'</p><form action="view_cart.php" method="post"><input type="submit" name="removeFromShoppingCart" value="Remove from Shopping Cart"></form></div></article></section>';
  };
  
  ?>
