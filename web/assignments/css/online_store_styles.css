@@ -21,6 +21,22 @@ nav a:hover {
 	text-decoration: underline;
 }
 
+section {
+	border: 1px solid #A9A9A9;
+	padding: 5px;
+	width: 700px;
+	height:500px;
+}
+
+p.price {
+	color: red;
+}
+
+section article div img {
+	max-width: 400px;
+	max-height: 267px;
+}
+
 footer {
 background-color: #000066;
 height: 50px;

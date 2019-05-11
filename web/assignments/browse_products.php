@@ -19,6 +19,8 @@ session_start();
  // Create an array for the shopping cart in the session
  $_SESSION['shoppingCart'] = array();
  
+ var_dump($_SESSION);
+ 
  // Add the 1st product
  //$_SESSION['shoppingCart']['product1'] = array();
  
@@ -47,7 +49,7 @@ session_start();
  );
  
  foreach ($products as $product) {
-	echo "<section><h2>".$product["title"]."</h2><article><div><img src=".$product["image"]."></div><div><p>".$product["price"].
+	echo "<section><h2>".$product["title"]."</h2><article><div><img src=".$product["image"]."></div><div><p class='price'>".$product["price"].
 	"</p><p>".$product["description"]."</p></div></article></section>";
  };
  
