@@ -44,6 +44,9 @@ section article {
 	flex-direction: row;
 	justify-content: space-between;
 }
+section article div {
+	margin: 10px;
+}
 
 p.price {
 	color: red;

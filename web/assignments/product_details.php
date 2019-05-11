@@ -5,7 +5,7 @@ session_start();
 <!DOCTYPE html>
 <html lang="en-us">
  <head>
-  <title>Browse Products Page</title>
+  <title>Product Details Page</title>
   <link href="css/online_store_styles.css" rel="stylesheet" media="screen">
  </head>
  <body>
@@ -32,7 +32,7 @@ session_start();
  //$_SESSION['shoppingCart']['product1']['img'] = "product_images/cellphone-cellular-device-50684.jpg";
  //$_SESSION['shoppingCart']['product1']['description'] = "Full Screen Unlocked";
  
- 
+ /*
  $products = array(
  array(
  "title" => "Smartphone",
@@ -56,10 +56,11 @@ session_start();
  "stock" => 20
  )
  );
+ */
  
- foreach ($products as $product) {
-	echo "<section><h2>".$product["title"]."</h2><article><div><img src=".$product["image"]."></div><div><p class='price'><span>Price: </span>".$product["price"].
-	"</p><p><span>Description: </span>".$product["description"]."</p><p><span>Stock: </span>".$product["stock"]."</p><a href="product_details.php">Product details</a></div></article></section>";
+ foreach ($product as $item) {
+	echo "<section><h2>".$item["title"]."</h2><article><div><img src=".$item["image"]."></div><div><p class='price'><span>Price: </span>".$item["price"].
+	"</p><p><span>Description: </span>".$item["description"]."</p><p><span>Stock: </span>".$item["stock"]."</p></div></article></section>";
  };
  
  ?>
