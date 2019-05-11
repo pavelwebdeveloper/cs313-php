@@ -35,7 +35,7 @@ session_start();
  
  $products = array(
  array(
- "numberOfProduct" => 1;
+ //"numberOfProduct" => 1;
  "title" => "Smartphone",
  "image" => "product_images/cellphone-cellular-device-50684.jpg",
  "price" => 500,
@@ -43,7 +43,7 @@ session_start();
  "stock" => 10
  ),
  array(
- "numberOfProduct" => 2;
+ //"numberOfProduct" => 2;
  "title" => "Watch",
  "image" => "product_images/blur-brass-bronze-2113994.jpg",
  "price" => 100,
@@ -51,7 +51,7 @@ session_start();
  "stock" => 30
  ),
  array(
- "numberOfProduct" => 3;
+ //"numberOfProduct" => 3;
  "title" => "Binoculars",
  "image" => "product_images/binoculars-black-equipment-55804.jpg",
  "price" => 150,
@@ -65,7 +65,7 @@ session_start();
  var_dump($_SESSION);
  
  foreach ($products as $product) {
-	 $_SESSION['productNumber'] = $product["numberOfProduct"];
+	 //$_SESSION['productNumber'] = $product["numberOfProduct"];
 	echo '<section><h2>'.$product["title"].'</h2><article><div><img src='.$product["image"].'></div><div><p class="price"><span>Price: </span>'.$product["price"].
 	'</p><p><span>Description: </span>'.$product["description"].'</p><p><span>Stock: </span>'.$product["stock"].
 	'</p><form method="post" action="product_details.php"><input type="hidden" name="title" value="'.$product["title"].
