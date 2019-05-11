@@ -110,6 +110,7 @@ session_start();
 		$product[] = $_SESSION['image'];
 		$cars = array("BMW", "Mercedez");*/
 		$_SESSION['shoppingCart'][] = $_SESSION['products'][0][$productNumber - 1];
+		$_SESSION['products'][0][$productNumber - 1];
 	}
 	
 	
@@ -137,6 +138,10 @@ session_start();
 	echo "<br>";
 	echo "<br>";
 	var_dump($_SESSION['products'][0][$productNumber - 1]);
+	echo "<br>";
+	echo "<br>";
+	echo "<br>";
+	var_dump($_SESSION['products'][0][$productNumber - 1]['stock']);
 	echo "<br>";
 	echo "<br>";
 	echo "<br>";
