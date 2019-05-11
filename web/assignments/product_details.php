@@ -109,7 +109,7 @@ session_start();
 	echo "<br>";
 	echo "<br>";
 	echo "productNumber";
-	var_dump($_SESSION["productNumber"]);
+	var_dump((int)$_SESSION["productNumber"]);
  
  ?>
  
