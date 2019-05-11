@@ -14,7 +14,7 @@ session_start();
  </header>
  <main>
  <?php
- echo "<br>";
+ echo "<br><h1>1</h1>";
  var_dump($_SESSION);
  echo "<br>";
  echo "<br>";
@@ -25,6 +25,7 @@ session_start();
  $_SESSION['products'] = array();
  echo "<br>";
  
+ echo "<br><h1>2</h1>";
  var_dump($_SESSION);
  echo "<br>";
  echo "<br>";
@@ -69,6 +70,7 @@ session_start();
  
  $_SESSION['products'][] = $products;
  
+ echo "<br><h1>3</h1>";
  var_dump($_SESSION);
  echo "<br>";
  echo "<br>";

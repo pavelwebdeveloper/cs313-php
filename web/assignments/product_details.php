@@ -105,10 +105,10 @@ session_start();
 	"</p><form action='product_details.php' method='post'><input type='submit' name='addToShoppingCart' value='Add to Shopping Cart'></form></div></article></section>";
 	
 	if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['addToShoppingCart'])) {
-		$product = array();
+		/*$product = array();
 		$product[] = $_SESSION['productNumber'];
 		$product[] = $_SESSION['image'];
-		$cars = array("BMW", "Mercedez");
+		$cars = array("BMW", "Mercedez");*/
 		$_SESSION['shoppingCart'][] = $_SESSION['products'][0][$productNumber - 1];
 	}
 	
