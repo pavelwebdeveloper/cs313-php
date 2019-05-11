@@ -63,7 +63,7 @@ session_start();
 	'</p><form method="post" action="product_details.php"><input type="hidden" name="title" value="'.$product["title"].
 	'"><input type="hidden" name="image" value="'.$product["image"].'"><input type="hidden" name="price" value="'.$product["price"].
 	'"><input type="hidden" name="description" value="'.$product["description"].'"><input type="hidden" name="stock" value="'.$product["stock"].
-	'<input type="submit" value="Product details"></form></div></article></section>';
+	'"><input type="submit" value="Product details"></form></div></article></section>';
 	/*$detailedproduct = array();
 	$detailedproduct = $product["title"];
 	$detailedproduct = $product["image"];
