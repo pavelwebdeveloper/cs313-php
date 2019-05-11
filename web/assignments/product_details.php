@@ -72,17 +72,23 @@ session_start();
  $product["description"] = $_POST["description"];
  $product["stock"] = $_POST["stock"];
  
+ 
+ 
  var_dump($product);
  
-	echo "<section><h2>".$product["title"]."</h2><article><div><img src=".$product["image"]."></div><div><p class='price'><span>Price: </span>".
-	$product["price"]."</p><p><span>Description: </span>".$product["description"]."</p><p><span>Stock: </span>".$product["stock"].
+ $productdetails = clone $product;
+ 
+ var_dump($productdetails);
+ 
+	echo "<section><h2>".$productdetails["title"]."</h2><article><div><img src=".$productdetails["image"]."></div><div><p class='price'><span>Price: </span>".
+	$productdetails["price"]."</p><p><span>Description: </span>".$productdetails["description"]."</p><p><span>Stock: </span>".$productdetails["stock"].
 	"</p><form action='product_details.php' method='post'><input type='submit' name='addToShoppingCart' value='Add to Shopping Cart'></form></div></article></section>";
 	
 	if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['addToShoppingCart'])) {
 		addToShoppingCart();
 	}
 	function addToShoppingCart(){
-		$_SESSION['shoppingCart'][] = $product;
+		$_SESSION['shoppingCart'][] = $productdetails;
 	}
 	
 	
