@@ -92,7 +92,7 @@ session_start();
 		$_SESSION['productNumber'] = $_POST['number'];
 	}
  
- 
+ $productNumber = (int)$_SESSION['productNumber'];
  
 	echo "<section><h2>".$product["title"]."</h2><article><div><img src=".$product["image"]."></div><div><p class='price'><span>Price: </span>".
 	$product["price"]."</p><p><span>Description: </span>".$product["description"]."</p><p><span>Stock: </span>".$product["stock"].
@@ -111,6 +111,7 @@ session_start();
 	echo "productNumber";
 	var_dump((int)$_SESSION["productNumber"]);
 	var_dump($_SESSION["products"][(int)$_SESSION["productNumber"]]);
+	var_dump($productNumber);
  
  ?>
  
