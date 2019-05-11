@@ -113,6 +113,8 @@ session_start();
 		if ($_SESSION['products'][0][$productNumber - 1]['addedToCart'] == 1) {
 		$_SESSION['shoppingCart'][] = $_SESSION['products'][0][$productNumber - 1];
 		}
+		$_SESSION['stock'] -= 1;
+		$_SESSION['addedToCart'] += 1;
 		
 		//$_SESSION['stock'] -= 1;
 	}
