@@ -81,6 +81,10 @@ session_start();
  
  var_dump($productDetails);
  
+ $productDetail = clone $productDetails;
+ 
+ var_dump($productDetail);
+ 
 	echo "<section><h2>".$productDetails["title"]."</h2><article><div><img src=".$productDetails["image"]."></div><div><p class='price'><span>Price: </span>".
 	$productDetails["price"]."</p><p><span>Description: </span>".$productDetails["description"]."</p><p><span>Stock: </span>".$productDetails["stock"].
 	"</p><form action='product_details.php' method='post'><input type='submit' name='addToShoppingCart' value='Add to Shopping Cart'></form></div></article></section>";
