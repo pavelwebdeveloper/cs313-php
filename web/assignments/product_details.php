@@ -120,8 +120,8 @@ session_start();
 	}
 		
 
-		$_SESSION['stock'] = $_SESSION['products'][0][$productNumber - 1]['stock'];
-		$_SESSION['addedToCart'] = $_SESSION['products'][0][$productNumber - 1]['addedToCart'];
+		$_SESSION['stock'] -= 1;;
+		$_SESSION['addedToCart'] += 1;;
 		$_SESSION['shoppingCart'][0]['stock'] = $_SESSION['products'][0][$productNumber - 1]['stock'];
 		$_SESSION['shoppingCart'][0]['addedToCart'] = $_SESSION['products'][0][$productNumber - 1]['addedToCart'];
 		//$_SESSION['stock'] -= 1;
