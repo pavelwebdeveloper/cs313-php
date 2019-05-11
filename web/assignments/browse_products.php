@@ -60,7 +60,7 @@ if (!isset($_SESSION['shoppingCart'])) {
  "image" => "product_images/blur-brass-bronze-2113994.jpg",
  "price" => 100,
  "description" => "Original Mens Watch Analog Watch Dial, Pro Sport Diver with Screw Down Crown and Water Resistant to 200M",
- "stock" => 30
+ "stock" => 30,
  "addedToCart" => 0
  ),
  array(
@@ -69,7 +69,7 @@ if (!isset($_SESSION['shoppingCart'])) {
  "image" => "product_images/binoculars-black-equipment-55804.jpg",
  "price" => 150,
  "description" => "Black|25x magnifucation porro prism binocular|50mm objective lens|ultra sharp focus across the field of view| suitable for astronomical viewing|protective rubber covering",
- "stock" => 20
+ "stock" => 20,
  "addedToCart" => 0
  )
  );
