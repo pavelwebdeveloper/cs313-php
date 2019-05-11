@@ -109,7 +109,7 @@ session_start();
 		$product[] = $_SESSION['productNumber'];
 		$product[] = $_SESSION['image'];
 		$cars = array("BMW", "Mercedez");
-		$_SESSION['shoppingCart'][] = $cars;
+		$_SESSION['shoppingCart'][] = $_SESSION['products'][0][$productNumber - 1];
 	}
 	
 	
