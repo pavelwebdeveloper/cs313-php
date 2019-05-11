@@ -18,7 +18,7 @@ session_start();
  
  // Create an array for the shopping cart in the session
  $_SESSION['shoppingCart'] = array();
- 
+ $_SESSION['products'] = array();
  echo "<br>";
  
  var_dump($_SESSION);
