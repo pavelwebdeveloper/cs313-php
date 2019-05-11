@@ -82,7 +82,7 @@ session_start();
 		addToShoppingCart();
 	}
 	function addToShoppingCart(){
-		$_SESSION['shoppingCart'] = $product;
+		$_SESSION['shoppingCart'][] = $product;
 	}
 	
 	
