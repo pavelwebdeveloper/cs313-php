@@ -1,6 +1,9 @@
 <?php
 // Start the session
 session_start();
+// Create an array for the shopping cart in the session
+ $_SESSION['shoppingCart'] = array();
+ $_SESSION['products'] = array();
 ?>
 <!DOCTYPE html>
 <html lang="en-us">
@@ -20,9 +23,7 @@ session_start();
  echo "<br>";
  echo "<br>";
  
- // Create an array for the shopping cart in the session
- $_SESSION['shoppingCart'] = array();
- $_SESSION['products'] = array();
+ 
  echo "<br>";
  
  echo "<br><h1>2</h1>";
