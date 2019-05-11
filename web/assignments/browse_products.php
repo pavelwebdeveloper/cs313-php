@@ -14,7 +14,11 @@ session_start();
  </header>
  <main>
  <?php
+ echo "<br>";
  var_dump($_SESSION);
+ echo "<br>";
+ echo "<br>";
+ echo "<br>";
  
  // Create an array for the shopping cart in the session
  $_SESSION['shoppingCart'] = array();
@@ -22,6 +26,9 @@ session_start();
  echo "<br>";
  
  var_dump($_SESSION);
+ echo "<br>";
+ echo "<br>";
+ echo "<br>";
  
  // Add the 1st product
  //$_SESSION['shoppingCart']['product1'] = array();
@@ -63,6 +70,9 @@ session_start();
  $_SESSION['products'][] = $products;
  
  var_dump($_SESSION);
+ echo "<br>";
+ echo "<br>";
+ echo "<br>";
  
  
  
