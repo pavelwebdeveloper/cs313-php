@@ -102,7 +102,7 @@ session_start();
 		addToShoppingCart();
 	}
 	function addToShoppingCart(){
-		$_SESSION['shoppingCart'][] = $_SESSION['products'][''];
+		$_SESSION['shoppingCart'][] = $_SESSION['products'][$_SESSION["productNumber"]];
 	}
 	
 	echo "<br>";
