@@ -85,11 +85,11 @@ session_start();
 	'"><input type="hidden" name="number" value="'.$product["numberOfProduct"].'"><input type="submit" name="numberOfProduct" value="Product details"></form></div></article></section>';
  };
 
-if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['numberOfProduct'])) {
+if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['number'])) {
 		addNumberOfProductToSession();
 	}
 	function addNumberOfProductToSession(){
-		$_SESSION['productNumber'] = $_POST['numberOfProduct'];
+		$_SESSION['productNumber'] = $_POST['number'];
 	}
  
  ?>

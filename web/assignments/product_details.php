@@ -102,7 +102,7 @@ session_start();
 	echo "<br>";
 	echo "<br>";
 	echo "productNumber";
-	echo $_SESSION['productNumber'];
+	echo $_SESSION["productNumber"];
  
  ?>
  
