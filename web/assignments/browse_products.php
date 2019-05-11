@@ -57,6 +57,10 @@ session_start();
  )
  );
  
+ $_SESSION['products'][] = $products;
+ 
+ var_dump($_SESSION);
+ 
  foreach ($products as $product) {
 	echo '<section><h2>'.$product["title"].'</h2><article><div><img src='.$product["image"].'></div><div><p class="price"><span>Price: </span>'.$product["price"].
 	'</p><p><span>Description: </span>'.$product["description"].'</p><p><span>Stock: </span>'.$product["stock"].
