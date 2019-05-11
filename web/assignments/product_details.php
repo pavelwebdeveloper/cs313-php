@@ -62,17 +62,20 @@ session_start();
  );
  */
 
-  static $product = array();
+  
  
  echo "<br>";
  
-
+ function copyProduct(){
+	 static $product = array();
  $product["title"] = $_POST["title"];
  $product["image"] = $_POST["image"];
  $product["price"] = $_POST["price"];
  $product["description"] = $_POST["description"];
  $product["stock"] = $_POST["stock"];
+ }
  
+ copyProduct();
  
  var_dump($product);
  
