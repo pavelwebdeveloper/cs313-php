@@ -6,7 +6,7 @@
  </head>
  <body>
  <header>
- <?php include $_SERVER[ 'DOCUMENT_ROOT' ].'/common/header.php'; ?>
+ <?php include $_SERVER[ 'DOCUMENT_ROOT' ].'/assignments/common/header.php'; ?>
  </header>
  <main>
  
@@ -14,7 +14,7 @@
 
   
   <footer>
-  <?php include $_SERVER[ 'DOCUMENT_ROOT' ].'/common/footer.php'; ?>
+  <?php include $_SERVER[ 'DOCUMENT_ROOT' ].'/assignments/common/footer.php'; ?>
   </footer>
  </body>
 </html>
