@@ -68,6 +68,7 @@ session_start();
  
  array_push($product, $_POST["title"], $_POST["image"], $_POST["price"], $_POST["description"], $_POST["stock"]); 
  
+ var_dump($product);
  
  foreach ($product as $item) {
 	echo "<section><h2>".$item["title"]."</h2><article><div><img src=".$item["image"]."></div><div><p class='price'><span>Price: </span>".$item["price"].
