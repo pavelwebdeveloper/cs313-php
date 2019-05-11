@@ -36,6 +36,13 @@ section {
 	padding: 5px;
 	width: 700px;
 	height:500px;
+	margin: 10px;
+}
+
+section article {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
 }
 
 p.price {
