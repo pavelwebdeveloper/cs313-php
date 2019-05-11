@@ -3,10 +3,35 @@ background-color: #000066;
 height: 50px;
 }
 
+nav {
+	height: 50px;
+	padding-top: 10px;
+}
+
+nav a {
+	text-decoration: none;
+	color: white;
+	height: 50px;
+	font-size: 25px;
+	margin-left: 10px;
+	
+}
+
+nav a:hover {
+	text-decoration: underline;
+}
+
 footer {
 background-color: #000066;
 height: 50px;
 vertical-align: center;
+}
+
+footer p {
+	font-size: 15px;
+	color: white;
+	text-align: center;
+	padding-top: 10px;
 }
 
 /**********************************************************************************/
