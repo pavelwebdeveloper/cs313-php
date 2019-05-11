@@ -163,7 +163,7 @@ session_start();
 	echo "<br>";
 	echo "<br>";
 	echo "<br>";
-	var_dump($_SESSION['products']);
+	var_dump($_SESSION['products'][0]);
 	echo "<br>";
 	echo "<br>";
 	echo "<br>";
