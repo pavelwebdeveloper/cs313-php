@@ -20,7 +20,7 @@ session_start();
  echo "<br>";
  
  // Create an array for the shopping cart in the session
- $_SESSION['shoppingCart'] = array();
+ //$_SESSION['shoppingCart'] = array();
  
  echo "<br>";
  
