@@ -67,16 +67,20 @@ session_start();
  
  
  foreach ($products as $product) {
-	$_SESSION['productNumber'] = $product["numberOfProduct"];
 	echo '<section><h2>'.$product["title"].'</h2><article><div><img src='.$product["image"].'></div><div><p class="price"><span>Price: </span>'.$product["price"].
 	'</p><p><span>Description: </span>'.$product["description"].'</p><p><span>Stock: </span>'.$product["stock"].
 	'</p><form method="post" action="product_details.php"><input type="hidden" name="title" value="'.$product["title"].
 	'"><input type="hidden" name="image" value="'.$product["image"].'"><input type="hidden" name="price" value="'.$product["price"].
 	'"><input type="hidden" name="description" value="'.$product["description"].'"><input type="hidden" name="stock" value="'.$product["stock"].
-	'"><input type="submit" value="Product details"></form></div></article></section>';
+	'"><input type="hidden" name="number" value="'.$product["numberOfProduct"].'"><input type="submit" name="numberOfProduct" value="Product details"></form></div></article></section>';
  };
- 
- echo $_SESSION['productNumber'];
+
+if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['numberOfProduct'])) {
+		addNumberOfProductToSession();
+	}
+	function addNumberOfProductToSession(){
+		$_SESSION['productNumber'] = $_POST['numberOfProduct'];
+	}
  
  ?>
  

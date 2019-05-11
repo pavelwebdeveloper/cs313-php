@@ -27,6 +27,7 @@ session_start();
  
  var_dump($_POST);
  
+ 
  // Add the 1st product
  //$_SESSION['shoppingCart']['product1'] = array();
  
@@ -73,17 +74,7 @@ session_start();
  $product["description"] = $_POST["description"];
  $product["stock"] = $_POST["stock"];
  
- $productDetails = new ArrayObject($product);
  
- var_dump($product);
- 
- echo "<br>";
- 
- var_dump($productDetails);
- 
- $productDetail = clone $productDetails;
- 
- var_dump($productDetail);
  
 	echo "<section><h2>".$product["title"]."</h2><article><div><img src=".$product["image"]."></div><div><p class='price'><span>Price: </span>".
 	$product["price"]."</p><p><span>Description: </span>".$product["description"]."</p><p><span>Stock: </span>".$product["stock"].
@@ -93,10 +84,10 @@ session_start();
 		addToShoppingCart();
 	}
 	function addToShoppingCart(){
-		$_SESSION['shoppingCart'][] = $productDetail;
+		$_SESSION['shoppingCart'][] = $_SESSION['products'][''];
 	}
 	
-	
+	echo $_SESSION['productNumber'];
  
  ?>
  
