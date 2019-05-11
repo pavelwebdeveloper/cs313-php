@@ -60,6 +60,11 @@ session_start();
  foreach ($products as $product) {
 	echo "<section><h2>".$product["title"]."</h2><article><div><img src=".$product["image"]."></div><div><p class='price'><span>Price: </span>".$product["price"].
 	"</p><p><span>Description: </span>".$product["description"]."</p><p><span>Stock: </span>".$product["stock"]."</p><a href='product_details.php'>Product details</a></div></article></section>";
+	/*$detailedproduct = array();
+	$detailedproduct = $product["title"];
+	$detailedproduct = $product["image"];
+	$detailedproduct = $product["price"];
+	$detailedproduct = $product["description"];*/
  };
  
  ?>
