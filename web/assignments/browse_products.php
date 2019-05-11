@@ -73,7 +73,7 @@ if (!isset($_SESSION['shoppingCart'])) {
  }
  
  
- if (!isset($_SESSION['products'][])) {
+ if (!isset($_SESSION['products'][0])) {
   $_SESSION['products'][] = $products;
  }
  
