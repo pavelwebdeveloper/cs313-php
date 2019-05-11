@@ -23,6 +23,10 @@ session_start();
  
  var_dump($_SESSION);
  
+ echo "<br>";
+ 
+ var_dump($_POST);
+ 
  // Add the 1st product
  //$_SESSION['shoppingCart']['product1'] = array();
  
