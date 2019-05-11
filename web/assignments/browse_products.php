@@ -43,7 +43,7 @@ if (!isset($_SESSION['shoppingCart'])) {
  //$_SESSION['shoppingCart']['product1']['img'] = "product_images/cellphone-cellular-device-50684.jpg";
  //$_SESSION['shoppingCart']['product1']['description'] = "Full Screen Unlocked";
  
- 
+ if (!isset($products)) {
  $products = array(
  array(
  "numberOfProduct" => 1,
@@ -70,8 +70,12 @@ if (!isset($_SESSION['shoppingCart'])) {
  "stock" => 20
  )
  );
+ }
  
- $_SESSION['products'][] = $products;
+ 
+ if (!isset($_SESSION['products'])) {
+  $_SESSION['products'][] = $products;
+ }
  
  echo "<br><h1>3</h1>";
  var_dump($_SESSION);

@@ -87,9 +87,9 @@ session_start();
  */
  
  if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['number'])) {
-		addProductToSession();
+		/*addProductToSession();
 	}
-	function addProductToSession(){
+	function addProductToSession(){*/
 		$_SESSION['productNumber'] = $_POST['number'];
 		$_SESSION['image'] = $_POST['image'];
 		$_SESSION['title'] = $_POST['title'];
