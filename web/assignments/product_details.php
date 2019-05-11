@@ -66,7 +66,11 @@ session_start();
  
  echo "<br>";
  
- array_push($product, $_POST["title"], $_POST["image"], $_POST["price"], $_POST["description"], $_POST["stock"]); 
+ $products["title"] = $_POST["title"];
+ $products["image"] = $_POST["image"];
+ $products["price"] = $_POST["price"];
+ $products["description"] = $_POST["description"];
+ $products["stock"] = $_POST["stock"];
  
  var_dump($product);
  
