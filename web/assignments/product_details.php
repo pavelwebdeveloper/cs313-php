@@ -110,8 +110,18 @@ session_start();
 	echo "<br>";
 	echo "productNumber";
 	var_dump((int)$_SESSION["productNumber"]);
+	echo "<br>";
+	echo "<br>";
+	echo "<br>";
 	//echo $_SESSION["productNumber"];
-	var_dump($_SESSION["products"]);
+	echo $productNumber;
+	echo "<br>";
+	echo "<br>";
+	echo "<br>";
+	var_dump($_SESSION["products"][$productNumber]);
+	echo "<br>";
+	echo "<br>";
+	echo "<br>";
 	var_dump($productNumber);
  
  ?>
