@@ -85,8 +85,8 @@ session_start();
  
  var_dump($productDetail);
  
-	echo "<section><h2>".$productDetail["title"]."</h2><article><div><img src=".$productDetail["image"]."></div><div><p class='price'><span>Price: </span>".
-	$productDetail["price"]."</p><p><span>Description: </span>".$productDetail["description"]."</p><p><span>Stock: </span>".$productDetail["stock"].
+	echo "<section><h2>".$product["title"]."</h2><article><div><img src=".$product["image"]."></div><div><p class='price'><span>Price: </span>".
+	$product["price"]."</p><p><span>Description: </span>".$product["description"]."</p><p><span>Stock: </span>".$product["stock"].
 	"</p><form action='product_details.php' method='post'><input type='submit' name='addToShoppingCart' value='Add to Shopping Cart'></form></div></article></section>";
 	
 	if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['addToShoppingCart'])) {

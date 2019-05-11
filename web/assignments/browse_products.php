@@ -35,6 +35,7 @@ session_start();
  
  $products = array(
  array(
+ "numberOfProduct" => 1;
  "title" => "Smartphone",
  "image" => "product_images/cellphone-cellular-device-50684.jpg",
  "price" => 500,
@@ -42,6 +43,7 @@ session_start();
  "stock" => 10
  ),
  array(
+ "numberOfProduct" => 2;
  "title" => "Watch",
  "image" => "product_images/blur-brass-bronze-2113994.jpg",
  "price" => 100,
@@ -49,6 +51,7 @@ session_start();
  "stock" => 30
  ),
  array(
+ "numberOfProduct" => 3;
  "title" => "Binoculars",
  "image" => "product_images/binoculars-black-equipment-55804.jpg",
  "price" => 150,
@@ -68,11 +71,7 @@ session_start();
 	'"><input type="hidden" name="image" value="'.$product["image"].'"><input type="hidden" name="price" value="'.$product["price"].
 	'"><input type="hidden" name="description" value="'.$product["description"].'"><input type="hidden" name="stock" value="'.$product["stock"].
 	'"><input type="submit" value="Product details"></form></div></article></section>';
-	/*$detailedproduct = array();
-	$detailedproduct = $product["title"];
-	$detailedproduct = $product["image"];
-	$detailedproduct = $product["price"];
-	$detailedproduct = $product["description"];*/
+	$_SESSION['productNumber'] = $product["numberOfProduct"];
  };
  
  ?>
