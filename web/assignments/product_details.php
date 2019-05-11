@@ -74,9 +74,11 @@ session_start();
 
   $product = array();
   
+  if (!(isset($phone)) || !(isset($watch)) || !(isset($binocular))) {
   $phone = 1;
 		$watch = 1;
 		$binocular = 1;
+  }
  
  echo "<br>";
  echo "<br>";
