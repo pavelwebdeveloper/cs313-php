@@ -59,8 +59,7 @@ session_start();
  
  foreach ($products as $product) {
 	echo "<section><h2>".$product["title"]."</h2><article><div><img src=".$product["image"]."></div><div><p class='price'><span>Price: </span>".$product["price"].
-	"</p><p><span>Description: </span>".$product["description"]."</p><p><span>Stock: </span>".$product["stock"]."</p><form method='post' action='product_details.php'>".
-	"<input type='hidden' name='$_SESSION['productdetails']' value='$product'><input type='submit' name='productdetails' value='Product details' id='product_details.php'></form></div></article></section>";
+	"</p><p><span>Description: </span>".$product["description"]."</p><p><span>Stock: </span>".$product["stock"]."</p><form method='post' action='product_details.php'><input type='hidden' name='$_SESSION['productdetails']' value='$product'><input type='submit' name='productdetails' value='Product details' id='product_details.php'></form></div></article></section>";
 	/*$detailedproduct = array();
 	$detailedproduct = $product["title"];
 	$detailedproduct = $product["image"];
