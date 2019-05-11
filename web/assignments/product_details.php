@@ -78,12 +78,13 @@ session_start();
  echo "<br>";
  echo "<br>";
  
- 
+ /*
  $product["title"] = $_POST["title"];
  $product["image"] = $_POST["image"];
  $product["price"] = $_POST["price"];
  $product["description"] = $_POST["description"];
  $product["stock"] = $_POST["stock"];
+ */
  
  if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['number'])) {
 		addProductToSession();
@@ -107,7 +108,10 @@ session_start();
 		addToShoppingCart();
 	}
 	function addToShoppingCart(){
-		$cars = array("BMW", "Toyota");
+		$product = array();
+		$product[] = $_SESSION['productNumber'];
+		$product[] = $_SESSION['image'];
+		$cars = array("BMW", "Mercedez");
 		$_SESSION['shoppingCart'][] = $cars;
 	}
 	
@@ -137,6 +141,10 @@ session_start();
 	echo "<br>";
 	echo "<br>";
 	var_dump($_SESSION["description"]);
+	echo "<br>";
+	echo "<br>";
+	echo "<br>";
+	var_dump($product);
 	echo "<br>";
 	echo "<br>";
 	echo "<br>";
