@@ -122,6 +122,10 @@ session_start();
 	echo "<br>";
 	echo "<br>";
 	echo "<br>";
+	var_dump($_SESSION["products"]);
+	echo "<br>";
+	echo "<br>";
+	echo "<br>";
 	var_dump($productNumber);
  
  ?>
