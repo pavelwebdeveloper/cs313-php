@@ -115,7 +115,8 @@ session_start();
 		}
 		$_SESSION['stock'] -= 1;
 		$_SESSION['addedToCart'] += 1;
-		
+		$_SESSION['shoppingCart'][0]['stock'] -= 1;
+		$_SESSION['shoppingCart'][0]['addedToCart'] += 1;
 		//$_SESSION['stock'] -= 1;
 	}
 	
