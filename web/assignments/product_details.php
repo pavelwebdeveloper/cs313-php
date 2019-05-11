@@ -107,7 +107,8 @@ session_start();
 		addToShoppingCart();
 	}
 	function addToShoppingCart(){
-		$_SESSION['shoppingCart'][0][] = $_SESSION['products'][0][$productNumber - 1];
+		$cars = array("BMW", "Toyota");
+		$_SESSION['shoppingCart'][] = $cars;
 	}
 	
 	echo "<br>";
@@ -131,7 +132,7 @@ session_start();
 	echo "<br>";
 	echo "<br>";
 	echo "<br>";
-	var_dump($_SESSION['products']);
+	var_dump($_SESSION['shoppingCart']);
 	echo "<br>";
 	echo "<br>";
 	echo "<br>";
