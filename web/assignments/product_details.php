@@ -74,11 +74,6 @@ session_start();
 
   $product = array();
   
-  if (!(isset($phone)) || !(isset($watch)) || !(isset($binocular))) {
-  $phone = 1;
-		$watch = 1;
-		$binocular = 1;
-  }
  
  echo "<br>";
  echo "<br>";
@@ -120,16 +115,10 @@ session_start();
 		
 		
 		
-		if ($phone != 0 || $watch != 0 || $binocular != 0) {
+		if ($_SESSION['products'][0][$productNumber - 1]['addedToCart'] == 1) {
 		$_SESSION['shoppingCart'][] = $_SESSION['products'][0][$productNumber - 1];
 	}
-		if ($_SESSION['products'][0][$productNumber - 1]['numberOfProduct'] = 1 && $_SESSION['products'][0][$productNumber - 1]['addedToCart'] == 1) {
-			$phone = 0;
-		} elseif ($_SESSION['products'][0][$productNumber - 1]['numberOfProduct'] = 2 && $_SESSION['products'][0][$productNumber - 1]['addedToCart'] == 1) {
-			$watch = 0;
-		} elseif ($_SESSION['products'][0][$productNumber - 1]['numberOfProduct'] = 3 && $_SESSION['products'][0][$productNumber - 1]['addedToCart'] == 1) {
-			$binocular = 0;
-		}
+		
 
 		$_SESSION['stock'] = $_SESSION['products'][0][$productNumber - 1]['stock'];
 		$_SESSION['addedToCart'] = $_SESSION['products'][0][$productNumber - 1]['addedToCart'];
