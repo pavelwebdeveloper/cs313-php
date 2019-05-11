@@ -86,10 +86,14 @@ session_start();
  $product["stock"] = $_POST["stock"];
  
  if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['number'])) {
-		addNumberOfProductToSession();
+		addProductToSession();
 	}
-	function addNumberOfProductToSession(){
+	function addProductToSession(){
 		$_SESSION['productNumber'] = $_POST['number'];
+		$_SESSION['title'] = $_POST['title'];
+		$_SESSION['price'] = $_POST['price'];
+		$_SESSION['description'] = $_POST['description'];
+		$_SESSION['stock'] = $_POST['stock'];
 	}
  
  $productNumber = (int)$_SESSION['productNumber'];
@@ -126,7 +130,11 @@ session_start();
 	echo "<br>";
 	echo "<br>";
 	echo "<br>";
-	var_dump($_SESSION['shoppingCart']);
+	var_dump($_SESSION['products']);
+	echo "<br>";
+	echo "<br>";
+	echo "<br>";
+	var_dump($_SESSION["description"]);
 	echo "<br>";
 	echo "<br>";
 	echo "<br>";
