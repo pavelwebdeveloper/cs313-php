@@ -90,6 +90,7 @@ session_start();
 	}
 	function addProductToSession(){
 		$_SESSION['productNumber'] = $_POST['number'];
+		$_SESSION['image'] = $_POST['image'];
 		$_SESSION['title'] = $_POST['title'];
 		$_SESSION['price'] = $_POST['price'];
 		$_SESSION['description'] = $_POST['description'];
@@ -98,8 +99,8 @@ session_start();
  
  $productNumber = (int)$_SESSION['productNumber'];
  
-	echo "<section><h2>".$product["title"]."</h2><article><div><img src=".$product["image"]."></div><div><p class='price'><span>Price: </span>".
-	$product["price"]."</p><p><span>Description: </span>".$product["description"]."</p><p><span>Stock: </span>".$product["stock"].
+	echo "<section><h2>".$_SESSION['title']."</h2><article><div><img src=".$_SESSION['image']."></div><div><p class='price'><span>Price: </span>".
+	$_SESSION['price']."</p><p><span>Description: </span>".$_SESSION['description']."</p><p><span>Stock: </span>".$_SESSION['stock'].
 	"</p><form action='product_details.php' method='post'><input type='submit' name='addToShoppingCart' value='Add to Shopping Cart'></form></div></article></section>";
 	
 	if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['addToShoppingCart'])) {
