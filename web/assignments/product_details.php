@@ -85,6 +85,13 @@ session_start();
  $product["description"] = $_POST["description"];
  $product["stock"] = $_POST["stock"];
  
+ if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['number'])) {
+		addNumberOfProductToSession();
+	}
+	function addNumberOfProductToSession(){
+		$_SESSION['productNumber'] = $_POST['number'];
+	}
+ 
  
  
 	echo "<section><h2>".$product["title"]."</h2><article><div><img src=".$product["image"]."></div><div><p class='price'><span>Price: </span>".

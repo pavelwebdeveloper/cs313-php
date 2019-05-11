@@ -84,13 +84,6 @@ session_start();
 	'"><input type="hidden" name="description" value="'.$product["description"].'"><input type="hidden" name="stock" value="'.$product["stock"].
 	'"><input type="hidden" name="number" value="'.$product["numberOfProduct"].'"><input type="submit" name="numberOfProduct" value="Product details"></form></div></article></section>';
  };
-
-if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['number'])) {
-		addNumberOfProductToSession();
-	}
-	function addNumberOfProductToSession(){
-		$_SESSION['productNumber'] = $_POST['number'];
-	}
  
  ?>
  
