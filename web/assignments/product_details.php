@@ -105,11 +105,15 @@ session_start();
 	"</p><form action='product_details.php' method='post'><input type='submit' name='addToShoppingCart' value='Add to Shopping Cart'></form></div></article></section>";
 	
 	if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['addToShoppingCart'])) {
-		addToShoppingCart();
+		$product = array();
+		$product[] = $_SESSION['productNumber'];
+		$product[] = $_SESSION['image'];
+		$cars = array("BMW", "Mercedez");
+		$_SESSION['shoppingCart'][] = $cars;
 	}
 	
-	$product = array();
 	
+	/*
 	function addToShoppingCart(){
 		global $product;
 		global $productNumber;
@@ -117,7 +121,7 @@ session_start();
 		$product[1] = $_SESSION['image'];
 		$cars = array("BMW", "Mercedez");
 		$_SESSION['shoppingCart'][] = $cars;
-	}
+	}*/
 	
 	echo "<br>";
 	echo "<br>";
