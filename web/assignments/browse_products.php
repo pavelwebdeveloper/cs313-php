@@ -51,7 +51,8 @@ if (!isset($_SESSION['shoppingCart'])) {
  "image" => "product_images/cellphone-cellular-device-50684.jpg",
  "price" => 500,
  "description" => "Full Screen Unlocked Smartphone|5.7 Android Dual SIM Cell Phones, 512 RAM/512 ROM, GSM 2G",
- "stock" => 10
+ "stock" => 10,
+ "addedToCart" => 0
  ),
  array(
  "numberOfProduct" => 2,
@@ -60,6 +61,7 @@ if (!isset($_SESSION['shoppingCart'])) {
  "price" => 100,
  "description" => "Original Mens Watch Analog Watch Dial, Pro Sport Diver with Screw Down Crown and Water Resistant to 200M",
  "stock" => 30
+ "addedToCart" => 0
  ),
  array(
  "numberOfProduct" => 3,
@@ -68,6 +70,7 @@ if (!isset($_SESSION['shoppingCart'])) {
  "price" => 150,
  "description" => "Black|25x magnifucation porro prism binocular|50mm objective lens|ultra sharp focus across the field of view| suitable for astronomical viewing|protective rubber covering",
  "stock" => 20
+ "addedToCart" => 0
  )
  );
  }
@@ -91,7 +94,8 @@ if (!isset($_SESSION['shoppingCart'])) {
 	'</p><form method="post" action="product_details.php"><input type="hidden" name="title" value="'.$product["title"].
 	'"><input type="hidden" name="image" value="'.$product["image"].'"><input type="hidden" name="price" value="'.$product["price"].
 	'"><input type="hidden" name="description" value="'.$product["description"].'"><input type="hidden" name="stock" value="'.$product["stock"].
-	'"><input type="hidden" name="number" value="'.$product["numberOfProduct"].'"><input type="submit" name="numberOfProduct" value="Product details"></form></div></article></section>';
+	'"><input type="hidden" name="number" value="'.$product["numberOfProduct"].
+	'"><input type="hidden" name="addeToCart" value="'.$product["addedToCart"].'"><input type="submit" name="numberOfProduct" value="Product details"></form></div></article></section>';
  };
  
  ?>

@@ -90,8 +90,8 @@ if (!isset($_SESSION['shoppingCart'])) {
 	'</p><p><span>Description: </span>'.$product["description"].'</p><p><span>Stock: </span>'.$product["stock"].
 	'</p><form method="post" action="product_details.php"><input type="hidden" name="title" value="'.$product["title"].
 	'"><input type="hidden" name="image" value="'.$product["image"].'"><input type="hidden" name="price" value="'.$product["price"].
-	'"><input type="hidden" name="description" value="'.$product["description"].'"><input type="hidden" name="stock" value="'.$product["stock"].
-	'"><input type="hidden" name="number" value="'.$product["numberOfProduct"].'"><input type="submit" name="numberOfProduct" value="Product details"></form></div></article></section>';
+	'"><input type="hidden" name="description" value="'.$product["description"].
+	'"><form action="view_cart.php" method="post"><input type="submit" name="removeFromShoppingCart" value="Remove from Shopping Cart"></form></div></article></section>';
  };
  
  ?>

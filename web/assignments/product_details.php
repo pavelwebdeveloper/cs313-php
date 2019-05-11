@@ -96,6 +96,7 @@ session_start();
 		$_SESSION['price'] = $_POST['price'];
 		$_SESSION['description'] = $_POST['description'];
 		$_SESSION['stock'] = $_POST['stock'];
+		$_SESSION['addedToCart'] = $_POST['addedToCart'];
 	}
  
  $productNumber = (int)$_SESSION['productNumber'];
@@ -107,9 +108,11 @@ session_start();
 		$product[] = $_SESSION['productNumber'];
 		$product[] = $_SESSION['image'];
 		$cars = array("BMW", "Mercedez");*/
-		$_SESSION['shoppingCart'][] = $_SESSION['products'][0][$productNumber - 1];
 		$_SESSION['products'][0][$productNumber - 1]['stock'] -= 1 ;
-		$_SESSION['stock'] -= 1;
+		$_SESSION['products'][0][$productNumber - 1]['addedToCart'] += 1 ;
+		$_SESSION['shoppingCart'][] = $_SESSION['products'][0][$productNumber - 1];
+		
+		//$_SESSION['stock'] -= 1;
 	}
 	
 	echo "<section><h2>".$_SESSION['title']."</h2><article><div><img src=".$_SESSION['image']."></div><div><p class='price'><span>Price: </span>".
