@@ -111,6 +111,7 @@ session_start();
 		$cars = array("BMW", "Mercedez");*/
 		$_SESSION['shoppingCart'][] = $_SESSION['products'][0][$productNumber - 1];
 		$_SESSION['products'][0][$productNumber - 1]['stock'] -= 1 ;
+		$_SESSION['stock'] -= 1;
 	}
 	
 	
