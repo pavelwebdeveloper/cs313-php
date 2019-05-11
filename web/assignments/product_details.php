@@ -110,22 +110,22 @@ session_start();
 		$cars = array("BMW", "Mercedez");*/
 		$_SESSION['products'][0][$productNumber - 1]['stock'] -= 1 ;
 		$_SESSION['products'][0][$productNumber - 1]['addedToCart'] += 1 ;
-		/*
+		
 		$phone = 1;
 		$watch = 1;
 		$binocular = 1;
-		*/
 		
-		/*if ($phone != 0 || $watch != 0 || $binocular != 0) {*/
+		
+		if ($phone != 0 || $watch != 0 || $binocular != 0) {
 		$_SESSION['shoppingCart'][] = $_SESSION['products'][0][$productNumber - 1];
-	/*}
+	}
 		if ($_SESSION['products'][0][$productNumber - 1] == 1) {
 			$phone = 0;
 		} elseif ($_SESSION['products'][0][$productNumber - 1] == 2) {
 			$watch = 0;
-		} else {
+		} elseif ($_SESSION['products'][0][$productNumber - 1] == 3) {
 			$binocular = 0;
-		}*/
+		}
 
 		$_SESSION['stock'] = $_SESSION['products'][0][$productNumber - 1]['stock'];
 		$_SESSION['addedToCart'] = $_SESSION['products'][0][$productNumber - 1]['addedToCart'];
