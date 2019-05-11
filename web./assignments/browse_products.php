@@ -5,7 +5,7 @@ session_start();
 <!DOCTYPE html>
 <html lang="en-us">
  <head>
-  <title>Product Details Page</title>
+  <title>Browse Products Page</title>
   <link href="css/online_store_styles.css" rel="stylesheet" media="screen">
  </head>
  <body>
@@ -14,6 +14,7 @@ session_start();
  </header>
  <main>
  <?php
+ echo "<br>";
  var_dump($_SESSION);
  echo "<br>";
  echo "<br>";
@@ -21,21 +22,13 @@ session_start();
  
  // Create an array for the shopping cart in the session
  $_SESSION['shoppingCart'] = array();
- 
+ $_SESSION['products'] = array();
  echo "<br>";
  
  var_dump($_SESSION);
  echo "<br>";
  echo "<br>";
- 
  echo "<br>";
- 
- echo "POST";
- var_dump($_POST);
- echo "<br>";
- echo "<br>";
- echo "<br>";
- 
  
  // Add the 1st product
  //$_SESSION['shoppingCart']['product1'] = array();
@@ -46,9 +39,10 @@ session_start();
  //$_SESSION['shoppingCart']['product1']['img'] = "product_images/cellphone-cellular-device-50684.jpg";
  //$_SESSION['shoppingCart']['product1']['description'] = "Full Screen Unlocked";
  
- /*
+ 
  $products = array(
  array(
+ "numberOfProduct" => 1,
  "title" => "Smartphone",
  "image" => "product_images/cellphone-cellular-device-50684.jpg",
  "price" => 500,
@@ -56,6 +50,7 @@ session_start();
  "stock" => 10
  ),
  array(
+ "numberOfProduct" => 2,
  "title" => "Watch",
  "image" => "product_images/blur-brass-bronze-2113994.jpg",
  "price" => 100,
@@ -63,6 +58,7 @@ session_start();
  "stock" => 30
  ),
  array(
+ "numberOfProduct" => 3,
  "title" => "Binoculars",
  "image" => "product_images/binoculars-black-equipment-55804.jpg",
  "price" => 150,
@@ -70,41 +66,35 @@ session_start();
  "stock" => 20
  )
  );
- */
+ 
+ $_SESSION['products'][] = $products;
+ 
+ var_dump($_SESSION);
+ echo "<br>";
+ echo "<br>";
+ echo "<br>";
+ 
+ 
+ 
+ foreach ($products as $product) {
+	echo '<section><h2>'.$product["title"].'</h2><article><div><img src='.$product["image"].'></div><div><p class="price"><span>Price: </span>'.$product["price"].
+	'</p><p><span>Description: </span>'.$product["description"].'</p><p><span>Stock: </span>'.$product["stock"].
+	'</p><form method="post" action="product_details.php"><input type="hidden" name="title" value="'.$product["title"].
+	'"><input type="hidden" name="image" value="'.$product["image"].'"><input type="hidden" name="price" value="'.$product["price"].
+	'"><input type="hidden" name="description" value="'.$product["description"].'"><input type="hidden" name="stock" value="'.$product["stock"].
+	'"><input type="hidden" name="number" value="'.$product["numberOfProduct"].'"><input type="submit" name="numberOfProduct" value="Product details"></form></div></article></section>';
+ };
 
-  $product = array();
- 
- echo "<br>";
- echo "<br>";
- echo "<br>";
- 
- 
- $product["title"] = $_POST["title"];
- $product["image"] = $_POST["image"];
- $product["price"] = $_POST["price"];
- $product["description"] = $_POST["description"];
- $product["stock"] = $_POST["stock"];
- 
- 
- 
-	echo "<section><h2>".$product["title"]."</h2><article><div><img src=".$product["image"]."></div><div><p class='price'><span>Price: </span>".
-	$product["price"]."</p><p><span>Description: </span>".$product["description"]."</p><p><span>Stock: </span>".$product["stock"].
-	"</p><form action='product_details.php' method='post'><input type='submit' name='addToShoppingCart' value='Add to Shopping Cart'></form></div></article></section>";
-	
-	if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['addToShoppingCart'])) {
-		addToShoppingCart();
+if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['number'])) {
+		addNumberOfProductToSession();
 	}
-	function addToShoppingCart(){
-		$_SESSION['shoppingCart'][] = $_SESSION['products'][''];
+	function addNumberOfProductToSession(){
+		$_SESSION['productNumber'] = $_POST['number'];
 	}
-	
-	echo "<br>";
-	echo "<br>";
-	echo "<br>";
-	echo "productNumber";
-	var_dump($_SESSION["productNumber"]);
  
  ?>
+ 
+ 
  
  </main>
 

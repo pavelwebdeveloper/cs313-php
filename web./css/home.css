@@ -1,0 +1,166 @@
+header {
+background-color: #008000;
+height: 50px;
+}
+
+nav {
+	height: 50px;
+	padding-top: 10px;
+}
+
+nav a {
+	text-decoration: none;
+	color: white;
+	height: 50px;
+	font-size: 25px;
+	margin-left: 10px;
+	
+}
+
+nav a:hover {
+	text-decoration: underline;
+}
+
+h1, h2, h3 {
+	text-align: center;
+}
+
+h1#assignmentsheading {
+	color: white;
+	text-shadow: 0 0 1px black, 0 0 25px green;
+}
+
+h1 {
+	font-size: 40px;
+	color: white;
+	text-shadow: 0 0 1px black, 0 0 25px blue;
+}
+
+h2 {
+	font-size: 30px;
+	color: white;
+	text-shadow: 1px 1px 2px black, 0 0 25px #FFFF00;
+}
+
+h3 {
+	font-size: 25px;
+}
+
+section {
+	display: flex;
+	flex-direction: column;
+	margin: auto;
+}
+
+div.dishwithimageright {
+	display: flex;
+	flex-direction: column;
+	margin: auto;
+}
+
+div.dishwithimageleft {
+	display: flex;
+	flex-direction: column;
+	margin: auto;
+}
+
+div.dishwithimageright p, div.dishwithimageleft p {
+	text-align: center;
+	padding: 5px;
+	width: 100%;
+	vertical-align: center;
+	font-size: 20px;
+	vertical-align: middle;
+}
+
+img {
+	border: 1px solid #A9A9A9;
+	padding: 5px;
+	max-width: 400px;
+	max-height: 267px;
+	box-shadow: 5px 5px 3px grey;
+}
+
+footer {
+background-color: #5F9EA0;
+height: 50px;
+vertical-align: center;
+}
+
+footer p {
+	font-size: 15px;
+	text-align: center;
+	padding-top: 10px;
+}
+
+/**********************************************************************************/
+/****************THE END OF LAYOUT FOR SMALL SCREENS******************************/
+/**********************************************************************************/
+
+/************************************************************************************/
+/****************************LAYOUT FOR MEDIUM SCREENS*******************************/
+/************************************************************************************/
+
+@media only screen and (min-width: 37.5em) {
+	
+	
+	
+}
+
+/**********************************************************************************/
+/****************THE END OF LAYOUT FOR MEDIUM SCREENS******************************/
+/**********************************************************************************/
+
+/************************************************************************************/
+/****************************LAYOUT FOR LARGE SCREENS*******************************/
+/************************************************************************************/
+
+@media only screen and (min-width: 64em) {
+	
+	article {
+	border: 1px solid black;
+	box-shadow: 5px 5px 3px grey;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+
+h1 {
+	font-size: 50px;
+}
+
+h2 {
+	font-size: 35px;
+}
+
+h3 {
+	font-size: 30px;
+}
+
+img {
+	padding: 50px;
+}
+
+footer p {
+	font-size: 25px;
+}
+	
+	div.dishwithimageright {
+	display: flex;
+	flex-direction: row;
+	margin: 15px;
+	margin-top: 5px;
+}
+
+div.dishwithimageleft {
+	display: flex;
+	flex-direction: row-reverse;
+	margin: 15px;
+}
+
+div.dishwithimageright p, div.dishwithimageleft p {
+	max-width: 50%;
+	padding: 50px;
+}
+	
+}
