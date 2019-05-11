@@ -66,7 +66,7 @@ session_start();
  
  echo "<br>";
  
- function copyProduct(){
+ function copyProduct($product, $POST){
  $product["title"] = $_POST["title"];
  $product["image"] = $_POST["image"];
  $product["price"] = $_POST["price"];
