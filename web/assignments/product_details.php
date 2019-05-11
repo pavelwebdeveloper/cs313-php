@@ -76,11 +76,7 @@ session_start();
  
  var_dump($product);
  
- function clone(object1) {
-	 $this->object1 = clone $this->object1;
- }
- 
- $productdetails = clone($product);
+ $productdetails = clone $product;
  
  var_dump($productdetails);
  
