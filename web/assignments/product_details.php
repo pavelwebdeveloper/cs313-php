@@ -73,6 +73,10 @@ session_start();
  */
 
   $product = array();
+  
+  $phone = 1;
+		$watch = 1;
+		$binocular = 1;
  
  echo "<br>";
  echo "<br>";
@@ -111,9 +115,7 @@ session_start();
 		$_SESSION['products'][0][$productNumber - 1]['stock'] -= 1 ;
 		$_SESSION['products'][0][$productNumber - 1]['addedToCart'] += 1 ;
 		
-		$phone = 1;
-		$watch = 1;
-		$binocular = 1;
+		
 		
 		
 		if ($phone != 0 || $watch != 0 || $binocular != 0) {
