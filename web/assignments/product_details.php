@@ -112,8 +112,8 @@ session_start();
 	
 	function addToShoppingCart(){
 		global $product;
-		$product[] = $_SESSION['productNumber'];
-		$product[] = $_SESSION['image'];
+		$product[0] = $_SESSION['productNumber'];
+		$product[1] = $_SESSION['image'];
 		$cars = array("BMW", "Mercedez");
 		$_SESSION['shoppingCart'][] = $cars;
 	}
