@@ -71,7 +71,7 @@ session_start();
 	'"><input type="hidden" name="image" value="'.$product["image"].'"><input type="hidden" name="price" value="'.$product["price"].
 	'"><input type="hidden" name="description" value="'.$product["description"].'"><input type="hidden" name="stock" value="'.$product["stock"].
 	'"><input type="submit" value="Product details"></form></div></article></section>';
-	$_SESSION['productNumber'] = $product["numberOfProduct"];
+	//$_SESSION['productNumber'] = $product["numberOfProduct"];
  };
  
  ?>
