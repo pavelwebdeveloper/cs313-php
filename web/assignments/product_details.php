@@ -111,7 +111,7 @@ session_start();
 		$_SESSION['products'][0][$productNumber - 1]['stock'] -= 1 ;
 		$_SESSION['products'][0][$productNumber - 1]['addedToCart'] += 1 ;
 		
-		if ($phone != 0 || $watch != 0 || $binocular != 0) {}
+		if ($phone != 0 || $watch != 0 || $binocular != 0) {
 		$_SESSION['shoppingCart'][] = $_SESSION['products'][0][$productNumber - 1];
 	}
 		if ($_SESSION['products'][0][$productNumber - 1] == 1) {
