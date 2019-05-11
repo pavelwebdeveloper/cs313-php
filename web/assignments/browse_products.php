@@ -64,6 +64,8 @@ session_start();
  
  var_dump($_SESSION);
  
+ 
+ 
  foreach ($products as $product) {
 	$_SESSION['productNumber'] = $product["numberOfProduct"];
 	echo '<section><h2>'.$product["title"].'</h2><article><div><img src='.$product["image"].'></div><div><p class="price"><span>Price: </span>'.$product["price"].
@@ -74,7 +76,11 @@ session_start();
 	'"><input type="submit" value="Product details"></form></div></article></section>';
  };
  
+ echo $_SESSION['productNumber'];
+ 
  ?>
+ 
+ 
  
  </main>
 
