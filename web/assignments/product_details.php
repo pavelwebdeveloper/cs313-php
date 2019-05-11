@@ -57,8 +57,7 @@ session_start();
  )
  );
  */
- 
- var_dump($products);
+
  
  foreach ($product as $item) {
 	echo "<section><h2>".$item["title"]."</h2><article><div><img src=".$item["image"]."></div><div><p class='price'><span>Price: </span>".$item["price"].
