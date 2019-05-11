@@ -107,10 +107,13 @@ session_start();
 	if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['addToShoppingCart'])) {
 		addToShoppingCart();
 	}
+	
+	$product = array();
+	
 	function addToShoppingCart(){
-		$product = array();
-		$product[] = $_SESSION['productNumber'];
-		$product[] = $_SESSION['image'];
+		
+		global $product[] = $_SESSION['productNumber'];
+		global $product[] = $_SESSION['image'];
 		$cars = array("BMW", "Mercedez");
 		$_SESSION['shoppingCart'][] = $cars;
 	}
