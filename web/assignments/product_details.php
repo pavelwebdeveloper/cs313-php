@@ -110,7 +110,11 @@ session_start();
 		$cars = array("BMW", "Mercedez");*/
 		$_SESSION['products'][0][$productNumber - 1]['stock'] -= 1 ;
 		$_SESSION['products'][0][$productNumber - 1]['addedToCart'] += 1 ;
-		if (!(isset($_SESSION['shoppingCart'][0]['addedToCart']))) {
+		if (!(isset($_SESSION['shoppingCart'][0]['addedToCart'])) || ((!$_SESSION['shoppingCart'][0]['numberOfProduct'] == 1) && (!$_SESSION['shoppingCart'][0]['numberOfProduct'] == 2))  {
+		$_SESSION['shoppingCart'][] = $_SESSION['products'][0][$productNumber - 1];
+		} elseif (!(isset($_SESSION['shoppingCart'][0]['addedToCart'])) || ((!$_SESSION['shoppingCart'][0]['numberOfProduct'] == 2) && (!$_SESSION['shoppingCart'][0]['numberOfProduct'] == 3))  {
+		$_SESSION['shoppingCart'][] = $_SESSION['products'][0][$productNumber - 1];
+		} elseif (!(isset($_SESSION['shoppingCart'][0]['addedToCart'])) || ((!$_SESSION['shoppingCart'][0]['numberOfProduct'] == 1) && (!$_SESSION['shoppingCart'][0]['numberOfProduct'] == 3))  {
 		$_SESSION['shoppingCart'][] = $_SESSION['products'][0][$productNumber - 1];
 		}
 		$_SESSION['stock'] = $_SESSION['products'][0][$productNumber - 1]['stock'];
