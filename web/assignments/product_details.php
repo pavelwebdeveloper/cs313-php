@@ -66,11 +66,11 @@ session_start();
  
  echo "<br>";
  
- $products["title"] = $_POST["title"];
- $products["image"] = $_POST["image"];
- $products["price"] = $_POST["price"];
- $products["description"] = $_POST["description"];
- $products["stock"] = $_POST["stock"];
+ $product["title"] = $_POST["title"];
+ $product["image"] = $_POST["image"];
+ $product["price"] = $_POST["price"];
+ $product["description"] = $_POST["description"];
+ $product["stock"] = $_POST["stock"];
  
  var_dump($product);
  
