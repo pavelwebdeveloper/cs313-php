@@ -116,9 +116,9 @@ session_start();
 		$quantity = count($_SESSION['shoppingCart']);
 		$i = $quantity;
 		
-		if(!isset($i)){
+		/*if(!isset($i)){
 			$i = -1;
-		}
+		}*/
 		
 		if ($_SESSION['products'][0][$productNumber - 1]['addedToCart'] == 1) {
 		$_SESSION['shoppingCart'][] = $_SESSION['products'][0][$productNumber - 1];
