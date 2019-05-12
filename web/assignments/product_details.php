@@ -113,8 +113,8 @@ session_start();
 		$_SESSION['products'][0][$productNumber - 1]['stock'] -= 1 ;
 		$_SESSION['products'][0][$productNumber - 1]['addedToCart'] += 1 ;
 		
-		/*$quantity = count($_SESSION['shoppingCart']);
-		$i = $quantity - 1;*/
+		$quantity = count($_SESSION['shoppingCart']);
+		$i = $quantity;
 		
 		if(!isset($i)){
 			$i = -1;
@@ -122,7 +122,6 @@ session_start();
 		
 		if ($_SESSION['products'][0][$productNumber - 1]['addedToCart'] == 1) {
 		$_SESSION['shoppingCart'][] = $_SESSION['products'][0][$productNumber - 1];
-		$i++;
 	} else {
 		$_SESSION['shoppingCart'][$i]['stock'] -= 1;
 		$_SESSION['shoppingCart'][$i]['addedToCart'] += 1;
