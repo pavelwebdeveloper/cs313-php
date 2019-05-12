@@ -83,6 +83,8 @@ if (!isset($_SESSION['shoppingCart'])) {
  echo "<br>";
  echo "<br>";
  
+ $productNumber = (int)$_SESSION['productNumber'];
+ 
  if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['removeFromShoppingCart'])) {
 		/*$product = array();
 		$product[] = $_SESSION['productNumber'];
@@ -106,6 +108,50 @@ if (!isset($_SESSION['shoppingCart'])) {
 	'</p><p><span>Added to Cart: </span>'.$product["addedToCart"].
 	'</p><form action="view_cart.php" method="post"><input type="submit" name="removeFromShoppingCart" value="Remove from Shopping Cart"></form></div></article></section>';
  };
+ 
+ 
+ echo "<br>";
+	echo "<br>";
+	echo "<br>";
+	echo "productNumber";
+	var_dump((int)$_SESSION["productNumber"]);
+	echo "<br>";
+	echo "<br>";
+	echo "<br>";
+	//echo $_SESSION["productNumber"];
+	echo $productNumber;
+	echo "<br>";
+	echo "<br>";
+	echo "<br>";
+	var_dump($_SESSION['products'][0][$productNumber - 1]);
+	echo "<br>";
+	echo "<br>";
+	echo "<br>";
+	var_dump($_SESSION['products'][0][$productNumber - 1]['stock']);
+	echo "<br>";
+	echo "<br>";
+	echo "<br>";
+	var_dump($_SESSION['products'][0]);
+	echo "<br>";
+	echo "<br>";
+	echo "<br>";
+	var_dump($_SESSION['shoppingCart']);
+	echo "<br>";
+	echo "<br>";
+	echo "<br>";
+	var_dump($_SESSION["description"]);
+	echo "<br>";
+	echo "<br>";
+	echo "<br>";
+	var_dump($quantity);
+	echo "<br>";
+	echo "<br>";
+	echo "<br>";
+	var_dump($product);
+	echo "<br>";
+	echo "<br>";
+	echo "<br>";
+	var_dump($productNumber);
  
  ?>
  
