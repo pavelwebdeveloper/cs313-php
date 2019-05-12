@@ -101,8 +101,9 @@ session_start();
 	}
  
  $productNumber = (int)$_SESSION['productNumber'];
- 
-	
+if(!isset($i)) {
+	$i = -1;
+}
 	
 	if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['addToShoppingCart'])) {
 		/*$product = array();
@@ -117,9 +118,10 @@ session_start();
 		
 		if ($_SESSION['products'][0][$productNumber - 1]['addedToCart'] == 1) {
 		$_SESSION['shoppingCart'][] = $_SESSION['products'][0][$productNumber - 1];
+		$i++;
 	} else {
-		$_SESSION['shoppingCart'][$productNumber - 1]['stock'] -= 1;
-		$_SESSION['shoppingCart'][$productNumber - 1]['addedToCart'] += 1;
+		$_SESSION['shoppingCart'][$i]['stock'] -= 1;
+		$_SESSION['shoppingCart'][$i]['addedToCart'] += 1;
 	}
 		
 
