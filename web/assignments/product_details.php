@@ -101,6 +101,9 @@ session_start();
 	}
  
  $productNumber = (int)$_SESSION['productNumber'];
+ 
+ $i;
+ 
 if(!isset($i)) {
 	$i = -1;
 }
