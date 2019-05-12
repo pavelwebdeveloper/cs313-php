@@ -83,6 +83,19 @@ if (!isset($_SESSION['shoppingCart'])) {
  echo "<br>";
  echo "<br>";
  
+ if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['number'])) {
+		/*addProductToSession();
+	}
+	function addProductToSession(){*/
+		$_SESSION['productNumber'] = $_POST['number'];
+		$_SESSION['image'] = $_POST['image'];
+		$_SESSION['title'] = $_POST['title'];
+		$_SESSION['price'] = $_POST['price'];
+		$_SESSION['description'] = $_POST['description'];
+		$_SESSION['stock'] = $_POST['stock'];
+		$_SESSION['addedToCart'] = $_POST['addedToCart'];
+	}
+ 
  $productNumber = (int)$_SESSION['productNumber'];
  
  if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['removeFromShoppingCart'])) {
@@ -106,8 +119,11 @@ if (!isset($_SESSION['shoppingCart'])) {
 	echo '<section><h2>'.$product["title"].'</h2><article><div><img src='.$product["image"].'></div><div><p class="price"><span>Price: </span>'.$product["price"].
 	'</p><p><span>Description: </span>'.$product["description"].'</p><p><span>Stock: </span>'.$product["stock"].
 	'</p><p><span>Added to Cart: </span>'.$product["addedToCart"].
-	'</p><input type="hidden" name="number" value="'.$product["numberOfProduct"].
-	'"><form action="view_cart.php" method="post"><input type="submit" name="removeFromShoppingCart" value="Remove from Shopping Cart"></form></div></article></section>';
+	'</p><form method="post" action="product_details.php"><input type="hidden" name="title" value="'.$product["title"].
+	'"><input type="hidden" name="image" value="'.$product["image"].'"><input type="hidden" name="price" value="'.$product["price"].
+	'"><input type="hidden" name="description" value="'.$product["description"].'"><input type="hidden" name="stock" value="'.$product["stock"].
+	'"><input type="hidden" name="number" value="'.$product["numberOfProduct"].
+	'"><input type="hidden" name="addedToCart" value="'.$product["addedToCart"].'"><input type="submit" name="removeFromShoppingCart" value="Remove from Shopping Cart"></form></div></article></section>';
  };
  
  
