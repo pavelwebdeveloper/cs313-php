@@ -58,11 +58,11 @@ var_dump($_SERVER["REQUEST_METHOD"]);
 
 <?php
 echo "<h1>The products that you have purchased will be shipped to the following address</h1><br><br>";
-echo "Country: ".$country;
-echo "City: ".$city;
-echo "Street: ".$street;
-echo "House number: ".$houseNumber;
-echo "Zip code: ".$zipCode;
+echo "Country: ".$country."<br>";
+echo "City: ".$city."<br>";
+echo "Street: ".$street."<br>";
+echo "House number: ".$houseNumber."<br>";
+echo "Zip code: ".$zipCode."<br>";
 
 
 ?>
