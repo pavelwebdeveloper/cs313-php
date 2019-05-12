@@ -123,11 +123,11 @@ if (!isset($_SESSION['shoppingCart'])) {
 		$cars = array("BMW", "Mercedez");*/
 		$_SESSION['products'][0][$productNumber - 1]['stock'] += 1 ;
 		$_SESSION['products'][0][$productNumber - 1]['addedToCart'] -= 1 ;
-		if ($_SESSION['products'][0][$productNumber - 1]['addedToCart'] == 0) {
-		unset($_SESSION['shoppingCart'][$productNumber - 1]['stock']);
+		if ($_SESSION['products'][$productNumber - 1]['addedToCart'] == 0) {
+		unset($_SESSION['shoppingCart'][$productNumber - 1][$productNumber - 1]['stock']);
 		} else {
-			$_SESSION['shoppingCart'][$productNumber - 1]['stock'] += 1;
-		$_SESSION['shoppingCart'][$productNumber - 1]['addedToCart'] -= 1;
+			$_SESSION['shoppingCart'][$productNumber - 1][$productNumber - 1]['stock'] += 1;
+		$_SESSION['shoppingCart'][$productNumber - 1][$productNumber - 1]['addedToCart'] -= 1;
 		}
 		
 		//$_SESSION['stock'] -= 1;
