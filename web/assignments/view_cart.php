@@ -136,7 +136,7 @@ if (!isset($_SESSION['shoppingCart'])) {
 	echo "<br>";
 	echo "<br>";
 	//echo $_SESSION["productNumber"];
-	var_dump($_POST('productNumber'));
+	var_dump($_POST('number'));
 	echo "<br>";
 	echo "<br>";
 	echo "<br>";
