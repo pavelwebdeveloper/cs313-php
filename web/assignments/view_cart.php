@@ -106,7 +106,8 @@ if (!isset($_SESSION['shoppingCart'])) {
 	echo '<section><h2>'.$product["title"].'</h2><article><div><img src='.$product["image"].'></div><div><p class="price"><span>Price: </span>'.$product["price"].
 	'</p><p><span>Description: </span>'.$product["description"].'</p><p><span>Stock: </span>'.$product["stock"].
 	'</p><p><span>Added to Cart: </span>'.$product["addedToCart"].
-	'</p><form action="view_cart.php" method="post"><input type="submit" name="removeFromShoppingCart" value="Remove from Shopping Cart"></form></div></article></section>';
+	'</p><input type="hidden" name="number" value="'.$product["numberOfProduct"].
+	'"><form action="view_cart.php" method="post"><input type="submit" name="removeFromShoppingCart" value="Remove from Shopping Cart"></form></div></article></section>';
  };
  
  
@@ -119,7 +120,7 @@ if (!isset($_SESSION['shoppingCart'])) {
 	echo "<br>";
 	echo "<br>";
 	//echo $_SESSION["productNumber"];
-	echo $productNumber;
+	var_dump($_POST('productNumber'));
 	echo "<br>";
 	echo "<br>";
 	echo "<br>";
