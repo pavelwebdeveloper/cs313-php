@@ -164,7 +164,7 @@ if (!isset($_SESSION['shoppingCart'])) {
 	echo "<br>";
 	echo "<br>";
 	echo "<br>";
-	var_dump($_SESSION['shoppingCart'][]);
+	var_dump($_SESSION['shoppingCart']);
 	echo "<br>";
 	echo "<br>";
 	echo "<br>";
