@@ -109,14 +109,14 @@ session_start();
 		$product[] = $_SESSION['productNumber'];
 		$product[] = $_SESSION['image'];
 		$cars = array("BMW", "Mercedez");*/
-		$_SESSION['products'][0]['productNumber']['stock'] -= 1 ;
-		$_SESSION['products'][0]['productNumber']['addedToCart'] += 1 ;
+		$_SESSION['products'][0]['productNumber' - 1]['stock'] -= 1 ;
+		$_SESSION['products'][0]['productNumber' - 1]['addedToCart'] += 1 ;
 		
 		
 		
 		
-		if ($_SESSION['products'][0]['productNumber']['addedToCart'] == 1) {
-		$_SESSION['shoppingCart'][] = $_SESSION['products'][0]['productNumber'];
+		if ($_SESSION['products'][0]['productNumber' - 1]['addedToCart'] == 1) {
+		$_SESSION['shoppingCart'][] = $_SESSION['products'][0]['productNumber' - 1];
 	} else {
 		$_SESSION['shoppingCart'][0]['stock'] -= 1;
 		$_SESSION['shoppingCart'][0]['addedToCart'] += 1;
