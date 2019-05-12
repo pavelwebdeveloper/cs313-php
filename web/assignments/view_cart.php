@@ -122,7 +122,7 @@ if (!isset($_SESSION['shoppingCart'])) {
 		$product[] = $_SESSION['image'];
 		$cars = array("BMW", "Mercedez");*/
 		$quantity = count($_SESSION['shoppingCart']);
-		$i = $quantity - $_SESSION['productNumber'];
+		$i = $quantity - 1;
 		
 		
 		$_SESSION['products'][0][$productNumber - 1]['stock'] += 1 ;
