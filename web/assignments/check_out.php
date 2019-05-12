@@ -19,7 +19,7 @@ if (!isset($_SESSION['shoppingCart'])) {
  </header>
  <main>
  
- <form method="post" action="comfirmation_page.php">
+ <form method="post" action="confirmation_page.php">
 <label for="name">Country:</label>
 <input type="text" name="country"><br>
 <label for="email">City:</label>
@@ -32,7 +32,6 @@ if (!isset($_SESSION['shoppingCart'])) {
 <input type="text" name="zipCode"><br>
 
 <input type="submit" value="Complete the purchase">
-<button type="button" value="Return to the cart">
 
 </form>
 <form method="post" action="view_cart.php">
