@@ -180,6 +180,10 @@ if(!isset($i)) {
 	echo "<br>";
 	echo "<br>";
 	echo "<br>";
+	var_dump($$i);
+	echo "<br>";
+	echo "<br>";
+	echo "<br>";
 	var_dump($product);
 	echo "<br>";
 	echo "<br>";
