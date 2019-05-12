@@ -105,13 +105,13 @@ if (!isset($_SESSION['shoppingCart'])) {
 		$product[] = $_SESSION['image'];
 		$cars = array("BMW", "Mercedez");*/
 		$quantity = count($_SESSION['shoppingCart']);
-		$i = $quantity - 1;
+		
 		
 		
 		$_SESSION['products'][0][$productNumber - 1]['stock'] += 1 ;
 		$_SESSION['products'][0][$productNumber - 1]['addedToCart'] -= 1 ;
 		if ($_SESSION['products'][0][$productNumber - 1]['addedToCart'] == 0) {
-		unset($_SESSION['shoppingCart'][$i]);
+		unset($_SESSION['shoppingCart'][]);
 		} else {
 			$_SESSION['shoppingCart'][$i]['stock'] += 1;
 		$_SESSION['shoppingCart'][$i]['addedToCart'] -= 1;
@@ -164,7 +164,7 @@ if (!isset($_SESSION['shoppingCart'])) {
 	echo "<br>";
 	echo "<br>";
 	echo "<br>";
-	var_dump($_SESSION['shoppingCart']);
+	var_dump($_SESSION['shoppingCart'][]);
 	echo "<br>";
 	echo "<br>";
 	echo "<br>";
