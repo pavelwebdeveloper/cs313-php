@@ -102,11 +102,8 @@ session_start();
  
  $productNumber = (int)$_SESSION['productNumber'];
  
- $i;
  
-if(!isset($i)) {
-	$i = -1;
-}
+
 	
 	if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['addToShoppingCart'])) {
 		/*$product = array();
@@ -117,7 +114,9 @@ if(!isset($i)) {
 		$_SESSION['products'][0][$productNumber - 1]['addedToCart'] += 1 ;
 		
 		
-		
+		if(!isset($i)) {
+	$i = -1;
+}
 		
 		if ($_SESSION['products'][0][$productNumber - 1]['addedToCart'] == 1) {
 		$_SESSION['shoppingCart'][] = $_SESSION['products'][0][$productNumber - 1];
