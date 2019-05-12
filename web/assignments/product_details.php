@@ -109,21 +109,21 @@ session_start();
 		$product[] = $_SESSION['productNumber'];
 		$product[] = $_SESSION['image'];
 		$cars = array("BMW", "Mercedez");*/
-		//$_SESSION['products'][0][$productNumber - 1]['stock'] -= 1 ;
-		//$_SESSION['products'][0][$productNumber - 1]['addedToCart'] += 1 ;
+		$_SESSION['products'][0][$productNumber - 1]['stock'] -= 1 ;
+		$_SESSION['products'][0][$productNumber - 1]['addedToCart'] += 1 ;
 		
 		
 		
 		
-		if ($_SESSION['products'][0][$productNumber - 1]['addedToCart'] == 0) {
+		if ($_SESSION['products'][0][$productNumber - 1]['addedToCart'] == 1) {
 		$_SESSION['shoppingCart'][] = $_SESSION['products'][0][$productNumber - 1];
 	}
 		
 
 		$_SESSION['stock'] -= 1;;
 		$_SESSION['addedToCart'] += 1;;
-		$_SESSION['shoppingCart'][0][$productNumber - 1]['stock'] = $_SESSION['products'][0][$productNumber - 1]['stock'];
-		$_SESSION['shoppingCart'][0][$productNumber - 1]['addedToCart'] = $_SESSION['products'][0][$productNumber - 1]['addedToCart'];
+		//$_SESSION['shoppingCart'][0][$productNumber - 1]['stock'] -= 1;
+		//$_SESSION['shoppingCart'][0][$productNumber - 1]['addedToCart'] += 1;
 		//$_SESSION['stock'] -= 1;
 	}
 	
