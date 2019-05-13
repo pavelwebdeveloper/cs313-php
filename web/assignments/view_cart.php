@@ -85,7 +85,7 @@ if (!isset($_SESSION['shoppingCart'])) {
 						$_SESSION['addedToCart'] -= 1;
 						}
 						
-						break;
+						//break;
 					}
 						
 					}
