@@ -14,7 +14,7 @@ session_start();
  </header>
  <main>
  <?php
- 
+ /*
  var_dump($_SESSION);
  echo "<br>";
  echo "<br>";
@@ -34,16 +34,16 @@ session_start();
  echo "<br>";
  echo "<br>";
  
- 
+ */
  
 
   $product = array();
   
- 
+ /*
  echo "<br>";
  echo "<br>";
  echo "<br>";
- 
+ */
  /*
  $product["title"] = $_POST["title"];
  $product["image"] = $_POST["image"];
@@ -125,6 +125,7 @@ session_start();
 		$_SESSION['shoppingCart'][] = $cars;
 	}*/
 	
+	/*
 	echo "<br>";
 	echo "<br>";
 	echo "<br>";
@@ -167,6 +168,7 @@ session_start();
 	echo "<br>";
 	echo "<br>";
 	var_dump($productNumber);
+	*/
  
  ?>
  

@@ -19,7 +19,7 @@ if (!isset($_SESSION['shoppingCart'])) {
  </header>
  <main>
  <?php
- 
+ /*
  echo "<br><h1>1</h1>";
  var_dump($_SESSION);
  echo "<br>";
@@ -43,7 +43,7 @@ if (!isset($_SESSION['shoppingCart'])) {
  echo "<br>";
  echo "<br>";
  echo "<br>";
- 
+ */
  
  if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['number'])) {
 		
@@ -91,7 +91,7 @@ if (!isset($_SESSION['shoppingCart'])) {
  
 	
 	
- 
+ /*
  echo "<br>";
 	echo "<br>";
 	echo "<br>";
@@ -134,6 +134,7 @@ if (!isset($_SESSION['shoppingCart'])) {
 	echo "<br>";
 	echo "<br>";
 	var_dump($productNumber);
+	*/
  
  ?>
  
