@@ -99,7 +99,7 @@ session_start();
 	
 	echo "<section><h2>".$_SESSION['title']."</h2><article><div><img src=".$_SESSION['image']."></div><div><p class='price'><span>Price: </span>".
 	$_SESSION['price']."</p><p><span>Description: </span>".$_SESSION['description']."</p><p><span>Stock: </span>".$_SESSION['stock'].
-	"</p><form action='product_details.php' method='post'><input type='hidden' name='number' value='".$product['numberOfProduct'].
+	"</p><form action='product_details.php' method='post'><input type='hidden' name='number' value='".$_SESSION['productNumber'].
 	"'><input type='submit' name='addToShoppingCart' value='Add to Shopping Cart'></form></div></article></section>";
 	
 	
