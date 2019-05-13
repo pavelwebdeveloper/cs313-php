@@ -82,7 +82,7 @@ session_start();
 		
 		if(isset($_SESSION['shoppingCart'])) {
 			$numberOfProducts = count($_SESSION['shoppingCart']);
-	/*
+	
 			for($i = 0; $i < $numberOfProducts; $i++) {
 				 foreach ($_SESSION['shoppingCart'][$i] as $productItem){
 					if ($_SESSION['shoppingCart'][$i]['numberOfProduct'] == $_SESSION['productNumber']) {
@@ -99,15 +99,15 @@ session_start();
 				if($addProduct) {
 					$_SESSION['shoppingCart'][] = $_SESSION['products'][0][$productNumber - 1];
 				}
-			}*/
+			}
 		} else {
 			$_SESSION['shoppingCart'][] = $_SESSION['products'][0][$productNumber - 1];
-			/*
+			
 			$_SESSION['products'][0][$productNumber - 1]['stock'] -= 1;
 			$_SESSION['products'][0][$productNumber - 1]['addedToCart'] += 1;
 			$_SESSION['shoppingCart'][0]['stock'] -= 1;
 			$_SESSION['shoppingCart'][0]['addedToCart'] += 1;
-			*/
+			
 		}
 		
 		
@@ -145,10 +145,9 @@ session_start();
 		
 
 		$_SESSION['stock'] -= 1;
-		$_SESSION['addedToCart'] += 1;
+		$_SESSION['addedToCart'] += 1;*/
 		
 	}
-	*/
 	
 	
 	/*
