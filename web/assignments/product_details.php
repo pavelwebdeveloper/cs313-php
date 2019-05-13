@@ -80,7 +80,7 @@ session_start();
 		*/
 		
 		
-		if(isset($_SESSION['shoppingCart'])) {
+		if(empty($_SESSION['shoppingCart'])) {
 			$numberOfProducts = count($_SESSION['shoppingCart']);
 	
 			for($i = 0; $i < $numberOfProducts; $i++) {
