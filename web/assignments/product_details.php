@@ -93,13 +93,13 @@ session_start();
 						$_SESSION['shoppingCart'][$i]['addedToCart'] += 1;
 						
 						$addProduct = false;
+					}
 						
 					}
 				}
 				if($addProduct) {
 					$_SESSION['shoppingCart'][] = $_SESSION['products'][0][$productNumber - 1];
 				}
-			}
 		} else {
 			$_SESSION['shoppingCart'][] = $_SESSION['products'][0][$productNumber - 1];
 			
