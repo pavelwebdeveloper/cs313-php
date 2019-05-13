@@ -92,6 +92,8 @@ session_start();
 						$_SESSION['products'][0][$productNumber - 1]['addedToCart'] += 1;
 						$_SESSION['shoppingCart'][$i]['stock'] -= 1;
 						$_SESSION['shoppingCart'][$i]['addedToCart'] += 1;
+						$_SESSION['stock'] -= 1;
+						$_SESSION['addedToCart'] += 1;
 						
 						$addProduct = false;
 					}
@@ -108,6 +110,8 @@ session_start();
 			$_SESSION['products'][0][$productNumber - 1]['addedToCart'] += 1;
 			$_SESSION['shoppingCart'][0]['stock'] -= 1;
 			$_SESSION['shoppingCart'][0]['addedToCart'] += 1;
+			$_SESSION['stock'] -= 1;
+			$_SESSION['addedToCart'] += 1;
 			
 		}
 		
