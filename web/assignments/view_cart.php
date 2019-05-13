@@ -87,7 +87,6 @@ if (!isset($_SESSION['shoppingCart'])) {
 						
 						//$addProduct = false;
 					}
-						break;
 					}
 				}
 				/*
