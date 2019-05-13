@@ -82,8 +82,8 @@ if (!isset($_SESSION['shoppingCart'])) {
  echo "<br>";
  
  
- 
- foreach ($_SESSION['products'] as $product) {
+ $i = 0;
+ foreach ($_SESSION['products'][$i] as $product) {
 	echo '<section><h2>'.$product["title"].'</h2><article><div><img src='.$product["image"].'></div><div><p class="price"><span>Price: </span>'.$product["price"].
 	'</p><p><span>Description: </span>'.$product["description"].'</p><p><span>Stock: </span>'.$product["stock"].
 	'</p><form method="post" action="product_details.php"><input type="hidden" name="title" value="'.$product["title"].
@@ -91,6 +91,7 @@ if (!isset($_SESSION['shoppingCart'])) {
 	'"><input type="hidden" name="description" value="'.$product["description"].'"><input type="hidden" name="stock" value="'.$product["stock"].
 	'"><input type="hidden" name="number" value="'.$product["numberOfProduct"].
 	'"><input type="hidden" name="addedToCart" value="'.$product["addedToCart"].'"><input type="submit" name="productDetails" value="Product details"></form></div></article></section>';
+ $i++;
  };
  
  ?>
