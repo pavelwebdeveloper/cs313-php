@@ -97,7 +97,7 @@ session_start();
 						
 						$addProduct = false;
 					}
-						
+						break;
 					}
 				}
 				if($addProduct) {
