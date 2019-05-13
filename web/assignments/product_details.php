@@ -95,7 +95,8 @@ session_start();
 	
 	echo "<section><h2>".$_SESSION['title']."</h2><article><div><img src=".$_SESSION['image']."></div><div><p class='price'><span>Price: </span>".
 	$_SESSION['price']."</p><p><span>Description: </span>".$_SESSION['description']."</p><p><span>Stock: </span>".$_SESSION['stock'].
-	"</p><form action='product_details.php' method='post'><input type='submit' name='addToShoppingCart' value='Add to Shopping Cart'></form></div></article></section>";
+	"</p><input type='hidden' name='number' value='".$product['numberOfProduct'].
+	"'><form action='product_details.php' method='post'><input type='submit' name='addToShoppingCart' value='Add to Shopping Cart'></form></div></article></section>";
 	
 	
 	/*
@@ -150,6 +151,10 @@ session_start();
 	echo "<br>";
 	echo "<br>";
 	var_dump($productNumber);
+	echo "<br>";
+	echo "<br>";
+	echo "<br>";
+	var_dump($POST);
  
  ?>
  
