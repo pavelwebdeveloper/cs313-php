@@ -102,11 +102,13 @@ session_start();
 					}
 				}
 				if($addProduct) {
+					$numberOfProducts = count($_SESSION['shoppingCart']);
+					$j = $numberOfProducts;
 					$_SESSION['shoppingCart'][] = $_SESSION['products'][0][$productNumber - 1];
 					$_SESSION['products'][0][$productNumber - 1]['stock'] -= 1;
 						$_SESSION['products'][0][$productNumber - 1]['addedToCart'] += 1;
-						$_SESSION['shoppingCart'][$i]['stock'] -= 1;
-						$_SESSION['shoppingCart'][$i]['addedToCart'] += 1;
+						$_SESSION['shoppingCart'][$j]['stock'] -= 1;
+						$_SESSION['shoppingCart'][$j]['addedToCart'] += 1;
 						$_SESSION['stock'] -= 1;
 						$_SESSION['addedToCart'] += 1;
 				}
