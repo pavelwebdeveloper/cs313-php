@@ -99,7 +99,8 @@ session_start();
 		*/
 		
 		if(isset($_SESSION['shoppingCart'])) {
-			$numberOfProductItems = count($_SESSION['shoppingCart'][0]);
+			$y = 0;
+			//$numberOfProductItems = count($_SESSION['shoppingCart'][0]);
 			/*
 			foreach $_SESSION['shoppingCart'] as $product {
 				for($i = 0; $i < $numberOfProductItems; $i++) {
