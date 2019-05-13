@@ -71,10 +71,14 @@ session_start();
 	if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['addToShoppingCart'])) {
 		
 		
-		/*
+		$_SESSION['products'][0][$productNumber - 1]['stock'] -= 1;
+		$_SESSION['products'][0][$productNumber - 1]['addedToCart'] += 1;
+		
+		
 		$quantity = count($_SESSION['shoppingCart']);
 		$i = $quantity - 1;
-		*/
+		
+		
 		/*
 		if(isset($_SESSION['shoppingCart'])) {
 			$numberOfProductItems = count($_SESSION['shoppingCart'][0]);
@@ -98,6 +102,7 @@ session_start();
 		}
 		*/
 		
+		/*
 		if(isset($_SESSION['shoppingCart'])) {
 			$y = 0;
 			//$numberOfProductItems = count($_SESSION['shoppingCart'][0]);
@@ -115,11 +120,11 @@ session_start();
 				}
 				if($addProduct) {
 					$_SESSION['shoppingCart'][] = $_SESSION['products'][0][$productNumber - 1];
-				}*/
+				}
 			}
 		} else {
 			$_SESSION['shoppingCart'][] = $_SESSION['products'][0][$productNumber - 1];
-		}
+		}*/
 		
 		if ($_SESSION['products'][0][$productNumber - 1]['addedToCart'] == 1) {
 		$_SESSION['shoppingCart'][] = $_SESSION['products'][0][$productNumber - 1];
