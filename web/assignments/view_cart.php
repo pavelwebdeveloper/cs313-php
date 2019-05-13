@@ -61,6 +61,60 @@ if (!isset($_SESSION['shoppingCart'])) {
 	if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['removeFromShoppingCart'])) {
 				
 		
+		$numberOfProducts = count($_SESSION['shoppingCart']);
+		//$addProduct = true;
+		
+		if($numberOfProducts > 0) {
+			
+	
+			for($i = 0; $i < $numberOfProducts; $i++) {
+				 foreach ($_SESSION['shoppingCart'][$i] as $productItem){
+					if ($_SESSION['shoppingCart'][$i]['numberOfProduct'] == $_SESSION['productNumber']) {
+						
+						$_SESSION['products'][0][$productNumber - 1]['stock'] -= 1;
+						$_SESSION['products'][0][$productNumber - 1]['addedToCart'] += 1;
+						$_SESSION['shoppingCart'][$i]['stock'] -= 1;
+						$_SESSION['shoppingCart'][$i]['addedToCart'] += 1;
+						$_SESSION['stock'] -= 1;
+						$_SESSION['addedToCart'] += 1;
+						
+						//$addProduct = false;
+					}
+						break;
+					}
+				}
+				if($addProduct) {
+					$_SESSION['shoppingCart'][] = $_SESSION['products'][0][$productNumber - 1];
+					$_SESSION['products'][0][$productNumber - 1]['stock'] -= 1;
+						$_SESSION['products'][0][$productNumber - 1]['addedToCart'] += 1;
+						$_SESSION['shoppingCart'][$i]['stock'] -= 1;
+						$_SESSION['shoppingCart'][$i]['addedToCart'] += 1;
+						$_SESSION['stock'] -= 1;
+						$_SESSION['addedToCart'] += 1;
+				}
+		} else {
+			$_SESSION['shoppingCart'][] = $_SESSION['products'][0][$productNumber - 1];
+			
+			$_SESSION['products'][0][$productNumber - 1]['stock'] -= 1;
+			$_SESSION['products'][0][$productNumber - 1]['addedToCart'] += 1;
+			$_SESSION['shoppingCart'][0]['stock'] -= 1;
+			$_SESSION['shoppingCart'][0]['addedToCart'] += 1;
+			$_SESSION['stock'] -= 1;
+			$_SESSION['addedToCart'] += 1;
+			
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		/*
 		$_SESSION['products'][0][$productNumber - 1]['stock'] += 1 ;
 		$_SESSION['products'][0][$productNumber - 1]['addedToCart'] -= 1 ;
 		if ($_SESSION['products'][0][$productNumber - 1]['addedToCart'] == 0) {
@@ -68,7 +122,7 @@ if (!isset($_SESSION['shoppingCart'])) {
 		} else {
 			$_SESSION['shoppingCart'][$i]['stock'] += 1;
 		$_SESSION['shoppingCart'][$i]['addedToCart'] -= 1;
-		}
+		}*/
 		
 		
 	}
@@ -91,7 +145,7 @@ if (!isset($_SESSION['shoppingCart'])) {
  
 	
 	
- /*
+ 
  echo "<br>";
 	echo "<br>";
 	echo "<br>";
@@ -134,7 +188,7 @@ if (!isset($_SESSION['shoppingCart'])) {
 	echo "<br>";
 	echo "<br>";
 	var_dump($productNumber);
-	*/
+	
  
  ?>
  
