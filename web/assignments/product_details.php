@@ -80,6 +80,7 @@ session_start();
 		*/
 		
 		$numberOfProducts = count($_SESSION['shoppingCart']);
+		$addProduct = true;
 		
 		if($numberOfProducts > 0) {
 			
