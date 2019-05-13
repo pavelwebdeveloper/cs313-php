@@ -73,10 +73,23 @@ session_start();
 		$_SESSION['products'][0][$productNumber - 1]['stock'] -= 1 ;
 		$_SESSION['products'][0][$productNumber - 1]['addedToCart'] += 1 ;
 		
-		//$quantity = count($_SESSION['shoppingCart']);
-		//$i = $quantity - 1;
+		$quantity = count($_SESSION['shoppingCart']);
+		$i = $quantity - 1;
 		
+		/*
+		if (!isset($_SESSION['shoppingCart'][])) {
+		if($productNumber == 2) {
 		$i = $productNumber - 2;
+		} 
+		if ($productNumber == 1) {
+		$i = $productNumber - 1;
+		} 
+		if($productNumber == 3) {
+		$i = $productNumber - 3;
+		} 
+		} else {
+			//
+		}*/
 		
 		/*if(!isset($i)){
 			$i = -1;
