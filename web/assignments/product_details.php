@@ -72,28 +72,13 @@ session_start();
 		
 		$_SESSION['products'][0][$productNumber - 1]['stock'] -= 1 ;
 		$_SESSION['products'][0][$productNumber - 1]['addedToCart'] += 1 ;
-		
+		/*
 		$quantity = count($_SESSION['shoppingCart']);
 		$i = $quantity - 1;
+		*/
 		
-		/*
-		if (!isset($_SESSION['shoppingCart'][])) {
-		if($productNumber == 2) {
-		$i = $productNumber - 2;
-		} 
-		if ($productNumber == 1) {
-		$i = $productNumber - 1;
-		} 
-		if($productNumber == 3) {
-		$i = $productNumber - 3;
-		} 
-		} else {
-			//
-		}*/
 		
-		/*if(!isset($i)){
-			$i = -1;
-		}*/
+		
 		
 		if ($_SESSION['products'][0][$productNumber - 1]['addedToCart'] == 1) {
 		$_SESSION['shoppingCart'][] = $_SESSION['products'][0][$productNumber - 1];
@@ -107,10 +92,15 @@ session_start();
 		$_SESSION['addedToCart'] += 1;
 		
 	}
-	
+	/*
 	echo "<section><h2>".$_SESSION['title']."</h2><article><div><img src=".$_SESSION['image']."></div><div><p class='price'><span>Price: </span>".
 	$_SESSION['price']."</p><p><span>Description: </span>".$_SESSION['description']."</p><p><span>Stock: </span>".$_SESSION['stock'].
 	"</p><form action='product_details.php' method='post'><input type='submit' name='addToShoppingCart' value='Add to Shopping Cart'></form></div></article></section>";
+	*/
+	
+	echo "<section><h2>".$_SESSION['title']."</h2><article><div><img src=".$_SESSION['image']."></div><div><p class='price'><span>Price: </span>".
+	$_SESSION['price']."</p><p><span>Description: </span>".$_SESSION['description']."</p><p><span>Stock: </span>".$_SESSION['stock'].
+	"</p><input type='hidden' name='productNumber' value='".$_SESSION['productNumber']."'><form action='product_details.php' method='post'><input type='submit' name='addToShoppingCart' value='Add to Shopping Cart'></form></div></article></section>";
 	
 // echo 
 	
