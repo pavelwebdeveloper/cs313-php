@@ -102,12 +102,12 @@ session_start();
 			}*/
 		} else {
 			$_SESSION['shoppingCart'][] = $_SESSION['products'][0][$productNumber - 1];
-			
+			/*
 			$_SESSION['products'][0][$productNumber - 1]['stock'] -= 1;
 			$_SESSION['products'][0][$productNumber - 1]['addedToCart'] += 1;
 			$_SESSION['shoppingCart'][0]['stock'] -= 1;
 			$_SESSION['shoppingCart'][0]['addedToCart'] += 1;
-			
+			*/
 		}
 		
 		
