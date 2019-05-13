@@ -76,7 +76,7 @@ session_start();
 		//$quantity = count($_SESSION['shoppingCart']);
 		//$i = $quantity - 1;
 		
-		$i = $productNumber - 1;
+		$i = $productNumber - 2;
 		
 		/*if(!isset($i)){
 			$i = -1;
