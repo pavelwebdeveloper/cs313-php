@@ -19,7 +19,7 @@ if (!isset($_SESSION['shoppingCart'])) {
  </header>
  <main>
  <?php
- /*
+ 
  echo "<br><h1>1</h1>";
  var_dump($_SESSION);
  echo "<br>";
@@ -34,15 +34,8 @@ if (!isset($_SESSION['shoppingCart'])) {
  echo "<br>";
  echo "<br>";
  echo "<br>";
- */
- // Add the 1st product
- //$_SESSION['shoppingCart']['product1'] = array();
  
- // Initialize the 1st product values
- // Add the 1st product
- //$_SESSION['shoppingCart']['product1']['name'] = "";
- //$_SESSION['shoppingCart']['product1']['img'] = "product_images/cellphone-cellular-device-50684.jpg";
- //$_SESSION['shoppingCart']['product1']['description'] = "Full Screen Unlocked";
+ 
  
  if (!isset($products)) {
  $products = array(
@@ -81,13 +74,13 @@ if (!isset($_SESSION['shoppingCart'])) {
   $_SESSION['products'][] = $products;
  }
  
- /*
+ 
  echo "<br><h1>3</h1>";
  var_dump($_SESSION);
  echo "<br>";
  echo "<br>";
  echo "<br>";
- */
+ 
  
  
  foreach ($products as $product) {

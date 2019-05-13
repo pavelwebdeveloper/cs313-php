@@ -50,10 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 	
 }
-/*
-var_dump($major);
-var_dump($_SERVER["REQUEST_METHOD"]);
-*/
+
 ?>
 
 <?php

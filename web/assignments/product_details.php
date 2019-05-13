@@ -14,14 +14,11 @@ session_start();
  </header>
  <main>
  <?php
- /*
+ 
  var_dump($_SESSION);
  echo "<br>";
  echo "<br>";
  echo "<br>";
- 
- // Create an array for the shopping cart in the session
- //$_SESSION['shoppingCart'] = array();
  
  echo "<br>";
  
@@ -36,42 +33,9 @@ session_start();
  echo "<br>";
  echo "<br>";
  echo "<br>";
- */
  
- // Add the 1st product
- //$_SESSION['shoppingCart']['product1'] = array();
  
- // Initialize the 1st product values
- // Add the 1st product
- //$_SESSION['shoppingCart']['product1']['name'] = "";
- //$_SESSION['shoppingCart']['product1']['img'] = "product_images/cellphone-cellular-device-50684.jpg";
- //$_SESSION['shoppingCart']['product1']['description'] = "Full Screen Unlocked";
  
- /*
- $products = array(
- array(
- "title" => "Smartphone",
- "image" => "product_images/cellphone-cellular-device-50684.jpg",
- "price" => 500,
- "description" => "Full Screen Unlocked Smartphone|5.7 Android Dual SIM Cell Phones, 512 RAM/512 ROM, GSM 2G",
- "stock" => 10
- ),
- array(
- "title" => "Watch",
- "image" => "product_images/blur-brass-bronze-2113994.jpg",
- "price" => 100,
- "description" => "Original Mens Watch Analog Watch Dial, Pro Sport Diver with Screw Down Crown and Water Resistant to 200M",
- "stock" => 30
- ),
- array(
- "title" => "Binoculars",
- "image" => "product_images/binoculars-black-equipment-55804.jpg",
- "price" => 150,
- "description" => "Black|25x magnifucation porro prism binocular|50mm objective lens|ultra sharp focus across the field of view| suitable for astronomical viewing|protective rubber covering",
- "stock" => 20
- )
- );
- */
 
   $product = array();
   
@@ -89,9 +53,7 @@ session_start();
  */
  
  if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['number'])) {
-		/*addProductToSession();
-	}
-	function addProductToSession(){*/
+	
 		$_SESSION['productNumber'] = $_POST['number'];
 		$_SESSION['image'] = $_POST['image'];
 		$_SESSION['title'] = $_POST['title'];
@@ -107,10 +69,7 @@ session_start();
 
 	
 	if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['addToShoppingCart'])) {
-		/*$product = array();
-		$product[] = $_SESSION['productNumber'];
-		$product[] = $_SESSION['image'];
-		$cars = array("BMW", "Mercedez");*/
+		
 		$_SESSION['products'][0][$productNumber - 1]['stock'] -= 1 ;
 		$_SESSION['products'][0][$productNumber - 1]['addedToCart'] += 1 ;
 		
@@ -132,8 +91,6 @@ session_start();
 		$_SESSION['stock'] -= 1;
 		$_SESSION['addedToCart'] += 1;
 		
-		
-		//$_SESSION['stock'] -= 1;
 	}
 	
 	echo "<section><h2>".$_SESSION['title']."</h2><article><div><img src=".$_SESSION['image']."></div><div><p class='price'><span>Price: </span>".
@@ -151,7 +108,7 @@ session_start();
 		$_SESSION['shoppingCart'][] = $cars;
 	}*/
 	
-	/*echo "<br>";
+	echo "<br>";
 	echo "<br>";
 	echo "<br>";
 	echo "productNumber";
@@ -193,7 +150,7 @@ session_start();
 	echo "<br>";
 	echo "<br>";
 	var_dump($productNumber);
- */
+ 
  ?>
  
  </main>
