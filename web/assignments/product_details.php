@@ -79,9 +79,10 @@ session_start();
 		$i = $quantity - 1;
 		*/
 		
+		$numberOfProducts = count($_SESSION['shoppingCart']);
 		
-		if(empty($_SESSION['shoppingCart'])) {
-			$numberOfProducts = count($_SESSION['shoppingCart']);
+		if($numberOfProducts > 0) {
+			
 	
 			for($i = 0; $i < $numberOfProducts; $i++) {
 				 foreach ($_SESSION['shoppingCart'][$i] as $productItem){
@@ -216,6 +217,10 @@ session_start();
 	echo "<br>";
 	echo "<br>";
 	var_dump($productNumber);
+	echo "<br>";
+	echo "<br>";
+	echo "<br>";
+	var_dump($numberOfProducts);
 	
  
  ?>
