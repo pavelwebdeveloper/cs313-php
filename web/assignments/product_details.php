@@ -82,7 +82,7 @@ session_start();
 		
 		if(isset($_SESSION['shoppingCart'])) {
 			$numberOfProductItems = count($_SESSION['shoppingCart'][0]);
-			/*
+	
 			foreach $_SESSION['shoppingCart'] as $product {
 				for($i = 0; $i < $numberOfProductItems; $i++) {
 					if ($_SESSION['shoppingCart'][$i]['numberOfProduct'] == $_SESSION['productNumber']) {
@@ -97,7 +97,7 @@ session_start();
 				if($addProduct) {
 					$_SESSION['shoppingCart'][] = $_SESSION['products'][0][$productNumber - 1];
 				}
-			}*/
+			}
 		} else {
 			$_SESSION['shoppingCart'][] = $_SESSION['products'][0][$productNumber - 1];
 		}
