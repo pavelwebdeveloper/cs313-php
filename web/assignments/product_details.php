@@ -14,7 +14,7 @@ session_start();
  </header>
  <main>
  <?php
- /*
+ 
  var_dump($_SESSION);
  echo "<br>";
  echo "<br>";
@@ -34,7 +34,7 @@ session_start();
  echo "<br>";
  echo "<br>";
  
- */
+ 
  
 
   $product = array();
@@ -115,7 +115,7 @@ session_start();
 		$_SESSION['shoppingCart'][] = $cars;
 	}*/
 	
-	/*
+	
 	echo "<br>";
 	echo "<br>";
 	echo "<br>";
@@ -158,7 +158,7 @@ session_start();
 	echo "<br>";
 	echo "<br>";
 	var_dump($productNumber);
-	*/
+	
  
  ?>
  

@@ -19,7 +19,7 @@ if (!isset($_SESSION['shoppingCart'])) {
  </header>
  <main>
  <?php
- /*
+ 
  echo "<br><h1>1</h1>";
  var_dump($_SESSION);
  echo "<br>";
@@ -34,7 +34,7 @@ if (!isset($_SESSION['shoppingCart'])) {
  echo "<br>";
  echo "<br>";
  echo "<br>";
- */
+ 
  
  
  if (!isset($products)) {
@@ -74,14 +74,14 @@ if (!isset($_SESSION['shoppingCart'])) {
   $_SESSION['products'][] = $products;
  }
  
- /*
+ 
  echo "<br><h1>3</h1>";
  var_dump($_SESSION);
  echo "<br>";
  echo "<br>";
  echo "<br>";
  
- */
+ 
  
  foreach ($products as $product) {
 	echo '<section><h2>'.$product["title"].'</h2><article><div><img src='.$product["image"].'></div><div><p class="price"><span>Price: </span>'.$product["price"].
