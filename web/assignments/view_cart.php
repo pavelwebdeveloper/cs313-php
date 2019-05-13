@@ -77,6 +77,7 @@ if (!isset($_SESSION['shoppingCart'])) {
 						$_SESSION['shoppingCart'][$i]['addedToCart'] -= 1;
 						$_SESSION['stock'] += 1;
 						$_SESSION['addedToCart'] -= 1;
+						break;
 						} else {
 							unset($_SESSION['shoppingCart'][$i]);
 							$_SESSION['products'][0][$productNumber - 1]['stock'] += 1;
