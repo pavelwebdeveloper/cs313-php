@@ -85,11 +85,11 @@ if (!isset($_SESSION['shoppingCart'])) {
 						$_SESSION['addedToCart'] -= 1;
 						}
 						
-						//$addProduct = false;
+						break;
 					}
 						
 					}
-					break;
+					
 				}
 				/*
 				if($addProduct) {
