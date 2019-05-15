@@ -57,6 +57,18 @@ section article div img {
 	max-height: 267px;
 }
 
+form input {
+    -webkit-appearance: none;
+    display: block;
+    font-size: 1rem;
+    border: 1px solid #4253BA;
+    padding: .75rem;
+    color: #444;
+    width: 100%;
+    max-width: 19rem;
+    background-color: rgba(0,0,0,0.05);
+}
+
 footer {
 background-color: #000066;
 height: 50px;
