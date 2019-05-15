@@ -20,11 +20,11 @@ if (!isset($_SESSION['shoppingCart'])) {
  <main>
  
  <form method="post" action="confirmation_page.php">
-<label class="label" for="country">Country: <input type="text" name="country"></label><br>
-<label class="label" for="city">City: <input type="text" name="city"></label><br>
-<label class="label" for="street">Street: <input type="text" name="street"></label><br>
-<label class="label" for="houseNumber">House number: <input type="text" name="houseNumber"></label><br>
-<label class="label" for="zipCode">Zipcode: <input type="text" name="zipCode"></label><br>
+<label class="address" for="country">Country: <input type="text" name="country"></label><br>
+<label class="address" for="city">City: <input type="text" name="city"></label><br>
+<label class="address" for="street">Street: <input type="text" name="street"></label><br>
+<label class="address" for="houseNumber">House number: <input type="text" name="houseNumber"></label><br>
+<label class="address" for="zipCode">Zipcode: <input type="text" name="zipCode"></label><br>
 
 <input type="submit" value="Complete the purchase">
 
