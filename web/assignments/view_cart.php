@@ -140,7 +140,7 @@ if (!isset($_SESSION['shoppingCart'])) {
 	}
  
  
- if (!isset($_SESSION['shoppingCart'])) {
+ if (empty($_SESSION['shoppingCart'])) {
 	 echo "<h1>The Shopping Cart is empty</h1>";
  }
  
