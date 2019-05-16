@@ -19,7 +19,7 @@ if (!isset($_SESSION['shoppingCart'])) {
  </header>
  <main>
  <?php
- /*
+ 
  echo "<br><h1>1</h1>";
  var_dump($_SESSION);
  echo "<br>";
@@ -34,7 +34,7 @@ if (!isset($_SESSION['shoppingCart'])) {
  echo "<br>";
  echo "<br>";
  echo "<br>";
- */
+ 
  
  
  if (!isset($products)) {
@@ -74,13 +74,13 @@ if (!isset($_SESSION['shoppingCart'])) {
   $_SESSION['products'][] = $products;
  }
  
- /*
+ 
  echo "<br><h1>3</h1>";
  var_dump($_SESSION);
  echo "<br>";
  echo "<br>";
  echo "<br>";
- */
+ 
  
  $productNumber = $_SESSION['products'][0]['numberOfProduct'];
  
@@ -154,6 +154,58 @@ if (!isset($_SESSION['shoppingCart'])) {
 	//echo '';
  $i++;
  };
+ 
+ 
+ 
+ 
+	echo "<br>";
+	echo "<br>";
+	echo "<br>";
+	echo "productNumber";
+	var_dump((int)$_SESSION["productNumber"]);
+	echo "<br>";
+	echo "<br>";
+	echo "<br>";
+	//echo $_SESSION["productNumber"];
+	echo $productNumber;
+	echo "<br>";
+	echo "<br>";
+	echo "<br>";
+	var_dump($_SESSION['products'][0][$productNumber - 1]);
+	echo "<br>";
+	echo "<br>";
+	echo "<br>";
+	var_dump($_SESSION['products'][0][$productNumber - 1]['stock']);
+	echo "<br>";
+	echo "<br>";
+	echo "<br>";
+	var_dump($_SESSION['products'][0]);
+	echo "<br>";
+	echo "<br>";
+	echo "<br>";
+	var_dump($_SESSION['shoppingCart']);
+	echo "<br>";
+	echo "<br>";
+	echo "<br>";
+	var_dump($_SESSION["description"]);
+	echo "<br>";
+	echo "<br>";
+	echo "<br>";
+	var_dump($quantity);
+	echo "<br>";
+	echo "<br>";
+	echo "<br>";
+	var_dump($product);
+	echo "<br>";
+	echo "<br>";
+	echo "<br>";
+	var_dump($productNumber);
+	echo "<br>";
+	echo "<br>";
+	echo "<br>";
+	var_dump($numberOfProducts);
+	
+ 
  
  ?>
  
