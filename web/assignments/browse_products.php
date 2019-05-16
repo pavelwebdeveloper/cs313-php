@@ -90,8 +90,6 @@ if (!isset($_SESSION['shoppingCart'])) {
  
  
  if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['addToShoppingCart'])) {
-	 
-	 $productNumber = $_SESSION['products'][0]['numberOfProduct'];
 		
 		/*
 		$_SESSION['products'][0][$productNumber - 1]['stock'] -= 1;
