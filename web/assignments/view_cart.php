@@ -141,7 +141,7 @@ if (!isset($_SESSION['shoppingCart'])) {
  
  
  if (!isset($_SESSION['shoppingCart'])) {
-	 echo "<h1>The Shopping Cart is empty</h1>"
+	 echo "<h1>The Shopping Cart is empty</h1>";
  }
  
  foreach ($_SESSION['shoppingCart'] as $product) {
