@@ -81,6 +81,24 @@ main form input.submitBtn {
     cursor: pointer;
 }
 
+main div.bottomNavigationLinks {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+main div.bottomNavigationLinks div form input.navigationButton {
+	border: none;
+    background-color: #4253BA;
+    color: white;
+    border-radius: 7px;
+    padding: .75rem 1.5rem;
+    margin: 0 0 2rem 3%;
+    width: 100%;
+    max-width: 19rem;
+    cursor: pointer;
+}
+
 footer {
 background-color: #000066;
 height: 50px;

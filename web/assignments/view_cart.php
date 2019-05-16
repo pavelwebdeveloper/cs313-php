@@ -204,9 +204,18 @@ if (!isset($_SESSION['shoppingCart'])) {
  
  ?>
  
- <form method="post" action="check_out.php">
-<input type="submit" value="Continue to the Checkout Page">
+ <div class="bottomNavigationLinks">
+ <div>
+ <form method="post" action="browse_products.php">
+<input class="navigationButton" type="submit" value="Return to the Browse Products Page">
 </form>
+</div>
+<div>
+ <form method="post" action="check_out.php">
+<input class="navigationButton" type="submit" value="Continue to the Checkout Page">
+</form>
+</div>
+</div>
  
  </main>
 
