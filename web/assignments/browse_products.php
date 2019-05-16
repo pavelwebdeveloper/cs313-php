@@ -82,6 +82,65 @@ if (!isset($_SESSION['shoppingCart'])) {
  echo "<br>";
  */
  
+ $productNumber = $_SESSION['products'][0]['numberOfProduct'];
+ 
+ if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['addToShoppingCart'])) {
+		
+		/*
+		$_SESSION['products'][0][$productNumber - 1]['stock'] -= 1;
+		$_SESSION['products'][0][$productNumber - 1]['addedToCart'] += 1;
+		
+		
+		$quantity = count($_SESSION['shoppingCart']);
+		$i = $quantity - 1;
+		*/
+		
+		$numberOfProducts = count($_SESSION['shoppingCart']);
+		$addProduct = true;
+		
+		if($numberOfProducts > 0) {
+			
+	
+			for($i = 0; $i < $numberOfProducts; $i++) {
+				 foreach ($_SESSION['shoppingCart'][$i] as $productItem){
+					if ($_SESSION['shoppingCart'][$i]['numberOfProduct'] == $_SESSION['products'][0][$productNumber - 1]) {
+						
+						$_SESSION['products'][0][$productNumber - 1]['stock'] -= 1;
+						$_SESSION['products'][0][$productNumber - 1]['addedToCart'] += 1;
+						$_SESSION['shoppingCart'][$i]['stock'] -= 1;
+						$_SESSION['shoppingCart'][$i]['addedToCart'] += 1;
+						$_SESSION['stock'] -= 1;
+						$_SESSION['addedToCart'] += 1;
+						
+						$addProduct = false;
+					}
+						break;
+					}
+				}
+				if($addProduct) {
+					$numberOfProducts = count($_SESSION['shoppingCart']);
+					$j = $numberOfProducts;
+					$_SESSION['shoppingCart'][] = $_SESSION['products'][0][$productNumber - 1];
+					$_SESSION['products'][0][$productNumber - 1]['stock'] -= 1;
+						$_SESSION['products'][0][$productNumber - 1]['addedToCart'] += 1;
+						$_SESSION['shoppingCart'][$j]['stock'] -= 1;
+						$_SESSION['shoppingCart'][$j]['addedToCart'] += 1;
+						$_SESSION['stock'] -= 1;
+						$_SESSION['addedToCart'] += 1;
+				}
+		} else {
+			$_SESSION['shoppingCart'][] = $_SESSION['products'][0][$productNumber - 1];
+			
+			$_SESSION['products'][0][$productNumber - 1]['stock'] -= 1;
+			$_SESSION['products'][0][$productNumber - 1]['addedToCart'] += 1;
+			$_SESSION['shoppingCart'][0]['stock'] -= 1;
+			$_SESSION['shoppingCart'][0]['addedToCart'] += 1;
+			$_SESSION['stock'] -= 1;
+			$_SESSION['addedToCart'] += 1;
+			
+		}
+ 
+ 
  $i = 0;
  foreach ($_SESSION['products'][$i] as $product) {
 	echo '<section><h2>'.$product["title"].'</h2><article><div><img src='.$product["image"].'></div><div><p class="price"><span>Price: </span>'.$product["price"].
@@ -90,7 +149,8 @@ if (!isset($_SESSION['shoppingCart'])) {
 	'"><input type="hidden" name="image" value="'.$product["image"].'"><input type="hidden" name="price" value="'.$product["price"].
 	'"><input type="hidden" name="description" value="'.$product["description"].'"><input type="hidden" name="stock" value="'.$product["stock"].
 	'"><input type="hidden" name="number" value="'.$product["numberOfProduct"].
-	'"><input type="hidden" name="addedToCart" value="'.$product["addedToCart"].'"><input type="submit" name="productDetails" value="Product details"></form></div></article></section>';
+	'"><input type="hidden" name="addedToCart" value="'.$product["addedToCart"].
+	'"><input type="submit" name="productDetails" value="Product details"></form><form action="browse_products.php" method="post"><input type="submit" name="addToShoppingCart" value="Add to Shopping Cart"></form></div></article></section>';
  $i++;
  };
  
