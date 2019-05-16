@@ -26,7 +26,7 @@ if (!isset($_SESSION['shoppingCart'])) {
 <label class="address" for="houseNumber">House number: <input type="text" name="houseNumber"></label><br>
 <label class="address" for="zipCode">Zipcode: <input type="text" name="zipCode"></label><br>
 
-<input type="submit" value="Complete the purchase">
+<input class="submitBtn" type="submit" value="Complete the purchase">
 
 </form>
 <form method="post" action="view_cart.php">
