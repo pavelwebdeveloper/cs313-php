@@ -81,6 +81,7 @@ if (!isset($_SESSION['shoppingCart'])) {
  echo "<br>";
  echo "<br>";
  
+ /*
  if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['number'])) {
 	
 		$_SESSION['productNumber'] = $_POST['number'];
@@ -99,7 +100,7 @@ if (!isset($_SESSION['shoppingCart'])) {
 		$quantity = count($_SESSION['shoppingCart']);
 		$i = $quantity - 1;
 		*/
-		
+		/*
 		$numberOfProducts = count($_SESSION['shoppingCart']);
 		$addProduct = true;
 		
@@ -144,8 +145,8 @@ if (!isset($_SESSION['shoppingCart'])) {
 			
 		}
  }
- 
- 
+ */
+ /*
  $i = 0;
  foreach ($_SESSION['products'][$i] as $product) {
 	echo '<section><h2>'.$product["title"].'</h2><article><div><img src='.$product["image"].'></div><div><p class="price"><span>Price: </span>'.$product["price"].
@@ -160,8 +161,19 @@ if (!isset($_SESSION['shoppingCart'])) {
 	//echo '';
  $i++;
  };
- 
- 
+ */
+ $i = 0;
+ foreach ($_SESSION['products'][$i] as $product) {
+	echo '<section><h2>'.$product["title"].'</h2><article><div><img src='.$product["image"].'></div><div><p class="price"><span>Price: </span>'.$product["price"].
+	'</p><p><span>Description: </span>'.$product["description"].'</p><p><span>Stock: </span>'.$product["stock"].
+	'</p><form method="post" action="product_details.php"><input type="hidden" name="title" value="'.$product["title"].
+	'"><input type="hidden" name="image" value="'.$product["image"].'"><input type="hidden" name="price" value="'.$product["price"].
+	'"><input type="hidden" name="description" value="'.$product["description"].'"><input type="hidden" name="stock" value="'.$product["stock"].
+	'"><input type="hidden" name="number" value="'.$product["numberOfProduct"].
+	'"><input type="hidden" name="addedToCart" value="'.$product["addedToCart"].
+	'"><input type="submit" name="productDetails" value="Product details"></form></div></article></section>';
+ $i++;
+ };
  
  
 	echo "<br>";
