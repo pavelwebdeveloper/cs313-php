@@ -29,9 +29,20 @@ if (!isset($_SESSION['shoppingCart'])) {
 <input class="submitBtn" type="submit" value="Complete the purchase">
 
 </form>
+
+<div class="bottomNavigationLinks">
+ <div>
+ <form method="post" action="view_cart.php">
+<input class="navigationButton" type="submit" value="Return to the Shopping Cart">
+</form>
+</div>
+</div>
+
+<!--
 <form method="post" action="view_cart.php">
 <input type="submit" value="Return to the cart">
 </form>
+-->
  
  
  
