@@ -69,6 +69,18 @@ main form label.address input {
     background-color: rgba(0,0,0,0.05);
 }
 
+main form input.submitBtn {
+    border: none;
+    background-color: #4253BA;
+    color: white;
+    border-radius: 7px;
+    padding: .75rem 1.5rem;
+    margin: 0 0 2rem 3%;
+    width: 100%;
+    max-width: 19rem;
+    cursor: pointer;
+}
+
 footer {
 background-color: #000066;
 height: 50px;
