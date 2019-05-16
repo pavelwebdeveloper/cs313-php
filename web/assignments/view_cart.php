@@ -140,7 +140,9 @@ if (!isset($_SESSION['shoppingCart'])) {
 	}
  
  
- 
+ if (!isset($_SESSION['shoppingCart'])) {
+	 echo "<h1>The Shopping Cart is empty</h1>"
+ }
  
  foreach ($_SESSION['shoppingCart'] as $product) {
 	echo '<section><h2>'.$product["title"].'</h2><article><div><img src='.$product["image"].'></div><div><p class="price"><span>Price: </span>'.$product["price"].
