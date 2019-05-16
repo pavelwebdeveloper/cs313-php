@@ -18,8 +18,10 @@ if (!isset($_SESSION['shoppingCart'])) {
  <?php include $_SERVER[ 'DOCUMENT_ROOT' ].'/assignments/common/header.php'; ?>
  </header>
  <main>
- <?php
+ <h1>This is Browse Products Page</h1>
  
+ <?php
+ /*
  echo "<br><h1>1</h1>";
  var_dump($_SESSION);
  echo "<br>";
@@ -35,7 +37,7 @@ if (!isset($_SESSION['shoppingCart'])) {
  echo "<br>";
  echo "<br>";
  
- 
+ */
  
  if (!isset($products)) {
  $products = array(
@@ -74,13 +76,13 @@ if (!isset($_SESSION['shoppingCart'])) {
   $_SESSION['products'][] = $products;
  }
  
- 
+ /*
  echo "<br><h1>3</h1>";
  var_dump($_SESSION);
  echo "<br>";
  echo "<br>";
  echo "<br>";
- 
+ */
  /*
  if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['number'])) {
 	
@@ -175,7 +177,7 @@ if (!isset($_SESSION['shoppingCart'])) {
  $i++;
  };
  
- 
+ /*
 	echo "<br>";
 	echo "<br>";
 	echo "<br>";
@@ -227,7 +229,7 @@ if (!isset($_SESSION['shoppingCart'])) {
 	echo "<br>";
 	echo "POST value";
 	var_dump($_POST);
-	
+	*/
  
  
  ?>

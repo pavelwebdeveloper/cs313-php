@@ -18,6 +18,9 @@ if (!isset($_SESSION['shoppingCart'])) {
  <?php include $_SERVER[ 'DOCUMENT_ROOT' ].'/assignments/common/header.php'; ?>
  </header>
  <main>
+ 
+ <h1>This is View Cart Page</h1>
+ 
  <?php
  /*
  echo "<br><h1>1</h1>";

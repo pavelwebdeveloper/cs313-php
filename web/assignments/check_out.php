@@ -18,13 +18,14 @@ if (!isset($_SESSION['shoppingCart'])) {
  <?php include $_SERVER[ 'DOCUMENT_ROOT' ].'/assignments/common/header.php'; ?>
  </header>
  <main>
- 
+ <h1>This is Checkout Page</h1>
+ <p>Please, input the information about your address. It is required to fill out all the fields.</p>
  <form method="post" action="confirmation_page.php">
-<label class="address" for="country">Country: <input type="text" name="country"></label><br>
-<label class="address" for="city">City: <input type="text" name="city"></label><br>
-<label class="address" for="street">Street: <input type="text" name="street"></label><br>
-<label class="address" for="houseNumber">House number: <input type="text" name="houseNumber"></label><br>
-<label class="address" for="zipCode">Zipcode: <input type="text" name="zipCode"></label><br>
+<label class="address" for="country">Country: <input type="text" name="country" required></label><br>
+<label class="address" for="city">City: <input type="text" name="city" required></label><br>
+<label class="address" for="street">Street: <input type="text" name="street" required></label><br>
+<label class="address" for="houseNumber">House number: <input type="text" name="houseNumber" required></label><br>
+<label class="address" for="zipCode">Zipcode: <input type="text" name="zipCode" required></label><br>
 
 <input class="submitBtn" type="submit" value="Complete the purchase">
 

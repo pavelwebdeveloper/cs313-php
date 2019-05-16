@@ -18,7 +18,7 @@ if (!isset($_SESSION['shoppingCart'])) {
  <?php include $_SERVER[ 'DOCUMENT_ROOT' ].'/assignments/common/header.php'; ?>
  </header>
  <main>
- 
+ <h1>This is Confirmation Page</h1>
  <?php
 
 

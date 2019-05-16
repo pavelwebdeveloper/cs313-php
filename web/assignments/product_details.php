@@ -13,6 +13,8 @@ session_start();
  <?php include $_SERVER[ 'DOCUMENT_ROOT' ].'/assignments/common/header.php'; ?>
  </header>
  <main>
+ <h1>This is Product Details Page</h1>
+ 
  <?php
  /*
  var_dump($_SESSION);
