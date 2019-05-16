@@ -21,7 +21,23 @@ if (!isset($_SESSION['shoppingCart'])) {
  <h1>This is Confirmation Page</h1>
  <?php
 
+// define variables and set to empty values
+$country = $city = $street = $houseNumber = $zipCoce = "";
 
+
+
+//var_dump($major);
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+	$country = htmlspecialchars($_POST["country"]);
+	// Check if name contains only letters and whitespace
+	$city = htmlspecialchars($_POST["city"]);
+	$street = htmlspecialchars($_POST["street"]);
+	$houseNumber = htmlspecialchars($_POST["houseNumber"]);
+	$zipCode = htmlspecialchars($_POST["zipCode"]);
+
+	
+}
 
 
 if (empty($_SESSION['shoppingCart'])) {
@@ -47,23 +63,7 @@ echo "Zip code: ".$zipCode."<br>";
 //echo "Hello";
 
 //var_dump($_POST);
-// define variables and set to empty values
-$country = $city = $street = $houseNumber = $zipCoce = "";
 
-
-
-//var_dump($major);
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-	$country = htmlspecialchars($_POST["country"]);
-	// Check if name contains only letters and whitespace
-	$city = htmlspecialchars($_POST["city"]);
-	$street = htmlspecialchars($_POST["street"]);
-	$houseNumber = htmlspecialchars($_POST["houseNumber"]);
-	$zipCode = htmlspecialchars($_POST["zipCode"]);
-
-	
-}
 
 ?>
  
