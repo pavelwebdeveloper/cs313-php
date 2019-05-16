@@ -100,7 +100,6 @@ if (!isset($_SESSION['shoppingCart'])) {
 		
 		if($numberOfProducts > 0) {
 			
-	
 			for($i = 0; $i < $numberOfProducts; $i++) {
 				 foreach ($_SESSION['shoppingCart'][$i] as $productItem){
 					if ($_SESSION['shoppingCart'][$i]['numberOfProduct'] == $_SESSION['products'][0][$productNumber - 1]) {
@@ -139,6 +138,7 @@ if (!isset($_SESSION['shoppingCart'])) {
 			//$_SESSION['addedToCart'] += 1;
 			
 		}
+ }
  
  
  $i = 0;
