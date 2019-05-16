@@ -209,6 +209,7 @@ if (!isset($_SESSION['shoppingCart'])) {
 	echo "<br>";
 	echo "<br>";
 	echo "<br>";
+	echo "POST value";
 	var_dump($_POST);
 	
  
