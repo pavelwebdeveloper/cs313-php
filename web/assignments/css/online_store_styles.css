@@ -57,7 +57,7 @@ section article div img {
 	max-height: 267px;
 }
 
-form label.address input {
+main form label.address input {
     -webkit-appearance: none;
     display: block;
     font-size: 1rem;
