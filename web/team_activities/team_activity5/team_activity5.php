@@ -26,7 +26,7 @@ foreach ($db->query('SELECT * FROM Scriptures') as $row)
 <?php
 $bookName = filter_input(INPUT_POST, 'bookName', FILTER_SANITIZE_STRING);
 $scriptureName = findBooks($bookName);
-fuction findBooks($bookName) {
+function findBooks($bookName) {
 $stmt = $db->prepare('SELECT * FROM Scriptures WHERE name=:name');
 $stmt->bindValue(':name', $name, PDO::PARAM_STR);
 $stmt->execute();
