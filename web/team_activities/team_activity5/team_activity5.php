@@ -5,37 +5,15 @@
 </head>
 <body>
 <?php
-// Connecting to database
-try
-{
-  $dbUrl = getenv('DATABASE_URL');
 
-  $dbOpts = parse_url($dbUrl);
-
-  $dbHost = $dbOpts["host"];
-  $dbPort = $dbOpts["port"];
-  $dbUser = $dbOpts["user"];
-  $dbPassword = $dbOpts["pass"];
-  $dbName = ltrim($dbOpts["path"],'/');
-
-  $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
-
-  $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-}
-catch (PDOException $ex)
-{
-  echo 'Error!: ' . $ex->getMessage();
-  die();
-}
+ // Get the database connection file
+ require_once '../library/connections.php';
 
 echo "<h1>Scripture Resources</h1>";
 
 /*
-$stmt = $db->prepare('SELECT * FROM Scriptures WHERE id=:id');
-$stmt->bindValue(':id', $id, PDO::PARAM_INT);
-$stmt->bindValue(':id', $id, PDO::PARAM_INT);
-$stmt->bindValue(':id', $id, PDO::PARAM_INT);
-$stmt->bindValue(':id', $id, PDO::PARAM_INT);
+$stmt = $db->prepare('SELECT * FROM Scriptures WHERE name=:name');
+$stmt->bindValue(':name', $name, PDO::PARAM_STR);
 $stmt->execute();
 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 */
@@ -49,10 +27,17 @@ foreach ($db->query('SELECT * FROM Scriptures') as $row)
 
 <form method="post" action="team_activity5.php">
 <label for="name">Search for book:</label>
-<input type="text" name="name"><br>
+<input type="text" id="bookName" name="name"><br>
 </form>
 
 <?php
+/*
+$bookName = filter_input(INPUT_POST, 'bookName', FILTER_SANITIZE_STRING);
+$name = findBooks($bookName);
+fuction findBooks($bookName) {
+	
+};
+*/
 var_dump($_POST);
 ?>
 
