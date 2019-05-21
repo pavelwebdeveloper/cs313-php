@@ -30,6 +30,16 @@ catch (PDOException $ex)
 
 echo "<h1>Scripture Resources</h1>";
 
+$stmt = $db->prepare('SELECT * FROM Scriptures WHERE id=:id');
+$stmt->bindValue(':id', $id, PDO::PARAM_INT);
+$stmt->execute();
+$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+foreach ($rows as $row)
+{
+  echo '<b>' . $row['book'] . '</b>' . $row['chapter'] . ':' . $row['verse'] . '-' . $row['content'] . '<br/>';
+}
+
 ?>
 
 
