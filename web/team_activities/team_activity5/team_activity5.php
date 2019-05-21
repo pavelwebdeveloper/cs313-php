@@ -39,7 +39,7 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 /*$stmt->closeCursor();
  return $rows;  
 }*/
-
+var_dump($stmt);
 echo "<br>";
 echo "<br>";
 var_dump($rows);
