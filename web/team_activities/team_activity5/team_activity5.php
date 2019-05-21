@@ -26,9 +26,11 @@ foreach ($db->query('SELECT * FROM Scriptures') as $row)
 <?php
 var_dump($_POST);
 $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
+echo "<br>";
+echo "<br>";
 var_dump($name);
 $rows = findBooks($name);
-var_dump($rows);
+
 function findBooks($name) {
 $stmt = $db->prepare('SELECT * FROM Scriptures WHERE name=:name');
 $stmt->bindValue(':name', $name, PDO::PARAM_STR);
@@ -37,6 +39,10 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 $stmt->closeCursor();
  return $rows;  
 }
+
+echo "<br>";
+echo "<br>";
+var_dump($rows);
 
 if (isset($rows)) {
 foreach ($rows as $row2)
