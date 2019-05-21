@@ -42,7 +42,7 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 foreach ($db->query('SELECT * FROM Scriptures') as $row)
 {
-  echo '<b>' . $row['book'] . '</b>' . $row['chapter'] . ':' . $row['verse'] . '-' . $row['content'] . '<br/>';
+  echo '<b>' . $row['book'] . ' </b>' . $row['chapter'] . ':' . $row['verse'] . ' - "' . $row['content'] . '"<br/>';
 }
 
 ?>
