@@ -47,6 +47,14 @@ foreach ($db->query('SELECT * FROM Scriptures') as $row)
 
 ?>
 
+<form method="post" action="team_activity5.php">
+<label for="name">Search for book:</label>
+<input type="text" name="name"><br>
+</form>
+
+<?php
+echo $_POST;
+?>
 
 </body>
 </html>
