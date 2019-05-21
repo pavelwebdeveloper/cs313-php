@@ -53,7 +53,7 @@ foreach ($db->query('SELECT * FROM Scriptures') as $row)
 </form>
 
 <?php
-echo $_POST;
+var_dump($_POST);
 ?>
 
 </body>
