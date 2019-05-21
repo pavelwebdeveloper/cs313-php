@@ -33,24 +33,24 @@ var_dump($name);
 
 /*function findBooks($name) {*/
 $stmt = $db->prepare('SELECT * FROM Scriptures WHERE name=:name');
-$stmt->bindValue(':name', $name, PDO::PARAM_STR);
-$stmt->execute();
-$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+// $stmt->bindValue(':name', $name, PDO::PARAM_STR);
+// $stmt->execute();
+// $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 /*$stmt->closeCursor();
  return $rows;  
 }*/
 var_dump($stmt);
 echo "<br>";
 echo "<br>";
-var_dump($rows);
-
+//var_dump($rows);
+/*
 if (isset($rows)) {
 foreach ($rows as $row2)
 {
   echo '<b>' . $row2['book'] . ' </b>' . $row2['chapter'] . ':' . $row2['verse'] . ' - "' . $row2['content'] . '"<br><br>';
 }
 }
-
+*/
 
 
 ?>
