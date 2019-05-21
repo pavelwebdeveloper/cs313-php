@@ -11,8 +11,6 @@
 
 echo "<h1>Scripture Resources</h1>";
 
-$db = dbConnect();
-
 foreach ($db->query('SELECT * FROM Scriptures') as $row)
 {
   echo '<b>' . $row['book'] . ' </b>' . $row['chapter'] . ':' . $row['verse'] . ' - "' . $row['content'] . '"<br><br>';
@@ -29,7 +27,6 @@ foreach ($db->query('SELECT * FROM Scriptures') as $row)
 $bookName = filter_input(INPUT_POST, 'bookName', FILTER_SANITIZE_STRING);
 $scriptureName = findBooks($bookName);
 function findBooks($bookName) {
-//$db = dbConnect();
 $stmt = $db->prepare('SELECT * FROM Scriptures WHERE name=:name');
 $stmt->bindValue(':name', $name, PDO::PARAM_STR);
 $stmt->execute();

@@ -1,8 +1,9 @@
 <?php
 
 // Connecting to database
-function dbConnect() {
 
+try
+{
   $dbUrl = getenv('DATABASE_URL');
 
   $dbOpts = parse_url($dbUrl);
@@ -13,8 +14,7 @@ function dbConnect() {
   $dbPassword = $dbOpts["pass"];
   $dbName = ltrim($dbOpts["path"],'/');
   
-  try
-{
+  
 
   $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
 
@@ -25,6 +25,3 @@ catch (PDOException $ex)
   echo 'Error!: ' . $ex->getMessage();
   die();
 }
-}
-
-dbConnect();
