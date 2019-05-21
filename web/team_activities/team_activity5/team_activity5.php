@@ -34,7 +34,7 @@ var_dump($name);
 /*function findBooks($name) {*/
 $stmt = $db->prepare('SELECT * FROM Scriptures WHERE name=:name');
 $stmt->bindValue(':name', $name, PDO::PARAM_STR);
-// $stmt->execute();
+$stmt->execute();
 // $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 /*$stmt->closeCursor();
  return $rows;  
