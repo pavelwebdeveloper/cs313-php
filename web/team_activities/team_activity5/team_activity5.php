@@ -24,8 +24,11 @@ foreach ($db->query('SELECT * FROM Scriptures') as $row)
 </form>
 
 <?php
+var_dump($_POST);
 $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
+var_dump($name);
 $rows = findBooks($name);
+var_dump($rows);
 function findBooks($name) {
 $stmt = $db->prepare('SELECT * FROM Scriptures WHERE name=:name');
 $stmt->bindValue(':name', $name, PDO::PARAM_STR);
@@ -35,7 +38,7 @@ $stmt->closeCursor();
  return $rows;  
 }
 
-if (!empty($rows)) {
+if (isset($rows)) {
 foreach ($rows as $row2)
 {
   echo '<b>' . $row2['book'] . ' </b>' . $row2['chapter'] . ':' . $row2['verse'] . ' - "' . $row2['content'] . '"<br><br>';
@@ -43,7 +46,7 @@ foreach ($rows as $row2)
 }
 
 
-var_dump($_POST);
+
 ?>
 
 </body>
