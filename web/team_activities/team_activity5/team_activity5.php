@@ -20,13 +20,13 @@ foreach ($db->query('SELECT * FROM Scriptures') as $row)
 
 <form method="post" action="team_activity5.php">
 <label for="name">Search for book:</label>
-<input type="text" id="bookName" name="name"><br>
+<input type="text" id="name" name="name"><br>
 </form>
 
 <?php
-$bookName = filter_input(INPUT_POST, 'bookName', FILTER_SANITIZE_STRING);
-$rows = findBooks($bookName);
-function findBooks($bookName) {
+$name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
+$rows = findBooks($name);
+function findBooks($name) {
 $stmt = $db->prepare('SELECT * FROM Scriptures WHERE name=:name');
 $stmt->bindValue(':name', $name, PDO::PARAM_STR);
 $stmt->execute();
