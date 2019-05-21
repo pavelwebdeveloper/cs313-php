@@ -28,6 +28,8 @@ catch (PDOException $ex)
   die();
 }
 
+echo "<h1>Scripture Resources</h1>";
+
 ?>
 
 
