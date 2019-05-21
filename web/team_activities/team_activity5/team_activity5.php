@@ -31,11 +31,13 @@ $stmt = $db->prepare('SELECT * FROM Scriptures WHERE name=:name');
 $stmt->bindValue(':name', $name, PDO::PARAM_STR);
 $stmt->execute();
 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-};
+}
 
+if (!empty($rows)) {
 foreach ($rows as $row2)
 {
   echo '<b>' . $row2['book'] . ' </b>' . $row2['chapter'] . ':' . $row2['verse'] . ' - "' . $row2['content'] . '"<br><br>';
+}
 }
 
 
