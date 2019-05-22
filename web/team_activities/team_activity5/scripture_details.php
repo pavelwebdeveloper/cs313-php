@@ -15,7 +15,7 @@
  
  
  
- $stmt = $db->prepare('SELECT content FROM Scriptures WHERE id=:id');
+ $stmt = $db->prepare('SELECT * FROM Scriptures WHERE id=:id');
 $stmt->bindValue(':id', $id, PDO::PARAM_INT);
 $stmt->execute();
 $scripture = $stmt->fetch(PDO::FETCH_ASSOC);
