@@ -17,7 +17,7 @@
   <ul>
   <li><a href="/team_activities/team_activity2/team_activity2.html">Team Activity 2</a></li>
   <br>
-  <li><a href="/team_activities/team_activity3/team_activity3.php">Team Activity 3</a><li>
+  <li><a href="/team_activities/team_activity3/team_activity3.php">Team Activity 3</a></li>
   <br>
   <li><a href="/team_activities/team_activity5/team_activity5.php">Team Activity 5</a></li>
   </ul>
