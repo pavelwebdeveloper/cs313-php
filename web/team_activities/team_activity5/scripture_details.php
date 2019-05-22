@@ -18,9 +18,10 @@
  
  $stmt = $db->prepare('SELECT * FROM Scriptures WHERE id=:id');
 $stmt->bindValue(':id', $id, PDO::PARAM_INT);
-var_dump($stmt);
 $stmt->execute();
+var_dump($stmt);
 $scripture = $stmt->fetchAll(PDO::FETCH_ASSOC);
+var_dump($scripture);
 
 if (isset($scripture)) {
   echo '<p>' . $scripture['content'] . '</p><br><br>';
