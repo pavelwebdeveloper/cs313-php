@@ -50,6 +50,7 @@ div#activities {
 	display: flex;
 	flex-direction: column;
 	margin: auto;
+	justify-content: space-between;
 }
 
 section {
