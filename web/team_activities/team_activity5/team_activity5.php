@@ -6,8 +6,7 @@
 <body>
 <?php
 
- // Get the database connection file
- require_once '../../library/connections.php';
+ 
  
  //include '../../library/connections.php';
  
@@ -36,6 +35,8 @@ var_dump($name);
 //$rows = findBooks($name);
 
 /*function findBooks($name) {*/
+// Get the database connection file
+ require_once '../../library/connections.php';
 $stmt = $db->prepare('SELECT * FROM Scriptures WHERE book=:name');
 $stmt->bindValue(':name', $name, PDO::PARAM_STR);
 $stmt->execute();
