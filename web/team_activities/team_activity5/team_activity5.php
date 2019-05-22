@@ -11,14 +11,14 @@
  
  //include '../../library/connections.php';
  
-/*
+
 echo "<h1>Scripture Resources</h1>";
 
 foreach ($db->query('SELECT * FROM Scriptures') as $row)
 {
   echo '<b>' . $row['book'] . ' </b>' . $row['chapter'] . ':' . $row['verse'] . ' - "' . $row['content'] . '"<br><br>';
 }
-*/
+
 ?>
 
 <form method="post" action="team_activity5.php">
