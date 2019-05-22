@@ -19,6 +19,13 @@ foreach ($db->query('SELECT * FROM Scriptures') as $row)
   echo '<b>' . $row['book'] . ' </b>' . $row['chapter'] . ':' . $row['verse'] . ' - "' . $row['content'] . '"<br><br>';
 }
 
+
+echo "<h1>Scripture Links</h1>";
+
+foreach ($db->query('SELECT * FROM Scriptures') as $row)
+{
+  echo '<a href="scripture_details.php"><b>' . $row['book'] . ' </b>' . $row['chapter'] . ':' . $row['verse'] . '</a><br><br>';
+}
 ?>
 
 <form method="post" action="team_activity5.php">
