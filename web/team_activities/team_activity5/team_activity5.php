@@ -32,10 +32,10 @@ var_dump($name);
 //$rows = findBooks($name);
 
 /*function findBooks($name) {*/
-$stmt = $db->prepare('SELECT * FROM Scriptures WHERE name=:name');
+$stmt = $db->prepare('SELECT * FROM Scriptures WHERE book=:name');
 $stmt->bindValue(':name', $name, PDO::PARAM_STR);
 $stmt->execute();
-// $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 /*$stmt->closeCursor();
  return $rows;  
 }*/
