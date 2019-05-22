@@ -24,7 +24,7 @@ echo "<h1>Scripture Links</h1>";
 
 foreach ($db->query('SELECT * FROM Scriptures') as $row)
 {
-  echo '<a href="scripture_details.php"><b>' . $row['book'] . ' </b>' . $row['chapter'] . ':' . $row['verse'] . '</a><br><br>';
+  echo '<a href="scripture_details.php?' . $row['id'] . '"><b>' . $row['book'] . ' </b>' . $row['chapter'] . ':' . $row['verse'] . '</a><br><br>';
 }
 ?>
 
