@@ -24,6 +24,7 @@ foreach ($db->query('SELECT * FROM Scriptures') as $row)
 <form method="post" action="team_activity5.php">
 <label for="name">Search for book:</label>
 <input type="text" id="name" name="name"><br>
+<input type="submit" value="Submit">
 </form>
 
 <?php
