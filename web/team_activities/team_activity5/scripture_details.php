@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Scriptures</title>
+<title>Scriptures Details</title>
 </head>
 <body>
 <?php
@@ -10,6 +10,9 @@
  require_once '../../library/connections.php';
  
  //include '../../library/connections.php';
+ 
+ echo "<h1>Scripture Details</h1>";
+ echo "<br>";
  
  $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
  
