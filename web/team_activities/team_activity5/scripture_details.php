@@ -13,6 +13,9 @@
  
  $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
  
+ var_dump($id);
+ 
+ /*
  $stmt = $db->prepare('SELECT * FROM Scriptures WHERE id=:id');
 $stmt->bindValue(':id', $id, PDO::PARAM_INT);
 $stmt->execute();
@@ -21,7 +24,7 @@ $scripture = $stmt->fetchAll(PDO::FETCH_ASSOC);
 if (isset($scripture)) {
   echo '<p>' . $scripture['content'] . '</p><br><br>';
 }
-
+*/
 ?>
 
 </body>
