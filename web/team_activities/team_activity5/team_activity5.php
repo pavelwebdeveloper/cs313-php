@@ -11,14 +11,14 @@
  
  //include '../../library/connections.php';
  
-
+/*
 echo "<h1>Scripture Resources</h1>";
 
 foreach ($db->query('SELECT * FROM Scriptures') as $row)
 {
   echo '<b>' . $row['book'] . ' </b>' . $row['chapter'] . ':' . $row['verse'] . ' - "' . $row['content'] . '"<br><br>';
 }
-
+*/
 ?>
 
 <form method="post" action="team_activity5.php">
@@ -35,7 +35,7 @@ var_dump($name);
 //$rows = findBooks($name);
 
 /*function findBooks($name) {*/
-$stmt = $db->prepare('SELECT * FROM Scriptures WHERE book=:name;');
+$stmt = $db->prepare('SELECT * FROM Scriptures WHERE book=:name');
 $stmt->bindValue(':name', $name, PDO::PARAM_STR);
 $stmt->execute();
 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
