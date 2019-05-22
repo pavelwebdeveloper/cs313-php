@@ -33,17 +33,16 @@ $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
 echo "<br>";
 echo "<br>";
 var_dump($name);
-//$rows = findBooks($name);
+$rows = findBooks($name);
 
-/*function findBooks($name) {*/
+function findBooks($name) {
 
 $stmt = $db->prepare('SELECT * FROM Scriptures WHERE book=:name');
 $stmt->bindValue(':name', $name, PDO::PARAM_STR);
 $stmt->execute();
 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-/*$stmt->closeCursor();
- return $rows;  
-}*/
+return $rows;  
+}
 echo "<br>";
 echo "<br>";
 var_dump($stmt);
