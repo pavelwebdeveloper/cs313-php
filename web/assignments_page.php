@@ -19,6 +19,8 @@
   <br>
   <li><a href="/team_activities/team_activity3/team_activity3.php">Team Activity 3</a></li>
   <br>
+  <li><a href="https://github.com/pavelwebdeveloper/cs313-php/tree/master/team_activities_db">Team Activity 4</a></li>
+  <br>
   <li><a href="/team_activities/team_activity5/team_activity5.php">Team Activity 5</a></li>
   </ul>
   </div>
