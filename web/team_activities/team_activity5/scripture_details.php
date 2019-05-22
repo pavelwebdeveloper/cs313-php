@@ -22,7 +22,7 @@ $scripture = $stmt->fetch(PDO::FETCH_ASSOC);
 
 
 if (isset($scripture)) {
-  echo '<p><b>' . $scripture['content'] . '</b></p><br><br>';
+  echo '<p><b>' . $scripture['book'] . ' ' . $scripture['chapter'] . ':' . $scripture['verse'] . '</b> - "' . $scripture['content'] . '"</p><br><br>';
 }
 
 ?>

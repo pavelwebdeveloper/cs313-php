@@ -16,7 +16,7 @@ echo "<h1>Scripture Resources</h1>";
 
 foreach ($db->query('SELECT * FROM Scriptures') as $row)
 {
-  echo '<b>' . $row['book'] . ' </b>' . $row['chapter'] . ':' . $row['verse'] . ' - "' . $row['content'] . '"<br><br>';
+  echo '<b>' . $row['book'] . ' ' . $row['chapter'] . ':' . $row['verse'] . '</b> - "' . $row['content'] . '"<br><br>';
 }
 
 
@@ -24,7 +24,7 @@ echo "<h1>Scripture Links</h1>";
 
 foreach ($db->query('SELECT * FROM Scriptures') as $row)
 {
-  echo '<a href="scripture_details.php?id=' . $row['id'] . '"><b>' . $row['book'] . ' </b>' . $row['chapter'] . ':' . $row['verse'] . '</a><br><br>';
+  echo '<a href="scripture_details.php?id=' . $row['id'] . '">' . $row['book'] . ' ' . $row['chapter'] . ':' . $row['verse'] . '</a><br><br>';
 }
 ?>
 
