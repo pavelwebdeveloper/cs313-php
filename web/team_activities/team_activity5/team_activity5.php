@@ -40,7 +40,7 @@ var_dump($name);
 $stmt = $db->prepare('SELECT * FROM Scriptures WHERE book=:name');
 $stmt->bindValue(':name', $name, PDO::PARAM_STR);
 $stmt->execute();
-//$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 /*$stmt->closeCursor();
  return $rows;  
 }*/
@@ -49,7 +49,7 @@ echo "<br>";
 var_dump($stmt);
 echo "<br>";
 echo "<br>";
-//var_dump($rows);
+var_dump($rows);
 /*
 if (isset($rows)) {
 foreach ($rows as $row2)
