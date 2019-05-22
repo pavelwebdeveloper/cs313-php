@@ -53,6 +53,11 @@ div#activities {
 	justify-content: space-between;
 }
 
+h2.heading {
+	color: purple;
+	text-shadow: 0 0 1px black, 0 0 25px green;
+}
+
 section {
 	display: flex;
 	flex-direction: column;
