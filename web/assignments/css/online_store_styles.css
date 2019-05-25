@@ -32,6 +32,7 @@ nav a {
 	list-style-type: none;
 	background-color: #000066;
 	border: 1px solid white;
+	color: white;
 }
 
 #homepage #home div#homeleft ul a {
