@@ -24,20 +24,8 @@ if (!isset($_SESSION['shoppingCart'])) {
  
 <div class="homepage">
  <section>
- <?php 
- echo '<ul>';
- foreach ($db->query('SELECT * FROM productdepartment') as $row)
-{	
- echo '<li><a href="productgroups.php?id=' . $row['id'] . '">' . $row['productdepartmentname'] . '</a></li>';
-}
-echo '</ul>';
-/*ar_dump($db);
-echo "<br>";
-echo "<br>";
-var_dump($row);
-*/
  
- ?>
+ 
  </section>
  <section id="right">
  </section>
