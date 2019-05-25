@@ -36,6 +36,8 @@ nav a {
 	height: 50px;
 	font-size: 25px;
 	margin-left: 10px;
+	list-style-type: none;
+	background-color: blue;
 }
 
 #homepage #home div#homeright {
