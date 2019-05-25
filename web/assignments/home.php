@@ -41,7 +41,7 @@ var_dump($row);
  </section>
  <section id="right">
  </section>
- <div>
+ </div>
 
  
  </main>
