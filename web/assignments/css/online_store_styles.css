@@ -28,7 +28,7 @@ main section.homepage {
 	flex-direction: row;
 }
 
-main section.homepage div {
+main section.homepage section {
 	border: 1px black solid;
 	height: 100px;
 }
