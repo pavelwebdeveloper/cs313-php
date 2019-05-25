@@ -34,6 +34,9 @@ if (!isset($_SESSION['shoppingCart'])) {
  echo '<li><a href="productgroups.php?id=' . $row['id'] . '">' . $row['productdepartmentname'] . '</a></li>';
 }
 echo '</ul>';
+
+var_dump($db);
+var_dump($row);
  
  ?>
  </nav>
