@@ -21,7 +21,7 @@ if (!isset($_SESSION['shoppingCart'])) {
  
  
  
- <div class="bottomNavigationLinks">
+ <div class="homepage">
  <div>
  
 </div>
