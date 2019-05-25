@@ -28,12 +28,12 @@ if (!isset($_SESSION['shoppingCart'])) {
  <?php
  
  
- echo '<ul>';
+ //echo '<ul>';
  foreach ($db->query('SELECT * FROM productdepartment') as $row)
 {	
- echo '<li><a href="productgroups.php?id=' . $row['id'] . '">' . $row['productdepartmentname'] . '</a></li>';
+ echo '<a href="productgroups.php?id=' . $row['id'] . '">' . $row['productdepartmentname'] . '</a>';
 }
-echo '</ul>';
+//echo '</ul>';
 
 var_dump($db);
 echo "<br>";
