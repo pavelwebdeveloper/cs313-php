@@ -20,7 +20,7 @@ if (!isset($_SESSION['shoppingCart'])) {
  <header>
  <?php include $_SERVER[ 'DOCUMENT_ROOT' ].'/assignments/common/header.php'; ?>
  </header>
- <main id="homepage">
+ <main class="homepage">
  
 
  <section>
