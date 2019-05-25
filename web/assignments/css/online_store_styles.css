@@ -25,6 +25,12 @@ main div.homepage {
 	flex-direction: row;
 }
 
+main div.homepage div {
+	border: 1px black solid;
+	height: 100px;
+}
+
+/*
 main div.homepage div#left {
 	border: 1px black solid;
 	height: 100px;
@@ -44,6 +50,7 @@ div.homepage div#right {
 	height: 100px;
 	flex-grow: 2;
 }
+*/
 
 
 

@@ -5,8 +5,7 @@ session_start();
 if (!isset($_SESSION['shoppingCart'])) {
  $_SESSION['shoppingCart'] = array();
  $_SESSION['products'] = array();
- }
- 
+ } 
  // Get the database connection file
  require_once '../library/connections.php';
 ?>
