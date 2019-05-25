@@ -22,7 +22,7 @@ if (!isset($_SESSION['shoppingCart'])) {
  
  <?php
  // Get the database connection file
- require_once '../../library/connections.php';
+ require_once '../library/connections.php';
  ?>
  
   <div id="homeright">
