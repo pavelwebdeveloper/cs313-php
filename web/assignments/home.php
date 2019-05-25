@@ -18,17 +18,13 @@ if (!isset($_SESSION['shoppingCart'])) {
  <header>
  <?php include $_SERVER[ 'DOCUMENT_ROOT' ].'/assignments/common/header.php'; ?>
  </header>
- <main class="homepage">
+ <main>
+ 
+ <div id="homepage">
+ </div>
  
  
  
- 
- <div class="left">
- 
-</div>
-<div class="right">
- 
-</div>
  
  </main>
 
