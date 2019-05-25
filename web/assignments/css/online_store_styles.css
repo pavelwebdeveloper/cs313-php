@@ -23,12 +23,12 @@ nav a {
 
 
 
-main {
+.homepage {
 	display: flex;
 	flex-direction: row;
 }
 
-main div.left div.right {
+.left .right {
 	border: 1px solid black;
 	height: 100px;
 }
