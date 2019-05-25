@@ -23,9 +23,7 @@ if (!isset($_SESSION['shoppingCart'])) {
  <main>
  
 <div class="homepage">
- <section>
- 
- 
+ <section> 
  </section>
  <section id="right">
  </section>
