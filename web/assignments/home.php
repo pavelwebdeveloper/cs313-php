@@ -24,7 +24,6 @@ if (!isset($_SESSION['shoppingCart'])) {
  
  <div id="homepagediv">
  <section>
- <nav id="departments">
  <?php
  
  
@@ -41,7 +40,6 @@ echo "<br>";
 var_dump($row);
  
  ?>
- </nav>
  </section>
  <section>
  </section>
