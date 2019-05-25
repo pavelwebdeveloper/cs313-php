@@ -20,22 +20,19 @@ nav a {
 	
 }
 
-main section.homepage {
-	border: 1px black solid;
-	height: 100px;
-}
 
-/*
-main div.homepage {
+
+
+main section.homepage {
 	display: flex;
 	flex-direction: row;
 }
 
-main div.homepage div {
+main section.homepage div {
 	border: 1px black solid;
 	height: 100px;
 }
-*/
+
 /*
 main div.homepage div#left {
 	border: 1px black solid;
