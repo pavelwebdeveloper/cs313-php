@@ -22,7 +22,7 @@ if (!isset($_SESSION['shoppingCart'])) {
  </header>
  <main>
  
-<div id="homepage">
+<div class="homepage">
  <div> 
  </div>
  <div id="right">
