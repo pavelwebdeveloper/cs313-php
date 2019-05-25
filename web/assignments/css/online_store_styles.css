@@ -25,11 +25,12 @@ main div.homepage {
 	flex-direction: row;
 }
 
-div.homepage div#right {
-	flex-grow: 2;
+main div.homepage div#left {
+	border: 1px black solid;
+	height: 100px;
 }
 
-main div.homepage div ul li a {
+main div.homepage div#left ul li a {
 	text-decoration: none;
 	color: black;
 	height: 50px;
@@ -37,6 +38,14 @@ main div.homepage div ul li a {
 	margin-left: 10px;
 	
 }
+
+div.homepage div#right {
+	border: 1px black solid;
+	height: 100px;
+	flex-grow: 2;
+}
+
+
 
 
 
