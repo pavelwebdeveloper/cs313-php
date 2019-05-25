@@ -36,6 +36,8 @@ if (!isset($_SESSION['shoppingCart'])) {
 echo '</ul>';
 
 var_dump($db);
+echo "<br>";
+echo "<br>";
 var_dump($row);
  
  ?>
