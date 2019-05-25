@@ -12,6 +12,7 @@ if (!isset($_SESSION['shoppingCart'])) {
  <head>
   <title>View Cart Page</title>
   <link href="css/online_store_styles.css" rel="stylesheet" media="screen">
+  <link href="css/normalize.css" rel="stylesheet" media="screen">
  </head>
  <body>
  <header>
