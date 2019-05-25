@@ -22,14 +22,14 @@ if (!isset($_SESSION['shoppingCart'])) {
  
  
  
- <section class="homepage">
- <section>
+ <div class="bottomNavigationLinks">
+ <div>
  
-</section>
-<section>
+</div>
+<div>
  
-</section>
-</section>
+</div>
+</div>
  
  </main>
 

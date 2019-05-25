@@ -23,12 +23,12 @@ nav a {
 
 
 
-main section.homepage {
+main div.bottomNavigationLinks {
 	display: flex;
 	flex-direction: row;
 }
 
-main section.homepage section {
+main div.bottomNavigationLinks div {
 	border: 1px black solid;
 	height: 100px;
 }
