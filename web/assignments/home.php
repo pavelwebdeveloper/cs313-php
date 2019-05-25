@@ -8,7 +8,7 @@ if (!isset($_SESSION['shoppingCart'])) {
  }
  
  // Get the database connection file
- //require_once '../../library/connections.php';
+ require_once '../library/connections.php';
 ?>
 <!DOCTYPE html>
 <html lang="en-us">
