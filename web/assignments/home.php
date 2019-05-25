@@ -18,7 +18,7 @@ if (!isset($_SESSION['shoppingCart'])) {
  <header>
  <?php include $_SERVER[ 'DOCUMENT_ROOT' ].'/assignments/common/header.php'; ?>
  </header>
- <main id="home>
+ <main id="home">
  
  <?php
  // Get the database connection file
