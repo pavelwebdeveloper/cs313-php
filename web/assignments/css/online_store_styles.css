@@ -29,8 +29,8 @@ main div.bottomNavigationLinks {
 }
 
 main div.bottomNavigationLinks div.left div.right {
-	border: 1px black solid;
-	height: 100px;
+	border: 1px black solid !important;
+	height: 100px !important;
 }
 
 /*
