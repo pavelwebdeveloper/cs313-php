@@ -20,7 +20,7 @@ nav a {
 	
 }
 
-main div.homepage {
+main section.homepage {
 	border: 1px black solid;
 	height: 100px;
 }
