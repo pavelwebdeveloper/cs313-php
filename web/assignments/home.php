@@ -24,7 +24,7 @@ if (!isset($_SESSION['shoppingCart'])) {
  
  <div id="homepage">
  <section>
- <nav>
+ <nav >
  <?php
  
  

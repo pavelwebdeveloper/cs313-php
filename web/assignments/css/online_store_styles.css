@@ -20,6 +20,15 @@ nav a {
 	
 }
 
+div#homepage nav a {
+	text-decoration: none;
+	color: black;
+	height: 50px;
+	font-size: 25px;
+	margin-left: 10px;
+	
+}
+
 header div a {
 	text-decoration: none;
 	color: white;
