@@ -30,12 +30,12 @@ nav a {
 
 #homepage #home div#homeleft ul li {
 	list-style-type: none;
-	background-color: blue;
+	background-color: #000066;
+	border: 1px solid white;
 }
 
 #homepage #home div#homeleft ul a {
-	text-decoration: none;
-	color: black;
+	color: white;
 	height: 50px;
 	font-size: 25px;
 	margin-left: 10px;
