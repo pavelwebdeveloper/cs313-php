@@ -18,14 +18,13 @@ if (!isset($_SESSION['shoppingCart'])) {
  <header>
  <?php include $_SERVER[ 'DOCUMENT_ROOT' ].'/assignments/common/header.php'; ?>
  </header>
- <main>
+ <main id="home>
  
  <?php
  // Get the database connection file
  require_once '../../library/connections.php';
  ?>
  
- <div id="home">
   <div id="homeright">
   <?php  
  echo '<ul>';
@@ -40,7 +39,6 @@ echo '</ul>';
   </div>
    <div id="homeleft">
   </div>
-</div>
  
  
  
