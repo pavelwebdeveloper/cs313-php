@@ -7,8 +7,7 @@ if (!isset($_SESSION['shoppingCart'])) {
  $_SESSION['products'] = array();
  }
  
- // Get the database connection file
- require_once '../library/connections.php';
+ 
 ?>
 <!DOCTYPE html>
 <html lang="en-us">
@@ -28,12 +27,12 @@ if (!isset($_SESSION['shoppingCart'])) {
  <?php
  
  
- //echo '<ul>';
+ echo '<ul>';
  foreach ($db->query('SELECT * FROM productdepartment') as $row)
 {	
- echo '<a href="productgroups.php?id=' . $row['id'] . '">' . $row['productdepartmentname'] . '</a>';
+ echo '<li><a href="productgroups.php?id=' . $row['id'] . '">' . $row['productdepartmentname'] . '</a></li>';
 }
-//echo '</ul>';
+echo '</ul>';
 
 var_dump($db);
 echo "<br>";
