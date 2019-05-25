@@ -28,7 +28,7 @@ main div.bottomNavigationLinks {
 	flex-direction: row;
 }
 
-main div.bottomNavigationLinks div {
+main div.bottomNavigationLinks div.left div.right {
 	border: 1px black solid;
 	height: 100px;
 }

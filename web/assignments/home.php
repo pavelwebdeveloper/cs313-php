@@ -23,10 +23,10 @@ if (!isset($_SESSION['shoppingCart'])) {
  
  
  <div class="bottomNavigationLinks">
- <div>
+ <div class="left">
  
 </div>
-<div>
+<div class="right">
  
 </div>
 </div>
