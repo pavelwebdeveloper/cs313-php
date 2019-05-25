@@ -20,8 +20,23 @@ if (!isset($_SESSION['shoppingCart'])) {
  </header>
  <main>
  
+ <?php
+ // Get the database connection file
+ require_once '../../library/connections.php';
+ ?>
+ 
  <div id="home">
   <div id="homeright">
+  <?php  
+ echo '<ul>';
+ foreach ($db->query('SELECT * FROM productdepartment') as $row)
+{	
+ echo '<li><a href="productgroups.php?id=' . $row['id'] . '">' . $row['productdepartmentname'] . '</a></li>';
+}
+echo '</ul>';
+
+ 
+ ?>
   </div>
    <div id="homeleft">
   </div>

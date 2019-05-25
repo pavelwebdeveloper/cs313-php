@@ -39,6 +39,8 @@ var_dump($row);
 <input type="submit" value="Submit">
 </form>
 
+
+
 <?php
 
 $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
