@@ -22,7 +22,7 @@ if (!isset($_SESSION['shoppingCart'])) {
  </header>
  <main id="homepage">
  
- <div id="homepagediv">
+
  <section>
  <?php
  
@@ -34,16 +34,17 @@ if (!isset($_SESSION['shoppingCart'])) {
 }
 echo '</ul>';
 
-var_dump($db);
+v/*ar_dump($db);
 echo "<br>";
 echo "<br>";
 var_dump($row);
+*/
  
  ?>
  </section>
  <section id="right">
  </section>
- <div>
+
  
  </main>
 
