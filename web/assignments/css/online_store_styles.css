@@ -29,7 +29,7 @@ main {
 }
 
 main div.left div.right {
-	border: 1px black solid;
+	border: 1px solid black;
 	height: 100px;
 }
 
