@@ -26,6 +26,11 @@ foreach ($db->query('SELECT * FROM Scriptures') as $row)
 {
   echo '<a href="scripture_details.php?id=' . $row['id'] . '">' . $row['book'] . ' ' . $row['chapter'] . ':' . $row['verse'] . '</a><br><br>';
 }
+
+var_dump($db);
+echo "<br>";
+echo "<br>";
+var_dump($row);
 ?>
 
 <form method="post" action="team_activity5.php">
