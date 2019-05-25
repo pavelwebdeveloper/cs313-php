@@ -5,14 +5,12 @@ session_start();
 if (!isset($_SESSION['shoppingCart'])) {
  $_SESSION['shoppingCart'] = array();
  $_SESSION['products'] = array();
- } 
- // Get the database connection file
- require_once '../library/connections.php';
+ }
 ?>
 <!DOCTYPE html>
 <html lang="en-us">
  <head>
-  <title>Home Page</title>
+  <title>View Cart Page</title>
   <link href="css/online_store_styles.css" rel="stylesheet" media="screen">
  </head>
  <body>
@@ -21,27 +19,16 @@ if (!isset($_SESSION['shoppingCart'])) {
  </header>
  <main>
  
-<div class="homepage">
- <div id="left"> 
  
- </div>
- <div id="right">
- </div>
- </div>
  
  <div class="bottomNavigationLinks">
  <div>
- <form method="post" action="browse_products.php">
-<input class="navigationButton" type="submit" value="Return to the Browse Products Page">
-</form>
+ 
 </div>
 <div>
- <form method="post" action="check_out.php">
-<input class="navigationButton" type="submit" value="Continue to the Checkout Page">
-</form>
+ 
 </div>
 </div>
-
  
  </main>
 
