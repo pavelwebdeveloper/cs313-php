@@ -27,11 +27,11 @@ nav a {
 	display: flex;
 	flex-direction: row;
 }
-/*
-.left .right {
+
+#left #right {
 	border: 1px solid black;
 	height: 100px;
-}*/
+}
 
 /*
 main div.homepage div#left {

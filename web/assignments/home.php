@@ -21,6 +21,10 @@ if (!isset($_SESSION['shoppingCart'])) {
  <main>
  
  <div id="homepage">
+ <div id="left">
+ </div>
+ <div id="right">
+ </div>
  </div>
  
  
