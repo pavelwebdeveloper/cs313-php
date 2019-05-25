@@ -20,16 +20,16 @@ nav a {
 	
 }
 
-main div.homepage {
+main div#homepage {
 	display: flex;
 	flex-direction: row;
 }
 
-div#homepage section#right {
+div#homepage div#right {
 	flex-grow: 2;
 }
 
-main div.homepage section ul li a {
+main div#homepage div ul li a {
 	text-decoration: none;
 	color: black;
 	height: 50px;
