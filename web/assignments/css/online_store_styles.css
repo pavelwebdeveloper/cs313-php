@@ -28,7 +28,10 @@ nav a {
 	flex-direction: row;
 }
 
-
+#homepage #home div#homeleft ul li {
+	list-style-type: none;
+	background-color: blue;
+}
 
 #homepage #home div#homeleft ul a {
 	text-decoration: none;
@@ -36,8 +39,6 @@ nav a {
 	height: 50px;
 	font-size: 25px;
 	margin-left: 10px;
-	list-style-type: none;
-	background-color: blue;
 }
 
 #homepage #home div#homeright {
