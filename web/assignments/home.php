@@ -20,8 +20,11 @@ if (!isset($_SESSION['shoppingCart'])) {
  </header>
  <main>
  
- <div class="home">
-  
+ <div id="home">
+  <div id="homeright">
+  </div>
+   <div id="homeleft">
+  </div>
 </div>
  
  

@@ -23,10 +23,17 @@ nav a {
 
 
 
-#homepage .home {
+#homepage #home {
 	display: flex;
 	flex-direction: row;
 }
+
+#homepage #home #homeright #homeleft {
+	border: 10px solid black;
+	width: 100px;
+}
+
+
 
 /*
 main div.homepage div#left {
