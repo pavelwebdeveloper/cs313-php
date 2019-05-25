@@ -23,23 +23,9 @@ nav a {
 
 
 
-.floatcolumn {
-  float: left;
-  padding: 15px;
-}
-
-.clearfix::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-
-.departmentsmenu {
-  width: 25%;
-}
-
-.content {
-  width: 75%;
+#homepage .home {
+	display: flex;
+	flex-direction: row;
 }
 
 /*
