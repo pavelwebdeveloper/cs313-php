@@ -25,7 +25,7 @@ if (!isset($_SESSION['shoppingCart'])) {
  require_once '../library/connections.php';
  ?>
  <div id="home">
-  <div id="homeright">
+  <div id="homeleft">
   <?php  
  echo '<ul>';
  foreach ($db->query('SELECT * FROM productdepartment') as $row)
@@ -37,7 +37,7 @@ echo '</ul>';
  
  ?>
   </div>
-   <div id="homeleft">
+   <div id="homeright">
   </div>
   </div>
  
