@@ -29,6 +29,15 @@ main#homepage div#homepagediv section ul li a {
 	
 }
 
+div#homepagediv {
+	display: flex;
+	flex-direction: row;
+}
+
+div#homepagediv section#right {
+	flex-grow: 2;
+}
+
 header div a {
 	text-decoration: none;
 	color: white;
