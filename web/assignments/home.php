@@ -20,12 +20,22 @@ if (!isset($_SESSION['shoppingCart'])) {
  </header>
  <main>
  
- <div id="homepage">
- <div id="left">
- </div>
- <div id="right">
- </div>
- </div>
+ <div class="clearfix">
+  <div class="floatcolumn departmentsmenu">
+    <ul>
+      <li>The Flight</li>
+      <li>The City</li>
+      <li>The Island</li>
+      <li>The Food</li>
+    </ul>
+  </div>
+
+  <div class="floatcolumn content">
+    <h1>The City</h1>
+    <p>Chania is the capital of the Chania region on the island of Crete. The city can be divided in two parts, the old town and the modern city.</p>
+    <p>You will learn more about web layout and responsive web pages in a later chapter.</p>
+  </div>
+</div>
  
  
  

@@ -23,14 +23,23 @@ nav a {
 
 
 
-#homepage {
-	display: flex;
-	flex-direction: row;
+.floatcolumn {
+  float: left;
+  padding: 15px;
 }
 
-#left #right {
-	border: 1px solid black;
-	height: 100px;
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.departmentsmenu {
+  width: 25%;
+}
+
+.content {
+  width: 75%;
 }
 
 /*
