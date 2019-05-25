@@ -29,11 +29,13 @@ nav a {
 }
 
 #homepage #home div#homeright {
-	
+	border: 5px solid black;
+	width: 100px;
 }
 
 #homepage #home div#homeleft {
-	
+	border: 5px solid black;
+	width: 100px;
 }
 
 
