@@ -20,21 +20,18 @@ if (!isset($_SESSION['shoppingCart'])) {
  <header>
  <?php include $_SERVER[ 'DOCUMENT_ROOT' ].'/assignments/common/header.php'; ?>
  </header>
- <main class="homepage">
+ <main>
  
-
+<div class="homepage">
  <section>
- <?php
- 
- 
+ <?php 
  echo '<ul>';
  foreach ($db->query('SELECT * FROM productdepartment') as $row)
 {	
  echo '<li><a href="productgroups.php?id=' . $row['id'] . '">' . $row['productdepartmentname'] . '</a></li>';
 }
 echo '</ul>';
-
-v/*ar_dump($db);
+/*ar_dump($db);
 echo "<br>";
 echo "<br>";
 var_dump($row);
@@ -44,6 +41,7 @@ var_dump($row);
  </section>
  <section id="right">
  </section>
+ <div>
 
  
  </main>
