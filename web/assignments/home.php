@@ -50,6 +50,7 @@ echo '<section><h2>'.$product["product"].'</h2><article><div><img src='.$product
 }
    }
    
+   /*
    $i = 0;
  foreach ($_SESSION['products'][$i] as $product) {
 	echo '<section><h2>'.$product[""].'</h2><article><div><img src='.$product["image"].'></div><div><p class="price"><span>Price: </span>'.$product["price"].
@@ -61,7 +62,9 @@ echo '<section><h2>'.$product["product"].'</h2><article><div><img src='.$product
 	'"><input type="hidden" name="addedToCart" value="'.$product["addedToCart"].
 	'"><input type="submit" name="productDetails" value="Product details"></form></div></article></section>';
  $i++;
- };
+ };*/
+ 
+ var_dump($product);
 ?>
   </div>
   </div>
