@@ -28,9 +28,12 @@ nav a {
 	flex-direction: row;
 }
 
-#homepage #home #homeright #homeleft {
-	border: 10px solid black;
-	width: 100px;
+#homepage #home div#homeright {
+	
+}
+
+#homepage #home div#homeleft {
+	
 }
 
 
