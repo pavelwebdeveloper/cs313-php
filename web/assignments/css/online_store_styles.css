@@ -23,14 +23,14 @@ nav a {
 
 
 
-main div.bottomNavigationLinks {
+main {
 	display: flex;
 	flex-direction: row;
 }
 
-main div.bottomNavigationLinks div.left div.right {
-	border: 1px black solid !important;
-	height: 100px !important;
+main div.left div.right {
+	border: 1px black solid;
+	height: 100px;
 }
 
 /*
