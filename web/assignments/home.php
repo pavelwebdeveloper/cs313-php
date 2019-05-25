@@ -20,8 +20,14 @@ if (!isset($_SESSION['shoppingCart'])) {
  <header>
  <?php include $_SERVER[ 'DOCUMENT_ROOT' ].'/assignments/common/header.php'; ?>
  </header>
- <main>
+ <main id="homepage">
+ 
+ <div id="homepagediv">
+ <section>
+ <nav>
  <?php
+ 
+ 
  echo '<ul>';
  foreach ($db->query('SELECT * FROM productdepartment') as $row)
 {	
@@ -33,16 +39,6 @@ var_dump($db);
 echo "<br>";
 echo "<br>";
 var_dump($row);
-
-?>
- 
- <div id="homepage">
- <section>
- <nav>
- <?php
- 
- 
- 
  
  ?>
  </nav>
