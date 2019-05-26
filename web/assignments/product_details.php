@@ -194,12 +194,13 @@ session_start();
 		$_SESSION['shoppingCart'][] = $cars;
 	}*/
 	
+	
+	echo "<br>";
+	echo "<br>";
+	echo "<br>";
+	var_dump($_SESSION);
+	
 	/*
-	echo "<br>";
-	echo "<br>";
-	echo "<br>";
-	echo "productNumber";
-	var_dump((int)$_SESSION["productNumber"]);
 	echo "<br>";
 	echo "<br>";
 	echo "<br>";
