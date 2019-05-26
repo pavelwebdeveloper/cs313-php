@@ -155,6 +155,7 @@ if (!isset($_SESSION['shoppingCart'])) {
 	'"><input type="hidden" name="productdescription" value="'.$product["productdescription"].'"><input type="hidden" name="stock" value="'.$product["stock"].
 	'"><input type="hidden" name="id" value="'.$product["id"].
 	'"><input type="submit" name="productDetails" value="Product details"></form></div></article></section>';
+	var_dump($_SESSION['products'][$i]);
  $i++;
  };
  
