@@ -29,13 +29,12 @@ session_start();
  echo "<br>";
  
  echo "<br>";
- 
+ */
  echo "POST";
  var_dump($_POST);
  echo "<br>";
  echo "<br>";
  echo "<br>";
- */
  
  
 
@@ -181,6 +180,13 @@ session_start();
 	$_SESSION['products'][0][$productNumber - 1]['price']."</p><p><span>Description: </span>".$_SESSION['products'][0][$productNumber - 1]['description']."</p><p><span>Stock: </span>".$_SESSION['products'][0][$productNumber - 1]['stock'].
 	"</p><input type='hidden' name='productNumber' value='".$_SESSION['products'][0][$productNumber - 1]['numberOfProduct']."'><form action='product_details.php' method='post'><input type='submit' name='addToShoppingCart' value='Add to Shopping Cart'></form></div></article></section>";
 	
+	foreach ($db->query('SELECT * FROM product') as $product)
+{	
+echo '<section><h2>'.$product["product"].'</h2><article><div><img src='.$product["image"].'></div><div><p class="price"><span>Price: </span>'.$product["price"].
+	'</p><p><span>Description: </span>'.$product["productdescription"].'</p><p><span>Stock: </span>'.$product["stock"].
+	'</p><form method="post" action="product_details.php"><input type="hidden" name="id" value="'.$product["id"].
+	'"><input type="submit" name="productDetails" value="Product details"></form></div></article></section>';
+}
 	
 // echo 
 	
