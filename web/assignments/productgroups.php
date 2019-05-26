@@ -83,7 +83,7 @@ echo '<section><h2>'.$product["product"].'</h2><article><div><img src='.$product
  $i++;
  };*/
  
- var_dump($groups);
+ //var_dump($groups);
 ?>
   </div>
   </div>

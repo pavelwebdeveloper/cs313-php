@@ -10,7 +10,7 @@ if (!isset($_SESSION['shoppingCart'])) {
 <!DOCTYPE html>
 <html lang="en-us" id="products">
  <head>
-  <title>View Cart Page</title>
+  <title>Home Page</title>
   <link href="css/online_store_styles.css" rel="stylesheet" media="screen">
   <link href="css/normalize.css" rel="stylesheet" media="screen">
  </head>
@@ -63,7 +63,7 @@ echo '<section><h2>'.$product["product"].'</h2><article><div><img src='.$product
  $i++;
  };*/
  
- var_dump($product);
+ //var_dump($product);
 ?>
   </div>
   </div>

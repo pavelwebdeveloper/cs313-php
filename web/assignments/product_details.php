@@ -23,7 +23,7 @@ session_start();
  echo "<br>";
  
  echo "<br>";
- */
+ 
  var_dump($_SESSION);
  echo "<br>";
  echo "<br>";
@@ -34,7 +34,7 @@ session_start();
  echo "<br>";
  echo "<br>";
  echo "<br>";
-
+*/
  
  
 
@@ -173,13 +173,13 @@ session_start();
 		$_SESSION['shoppingCart'][] = $cars;
 	}*/
 	
-	
+	/*
 	echo "<br>";
 	echo "<br>";
 	echo "<br>";
 	var_dump($_SESSION);
 	
-	/*
+	
 	echo "<br>";
 	echo "<br>";
 	echo "<br>";
@@ -196,13 +196,13 @@ session_start();
 	echo "<br>";
 	echo "<br>";
 	echo "<br>";
-	*/
+	
 	var_dump($_SESSION['products'][0]);
 	echo "<br>";
 	echo "<br>";
 	echo "<br>";
 	var_dump($_SESSION['shoppingCart']);
-	/*
+	
 	echo "<br>";
 	echo "<br>";
 	echo "<br>";
