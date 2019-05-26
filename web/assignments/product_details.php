@@ -13,11 +13,6 @@ session_start();
  <?php include $_SERVER[ 'DOCUMENT_ROOT' ].'/assignments/common/header.php'; ?>
  </header>
  <main>
- 
- <?php
- // Get the database connection file
- require_once '../library/connections.php';
- ?>
  <h1>This is Product Details Page</h1>
  
  <?php
@@ -34,12 +29,13 @@ session_start();
  echo "<br>";
  
  echo "<br>";
- */
+ 
  echo "POST";
  var_dump($_POST);
  echo "<br>";
  echo "<br>";
  echo "<br>";
+ */
  
  
 
@@ -181,17 +177,10 @@ session_start();
 	"</p><input type='hidden' name='productNumber' value='".$_SESSION['productNumber']."'><form action='product_details.php' method='post'><input type='submit' name='addToShoppingCart' value='Add to Shopping Cart'></form></div></article></section>";
 	*/
 	
-	/*echo "<section><h2>".$_SESSION['products'][0][$productNumber - 1]['title']."</h2><article><div><img src=".$_SESSION['products'][0][$productNumber - 1]['image']."></div><div><p class='price'><span>Price: </span>".
+	echo "<section><h2>".$_SESSION['products'][0][$productNumber - 1]['title']."</h2><article><div><img src=".$_SESSION['products'][0][$productNumber - 1]['image']."></div><div><p class='price'><span>Price: </span>".
 	$_SESSION['products'][0][$productNumber - 1]['price']."</p><p><span>Description: </span>".$_SESSION['products'][0][$productNumber - 1]['description']."</p><p><span>Stock: </span>".$_SESSION['products'][0][$productNumber - 1]['stock'].
 	"</p><input type='hidden' name='productNumber' value='".$_SESSION['products'][0][$productNumber - 1]['numberOfProduct']."'><form action='product_details.php' method='post'><input type='submit' name='addToShoppingCart' value='Add to Shopping Cart'></form></div></article></section>";
-	*/
-	foreach ($db->query('SELECT * FROM product WHERE id = ' . $_POST["id"] . ';') as $product)
-{	
-echo '<section><h2>'.$product["product"].'</h2><article><div><img src='.$product["image"].'></div><div><p class="price"><span>Price: </span>'.$product["price"].
-	'</p><p><span>Description: </span>'.$product["productdescription"].'</p><p><span>Stock: </span>'.$product["stock"].
-	'</p><form method="post" action="product_details.php"><input type="hidden" name="id" value="'.$product["id"].
-	'"><input type="submit" name="addToShoppingCart" value="Add to Shopping Cart"></form></div></article></section>';
-}
+	
 	
 // echo 
 	
