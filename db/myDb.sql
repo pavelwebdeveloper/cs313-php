@@ -99,8 +99,8 @@ INSERT INTO product (product, productgroupId, productdepartmentId, productdescri
 INSERT INTO product (product, productgroupId, productdepartmentId, productdescription, image, price, stock) VALUES ('Binoculars', 28, 3, '10x42 Roof Prism Binoculars for Adults, HD Professional Binoculars for Bird Watching Travel Stargazing Concerts Sports-BAK4 Prism FMC Lens-with Phone Mount Strap Carrying Bag', 'images/product_images/tourism/binoculars/binoculars-black-equipment-55804.jpg', 90, 100);
 INSERT INTO product (product, productgroupId, productdepartmentId, productdescription, image, price, stock) VALUES ('Binoculars', 28, 3, '10x42 Roof Prism Binoculars for Adults, HD Professional Binoculars for Bird Watching Travel Stargazing Concerts Sports-BAK4 Prism FMC Lens-with Phone Mount Strap Carrying Bag', 'images/product_images/tourism/binoculars/telescope-685174_1920.jpg', 70, 100);
 INSERT INTO product (product, productgroupId, productdepartmentId, productdescription, image, price, stock) VALUES ('Tent', 29, 3, 'Instant Pop Up Tent 3-Person Family Camping Tent with Carrying Bag for Outdoor Camping Hiking Fishing Travel Beach Park, Lightweight, All Season, 290 x 200 x 130 cm', 'images/product_images/tourism/tents/beach-3604912_1280.jpg', 100, 70);
-INSERT INTO product (product, productgroupId, productdepartmentId, productdescription, image, price, stock) VALUES ('Tent', 29, 3, 'Instant Pop Up Tent 3-Person Family Camping Tent with Carrying Bag for Outdoor Camping Hiking Fishing Travel Beach Park, Lightweight, All Season, 290 x 200 x 130 cm', 'images/product_images/tourism/tents/smartphones/tent-1324847_1280.jpg', 90, 150);
-INSERT INTO product (product, productgroupId, productdepartmentId, productdescription, image, price, stock) VALUES ('Tent', 29, 3, 'Instant Pop Up Tent 3-Person Family Camping Tent with Carrying Bag for Outdoor Camping Hiking Fishing Travel Beach Park, Lightweight, All Season, 290 x 200 x 130 cm', 'images/product_images/tourism/tents/smartphones/tent-3933238_1280.jpg', 115, 170);
+INSERT INTO product (product, productgroupId, productdepartmentId, productdescription, image, price, stock) VALUES ('Tent', 29, 3, 'Instant Pop Up Tent 3-Person Family Camping Tent with Carrying Bag for Outdoor Camping Hiking Fishing Travel Beach Park, Lightweight, All Season, 290 x 200 x 130 cm', 'images/product_images/tourism/tents/tent-1324847_1280.jpg', 90, 150);
+INSERT INTO product (product, productgroupId, productdepartmentId, productdescription, image, price, stock) VALUES ('Tent', 29, 3, 'Instant Pop Up Tent 3-Person Family Camping Tent with Carrying Bag for Outdoor Camping Hiking Fishing Travel Beach Park, Lightweight, All Season, 290 x 200 x 130 cm', 'images/product_images/tourism/tents/tent-3933238_1280.png', 115, 170);
 
 SELECT * FROM product;
 
@@ -108,3 +108,11 @@ DELETE FROM product;
 
 UPDATE product SET image = 'images/product_images/clocks/wallclocks/clock-147257_1280.png' WHERE id = 40;
 UPDATE product SET image = 'images/product_images/clocks/wallclocks/clock-2634551_1280.png' WHERE id = 41;
+UPDATE product SET image = 'images/product_images/clocks/watches/blur-brass-bronze-2113994.jpg' WHERE id = 43;
+UPDATE product SET image = 'images/product_images/clocks/watches/time-3091031_1280.jpg' WHERE id = 44;
+UPDATE product SET image = 'images/product_images/clocks/watches/wristwatch-407096_1280.jpg' WHERE id = 45;
+UPDATE product SET image = 'images/product_images/electronics/smartphones/iphone-6s-plus-1534380_1280.png' WHERE id = 53;
+UPDATE product SET image = 'images/product_images/electronics/smartphones/smartphone-153650_1280.png' WHERE id = 54;
+UPDATE product SET image = 'images/product_images/tourism/binoculars/telescope-685174_1920.png' WHERE id = 60;
+UPDATE product SET image = 'images/product_images/tourism/tents/tent-1324847_1280.jpg' WHERE id = 62;
+UPDATE product SET image = 'images/product_images/tourism/tents/tent-3933238_1280.png' WHERE id = 63;
