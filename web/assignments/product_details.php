@@ -54,15 +54,15 @@ session_start();
  $product["stock"] = $_POST["stock"];
  */
  
- if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['number'])) {
+ if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['id'])) {
 	
-		$_SESSION['productNumber'] = $_POST['number'];
+		$_SESSION['productNumber'] = $_POST['id'];
 		$_SESSION['image'] = $_POST['image'];
-		$_SESSION['title'] = $_POST['title'];
+		$_SESSION['title'] = $_POST['product'];
 		$_SESSION['price'] = $_POST['price'];
-		$_SESSION['description'] = $_POST['description'];
+		$_SESSION['description'] = $_POST['productdescription'];
 		$_SESSION['stock'] = $_POST['stock'];
-		$_SESSION['addedToCart'] = $_POST['addedToCart'];
+		$_SESSION['addedToCart'] = 0;
 	}
  
  $productNumber = (int)$_SESSION['productNumber'];
