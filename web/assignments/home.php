@@ -40,15 +40,15 @@ echo '</ul>';
   </div>
    <div id="homeright">
    <?php
-   for ($i; $i<5; $i++) {
+   $i = 1;
    foreach ($db->query('SELECT * FROM product') as $product)
 {	
-echo '<section><h2>'.$product["product"].'</h2><article><div><img src='.$product["image"].'></div><div><p class="price"><span>Price: </span>'.$product["price"].
+echo '<section><h2>'.$product["product" + $i].'</h2><article><div><img src='.$product["image"].'></div><div><p class="price"><span>Price: </span>'.$product["price"].
 	'</p><p><span>Description: </span>'.$product["productdescription"].'</p><p><span>Stock: </span>'.$product["stock"].
 	'</p><form method="post" action="product_details.php"><input type="hidden" name="id" value="'.$product["id"].
 	'"><input type="submit" name="productDetails" value="Product details"></form></div></article></section>';
+	$i+=3;
 }
-   }
    
    /*
    $i = 0;
