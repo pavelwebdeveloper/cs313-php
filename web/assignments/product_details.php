@@ -29,13 +29,13 @@ session_start();
  echo "<br>";
  
  echo "<br>";
- 
+ */
  echo "POST";
  var_dump($_POST);
  echo "<br>";
  echo "<br>";
  echo "<br>";
- */
+
  
  
 
