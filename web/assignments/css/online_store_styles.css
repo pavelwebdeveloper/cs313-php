@@ -47,6 +47,13 @@ nav a {
 	border: 1px solid black;
 }
 
+#products #flexlayout div#flexlayoutright a {
+	text-decoration: none;
+	color: black;
+	font-size: 25px;
+	
+}
+
 #products #flexlayout div#flexlayoutright img {
 	width: 400px;
 	height: 263px;
