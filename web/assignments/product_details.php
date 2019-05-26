@@ -23,13 +23,12 @@ session_start();
  echo "<br>";
  
  echo "<br>";
- 
+ */
  var_dump($_SESSION);
  echo "<br>";
  echo "<br>";
  
  echo "<br>";
- */
  echo "POST";
  var_dump($_POST);
  echo "<br>";
