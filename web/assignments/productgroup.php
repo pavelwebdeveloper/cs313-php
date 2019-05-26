@@ -50,7 +50,7 @@ $stmt->execute();
 $group = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 
-if (isset($groups)) {
+if (isset($group)) {
 	foreach ($group as $singleproduct) {
   echo '<section><h2>'.$singleproduct["product"].'</h2><article><div><img src='.$singleproduct["image"].'></div><div><p class="price"><span>Price: </span>'.$singleproduct["price"].
 	'</p><p><span>Description: </span>'.$singleproduct["productdescription"].'</p><p><span>Stock: </span>'.$singleproduct["stock"].
