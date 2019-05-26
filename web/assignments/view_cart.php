@@ -149,7 +149,7 @@ if (!isset($_SESSION['shoppingCart'])) {
  
  foreach ($_SESSION['shoppingCart'] as $product) {
 	echo '<section><h2>'.$product["title"].'</h2><article><div><img src='.$product["image"].'></div><div><p class="price"><span>Price: </span>'.$product["price"].
-	'</p><p><span>Description: </span>'.$product["description"].'</p><p><span>Stock: </span>'.$product["stock"].
+	'</p><p><span>Description: </span>'.$product["productdescription"].'</p><p><span>Stock: </span>'.$product["stock"].
 	'</p><p><span>Added to Cart: </span>'.$product["addedToCart"].
 	'</p><form method="post" action="view_cart.php"><input type="hidden" name="title" value="'.$product["title"].
 	'"><input type="hidden" name="image" value="'.$product["image"].'"><input type="hidden" name="price" value="'.$product["price"].
