@@ -8,7 +8,7 @@ if (!isset($_SESSION['shoppingCart'])) {
  }
 ?>
 <!DOCTYPE html>
-<html lang="en-us" id="homepage">
+<html lang="en-us" id="products">
  <head>
   <title>View Cart Page</title>
   <link href="css/online_store_styles.css" rel="stylesheet" media="screen">
@@ -24,8 +24,8 @@ if (!isset($_SESSION['shoppingCart'])) {
  // Get the database connection file
  require_once '../library/connections.php';
  ?>
- <div id="home">
-  <div id="homeleft">
+ <div id="flexlayout">
+  <div id="flexlayoutleft">
   <?php  
  echo '<ul>';
  echo '<li>Departments</li>';
@@ -38,7 +38,7 @@ echo '</ul>';
  
  ?>
   </div>
-   <div id="homeright">
+   <div id="flexlayoutright">
    <?php
    //$i = 1;
    foreach ($db->query('SELECT * FROM product') as $product)

@@ -23,28 +23,33 @@ nav a {
 
 
 
-#homepage #home {
+#products #flexlayout {
 	display: flex;
 	flex-direction: row;
 }
 
-#homepage #home div#homeleft ul li {
+#products #flexlayout div#flexlayoutleft ul li {
 	list-style-type: none;
 	background-color: #000066;
 	border: 1px solid white;
 	color: white;
 }
 
-#homepage #home div#homeleft ul a {
+#products #flexlayout div#flexlayoutleft ul a {
 	color: white;
 	height: 50px;
 	font-size: 25px;
 	margin-left: 10px;
 }
 
-#homepage #home div#homeright {
+#products #flexlayout div#flexlayoutright {
 	flex-grow: 3;
 	border: 1px solid black;
+}
+
+#products #flexlayout div#flexlayoutright img {
+	width: 400px;
+	height: 263px;
 }
 
 

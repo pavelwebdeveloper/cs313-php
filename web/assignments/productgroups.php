@@ -8,9 +8,9 @@ if (!isset($_SESSION['shoppingCart'])) {
  }
 ?>
 <!DOCTYPE html>
-<html lang="en-us" id="homepage">
+<html lang="en-us" id="products">
  <head>
-  <title>View Cart Page</title>
+  <title>Product Groups Page</title>
   <link href="css/online_store_styles.css" rel="stylesheet" media="screen">
   <link href="css/normalize.css" rel="stylesheet" media="screen">
  </head>
@@ -24,8 +24,8 @@ if (!isset($_SESSION['shoppingCart'])) {
  // Get the database connection file
  require_once '../library/connections.php';
  ?>
- <div id="home">
-  <div id="homeleft">
+ <div id="flexlayout">
+  <div id="flexlayoutleft">
   <?php  
  echo '<ul>';
  echo '<li>Departments</li>';
@@ -38,7 +38,7 @@ echo '</ul>';
  
  ?>
   </div>
-   <div id="homeright">
+   <div id="flexlayoutright">
    <?php
    $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
  
@@ -52,7 +52,7 @@ $groups = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 if (isset($groups)) {
 	foreach ($groups as $group) {
-  echo '<article><div>' . $group["productgroupname"] . '<div><img src=' . $group['image'] . '></div></article><br><br>';
+  echo '<a href="productgroups.php?id=' . $group["id"] . '"><article><div>' . $group["productgroupname"] . '<div><img src=' . $group['image'] . '></div></article></a><br><br>';
 	}
 }
    
