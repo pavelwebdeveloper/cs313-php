@@ -50,7 +50,7 @@ if (!isset($_SESSION['shoppingCart'])) {
  $products = $db->query('SELECT * FROM product');
  }
  
- var_dump($products);
+ //var_dump($products);
  
  if (!isset($_SESSION['products'][0])) {
   $_SESSION['products'][] = $products;
@@ -155,7 +155,7 @@ if (!isset($_SESSION['shoppingCart'])) {
 	'"><input type="hidden" name="productdescription" value="'.$product["productdescription"].'"><input type="hidden" name="stock" value="'.$product["stock"].
 	'"><input type="hidden" name="id" value="'.$product["id"].
 	'"><input type="submit" name="productDetails" value="Product details"></form></div></article></section>';
-	var_dump($_SESSION['products'][$i]);
+	//var_dump($_SESSION['products'][$i]);
  $i++;
  };
  
@@ -181,7 +181,7 @@ if (!isset($_SESSION['shoppingCart'])) {
 	echo "<br>";
 	echo "<br>";
 	echo "<br>";
-	*/
+	
 	var_dump($_SESSION['products'][0][0]);
 	echo "<br>";
 	echo "<br>";
@@ -190,7 +190,7 @@ if (!isset($_SESSION['shoppingCart'])) {
 	echo "<br>";
 	echo "<br>";
 	echo "<br>";
-	/*
+	
 	var_dump($_SESSION["description"]);
 	echo "<br>";
 	echo "<br>";
