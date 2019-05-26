@@ -170,16 +170,16 @@ session_start();
 	$_SESSION['price']."</p><p><span>Description: </span>".$_SESSION['description']."</p><p><span>Stock: </span>".$_SESSION['stock'].
 	"</p><form action='product_details.php' method='post'><input type='submit' name='addToShoppingCart' value='Add to Shopping Cart'></form></div></article></section>";
 	*/
-	/*
+	
 	echo "<section><h2>".$_SESSION['title']."</h2><article><div><img src=".$_SESSION['image']."></div><div><p class='price'><span>Price: </span>".
 	$_SESSION['price']."</p><p><span>Description: </span>".$_SESSION['description']."</p><p><span>Stock: </span>".$_SESSION['stock'].
 	"</p><input type='hidden' name='productNumber' value='".$_SESSION['productNumber']."'><form action='product_details.php' method='post'><input type='submit' name='addToShoppingCart' value='Add to Shopping Cart'></form></div></article></section>";
-	*/
 	
+	/*
 	echo "<section><h2>".$_SESSION['products'][0][$productNumber - 1]['title']."</h2><article><div><img src=".$_SESSION['products'][0][$productNumber - 1]['image']."></div><div><p class='price'><span>Price: </span>".
 	$_SESSION['products'][0][$productNumber - 1]['price']."</p><p><span>Description: </span>".$_SESSION['products'][0][$productNumber - 1]['description']."</p><p><span>Stock: </span>".$_SESSION['products'][0][$productNumber - 1]['stock'].
 	"</p><input type='hidden' name='productNumber' value='".$_SESSION['products'][0][$productNumber - 1]['numberOfProduct']."'><form action='product_details.php' method='post'><input type='submit' name='addToShoppingCart' value='Add to Shopping Cart'></form></div></article></section>";
-	
+	*/
 	
 // echo 
 	
