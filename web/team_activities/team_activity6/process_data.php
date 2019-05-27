@@ -42,7 +42,7 @@
   var_dump($topic3);
   echo "<br>";
   
-  foreach ($db->query('SELECT * FROM Scriptures') as $row)
+  foreach ($db->query('SELECT * FROM Scriptures DESC') as $row)
 {
   echo '<b>' . $row['id'] . '</b><br><br>';
 }
