@@ -39,6 +39,7 @@ echo '</ul>';
  ?>
   </div>
    <div id="flexlayoutright">
+   <h2>These are some of the products that we sell</h2>
    <?php
    //$i = 1;
    
