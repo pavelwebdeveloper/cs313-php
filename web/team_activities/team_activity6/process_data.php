@@ -7,7 +7,7 @@
 <?php
 
  // Get the database connection file
- require '../../library/connections.php';
+ require_once '../../library/connections.php';
  
  //include '../../library/connections.php';
  
@@ -69,7 +69,8 @@ echo "<br>";
 var_dump($scripture_id);
   echo "<br>";
 
-
+// Get the database connection file
+ require_once '../../library/connections.php';
 
 $stmt = $db->prepare('INSERT INTO Scriptures_topic (scriptures_id, topic_id) VALUES (:scripture_id, :topic1)');
 echo "$stmt";
