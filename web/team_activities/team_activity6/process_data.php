@@ -31,7 +31,7 @@
  }
  
  
- 
+ /*
  $stmt = $db->prepare('INSERT INTO Scriptures (book, chapter, verse, content) VALUES (:book, :chapter, :verse, :content)');
 $stmt->bindValue(':book', $book, PDO::PARAM_STR);
 $stmt->bindValue(':chapter', $chapter, PDO::PARAM_STR);
@@ -80,7 +80,7 @@ if (isset($results)) {
   echo '<b>' . $result['scriptures_id'] . ' </b>' . $result['topic_id'] . '<br><br>';
 }
 }
-
+*/
 ?>
 
 </body>
