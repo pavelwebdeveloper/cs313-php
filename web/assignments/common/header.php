@@ -3,9 +3,9 @@
 <a href="browse_products.php" title="a link to Browse Products page">Products</a>
 </nav>
 <div>
-<form method="post" action="team_activity5.php">
+<form method="post" action="browse_products.php">
 <label for="name"></label>
-<input type="text" id="name" name="product" value="Search for a product"><br>
+<input type="text" id="name" name="searchProduct" placeholder="Search for a product">
 <input type="submit" value="Search">
 </form>
 </div>
