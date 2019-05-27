@@ -31,7 +31,7 @@ var_dump($topics);
 
 foreach ($topics as $topic)
 {
-echo "<input type='checkbox' name='topic1' value='" . $topic['id'] . "'>" . $topic['name'] . "<br>";
+echo "<input type='checkbox' name='topic" . $topic['id'] . "' value='" . $topic['id'] . "'>" . $topic['name'] . "<br>";
 }
 
 ?>
