@@ -22,6 +22,8 @@
  $verse = filter_input(INPUT_POST, 'verse', FILTER_SANITIZE_STRING);
  $content = filter_input(INPUT_POST, 'content', FILTER_SANITIZE_STRING);
  $topic1 = filter_input(INPUT_POST, 'topic1', FILTER_SANITIZE_STRING);
+ $topic2 = filter_input(INPUT_POST, 'topic2', FILTER_SANITIZE_STRING);
+ $topic3 = filter_input(INPUT_POST, 'topic3', FILTER_SANITIZE_STRING);
  var_dump($book);
   echo "<br>";
    
@@ -35,14 +37,11 @@
  
  var_dump($topic1);
   echo "<br>";
-  /*
- if(isset($_POST('topic2'))) {
- $topic2 = filter_input(INPUT_POST, 'topic2', FILTER_SANITIZE_STRING);
- }
- if(isset($_POST('topic3'))) {
- $topic3 = filter_input(INPUT_POST, 'topic3', FILTER_SANITIZE_STRING);
- }
- */
+  var_dump($topic2);
+  echo "<br>";
+  var_dump($topic3);
+  echo "<br>";
+  
  
  /*
  $stmt = $db->prepare('INSERT INTO Scriptures (book, chapter, verse, content) VALUES (:book, :chapter, :verse, :content)');
