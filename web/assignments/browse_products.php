@@ -55,7 +55,7 @@ $stmt->execute();
 $foundproducts = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 
-if (isset($foundproducts)) {
+if (!empty($foundproducts)) {
 foreach ($foundproducts as $foundproduct)
 {
   echo '<section><h2>'.$foundproduct["product"].'</h2><article><div><img src='.$foundproduct["image"].'></div><div><p class="price"><span>Price: </span>'.$foundproduct["price"].
