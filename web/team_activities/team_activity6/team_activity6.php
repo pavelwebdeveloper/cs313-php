@@ -28,13 +28,12 @@ echo "<br>";
 var_dump($topics);
   echo "<br>";
 
-/*
+
 foreach ($topics as $topic)
 {
-echo "<input type='checkbox' name='topic1' value='" . $topic['name'] . "'> Faith<br>
-  <input type='checkbox' name='topic2' value='2'> Sacrifice <br>
-  <input type='checkbox' name='topic3' value='3'> Charity ";
-*/
+echo "<input type='checkbox' name='topic1' value='" . $topic['id'] . "'>" . $topic['name'] . "<br>";
+}
+
 ?>
 <input type="submit" value="Submit">
 </form>
