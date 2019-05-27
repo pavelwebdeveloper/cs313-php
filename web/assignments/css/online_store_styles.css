@@ -75,13 +75,13 @@ nav a {
 	
 }
 
-/*)
-#products #flexlayout div#flexlayoutright img {
+
+#products #flexlayout div#flexlayoutright img#productGroupImage {
 	width: 400px;
 	height: 263px;
 }
 
-*/
+
 
 h2 {
 	text-align: center;
