@@ -45,25 +45,29 @@
   foreach ($db->query('SELECT * FROM Scriptures ORDER BY id DESC') as $row)
 {
   echo '<b>' . $row['id'] . '</b><br><br>';
+  $scripture_id = $row['id'];
   break;
 }
   
+  /*
   $stmt = $db->query('INSERT INTO Scriptures (book, chapter, verse, content) VALUES (' . $book . ', ' . $chapter . ', ' . $verse . ', ' . $content . ')');
   
   var_dump($stmt);
   echo "<br>";
-  $rowsChanged = $stmt->rowCount();
+  $rowsChanged = $stmt->rowCount()*/
  
- /*
- $stmt = $db->prepare('INSERT INTO Scriptures (book, chapter, verse, content) VALUES (:book, :chapter, :verse, :content)');
+ 
+ $stmt = $db->prepare('INSERT INTO Scriptures (book, chapter, verse, content) VALUES (:book, :chapter, :verse, :content); INSERT INTO Scriptures_topic (scriptures_id, topic_id) VALUES (' . $scripture_id . ', ' . $topic1 . ')');
 $stmt->bindValue(':book', $book, PDO::PARAM_STR);
 $stmt->bindValue(':chapter', $chapter, PDO::PARAM_STR);
  $stmt->bindValue(':verse', $verse, PDO::PARAM_STR);
  $stmt->bindValue(':content', $content, PDO::PARAM_STR);
+ $stmt->bindValue(':scripture_id', $scripture_id, PDO::PARAM_INT);
+$stmt->bindValue(':topic1', $topic1, PDO::PARAM_STR);
 $stmt->execute();
 $rowsChanged = $stmt->rowCount();
 $stmt->closeCursor();
-*/
+
 
 echo "Insert into Scriptures";
 var_dump($rowsChanged);
