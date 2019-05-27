@@ -66,13 +66,13 @@ var_dump($scripture_id);
   echo "<br>";
 
 
-if(isset($topic1)) {
-	$stmt = $db->prepare('INSERT INTO Scriptures_topic (scriptures_id, topic_id) VALUES (:scripture_id, :topic1)');
+
+$stmt = $db->prepare('INSERT INTO Scriptures_topic (scriptures_id, topic_id) VALUES (:scripture_id, :topic1)');
 $stmt->bindValue(':scripture_id', $scripture_id, PDO::PARAM_STR);
 $stmt->bindValue(':topic1', $topic1, PDO::PARAM_INT);
 $stmt->execute();
 $rowsChangedForTopic1 = $stmt->rowCount();
-}
+
 
 echo "Insert into Scriptures_topic1";
 var_dump($rowsChangedForTopic1);
