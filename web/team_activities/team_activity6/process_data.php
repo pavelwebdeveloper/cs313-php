@@ -15,7 +15,7 @@
  echo "<br>";
  
  var_dump($_POST);
- 
+ /*
  $book = filter_input(INPUT_POST, 'book', FILTER_SANITIZE_STRING);
  $chapter = filter_input(INPUT_POST, 'chapter', FILTER_SANITIZE_STRING);
  $verse = filter_input(INPUT_POST, 'verse', FILTER_SANITIZE_STRING);
@@ -29,7 +29,7 @@
  if(isset($_POST('topic3'))) {
  $topic3 = filter_input(INPUT_POST, 'topic3', FILTER_SANITIZE_NUMBER_INT);
  }
- 
+ */
  
  /*
  $stmt = $db->prepare('INSERT INTO Scriptures (book, chapter, verse, content) VALUES (:book, :chapter, :verse, :content)');
