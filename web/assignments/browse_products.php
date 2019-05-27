@@ -52,18 +52,18 @@ $product = filter_input(INPUT_POST, 'searchProduct', FILTER_SANITIZE_STRING);
 $stmt = $db->prepare('SELECT * FROM product WHERE product=:product');
 $stmt->bindValue(':product', $product, PDO::PARAM_STR);
 $stmt->execute();
-$products = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$foundproducts = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 
-if (isset($products)) {
-foreach ($products as $product)
+if (isset($foundproducts)) {
+foreach ($foundproducts as $foundproduct)
 {
-  echo '<section><h2>'.$product["product"].'</h2><article><div><img src='.$product["image"].'></div><div><p class="price"><span>Price: </span>'.$product["price"].
-	'</p><p><span>Description: </span>'.$product["productdescription"].'</p><p><span>Stock: </span>'.$product["stock"].
-	'</p><form method="post" action="product_details.php"><input type="hidden" name="product" value="'.$product["product"].
-	'"><input type="hidden" name="image" value="'.$product["image"].'"><input type="hidden" name="price" value="'.$product["price"].
-	'"><input type="hidden" name="productdescription" value="'.$product["productdescription"].'"><input type="hidden" name="stock" value="'.$product["stock"].
-	'"><input type="hidden" name="id" value="'.$product["id"].
+  echo '<section><h2>'.$foundproduct["product"].'</h2><article><div><img src='.$foundproduct["image"].'></div><div><p class="price"><span>Price: </span>'.$foundproduct["price"].
+	'</p><p><span>Description: </span>'.$foundproduct["productdescription"].'</p><p><span>Stock: </span>'.$foundproduct["stock"].
+	'</p><form method="post" action="product_details.php"><input type="hidden" name="product" value="'.$foundproduct["product"].
+	'"><input type="hidden" name="image" value="'.$foundproduct["image"].'"><input type="hidden" name="price" value="'.$foundproduct["price"].
+	'"><input type="hidden" name="productdescription" value="'.$foundproduct["productdescription"].'"><input type="hidden" name="stock" value="'.$foundproduct["stock"].
+	'"><input type="hidden" name="id" value="'.$foundproduct["id"].
 	'"><input type="submit" name="productDetails" value="Product details"></form></div></article></section>';
 }
 } else {
