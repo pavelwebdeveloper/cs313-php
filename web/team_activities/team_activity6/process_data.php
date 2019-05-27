@@ -51,6 +51,7 @@ $stmt->bindValue(':chapter', $chapter, PDO::PARAM_STR);
  $stmt->bindValue(':content', $content, PDO::PARAM_STR);
 $stmt->execute();
 $rowsChanged = $stmt->rowCount();
+$stmt->closeCursor();
 
 echo "Insert into Scriptures";
 var_dump($rowsChanged);
@@ -61,6 +62,7 @@ $stmt = $db->prepare('SELECT id FROM Scriptures WHERE content=:content');
 $stmt->bindValue(':content', $content, PDO::PARAM_STR);
 $stmt->execute();
 $scripture_id = $stmt->fetch(PDO::FETCH_ASSOC);
+$stmt->closeCursor();
 
 echo "Scripture id";
 echo "<br>";
@@ -77,6 +79,7 @@ $stmt->bindValue(':scripture_id', $scripture_id, PDO::PARAM_INT);
 $stmt->bindValue(':topic1', $topic1, PDO::PARAM_STR);
 $stmt->execute();
 $rowsChangedForTopic1 = $stmt->rowCount();
+$stmt->closeCursor();
 
 
 
