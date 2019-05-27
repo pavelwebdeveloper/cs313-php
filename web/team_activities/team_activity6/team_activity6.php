@@ -44,9 +44,21 @@ foreach ($db->query('SELECT * FROM Scriptures ORDER BY id DESC') as $row)
 echo "<br>";
 var_dump($lastScripture_id);
   echo "<br>";
+  
+  
+  $stmt = $db->prepare('INSERT INTO Scriptures_topic (scriptures_id, topic_id) VALUES (:scripture_id, :topic1)');
+echo "$stmt";
+echo "<br>";
+var_dump($stmt);
+$stmt->bindValue(':scripture_id', $lastScripture_id, PDO::PARAM_INT);
+$stmt->bindValue(':topic1', $topic1, PDO::PARAM_STR);
+$stmt->execute();
+$rowsChangedForTopic1 = $stmt->rowCount();
+$stmt->closeCursor();
 
 ?>
 <input type="hidden" name="lastScripture_id" value="$lastScripture_id">
+<input type="hidden" name="rowsChangedForTopic1" value="$rowsChangedForTopic1">
 <input type="submit" value="Submit">
 </form>
 

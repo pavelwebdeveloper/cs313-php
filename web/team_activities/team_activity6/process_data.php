@@ -24,7 +24,7 @@
  $topic1 = filter_input(INPUT_POST, 'topic1', FILTER_SANITIZE_STRING);
  $topic2 = filter_input(INPUT_POST, 'topic2', FILTER_SANITIZE_STRING);
  $topic3 = filter_input(INPUT_POST, 'topic3', FILTER_SANITIZE_STRING);
- $lastScripture_id = filter_input(INPUT_POST, 'lastScripture_id', FILTER_SANITIZE_STRING);
+ $lastScripture_id = filter_input(INPUT_POST, 'lastScripture_id', FILTER_SANITIZE_NUMBER_INT);
  var_dump($book);
   echo "<br>";
    
@@ -41,6 +41,10 @@
   var_dump($topic2);
   echo "<br>";
   var_dump($topic3);
+  echo "<br>";
+  echo "Insert into Scriptures_topic1";
+echo "<br>";
+var_dump($_POST('rowsChangedForTopic1'));
   echo "<br>";
   
   
@@ -69,7 +73,7 @@ var_dump($rowsChanged);
   echo "<br>";
 
 
-$scripture_id = $db->query("SELECT id FROM Scriptures WHERE content=" . $content . "'");
+
 
 
 /*
