@@ -19,7 +19,7 @@
 // Get the database connection file
  require_once '../../library/connections.php';
 
-$stmt = $db->prepare('SELECT name FROM topic');
+$stmt = $db->prepare('SELECT * FROM topic');
 $stmt->execute();
 $topics = $stmt->fetchAll(PDO::FETCH_ASSOC);
 $stmt->closeCursor();
@@ -31,7 +31,7 @@ var_dump($topics);
 /*
 foreach ($topics as $topic)
 {
-echo "<input type='checkbox' name='topic1' value='" . 1'> Faith<br>
+echo "<input type='checkbox' name='topic1' value='" . $topic['name'] . "'> Faith<br>
   <input type='checkbox' name='topic2' value='2'> Sacrifice <br>
   <input type='checkbox' name='topic3' value='3'> Charity ";
 */
