@@ -75,7 +75,7 @@ ALTER TABLE productgroup ADD image VARCHAR(150);
 
 DELETE FROM productgroup;
 
-UPDATE productgroup SET image = 'images/product_subgroup_images/tourism/tents/travel-bag-3256390_1280.jpg' WHERE id = 29;
+UPDATE productgroup SET image = 'images/product_subgroup_images/tourism/tents/camping-3893587_1280.jpg' WHERE id = 29;
 
 INSERT INTO product (product, productgroupId, productdepartmentId, productdescription, image, price, stock) VALUES ('Digital Alarm Clock', 21, 1, 'Small Digital Alarm Clock, LED Display Time/Date/Alarm/Temperature, Optional Weekday Mode, Battery Powered & USB Powered for Bedroom, Office, Travel', 'images/product_images/clocks/digitalclocks/clock-997589_1280.jpg', 20, 50);
 INSERT INTO product (product, productgroupId, productdepartmentId, productdescription, image, price, stock) VALUES ('Digital Alarm Clock', 21, 1, 'Small Digital Alarm Clock, LED Display Time/Date/Alarm/Temperature, Optional Weekday Mode, Battery Powered & USB Powered for Bedroom, Office, Travel', 'images/product_images/clocks/digitalclocks/radio-alarm-clock-2947068_1280.jpg', 15, 50);
