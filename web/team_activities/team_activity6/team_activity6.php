@@ -19,7 +19,7 @@
 // Get the database connection file
  require_once '../../library/connections.php';
 
-$stmt = $db->prepare('SELECT topic_id FROM Scriptures_topic');
+$stmt = $db->prepare('SELECT name FROM topic');
 $stmt->execute();
 $topics = $stmt->fetchAll(PDO::FETCH_ASSOC);
 $stmt->closeCursor();
