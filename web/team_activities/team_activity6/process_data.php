@@ -63,20 +63,22 @@ $stmt->execute();
 $scripture_id = $stmt->fetch(PDO::FETCH_ASSOC);
 
 echo "Scripture id";
+echo "<br>";
 var_dump($scripture_id);
   echo "<br>";
 
 
-if(isset($topic2)) {
+
 $stmt = $db->prepare('INSERT INTO Scriptures_topic (scriptures_id, topic_id) VALUES (:scripture_id, :topic1)');
 $stmt->bindValue(':scripture_id', $scripture_id, PDO::PARAM_STR);
 $stmt->bindValue(':topic1', $topic1, PDO::PARAM_STR);
 $stmt->execute();
 $rowsChangedForTopic1 = $stmt->rowCount();
-}
+
 
 
 echo "Insert into Scriptures_topic1";
+echo "<br>";
 var_dump($rowsChangedForTopic1);
   echo "<br>";
 
