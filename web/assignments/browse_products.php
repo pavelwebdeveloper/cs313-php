@@ -67,7 +67,7 @@ foreach ($foundproducts as $foundproduct)
 	'"><input type="submit" name="productDetails" value="Product details"></form></div></article></section>';
 }
 } else {
-	 echo "<h1>Sorry, no product found. Please, try to find a product with a diffrenet name</h1>";
+	 echo "<h1>Sorry, no product found. Please, try to find a product with a differenet name</h1>";
  }
 
 } else {
