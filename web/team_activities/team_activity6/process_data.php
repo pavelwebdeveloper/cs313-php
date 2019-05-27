@@ -42,8 +42,10 @@
   var_dump($topic3);
   echo "<br>";
   
+  $stmt = $db->query('INSERT INTO Scriptures (book, chapter, verse, content) VALUES (' . $book . ', ' . $chapter . ', ' . $verse . ', ' . $content . ')');
+  $rowsChanged = $stmt->rowCount();
  
- 
+ /*
  $stmt = $db->prepare('INSERT INTO Scriptures (book, chapter, verse, content) VALUES (:book, :chapter, :verse, :content)');
 $stmt->bindValue(':book', $book, PDO::PARAM_STR);
 $stmt->bindValue(':chapter', $chapter, PDO::PARAM_STR);
@@ -52,30 +54,37 @@ $stmt->bindValue(':chapter', $chapter, PDO::PARAM_STR);
 $stmt->execute();
 $rowsChanged = $stmt->rowCount();
 $stmt->closeCursor();
+*/
 
 echo "Insert into Scriptures";
 var_dump($rowsChanged);
   echo "<br>";
 
 
+$scripture_id = $db->query("SELECT id FROM Scriptures WHERE content=" . $content . "'");
+
+
+/*
 $stmt = $db->prepare('SELECT id FROM Scriptures WHERE content=:content');
 $stmt->bindValue(':content', $content, PDO::PARAM_STR);
 $stmt->execute();
 $scripture_id = $stmt->fetch(PDO::FETCH_ASSOC);
 $stmt->closeCursor();
+*/
+
 
 echo "Scripture id";
 echo "<br>";
 var_dump($scripture_id);
   echo "<br>";
   
-  ?>
-  
-  <?php
-
-// Get the database connection file
- require_once '../../library/connections.php';
  
+ 
+ if(isset($topic1)) {
+$topic1_insert = $db->query('INSERT INTO Scriptures_topic (scriptures_id, topic_id) VALUES (' . $scripture_id . ', ' . $topic1 . ')');
+ }
+ 
+ /*
  if(isset($scripture_id)) {
 $stmt2 = $db->prepare('INSERT INTO Scriptures_topic (scriptures_id, topic_id) VALUES (:scripture_id, :topic1)');
 echo "$stmt";
@@ -88,11 +97,11 @@ $rowsChangedForTopic1 = $stmt2->rowCount();
 $stmt2->closeCursor();
  }
 
-
+*/
 
 echo "Insert into Scriptures_topic1";
 echo "<br>";
-var_dump($rowsChangedForTopic1);
+var_dump($topic1_insert);
   echo "<br>";
 
 /*
