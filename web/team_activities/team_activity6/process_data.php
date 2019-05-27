@@ -68,6 +68,10 @@ echo "Scripture id";
 echo "<br>";
 var_dump($scripture_id);
   echo "<br>";
+  
+  ?>
+  
+  <?php
 
 // Get the database connection file
  require_once '../../library/connections.php';
