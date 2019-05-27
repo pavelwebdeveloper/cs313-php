@@ -5,7 +5,7 @@
 <div>
 <form method="post" action="browse_products.php">
 <label for="name"></label>
-<input type="text" id="name" name="searchProduct" placeholder="Search for a product">
+<input type="text" id="name" name="searchProduct" placeholder="Product name">
 <input type="submit" value="Search">
 </form>
 </div>

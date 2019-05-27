@@ -26,6 +26,24 @@ if (!isset($_SESSION['shoppingCart'])) {
  <h1>This is Browse Products Page</h1>
  
  <?php
+ /*
+ echo "<br><h1>1</h1>";
+ var_dump($_SESSION);
+ echo "<br>";
+ echo "<br>";
+ echo "<br>";
+ 
+ 
+ echo "<br>";
+ 
+ echo "<br><h1>2</h1>";
+ var_dump($_SESSION);
+ echo "<br>";
+ echo "<br>";
+ echo "<br>";
+ 
+ */
+ 
  
  if(isset($_POST['searchProduct'])) {
 
@@ -50,30 +68,7 @@ foreach ($products as $product)
 }
 }
 
-}
-
-
-
-?>
- 
- <?php
- /*
- echo "<br><h1>1</h1>";
- var_dump($_SESSION);
- echo "<br>";
- echo "<br>";
- echo "<br>";
- 
- 
- echo "<br>";
- 
- echo "<br><h1>2</h1>";
- var_dump($_SESSION);
- echo "<br>";
- echo "<br>";
- echo "<br>";
- 
- */
+} else {
  
  if (!isset($products)) {
 	 
@@ -246,6 +241,7 @@ foreach ($products as $product)
 	var_dump($_POST);
 	*/
  
+}
  
  ?>
  
