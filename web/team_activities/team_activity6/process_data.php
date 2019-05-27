@@ -21,6 +21,7 @@
  $chapter = filter_input(INPUT_POST, 'chapter', FILTER_SANITIZE_STRING);
  $verse = filter_input(INPUT_POST, 'verse', FILTER_SANITIZE_STRING);
  $content = filter_input(INPUT_POST, 'content', FILTER_SANITIZE_STRING);
+ $topic1 = filter_input(INPUT_POST, 'topic1', FILTER_SANITIZE_STRING);
  var_dump($book);
   echo "<br>";
    
@@ -31,9 +32,7 @@
  var_dump($content);
   echo "<br>";
  
- if(!empty($_POST('topic1'))) {
- $topic1 = filter_input(INPUT_POST, 'topic1', FILTER_SANITIZE_STRING);
- }
+ 
  var_dump($topic1);
   echo "<br>";
   /*
