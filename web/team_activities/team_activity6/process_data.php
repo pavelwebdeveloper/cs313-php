@@ -31,7 +31,7 @@
  var_dump($content);
   echo "<br>";
  
- if(isset($_POST('topic1'))) {
+ if(!empty($_POST('topic1'))) {
  $topic1 = filter_input(INPUT_POST, 'topic1', FILTER_SANITIZE_NUMBER_INT);
  }
  var_dump($topic1);
