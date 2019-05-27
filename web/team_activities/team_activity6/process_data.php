@@ -52,12 +52,19 @@ $stmt->bindValue(':chapter', $chapter, PDO::PARAM_STR);
 $stmt->execute();
 $rowsChanged = $stmt->rowCount();
 
-/*
+var_dump($rowsChanged);
+  echo "<br>";
+
+
 $stmt = $db->prepare('SELECT id FROM Scriptures WHERE content=:content');
 $stmt->bindValue(':content', $content, PDO::PARAM_STR);
 $stmt->execute();
 $scripture_id = $stmt->fetch(PDO::FETCH_ASSOC);
 
+var_dump($scripture_id);
+  echo "<br>";
+
+/*
 if(isset($topic1)) {
 	$stmt = $db->prepare('INSERT INTO Scriptures_topic (scriptures_id, topic_id) VALUES (:scripture_id, :topic1)');
 $stmt->bindValue(':scripture_id', $scripture_id, PDO::PARAM_STR);
