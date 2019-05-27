@@ -72,15 +72,15 @@ var_dump($scripture_id);
 // Get the database connection file
  require_once '../../library/connections.php';
 
-$stmt = $db->prepare('INSERT INTO Scriptures_topic (scriptures_id, topic_id) VALUES (:scripture_id, :topic1)');
+$stmt2 = $db->prepare('INSERT INTO Scriptures_topic (scriptures_id, topic_id) VALUES (:scripture_id, :topic1)');
 echo "$stmt";
 echo "<br>";
-var_dump($stmt);
-$stmt->bindValue(':scripture_id', $scripture_id, PDO::PARAM_INT);
-$stmt->bindValue(':topic1', $topic1, PDO::PARAM_STR);
-$stmt->execute();
-$rowsChangedForTopic1 = $stmt->rowCount();
-$stmt->closeCursor();
+var_dump($stmt2);
+$stmt2->bindValue(':scripture_id', $scripture_id, PDO::PARAM_INT);
+$stmt2->bindValue(':topic1', $topic1, PDO::PARAM_STR);
+$stmt2->execute();
+$rowsChangedForTopic1 = $stmt2->rowCount();
+$stmt2->closeCursor();
 
 
 
