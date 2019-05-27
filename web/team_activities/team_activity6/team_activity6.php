@@ -19,20 +19,20 @@
 // Get the database connection file
  require_once '../../library/connections.php';
 
-foreach ($db->query('SELECT * FROM topic DESC') as $topic)
-{
-echo $topic['id'];
-break;
-}
+$stmt = $db->prepare('SELECT * FROM topic');
+$stmt->execute();
+$topics = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$stmt->closeCursor();
+
 echo "<br>";
-var_dump($topic);
+var_dump($topics);
   echo "<br>";
 
-/*
+
 foreach ($topics as $topic)
 {
 echo "<input type='checkbox' name='topic" . $topic['id'] . "' value='" . $topic['id'] . "'>" . $topic['name'] . "<br>";
-}*/
+}
 
 ?>
 <input type="submit" value="Submit">

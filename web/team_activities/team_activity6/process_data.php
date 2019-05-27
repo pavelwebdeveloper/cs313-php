@@ -42,9 +42,11 @@
   var_dump($topic3);
   echo "<br>";
   
-  $stmt = $db->query('SELECT * FROM Scriptures');
-  var_dump($stmt);
-  echo "<br>";
+  foreach ($db->query('SELECT * FROM Scriptures DESC') as $row)
+{
+  echo '<b>' . $row['id'] . '</b><br><br>';
+  break;
+}
   
   $stmt = $db->query('INSERT INTO Scriptures (book, chapter, verse, content) VALUES (' . $book . ', ' . $chapter . ', ' . $verse . ', ' . $content . ')');
   
