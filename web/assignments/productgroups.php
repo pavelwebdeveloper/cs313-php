@@ -52,7 +52,7 @@ $groups = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 if (isset($groups)) {
 	foreach ($groups as $group) {
-  echo '<a href="productgroup.php?id=' . $group["id"] . '"><article><div>' . $group["productgroupname"] . '<div><img src=' . $group['image'] . '></div></article></a><br><br>';
+  echo '<a href="productgroup.php?id=' . $group["id"] . '"><article><div>' . $group["productgroupname"] . '</div><div><img src=' . $group['image'] . '></div></article></a><br><br>';
 	}
 }
    
