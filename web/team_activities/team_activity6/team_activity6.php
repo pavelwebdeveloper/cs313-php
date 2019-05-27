@@ -19,9 +19,10 @@
 // Get the database connection file
  require_once '../../library/connections.php';
 
-foreach ($db->query('SELECT * FROM topic') as $topic)
+foreach ($db->query('SELECT * FROM topic DESC') as $topic)
 {
-echo "<input type='checkbox' name='topic" . $topic['id'] . "' value='" . $topic['id'] . "'>" . $topic['name'] . "<br>";
+echo $topic['id'];
+break;
 }
 echo "<br>";
 var_dump($topic);
