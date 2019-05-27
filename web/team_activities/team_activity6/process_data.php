@@ -57,6 +57,7 @@
   $rowsChanged = $stmt->rowCount()*/
  
  function insertIntoScriptures($book, $chapter, $verse, $content){
+	 global $db;
  $stmt = $db->prepare('INSERT INTO Scriptures (book, chapter, verse, content) VALUES (:book, :chapter, :verse, :content)');
 $stmt->bindValue(':book', $book, PDO::PARAM_STR);
 $stmt->bindValue(':chapter', $chapter, PDO::PARAM_STR);
