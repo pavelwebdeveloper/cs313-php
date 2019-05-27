@@ -34,7 +34,19 @@ foreach ($topics as $topic)
 echo "<input type='checkbox' name='topic" . $topic['id'] . "' value='" . $topic['id'] . "'>" . $topic['name'] . "<br>";
 }
 
+foreach ($db->query('SELECT * FROM Scriptures ORDER BY id DESC') as $row)
+{
+  echo '<b>' . $row['id'] . '</b><br><br>';
+  $lastScripture_id = $row['id'];
+  break;
+}
+
+echo "<br>";
+var_dump($lastScripture_id);
+  echo "<br>";
+
 ?>
+<input type="hidden" name="lastScripture_id" value="$lastScripture_id">
 <input type="submit" value="Submit">
 </form>
 

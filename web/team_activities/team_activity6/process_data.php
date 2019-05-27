@@ -24,6 +24,7 @@
  $topic1 = filter_input(INPUT_POST, 'topic1', FILTER_SANITIZE_STRING);
  $topic2 = filter_input(INPUT_POST, 'topic2', FILTER_SANITIZE_STRING);
  $topic3 = filter_input(INPUT_POST, 'topic3', FILTER_SANITIZE_STRING);
+ $lastScripture_id = filter_input(INPUT_POST, 'lastScripture_id', FILTER_SANITIZE_STRING);
  var_dump($book);
   echo "<br>";
    
@@ -42,12 +43,7 @@
   var_dump($topic3);
   echo "<br>";
   
-  foreach ($db->query('SELECT * FROM Scriptures ORDER BY id DESC') as $row)
-{
-  echo '<b>' . $row['id'] . '</b><br><br>';
-  $scripture_id = $row['id'];
-  break;
-}
+  
   
   /*
   $stmt = $db->query('INSERT INTO Scriptures (book, chapter, verse, content) VALUES (' . $book . ', ' . $chapter . ', ' . $verse . ', ' . $content . ')');
@@ -56,8 +52,7 @@
   echo "<br>";
   $rowsChanged = $stmt->rowCount()*/
  
- function insertIntoScriptures($book, $chapter, $verse, $content){
-	 global $db;
+ 
  $stmt = $db->prepare('INSERT INTO Scriptures (book, chapter, verse, content) VALUES (:book, :chapter, :verse, :content)');
 $stmt->bindValue(':book', $book, PDO::PARAM_STR);
 $stmt->bindValue(':chapter', $chapter, PDO::PARAM_STR);
@@ -67,9 +62,6 @@ $stmt->execute();
 $rowsChanged = $stmt->rowCount();
 $stmt->closeCursor();
 return $rowsChanged;
- }
- 
- insertIntoScriptures();
 
 
 echo "Insert into Scriptures";
