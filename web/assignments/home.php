@@ -28,7 +28,7 @@ if (!isset($_SESSION['shoppingCart'])) {
   <div id="flexlayoutleft">
   <?php  
  echo '<ul>';
- echo '<li>Departments</li>';
+ echo '<li id="departmentsMenuHeading"><b>Departments</b></li>';
  foreach ($db->query('SELECT * FROM productdepartment') as $row)
 {	
  echo '<li><a href="productgroups.php?id=' . $row['id'] . '">' . $row['productdepartmentname'] . '</a></li>';
