@@ -52,6 +52,7 @@ $stmt->bindValue(':chapter', $chapter, PDO::PARAM_STR);
 $stmt->execute();
 $rowsChanged = $stmt->rowCount();
 
+echo "Insert into Scriptures";
 var_dump($rowsChanged);
   echo "<br>";
 
