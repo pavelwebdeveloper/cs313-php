@@ -66,10 +66,8 @@ foreach ($products as $product)
 	'"><input type="hidden" name="id" value="'.$product["id"].
 	'"><input type="submit" name="productDetails" value="Product details"></form></div></article></section>';
 }
-}
-
-if (!isset($products)) {
-	 echo "<h1>Sorry, no product found with this name. Please, try to find a product with a diffrenet name</h1>";
+} else {
+	 echo "<h1>Sorry, no product found. Please, try to find a product with a diffrenet name</h1>";
  }
 
 } else {
