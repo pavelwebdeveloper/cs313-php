@@ -16,18 +16,32 @@
 <textarea name="content" rows="20" cols="100"></textarea>
 <br>
 <?php
-echo "<input type='checkbox' name='topic1' value='1'> Faith<br>
+// Get the database connection file
+ require_once '../../library/connections.php';
+
+$stmt = $db->prepare('SELECT topic_id FROM Scriptures_topic');
+$stmt->execute();
+$topics = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$stmt->closeCursor();
+
+echo "<br>";
+var_dump($topics);
+  echo "<br>";
+
+/*
+foreach ($topics as $topic)
+{
+echo "<input type='checkbox' name='topic1' value='" . 1'> Faith<br>
   <input type='checkbox' name='topic2' value='2'> Sacrifice <br>
   <input type='checkbox' name='topic3' value='3'> Charity ";
-
+*/
 ?>
 <input type="submit" value="Submit">
 </form>
 
 <?php
 
- // Get the database connection file
- require_once '../../library/connections.php';
+ 
  
  //include '../../library/connections.php';
  
