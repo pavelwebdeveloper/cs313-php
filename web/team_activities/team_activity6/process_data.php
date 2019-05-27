@@ -42,7 +42,12 @@
   var_dump($topic3);
   echo "<br>";
   
+  $stmt = $db->query('INSERT INTO Scriptures (book, chapter, verse, content) VALUES ('John', 5, 6, 'Hi')');
+  var_dump($stmt);
+  echo "<br>";
+  
   $stmt = $db->query('INSERT INTO Scriptures (book, chapter, verse, content) VALUES (' . $book . ', ' . $chapter . ', ' . $verse . ', ' . $content . ')');
+  
   var_dump($stmt);
   echo "<br>";
   $rowsChanged = $stmt->rowCount();
