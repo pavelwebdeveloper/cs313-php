@@ -119,3 +119,13 @@ UPDATE product SET image = 'images/product_images/electronics/smartphones/smartp
 UPDATE product SET image = 'images/product_images/tourism/binoculars/telescope-685174_1920.png' WHERE id = 60;
 UPDATE product SET image = 'images/product_images/tourism/tents/tent-1324847_1280.jpg' WHERE id = 62;
 UPDATE product SET image = 'images/product_images/tourism/tents/tent-3933238_1280.png' WHERE id = 63;
+
+UPDATE product SET product = 'digital alarm clock' WHERE product = 'Digital Alarm Clock';
+UPDATE product SET product = 'wall clock' WHERE product = 'Wall Clock';
+UPDATE product SET product = 'camera' WHERE product = 'Camera';
+UPDATE product SET product = 'watch' WHERE product = 'Watch';
+UPDATE product SET product = 'laptop' WHERE product = 'Laptop';
+UPDATE product SET product = 'smartphone' WHERE product = 'Smartphone';
+UPDATE product SET product = 'backpack' WHERE product = 'Backpack';
+UPDATE product SET product = 'binoculars' WHERE product = 'Binoculars';
+UPDATE product SET product = 'tent' WHERE product = 'Tent';
