@@ -26,6 +26,37 @@ if (!isset($_SESSION['shoppingCart'])) {
  <h1>This is Browse Products Page</h1>
  
  <?php
+ 
+ if(isset($_POST['searchProduct'])) {
+
+$product = filter_input(INPUT_POST, 'searchProduct', FILTER_SANITIZE_STRING);
+
+$stmt = $db->prepare('SELECT * FROM product WHERE product=:product');
+$stmt->bindValue(':product', $product, PDO::PARAM_STR);
+$stmt->execute();
+$products = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+
+if (isset($products)) {
+foreach ($products as $product)
+{
+  echo '<section><h2>'.$product["product"].'</h2><article><div><img src='.$product["image"].'></div><div><p class="price"><span>Price: </span>'.$product["price"].
+	'</p><p><span>Description: </span>'.$product["productdescription"].'</p><p><span>Stock: </span>'.$product["stock"].
+	'</p><form method="post" action="product_details.php"><input type="hidden" name="product" value="'.$product["product"].
+	'"><input type="hidden" name="image" value="'.$product["image"].'"><input type="hidden" name="price" value="'.$product["price"].
+	'"><input type="hidden" name="productdescription" value="'.$product["productdescription"].'"><input type="hidden" name="stock" value="'.$product["stock"].
+	'"><input type="hidden" name="id" value="'.$product["id"].
+	'"><input type="submit" name="productDetails" value="Product details"></form></div></article></section>';
+}
+}
+
+}
+
+
+
+?>
+ 
+ <?php
  /*
  echo "<br><h1>1</h1>";
  var_dump($_SESSION);
