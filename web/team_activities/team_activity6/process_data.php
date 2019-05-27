@@ -15,11 +15,12 @@
  echo "<br>";
  
  var_dump($_POST);
- /*
+ 
  $book = filter_input(INPUT_POST, 'book', FILTER_SANITIZE_STRING);
  $chapter = filter_input(INPUT_POST, 'chapter', FILTER_SANITIZE_STRING);
  $verse = filter_input(INPUT_POST, 'verse', FILTER_SANITIZE_STRING);
  $content = filter_input(INPUT_POST, 'content', FILTER_SANITIZE_STRING);
+ /*
  if(isset($_POST('topic1'))) {
  $topic1 = filter_input(INPUT_POST, 'topic1', FILTER_SANITIZE_NUMBER_INT);
  }
