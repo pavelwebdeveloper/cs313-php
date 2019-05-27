@@ -68,6 +68,10 @@ foreach ($products as $product)
 }
 }
 
+if (!isset($products)) {
+	 echo "<h1>Sorry, no product found with this name. Please, try to find a product with a diffrenet name</h1>";
+ }
+
 } else {
  
  if (!isset($products)) {
