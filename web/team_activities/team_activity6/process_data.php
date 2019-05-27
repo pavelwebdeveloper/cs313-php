@@ -32,16 +32,16 @@
   echo "<br>";
  
  if(!empty($_POST('topic1'))) {
- $topic1 = filter_input(INPUT_POST, 'topic1', FILTER_SANITIZE_NUMBER_INT);
+ $topic1 = filter_input(INPUT_POST, 'topic1', FILTER_SANITIZE_STRING);
  }
  var_dump($topic1);
   echo "<br>";
   /*
  if(isset($_POST('topic2'))) {
- $topic2 = filter_input(INPUT_POST, 'topic2', FILTER_SANITIZE_NUMBER_INT);
+ $topic2 = filter_input(INPUT_POST, 'topic2', FILTER_SANITIZE_STRING);
  }
  if(isset($_POST('topic3'))) {
- $topic3 = filter_input(INPUT_POST, 'topic3', FILTER_SANITIZE_NUMBER_INT);
+ $topic3 = filter_input(INPUT_POST, 'topic3', FILTER_SANITIZE_STRING);
  }
  */
  
