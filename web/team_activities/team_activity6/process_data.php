@@ -30,10 +30,13 @@
   echo "<br>";
  var_dump($content);
   echo "<br>";
- /*
+ 
  if(isset($_POST('topic1'))) {
  $topic1 = filter_input(INPUT_POST, 'topic1', FILTER_SANITIZE_NUMBER_INT);
  }
+ var_dump($topic1);
+  echo "<br>";
+  /*
  if(isset($_POST('topic2'))) {
  $topic2 = filter_input(INPUT_POST, 'topic2', FILTER_SANITIZE_NUMBER_INT);
  }
