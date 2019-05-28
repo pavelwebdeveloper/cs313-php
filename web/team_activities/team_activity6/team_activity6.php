@@ -32,6 +32,15 @@ var_dump($topics);
 foreach ($topics as $topic)
 {
 echo "<input type='checkbox' name='topic" . $topic['id'] . "' value='" . $topic['id'] . "'>" . $topic['name'] . "<br>";
+if($topic['id'] == 1) {
+	$topic1 = 1;
+}
+if($topic['id'] == 2) {
+	$topic2 = 2;
+}
+if($topic['id'] == 3) {
+	$topic2 = 3;
+}
 }
 
 foreach ($db->query('SELECT * FROM Scriptures ORDER BY id DESC') as $row)
@@ -55,6 +64,8 @@ $stmt->bindValue(':topic1', $topic1, PDO::PARAM_STR);
 $stmt->execute();
 $rowsChangedForTopic1 = $stmt->rowCount();
 $stmt->closeCursor();
+
+
 
 ?>
 <input type="hidden" name="lastScripture_id" value="$lastScripture_id">
