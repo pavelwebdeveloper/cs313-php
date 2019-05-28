@@ -39,7 +39,7 @@ if($topic['id'] == 2) {
 	$topic2 = 2;
 }
 if($topic['id'] == 3) {
-	$topic2 = 3;
+	$topic3 = 3;
 }
 }
 
@@ -52,6 +52,10 @@ foreach ($db->query('SELECT * FROM Scriptures ORDER BY id DESC') as $row)
 
 echo "<br>";
 var_dump($lastScripture_id);
+  echo "<br>";
+  
+  echo "<br>";
+var_dump($topic1);
   echo "<br>";
   
   
