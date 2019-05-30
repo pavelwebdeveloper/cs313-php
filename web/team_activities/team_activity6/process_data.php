@@ -72,13 +72,9 @@ var_dump($stmt);
 
 
 $scripture_id = $db->lastInsertId('Scriptures_id_seq');
-/*
-$stmt = $db->prepare('SELECT id FROM Scriptures WHERE content=:content');
-$stmt->bindValue(':content', $content, PDO::PARAM_STR);
-$stmt->execute();
-$scripture_id = $stmt->fetch(PDO::FETCH_ASSOC);
-$stmt->closeCursor();
-*/
+
+
+
 
 
 echo "Scripture id";
@@ -86,6 +82,19 @@ echo "<br>";
 var_dump($scripture_id);
   echo "<br>";
   
+ 
+ $selectCheck = $db->prepare('SELECT id FROM Scriptures WHERE content=:content');
+$selectCheck->bindValue(':content', $content, PDO::PARAM_STR);
+$selectCheck->execute();
+$scripture_idAnother = $selectCheck->fetch(PDO::FETCH_ASSOC);
+$selectCheck->closeCursor();
+echo "$scripture_idAnother";
+echo "<br>";
+var_dump($scripture_idAnother);
+echo "<br>";
+echo "<br>";
+echo "<br>";
+ 
  
 $insertTopic = $db->prepare('INSERT INTO Scriptures_topic (scriptures_id, topic_id) VALUES (:scripture_id, :topic1)');
 echo "$insertTopic";
