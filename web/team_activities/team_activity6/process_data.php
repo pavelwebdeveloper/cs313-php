@@ -51,13 +51,14 @@
   
   
   
-  
+  /*
   $stmt = $db->query('INSERT INTO Scriptures (book, chapter, verse, content) VALUES (' . $book . ', ' . $chapter . ', ' . $verse . ', ' . $content . ')');
   
   var_dump($stmt);
   echo "<br>";
+  */
  
- /*
+ 
  $stmt = $db->prepare('INSERT INTO Scriptures (book, chapter, verse, content) VALUES (:book, :chapter, :verse, :content)'); 
 $stmt->bindValue(':book', $book, PDO::PARAM_STR);
 $stmt->bindValue(':chapter', $chapter, PDO::PARAM_STR);
@@ -66,11 +67,11 @@ $stmt->bindValue(':chapter', $chapter, PDO::PARAM_STR);
 $stmt->execute();
 var_dump($stmt);
 
-*/
 
 
 
-$scripture_id = $pdo->lastInsertId('Scriptures_id_seq');
+
+$scripture_id = $db->lastInsertId('Scriptures_id_seq');
 /*
 $stmt = $db->prepare('SELECT id FROM Scriptures WHERE content=:content');
 $stmt->bindValue(':content', $content, PDO::PARAM_STR);
@@ -89,13 +90,20 @@ var_dump($scripture_id);
  $stmt2 = $db->prepare('INSERT INTO Scriptures_topic (scriptures_id, topic_id) VALUES (:scripture_id, :topic1)');
 echo "$stmt2";
 echo "<br>";
-var_dump($stmt);
+var_dump($stmt2);
+echo "<br>";
+echo "<br>";
+echo "<br>";
 $stmt2->bindValue(':scripture_id', $scripture_id, PDO::PARAM_INT);
 $stmt2->bindValue(':topic1', $topic1, PDO::PARAM_STR);
 $stmt2->execute();
 $rowsChangedForTopic1 = $stmt2->rowCount();
 $stmt2->closeCursor();
  
+ 
+ echo "$rowsChangedForTopic1";
+ echo "<br>";
+echo "<br>";
  
  
  
