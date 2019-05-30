@@ -1,9 +1,16 @@
+<?php
+// Get the database connection file
+ require("../../library/dbConnection.php");
+ $db = dbConnection();
+?>
 <!DOCTYPE html>
 <html>
 <head>
-<title>Scriptures</title>
+<title>Scriptures and Topics Entry</title>
 </head>
 <body>
+
+<h3>Please, enter a scripture and specify appropriate topics for this scripture</h3>
 
 <form method="post" action="process_data.php">
 <label for="book">Book:</label>
@@ -16,8 +23,7 @@
 <textarea name="content" rows="20" cols="100"></textarea>
 <br>
 <?php
-// Get the database connection file
- require_once '../../library/connections.php';
+
 
 $stmt = $db->prepare('SELECT * FROM topic');
 $stmt->execute();
@@ -32,6 +38,7 @@ var_dump($topics);
 foreach ($topics as $topic)
 {
 echo "<input type='checkbox' name='topic" . $topic['id'] . "' value='" . $topic['id'] . "'>" . $topic['name'] . "<br>";
+/*
 if($topic['id'] == 1) {
 	$topic1 = 1;
 }
@@ -41,33 +48,15 @@ if($topic['id'] == 2) {
 if($topic['id'] == 3) {
 	$topic3 = 3;
 }
+*/
 }
 
-foreach ($db->query('SELECT * FROM Scriptures ORDER BY id DESC') as $row)
-{
-  echo '<b>' . $row['id'] . '</b><br><br>';
-  $lastScripture_id = $row['id'];
-  break;
-}
 
-echo "<br>";
-var_dump($lastScripture_id);
-  echo "<br>";
+
   
   echo "<br>";
 var_dump($topic1);
   echo "<br>";
-  
-  
-  $stmt = $db->prepare('INSERT INTO Scriptures_topic (scriptures_id, topic_id) VALUES (:scripture_id, :topic1)');
-echo "$stmt";
-echo "<br>";
-var_dump($stmt);
-$stmt->bindValue(':scripture_id', $lastScripture_id, PDO::PARAM_INT);
-$stmt->bindValue(':topic1', $topic1, PDO::PARAM_STR);
-$stmt->execute();
-$rowsChangedForTopic1 = $stmt->rowCount();
-$stmt->closeCursor();
 
 
 
