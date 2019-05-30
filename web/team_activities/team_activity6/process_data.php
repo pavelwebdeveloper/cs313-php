@@ -94,7 +94,7 @@ var_dump($stmt2);
 echo "<br>";
 echo "<br>";
 echo "<br>";
-$stmt2->bindValue(':scripture_id', $scripture_id, PDO::PARAM_INT);
+$stmt2->bindValue(':scripture_id', $scripture_id, PDO::PARAM_STR);
 $stmt2->bindValue(':topic1', $topic1, PDO::PARAM_STR);
 $stmt2->execute();
 $rowsChangedForTopic1 = $stmt2->rowCount();
