@@ -57,6 +57,7 @@ echo "<br>";
  
  
  $stmt = $db->prepare('INSERT INTO Scriptures (book, chapter, verse, content) VALUES (:book, :chapter, :verse, :content)');
+ var_dump($stmt);
 $stmt->bindValue(':book', $book, PDO::PARAM_STR);
 $stmt->bindValue(':chapter', $chapter, PDO::PARAM_STR);
  $stmt->bindValue(':verse', $verse, PDO::PARAM_STR);
