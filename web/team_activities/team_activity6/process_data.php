@@ -44,8 +44,7 @@
   echo "<br>";
   echo "Insert into Scriptures_topic1";
 echo "<br>";
-var_dump($_POST('rowsChangedForTopic1'));
-  echo "<br>";
+
   
   
   
@@ -63,14 +62,7 @@ $stmt->bindValue(':chapter', $chapter, PDO::PARAM_STR);
  $stmt->bindValue(':verse', $verse, PDO::PARAM_STR);
  $stmt->bindValue(':content', $content, PDO::PARAM_STR);
 $stmt->execute();
-$rowsChanged = $stmt->rowCount();
-$stmt->closeCursor();
-return $rowsChanged;
 
-
-echo "Insert into Scriptures";
-var_dump($rowsChanged);
-  echo "<br>";
 
 
 
