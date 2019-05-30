@@ -87,18 +87,18 @@ var_dump($scripture_id);
   echo "<br>";
   
  
- $stmt2 = $db->prepare('INSERT INTO Scriptures_topic (scriptures_id, topic_id) VALUES (:scripture_id, :topic1)');
-echo "$stmt2";
+$insertTopic = $db->prepare('INSERT INTO Scriptures_topic (scriptures_id, topic_id) VALUES (:scripture_id, :topic1)');
+echo "$insertTopic";
 echo "<br>";
-var_dump($stmt2);
+var_dump($insertTopic);
 echo "<br>";
 echo "<br>";
 echo "<br>";
-$stmt2->bindValue(':scripture_id', $scripture_id, PDO::PARAM_STR);
-$stmt2->bindValue(':topic1', $topic1, PDO::PARAM_STR);
-$stmt2->execute();
-$rowsChangedForTopic1 = $stmt2->rowCount();
-$stmt2->closeCursor();
+$insertTopic->bindValue(':scripture_id', $scripture_id, PDO::PARAM_STR);
+$insertTopic->bindValue(':topic1', $topic1, PDO::PARAM_STR);
+$insertTopic->execute();
+$rowsChangedForTopic1 = $insertTopic->rowCount();
+$insertTopic->closeCursor();
  
  
  echo "$rowsChangedForTopic1";
