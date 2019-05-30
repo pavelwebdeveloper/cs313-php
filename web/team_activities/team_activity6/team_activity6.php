@@ -61,8 +61,8 @@ var_dump($topic1);
 
 
 ?>
-<input type="hidden" name="lastScripture_id" value="$lastScripture_id">
-<input type="hidden" name="rowsChangedForTopic1" value="$rowsChangedForTopic1">
+<!--<input type="hidden" name="lastScripture_id" value="$lastScripture_id">
+<input type="hidden" name="rowsChangedForTopic1" value="$rowsChangedForTopic1">-->
 <input type="submit" value="Submit">
 </form>
 

@@ -1,3 +1,8 @@
+<?php
+// Get the database connection file
+ require("../../library/dbConnection.php");
+ $db = dbConnection();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,7 +12,7 @@
 <?php
 
  // Get the database connection file
- require_once '../../library/connections.php';
+ //require_once '../../library/connections.php';
  
  //include '../../library/connections.php';
  
@@ -24,7 +29,6 @@
  $topic1 = filter_input(INPUT_POST, 'topic1', FILTER_SANITIZE_STRING);
  $topic2 = filter_input(INPUT_POST, 'topic2', FILTER_SANITIZE_STRING);
  $topic3 = filter_input(INPUT_POST, 'topic3', FILTER_SANITIZE_STRING);
- $lastScripture_id = filter_input(INPUT_POST, 'lastScripture_id', FILTER_SANITIZE_NUMBER_INT);
  var_dump($book);
   echo "<br>";
    
@@ -42,8 +46,7 @@
   echo "<br>";
   var_dump($topic3);
   echo "<br>";
-  echo "Insert into Scriptures_topic1";
-echo "<br>";
+  
 
   
   
