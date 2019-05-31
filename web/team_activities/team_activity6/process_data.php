@@ -87,7 +87,6 @@ var_dump($scripture_id);
 $selectCheck->bindValue(':content', $content, PDO::PARAM_STR);
 $selectCheck->execute();
 $scripture_idAnother = $selectCheck->fetch(PDO::FETCH_ASSOC);
-$selectCheck->closeCursor();
 echo "$scripture_id Another";
 echo "<br>";
 var_dump($scripture_idAnother);
