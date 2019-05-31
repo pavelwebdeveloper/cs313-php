@@ -95,7 +95,7 @@ echo "<br>";
 echo "<br>";
 echo "<br>";
  
- if(isset($topic1)) {
+
 $insertTopic = $db->prepare('INSERT INTO Scriptures_topic (scriptures_id, topic_id) VALUES (:scripture_id, :topic1)');
 echo "$insertTopic";
 echo "<br>";
@@ -108,7 +108,7 @@ $insertTopic->bindValue(':topic1', $topic1, PDO::PARAM_STR);
 $insertTopic->execute();
 $rowsChangedForTopic1 = $insertTopic->rowCount();
 $insertTopic->closeCursor();
- }
+
  
  
  echo "$rowsChangedForTopic1";
