@@ -102,7 +102,7 @@ var_dump($insertTopic);
 echo "<br>";
 echo "<br>";
 echo "<br>";
-$insertTopic->bindValue(':scripture_id', $scripture_id, PDO::PARAM_INT);
+$insertTopic->bindValue(':scripture_id', $scripture_id, PDO::PARAM_STR);
 $insertTopic->bindValue(':topic1', $topic1, PDO::PARAM_STR);
 $insertTopic->execute();
 $rowsChangedForTopic1 = $insertTopic->rowCount();
