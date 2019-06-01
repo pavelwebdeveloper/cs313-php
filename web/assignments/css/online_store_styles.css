@@ -107,19 +107,25 @@ h2 {
 }
 
 html#logInRegister main {
-  display: flex;\
-  align-items: center;
+  display: flex;
+  align-content: center;
 }
 
 html#logInRegister main div {
 	border: 2px solid gray;
-  width: 200px;  
-  height: 200px; 
   margin: auto;  
 }
 
 html#logInRegister main div form {
 	margin: 20px;
+}
+
+html#logInRegister main div form button:hover {
+	cursor: pointer;
+}
+
+html#logInRegister main div form button a {
+	text-decoration: none;
 }
 
 
