@@ -75,13 +75,14 @@ if(isset($_POST['SignUp'])) {
    
    
    $stmt = $db->prepare('INSERT INTO storeuser (username, email, password) VALUES (:username, :useremail, :userpassword)'); 
-   var_dump($stmt);
-	  echo "<br>";
-	  echo "<br>";
+   
 $stmt->bindValue(':username', $userName, PDO::PARAM_STR);
 $stmt->bindValue(':useremail', $userEmail, PDO::PARAM_STR);
  $stmt->bindValue(':userpassword', $hashedPassword, PDO::PARAM_STR);
 $stmt->execute();
+var_dump($stmt);
+	  echo "<br>";
+	  echo "<br>";
 $signUpOutcome = $stmt->rowCount();
 var_dump($signUpOutcome);
 	  echo "<br>";
