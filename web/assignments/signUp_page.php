@@ -24,18 +24,60 @@ if (!isset($_SESSION['shoppingCart'])) {
  ?>
  
  <div>
- <form method="post" action="logIn_page.php">
-<label for="name">Full name:</label><br>
-<input type="text" id="name" name="name" pattern="[A-Za-z]{2,}" required><br>
-<label for="email">E-mail:</label><br>
-<input type="email" id="email" name="email" placeholder="someone@gmail.com" pattern="[a-z0-9._%+-]+@[a-z0-9.]+\.[a-z]{2,}$" required><br>
-<label for="password">Password:</label><br>
-<input type="password" name="password" id="password" pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required><br>
+ <?php
+   if (isset($_SESSION['message'])) {
+    echo $_SESSION['message'];
+   }
+   ?>
+ <form method="post" action="signUp_page_page.php">
+<label for="userName">Full name:</label><br>
+<input type="text" id="userName" name="userName" pattern="[A-Za-z]{2,}" required><br>
+<label for="userEmail">E-mail:</label><br>
+<input type="email" id="userEmail" name="userEmail" placeholder="someone@gmail.com" pattern="[a-z0-9._%+-]+@[a-z0-9.]+\.[a-z]{2,}$" required><br>
+<label for="userPassword">Password:</label><br>
+<input type="password" name="userPassword" id="userPassword" pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required><br><br>
 <input type="submit" value="Sign Up">
+<input type="hidden" value="signUp">
 </form>
  </div>
  
- 
+ <?php
+if(isset($_POST('signUp'))) {
+	// Filter and store the data
+   $userName = filter_input(INPUT_POST, 'userName', FILTER_SANITIZE_STRING);
+   $userEmail = filter_input(INPUT_POST, 'userEmail', FILTER_SANITIZE_EMAIL);
+   $userPassword = filter_input(INPUT_POST, 'userPassword', FILTER_SANITIZE_STRING);
+    // Check for missing data
+   if(empty($userName) || empty($userEmail) || empty($userPassword))){
+    $message = '<p>Please, provide information correctly for all form fields.</p>';
+    include 'signUp_page_page.php';
+    exit;
+   }
+   
+   // Hash the checked password
+   $hashedPassword = password_hash($userPassword, PASSWORD_DEFAULT);
+   
+   
+   $stmt = $db->prepare('INSERT INTO storeuser (username, email, password) VALUES (:username, :useremail, :userpassword)'); 
+$stmt->bindValue(':username', $userName, PDO::PARAM_STR);
+$stmt->bindValue(':useremail', $userEmail, PDO::PARAM_STR);
+ $stmt->bindValue(':userpassword', $hashedPassword, PDO::PARAM_STR);
+$stmt->execute();
+$signUpOutcome = $stmt->rowCount();
+   
+   // Check and report the result and create the cookie when the individual registers with the site
+   if($signUpOutcome === 1){
+    $_SESSION['message'] = "<p>Thanks for registering. Please, use your email and password to login.</p>";
+    header('Location: logIn_page.php');
+   exit;
+   } else {
+    $message = "<p>Sorry, but the registration failed. Please, try again.</p>";
+            include 'signUp_page_page.php';
+    exit;
+   }
+   break;
+}
+ ?>
  
  </main>
  </body>
