@@ -61,7 +61,7 @@ if (!isset($_SESSION['shoppingCart'])) {
   echo "<br>";
   
 if(isset($_POST['updateAccount'])) {
-	/*
+	
 	// Filter and store the data
    $userName = filter_input(INPUT_POST, 'userName', FILTER_SANITIZE_STRING);
    $userEmail = filter_input(INPUT_POST, 'userEmail', FILTER_SANITIZE_EMAIL);
@@ -86,7 +86,6 @@ $findEmail = $alreadyexistingEmail->fetch(PDO::FETCH_ASSOC);
     $_SESSION['message'] = "<p>Sorry. Such an email address already exists.</p>";
     header("Location: update_account.php");
    exit;
-   }
    }
    
    // Check for missing data
@@ -119,7 +118,7 @@ $userUpdatedData = $getUserUpdatedData->fetch(PDO::FETCH_ASSOC);
     $message = "<p class='messagefailure'>Sorry, but the account update failed. Please, try again.</p>";
             header("Location: manage_account.php");
     exit;
-   }*/
+   }
    
 }/* elseif (isset($_POST['updatePassword'])) {
 	// Filter and store the password data
