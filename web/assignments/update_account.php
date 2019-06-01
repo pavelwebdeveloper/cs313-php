@@ -146,11 +146,11 @@ $passwordUpdateOutcome = $passwordUpdate->rowCount();
  // Check and report the result
    if($passwordUpdateOutcome){
     $_SESSION['message'] = "<p class='messagesuccess'>Your password has been successfully updated.</p>";
-    header("Location: manage_account.php");
+    header("Location: update_account.php");
    exit;
    } else {
     $_SESSION['message'] = "<p>Sorry, but the password update failed. Please, try again.</p>";
-            header("Location: manage_account.php");
+            header("Location: update_account.php");
     exit;
    }
 }
