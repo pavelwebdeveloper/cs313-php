@@ -8,7 +8,7 @@ if (!isset($_SESSION['shoppingCart'])) {
  }
 ?>
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en-us" id="products">
  <head>
   <title>Browse Products Page</title>
   <link href="css/online_store_styles.css" rel="stylesheet" media="screen">
