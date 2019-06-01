@@ -29,9 +29,9 @@ if (!isset($_SESSION['shoppingCart'])) {
     echo $_SESSION['message'];
    }
    ?>
- <form method="post" action="signUp_page_page.php">
+ <form method="post" action="signUp_page.php">
 <label for="userName">Full name:</label><br>
-<input type="text" id="userName" name="userName" pattern="[A-Za-z]{2,}" required><br>
+<input type="text" id="userName" name="userName" pattern="[A-Za-z ]{2,}" required><br>
 <label for="userEmail">E-mail:</label><br>
 <input type="email" id="userEmail" name="userEmail" placeholder="someone@gmail.com" pattern="[a-z0-9._%+-]+@[a-z0-9.]+\.[a-z]{2,}$" required><br>
 <label for="userPassword">Password:</label><br>
@@ -72,7 +72,7 @@ $signUpOutcome = $stmt->rowCount();
    exit;
    } else {
     $message = "<p>Sorry, but the registration failed. Please, try again.</p>";
-	header("Location: signUp_page_page.php");
+	header("Location: signUp_page.php");
     exit;
    }
    
