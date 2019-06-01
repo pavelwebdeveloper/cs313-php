@@ -31,7 +31,7 @@ if (!isset($_SESSION['shoppingCart'])) {
 <input type="email" id="email" name="email" placeholder="someone@gmail.com" pattern="[a-z0-9._%+-]+@[a-z0-9.]+\.[a-z]{2,}$" required><br>
 <label for="password">Password:</label>
 <input type="password" name="password" id="password" pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required><br>
-<input type="submit" value="Log in">
+<input type="submit" value="Sign Up">
 </form>
  </div>
  

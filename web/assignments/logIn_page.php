@@ -32,7 +32,7 @@ if (!isset($_SESSION['shoppingCart'])) {
 <input type="submit" value="Log in">
 <br>
 <p id="login">Not registered yet?</p>
-<a id="aregister" href="signUp_page.php" title="a link to a sign_up page">Sign Up</a>
+<button type="button"><a id="aregister" href="signUp_page.php" title="a link to a sign_up page">Sign Up</a></button>
 </form>
  </div>
  

@@ -107,7 +107,8 @@ h2 {
 }
 
 html#logInRegister main {
-  display: flex;
+  display: flex;\
+  align-items: center;
 }
 
 html#logInRegister main div {
@@ -115,6 +116,10 @@ html#logInRegister main div {
   width: 200px;  
   height: 200px; 
   margin: auto;  
+}
+
+html#logInRegister main div form {
+	margin: 20px;
 }
 
 
