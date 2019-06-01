@@ -35,7 +35,7 @@ CREATE TABLE storeuser (
 id SERIAL PRIMARY KEY,
 username VARCHAR(100) NOT NULL,
 email VARCHAR(100) NOT NULL,
-password VARCHAR(100) NOT NULL,
+password VARCHAR(255) NOT NULL,
 userlevel INT NOT NULL
 );
 
@@ -55,7 +55,9 @@ SELECT * FROM productdepartment;
 
 DROP TABLE productdepartment;
 
+DROP TABLE storeuser;
 
+SELECT * FROM storeuser;
 
 INSERT INTO productgroup (productgroupname, productdepartmentId, image) VALUES ('Digital clocks', 1, 'images/product_subgroup_images/clocks/digitalclocks/digital-clock-2476496_1280.jpg');
 INSERT INTO productgroup (productgroupname, productdepartmentId, image) VALUES ('Wall clocks', 1, 'images/product_subgroup_images/clocks/wallclocks/clock-773307_1280.jpg');
