@@ -44,6 +44,7 @@ if (!isset($_SESSION['shoppingCart'])) {
  </div>
  
  <?php
+ /*
 if(isset($_POST('logIn'))) {
 	// Filter and store the data
    $userEmail = filter_input(INPUT_POST, 'userEmail', FILTER_SANITIZE_EMAIL);
@@ -74,6 +75,7 @@ $userData = $getUserData->fetch(PDO::FETCH_ASSOC);
     exit;
    }
 }
+*/
  ?>
  
  
