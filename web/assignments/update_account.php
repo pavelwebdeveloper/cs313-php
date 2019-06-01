@@ -53,6 +53,12 @@ if (!isset($_SESSION['shoppingCart'])) {
  <?php
  var_dump($_POST);
   echo "<br>";
+  var_dump($_SESSION['userData']['username']);
+  echo "<br>";
+  var_dump($_SESSION['userData']['email']);
+  echo "<br>";
+  var_dump($_SESSION['userData']['id']);
+  echo "<br>";
   /*
 if(isset($_POST['updateAccount'])) {
 	// Filter and store the data
