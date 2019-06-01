@@ -1,4 +1,5 @@
-<div id="upperblock"><nav>
+<div id="upperblock">
+<nav>
 <a href="home.php" title="a link to Home page">Home</a>
 <a href="browse_products.php" title="a link to Browse Products page">Products</a>
 </nav>
@@ -15,11 +16,9 @@
 </div>
 <div id="lowerblock">
 <div>
-
 </div>
 <div id="logInOrSignUp">
 <a href="logIn_page.php" title="a link to log in">Log In</a>
-<p>or<p>
 <a href="signUp_page.php" title="a link to sign up">Sign Up</a>
 </div>
 </div>
