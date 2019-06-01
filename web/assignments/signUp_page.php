@@ -62,7 +62,7 @@ if(isset($_POST['SignUp'])) {
 	  var_dump($userEmail);
 	  echo "<br>";
 	  echo "<br>";
-	  var_dump($userEmail;
+	  var_dump($userEmail);
 	  echo "<br>";
 	  echo "<br>";
 	
