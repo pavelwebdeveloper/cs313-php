@@ -106,6 +106,17 @@ h2 {
 	text-align: center;
 }
 
+html#logInRegister main {
+  display: flex;
+}
+
+html#logInRegister main div {
+	border: 2px solid gray;
+  width: 200px;  
+  height: 200px; 
+  margin: auto;  
+}
+
 
 
 /*
