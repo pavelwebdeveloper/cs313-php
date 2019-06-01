@@ -71,6 +71,9 @@ if(isset($_POST['LogIn'])) {
 $getUserData->bindValue(':userEmail', $userEmail, PDO::PARAM_STR);
 $getUserData->execute();
 $userData = $getUserData->fetch(PDO::FETCH_ASSOC);
+var_dump($userData);
+	  echo "<br>";
+	  echo "<br>";
    
    // Compare the password just submitted against
    // the hashed password for the matching client
