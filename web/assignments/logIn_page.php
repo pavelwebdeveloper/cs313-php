@@ -82,7 +82,7 @@ var_dump($userData);
    var_dump($hashCheck);
 	  echo "<br>";
 	  echo "<br>";
-	  /*
+	  
    // If the hashes don't match create an error
    // and return to the login view
    if(!$hashCheck) {
@@ -90,8 +90,19 @@ var_dump($userData);
     header("Location: logIn_page.php");
     exit;
    }
+    // A valid user exists, log them in
+   $_SESSION['loggedin'] = TRUE;
+   // Remove the password from the array
+   // the array_pop function removes the last
+   // element from an array
+   array_pop($userData);
+   // Store the array into the session
+   $_SESSION['userData'] = $userData;
+   $_SESSION['message'] = '';
+   // Send them to the admin view
+   header("Location: home.php");
+   exit;
    
-   */
 }
 
  ?>
