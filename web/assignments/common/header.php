@@ -16,17 +16,16 @@
 </div>
 <div id="lowerblock">
 <?php if(!($_SESSION['loggedin'])){
-	echo "<div>
+	echo '<div>
 </div><div id="logInOrSignUp">
 <a href="logIn_page.php" title="a link to log in">Log In</a>
 <a href="signUp_page.php" title="a link to sign up">Sign Up</a>
-</div>";
+</div>';
 } else {
 	echo '<div><p>You are logged in as ' . $_SESSION['username'] . '</p>
 </div><div id="logInOrSignUp">
-<a href="signUp_page.php" title="a link to account update page">Manage account</a>
-<a href="logIn_page.php" title="a link to log in">Log Out</a>
-
+<a href="account.php" title="a link to account update page">Manage account</a>
+<a href="home.php?action=Logout" title="a link to log out">Log Out</a>
 </div>';
 }
 ?>
