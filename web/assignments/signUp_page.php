@@ -64,19 +64,18 @@ $stmt->bindValue(':useremail', $userEmail, PDO::PARAM_STR);
  $stmt->bindValue(':userpassword', $hashedPassword, PDO::PARAM_STR);
 $stmt->execute();
 $signUpOutcome = $stmt->rowCount();
-   /*
+   
    // Check and report the result and create the cookie when the individual registers with the site
    if($signUpOutcome === 1){
     $_SESSION['message'] = "<p>Thanks for registering. Please, use your email and password to login.</p>";
-    header('Location: logIn_page.php');
+    //header('Location: logIn_page.php');
    exit;
    } else {
     $message = "<p>Sorry, but the registration failed. Please, try again.</p>";
             include 'signUp_page_page.php';
     exit;
    }
-   break;
-   */
+   
 }
  ?>
  
