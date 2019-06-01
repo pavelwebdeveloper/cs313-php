@@ -25,11 +25,11 @@ if (!isset($_SESSION['shoppingCart'])) {
  
  <div>
  <form method="post" action="logIn_page.php">
-<label for="name">Full name:</label>
+<label for="name">Full name:</label><br>
 <input type="text" id="name" name="name" pattern="[A-Za-z]{2,}" required><br>
-<label for="email">E-mail:</label>
+<label for="email">E-mail:</label><br>
 <input type="email" id="email" name="email" placeholder="someone@gmail.com" pattern="[a-z0-9._%+-]+@[a-z0-9.]+\.[a-z]{2,}$" required><br>
-<label for="password">Password:</label>
+<label for="password">Password:</label><br>
 <input type="password" name="password" id="password" pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required><br>
 <input type="submit" value="Sign Up">
 </form>

@@ -25,11 +25,11 @@ if (!isset($_SESSION['shoppingCart'])) {
  
  <div>
  <form method="post" action="home.php">
-<label for="name">E-mail:</label>
+<label for="name">E-mail:</label><br>
 <input type="email" id="email" name="email" placeholder="someone@gmail.com" pattern="[a-z0-9\._%+-]+@[a-z0-9.]+\.[a-z]{2,}$" <?php if(isset($clientEmail)){echo "value='$clientEmail'";} ?> required><br>
-<label for="name">Password:</label>
+<label for="name">Password:</label><br>
 <input type="password" name="clientPassword" id="clientPassword" pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required><br>
-<input type="submit" value="Log in">
+<input class="submitButton" type="submit" value="Log in">
 <br>
 <p id="login">Not registered yet?</p>
 <button type="button"><a id="aregister" href="signUp_page.php" title="a link to a sign_up page">Sign Up</a></button>

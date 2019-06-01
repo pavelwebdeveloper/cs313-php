@@ -108,7 +108,7 @@ h2 {
 
 html#logInRegister main {
   display: flex;
-  align-content: center;
+  align-items: center;
 }
 
 html#logInRegister main div {
@@ -121,6 +121,10 @@ html#logInRegister main div form {
 }
 
 html#logInRegister main div form button:hover {
+	cursor: pointer;
+}
+
+html#logInRegister main div form input.submitButton:hover {
 	cursor: pointer;
 }
 
