@@ -36,7 +36,7 @@ if (!isset($_SESSION['shoppingCart'])) {
 <label for="userPassword">Password:</label><br>
 <input type="userPassword" name="userPassword" id="userPassword" pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required><br><br>
 <input class="submitButton" type="submit" value="Log in">
-<input type="hidden" value="logIn">
+<input type="hidden" name="LogIn" value="logIn">
 <br>
 <p id="login">Not registered yet?</p>
 <button type="button"><a id="aregister" href="signUp_page.php" title="a link to a sign_up page">Sign Up</a></button>
@@ -45,7 +45,7 @@ if (!isset($_SESSION['shoppingCart'])) {
  
  <?php
  
-if(isset($_POST['logIn'])) {
+if(isset($_POST['LogIn'])) {
 	// Filter and store the data
    $userEmail = filter_input(INPUT_POST, 'userEmail', FILTER_SANITIZE_EMAIL);
    $userPassword = filter_input(INPUT_POST, 'userPassword', FILTER_SANITIZE_STRING);

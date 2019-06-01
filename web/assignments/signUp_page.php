@@ -37,14 +37,14 @@ if (!isset($_SESSION['shoppingCart'])) {
 <label for="userPassword">Password:</label><br>
 <input type="password" name="userPassword" id="userPassword" pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required><br><br>
 <input type="submit" value="Sign Up">
-<input type="hidden" value="signUp">
+<input type="hidden" name="SignUp" value="signUp">
 </form>
  </div>
  
  <?php
  var_dump($_POST);
   echo "<br>";
-if(isset($_POST['signUp'])) {
+if(isset($_POST['SignUp'])) {
 	// Filter and store the data
    $userName = filter_input(INPUT_POST, 'userName', FILTER_SANITIZE_STRING);
    $userEmail = filter_input(INPUT_POST, 'userEmail', FILTER_SANITIZE_EMAIL);
