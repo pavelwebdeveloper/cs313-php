@@ -93,6 +93,17 @@ var_dump($scripture_idAnother);
 echo "<br>";
 echo "<br>";
 echo "<br>";
+
+$selectST = $db->prepare('SELECT id FROM Scriptures WHERE content=:content');
+$selectST->bindValue(':content', $content, PDO::PARAM_STR);
+$selectST->execute();
+$selectSTResult = $selectST->fetch(PDO::FETCH_ASSOC);
+echo "$selectSTResult Another";
+echo "<br>";
+var_dump($selectSTResult);
+echo "<br>";
+echo "<br>";
+echo "<br>";
  
 
 $insertTopic = $db->prepare('INSERT INTO Scriptures_topic (scriptures_id, topic_id) VALUES (:scripture_id, :topic1)');
