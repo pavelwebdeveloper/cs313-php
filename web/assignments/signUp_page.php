@@ -59,16 +59,19 @@ if(isset($_POST['SignUp'])) {
     var_dump($userName);
 	 echo "<br>";
 	  echo "<br>";
-	  var_dump($userName);
+	  var_dump($userEmail);
 	  echo "<br>";
 	  echo "<br>";
-	  var_dump($userName);
+	  var_dump($userEmail;
 	  echo "<br>";
 	  echo "<br>";
 	
    
    // Hash the checked password
    $hashedPassword = password_hash($userPassword, PASSWORD_DEFAULT);
+   var_dump($hashedPassword);
+	  echo "<br>";
+	  echo "<br>";
    
    
    $stmt = $db->prepare('INSERT INTO storeuser (username, email, password) VALUES (:username, :useremail, :userpassword)'); 
@@ -77,6 +80,9 @@ $stmt->bindValue(':useremail', $userEmail, PDO::PARAM_STR);
  $stmt->bindValue(':userpassword', $hashedPassword, PDO::PARAM_STR);
 $stmt->execute();
 $signUpOutcome = $stmt->rowCount();
+var_dump($signUpOutcome);
+	  echo "<br>";
+	  echo "<br>";
    
    // Check and report the result and create the cookie when the individual registers with the site
    if($signUpOutcome === 1){
