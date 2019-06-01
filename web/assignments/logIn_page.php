@@ -34,7 +34,7 @@ if (!isset($_SESSION['shoppingCart'])) {
 <label for="userEmail">E-mail:</label><br>
 <input type="email" id="userEmail" name="userEmail" placeholder="someone@gmail.com" pattern="[a-z0-9\._%+-]+@[a-z0-9.]+\.[a-z]{2,}$" <?php if(isset($clientEmail)){echo "value='$clientEmail'";} ?> required><br>
 <label for="userPassword">Password:</label><br>
-<input type="userPassword" name="userPassword" id="userPassword" pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required><br><br>
+<input type="password" name="userPassword" id="userPassword" pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required><br><br>
 <input class="submitButton" type="submit" value="Log in">
 <input type="hidden" name="LogIn" value="logIn">
 <br>
@@ -44,13 +44,20 @@ if (!isset($_SESSION['shoppingCart'])) {
  </div>
  
  <?php
- 
+ var_dump($_POST);
+  echo "<br>";
+	  echo "<br>";
 if(isset($_POST['LogIn'])) {
 	// Filter and store the data
    $userEmail = filter_input(INPUT_POST, 'userEmail', FILTER_SANITIZE_EMAIL);
    $userPassword = filter_input(INPUT_POST, 'userPassword', FILTER_SANITIZE_STRING);
 
-   
+   var_dump($userEmail);
+	  echo "<br>";
+	  echo "<br>";
+	  var_dump($userPassword);
+	  echo "<br>";
+	  echo "<br>";
    
    // Check for missing data
    if(empty($userEmail) || empty($userPassword)){
