@@ -74,7 +74,8 @@ $userData = $getUserData->fetch(PDO::FETCH_ASSOC);
 var_dump($userData);
 	  echo "<br>";
 	  echo "<br>";
-   
+	  
+   /*
    // Compare the password just submitted against
    // the hashed password for the matching client
    $hashCheck = password_verify($userPassword, $userData['userPassword']);
@@ -85,6 +86,7 @@ var_dump($userData);
     header("Location: logIn_page.php");
     exit;
    }
+   */
    
 }
 
