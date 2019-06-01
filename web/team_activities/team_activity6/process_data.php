@@ -94,6 +94,7 @@ echo "<br>";
 echo "<br>";
 echo "<br>";
 
+/*
 $selectST = $db->prepare('SELECT * FROM Scriptures_topic');
 $selectST->execute();
 $selectSTResult = $selectST->fetchAll(PDO::FETCH_ASSOC);
@@ -103,6 +104,7 @@ var_dump($selectSTResult);
 echo "<br>";
 echo "<br>";
 echo "<br>";
+*/
  
 
 $insertTopic = $db->prepare('INSERT INTO Scriptures_topic (scriptures_id, topic_id) VALUES (:scripture_id, :topic1)');

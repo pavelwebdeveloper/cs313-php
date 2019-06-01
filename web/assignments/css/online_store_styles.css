@@ -1,8 +1,23 @@
 header {
 	display: flex;
+	flex-direction: coloumn;
+background-color: #000066;
+height: 50px;
+}
+
+header div#upperblock{
+	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
 background-color: #000066;
+height: 50px;
+}
+
+header div#lowerblock{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+background-color: #00BFFF;
 height: 50px;
 }
 
