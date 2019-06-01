@@ -2,6 +2,20 @@
 // Start the session
 session_start();
 // Create an array for the shopping cart in the session
+// Get the value from the action name - value pair
+ $action = filter_input(INPUT_POST, 'action');
+ if ($action == NULL){
+  $action = filter_input(INPUT_GET, 'action');
+ }
+ 
+ switch ($action){
+	 case 'Logout':
+   $_SESSION = [];
+   session_destroy();
+   break;
+  default:
+	 }
+ 
 if (!isset($_SESSION['shoppingCart'])) {
  $_SESSION['shoppingCart'] = array();
  $_SESSION['products'] = array();

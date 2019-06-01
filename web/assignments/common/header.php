@@ -15,10 +15,21 @@
 </div>
 </div>
 <div id="lowerblock">
-<div>
-</div>
-<div id="logInOrSignUp">
+<?php if(!($_SESSION['loggedin'])){
+	echo "<div>
+</div><div id="logInOrSignUp">
 <a href="logIn_page.php" title="a link to log in">Log In</a>
 <a href="signUp_page.php" title="a link to sign up">Sign Up</a>
-</div>
+</div>";
+} else {
+	echo '<div><p>You are logged in as ' . $_SESSION['username'] . '</p>
+</div><div id="logInOrSignUp">
+<a href="signUp_page.php" title="a link to account update page">Manage account</a>
+<a href="logIn_page.php" title="a link to log in">Log Out</a>
+
+</div>';
+}
+?>
+
+
 </div>
