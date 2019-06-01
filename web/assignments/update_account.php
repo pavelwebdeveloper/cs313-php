@@ -31,12 +31,14 @@ if (!isset($_SESSION['shoppingCart'])) {
    ?>
  <form method="post" action="update_account.php">
 <label for="userName">Full name:</label><br>
+<!--
 <input type="text" id="userName" name="userName" pattern="[A-Za-z ]{2,}" <?php if(isset($_SESSION['userData']['username'])) {echo "value='$_SESSION['userData']['username']'"; } ?> required><br>
 <label for="userEmail">E-mail:</label><br>
 <input type="email" id="userEmail" name="userEmail" placeholder="someone@gmail.com" pattern="[a-z0-9._%+-]+@[a-z0-9.]+\.[a-z]{2,}$" <?php if(isset($_SESSION['userData']['email'])) {echo "value='$_SESSION['userData']['email']'"; } ?> required><br>
 <input type="submit" value="Update Account">
 <input type="hidden" name="updateAccount" value="updateAccount">
 <input type="hidden" name="userId" value="<?php if(isset($_SESSION['userData']['id'])){echo $_SESSION['userData']['id'];} ?>">
+-->
 </form>
 <h2>Change Password</h2>
    <p>You can use this form to update your password. Entering and submitting a new password in this field you will change the current password.</p>
