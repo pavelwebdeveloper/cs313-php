@@ -19,8 +19,9 @@ background-color: #00BFFF;
 height: 50px;
 }
 
-header div#lowerblock div#logInOrSignUp {
-	
+header div#lowerblock div#logInOrSignUp a {
+	background-color: #000066;
+	color: white;
 }
 
 nav {
@@ -34,7 +35,7 @@ nav a {
 	height: 50px;
 	font-size: 25px;
 	margin-left: 10px;
-	
+	cursor: pointer;
 }
 
 
@@ -73,11 +74,13 @@ nav a {
 	color: blue;
 	height: 50px;
 	font-size: 20px;
+	cursor: pointer;
 }
 
 #products #flexlayout div#flexlayoutleft ul a:hover {
 	text-decoration: underline;
 	color: #8B008B;
+	cursor: pointer;
 }
 
 #products #flexlayout div#flexlayoutright {
@@ -89,7 +92,7 @@ nav a {
 	text-decoration: none;
 	color: black;
 	font-size: 25px;
-	
+	cursor: pointer;
 }
 
 
@@ -139,6 +142,7 @@ header div a {
 	color: white;
 	height: 50px;
 	font-size: 25px;
+	cursor: pointer;
 }
 
 header a:hover {
