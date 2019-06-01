@@ -94,10 +94,9 @@ echo "<br>";
 echo "<br>";
 echo "<br>";
 
-$selectST = $db->prepare('SELECT id FROM Scriptures WHERE content=:content');
-$selectST->bindValue(':content', $content, PDO::PARAM_STR);
+$selectST = $db->prepare('SELECT * FROM Scriptures_topic');
 $selectST->execute();
-$selectSTResult = $selectST->fetch(PDO::FETCH_ASSOC);
+$selectSTResult = $selectST->fetchAll(PDO::FETCH_ASSOC);
 echo "$selectSTResult Another";
 echo "<br>";
 var_dump($selectSTResult);
