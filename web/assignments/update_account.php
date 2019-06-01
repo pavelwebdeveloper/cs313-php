@@ -120,7 +120,7 @@ $userUpdatedData = $getUserUpdatedData->fetch(PDO::FETCH_ASSOC);
     exit;
    }
    
-} elseif (isset($_POST['updatePassword'])) {
+}/* elseif (isset($_POST['updatePassword'])) {
 	// Filter and store the password data
    $userPassword = filter_input(INPUT_POST, 'userPassword', FILTER_SANITIZE_STRING);
    $userId = filter_input(INPUT_POST, 'userId', FILTER_SANITIZE_NUMBER_INT);
@@ -152,7 +152,7 @@ $passwordUpdateOutcome = $passwordUpdate;
             header("Location: manage_account.php");
     exit;
    }
-}
+}*/
  ?>
  
  </main>
