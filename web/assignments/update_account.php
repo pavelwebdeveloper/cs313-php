@@ -133,7 +133,7 @@ $userUpdatedData = $getUserUpdatedData->fetch(PDO::FETCH_ASSOC);
    }
    
    // Hash the checked password
-   /*
+   
    $hashedPassword = password_hash($userPassword, PASSWORD_DEFAULT);
    
    // Send the data to the model
@@ -142,7 +142,7 @@ $userUpdatedData = $getUserUpdatedData->fetch(PDO::FETCH_ASSOC);
  $passwordUpdate->bindValue(':userId', $userId, PDO::PARAM_INT);
 $passwordUpdate->execute();
 $passwordUpdateOutcome = $passwordUpdate;
-}
+
  // Check and report the result
    if($passwordUpdateOutcome){
     $_SESSION['message'] = "<p class='messagesuccess'>Your password has been successfully updated.</p>";
@@ -152,7 +152,7 @@ $passwordUpdateOutcome = $passwordUpdate;
     $_SESSION['message'] = "<p>Sorry, but the password update failed. Please, try again.</p>";
             header("Location: manage_account.php");
     exit;
-   }*/
+   }
 }
  ?>
  
