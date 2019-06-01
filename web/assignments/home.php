@@ -12,6 +12,7 @@ session_start();
 	 case 'Logout':
    $_SESSION = [];
    session_destroy();
+   header("Location: home.php");
    break;
   default:
 	 }
