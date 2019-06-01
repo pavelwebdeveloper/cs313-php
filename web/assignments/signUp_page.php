@@ -42,6 +42,8 @@ if (!isset($_SESSION['shoppingCart'])) {
  </div>
  
  <?php
+ var_dump($_POST);
+  echo "<br>";
 if(isset($_POST['signUp'])) {
 	// Filter and store the data
    $userName = filter_input(INPUT_POST, 'userName', FILTER_SANITIZE_STRING);
@@ -50,9 +52,20 @@ if(isset($_POST['signUp'])) {
     // Check for missing data
    if(empty($userName) || empty($userEmail) || empty($userPassword)){
     $message = '<p>Please, provide information correctly for all form fields.</p>';
-    include 'signUp_page_page.php';
+	header("Location: signUp_page.php");
     exit;
    }
+   
+    var_dump($userName);
+	 echo "<br>";
+	  echo "<br>";
+	  var_dump($userName);
+	  echo "<br>";
+	  echo "<br>";
+	  var_dump($userName);
+	  echo "<br>";
+	  echo "<br>";
+	
    
    // Hash the checked password
    $hashedPassword = password_hash($userPassword, PASSWORD_DEFAULT);
