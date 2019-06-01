@@ -75,7 +75,7 @@ var_dump($userData);
 	  echo "<br>";
 	  echo "<br>";
 	  
-   
+   /*
    // Compare the password just submitted against
    // the hashed password for the matching client
    $hashCheck = password_verify($userPassword, $userData['userPassword']);
@@ -90,7 +90,7 @@ var_dump($userData);
     exit;
    }
    
-   
+   */
 }
 
  ?>
