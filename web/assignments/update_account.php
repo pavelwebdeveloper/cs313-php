@@ -52,6 +52,7 @@ if (!isset($_SESSION['shoppingCart'])) {
  <?php
  var_dump($_POST);
   echo "<br>";
+  /*
 if(isset($_POST['updateAccount'])) {
 	// Filter and store the data
    $userName = filter_input(INPUT_POST, 'userName', FILTER_SANITIZE_STRING);
@@ -144,7 +145,7 @@ $passwordUpdateOutcome = $passwordUpdate;
             header("Location: manage_account.php");
     exit;
    }
-
+*/
  ?>
  
  </main>
