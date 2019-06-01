@@ -47,8 +47,8 @@ if (!isset($_SESSION['shoppingCart'])) {
  
 if(isset($_POST('logIn'))) {
 	// Filter and store the data
-   $userEmail = filter_input(INPUT_POST, 'userEmail', FILTER_SANITIZE_EMAIL);
-   $userPassword = filter_input(INPUT_POST, 'userPassword', FILTER_SANITIZE_STRING);
+   //$userEmail = filter_input(INPUT_POST, 'userEmail', FILTER_SANITIZE_EMAIL);
+   //$userPassword = filter_input(INPUT_POST, 'userPassword', FILTER_SANITIZE_STRING);
 
    
   /* 
