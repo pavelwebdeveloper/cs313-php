@@ -67,7 +67,7 @@ if(isset($_POST['LogIn'])) {
    }
    
    // Query the client data based on the email address
-   $getUserData = $db->prepare('SELECT id, username, email, password FROM storeuser WHERE userEmail=:userEmail');
+   $getUserData = $db->prepare('SELECT id, username, email, password FROM storeuser WHERE email=:userEmail');
 $getUserData->bindValue(':userEmail', $userEmail, PDO::PARAM_STR);
 $getUserData->execute();
 $userData = $getUserData->fetch(PDO::FETCH_ASSOC);
