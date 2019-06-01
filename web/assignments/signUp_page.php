@@ -48,7 +48,7 @@ if(isset($_POST['signUp'])) {
    $userEmail = filter_input(INPUT_POST, 'userEmail', FILTER_SANITIZE_EMAIL);
    $userPassword = filter_input(INPUT_POST, 'userPassword', FILTER_SANITIZE_STRING);
     // Check for missing data
-   if(empty($userName) || empty($userEmail) || empty($userPassword))){
+   if(empty($userName) || empty($userEmail) || empty($userPassword)){
     $message = '<p>Please, provide information correctly for all form fields.</p>';
     include 'signUp_page_page.php';
     exit;
