@@ -42,7 +42,7 @@ if (!isset($_SESSION['shoppingCart'])) {
  </div>
  
  <?php
-if(isset($_POST('signUp'))) {
+if(isset($_POST['signUp'])) {
 	// Filter and store the data
    $userName = filter_input(INPUT_POST, 'userName', FILTER_SANITIZE_STRING);
    $userEmail = filter_input(INPUT_POST, 'userEmail', FILTER_SANITIZE_EMAIL);

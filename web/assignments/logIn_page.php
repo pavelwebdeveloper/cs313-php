@@ -45,13 +45,13 @@ if (!isset($_SESSION['shoppingCart'])) {
  
  <?php
  
-if(isset($_POST('logIn'))) {
+if(isset($_POST['logIn'])) {
 	// Filter and store the data
-   //$userEmail = filter_input(INPUT_POST, 'userEmail', FILTER_SANITIZE_EMAIL);
-   //$userPassword = filter_input(INPUT_POST, 'userPassword', FILTER_SANITIZE_STRING);
+   $userEmail = filter_input(INPUT_POST, 'userEmail', FILTER_SANITIZE_EMAIL);
+   $userPassword = filter_input(INPUT_POST, 'userPassword', FILTER_SANITIZE_STRING);
 
    
-  /* 
+   
    // Check for missing data
    if(empty($userEmail) || empty($userPassword)){
     $_SESSION['message'] = "<p>Please, provide a valid email address and password.</p>";
@@ -75,7 +75,7 @@ $userData = $getUserData->fetch(PDO::FETCH_ASSOC);
     include 'logIn_page.php';
     exit;
    }
-   */
+   
 }
 
  ?>
