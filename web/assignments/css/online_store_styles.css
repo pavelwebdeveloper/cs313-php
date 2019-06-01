@@ -1,8 +1,6 @@
 header {
 	display: flex;
 	flex-direction: coloumn;
-background-color: #000066;
-height: 50px;
 }
 
 header div#upperblock{
@@ -19,6 +17,10 @@ header div#lowerblock{
 	justify-content: space-between;
 background-color: #00BFFF;
 height: 50px;
+}
+
+header div#lowerblock div#logInOrSignUp {
+	
 }
 
 nav {
