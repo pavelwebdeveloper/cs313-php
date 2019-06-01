@@ -99,7 +99,7 @@ $findEmail = $alreadyexistingEmail->fetch(PDO::FETCH_ASSOC);
 $updateAccount->bindValue(':useremail', $userEmail, PDO::PARAM_STR);
  $updateAccount->bindValue(':userId', $userId, PDO::PARAM_INT);
 $updateAccount->execute();
-$updateAccountOutcome = $updateAccount;
+$updateAccountOutcome = $updateAccount->rowCount();
    
    // Check and report the result
    if($updateAccountOutcome === 1){
@@ -141,7 +141,7 @@ $userUpdatedData = $getUserUpdatedData->fetch(PDO::FETCH_ASSOC);
  $passwordUpdate->bindValue(':password', $hashedPassword, PDO::PARAM_STR);
  $passwordUpdate->bindValue(':userId', $userId, PDO::PARAM_INT);
 $passwordUpdate->execute();
-$passwordUpdateOutcome = $passwordUpdate;
+$passwordUpdateOutcome = $passwordUpdate->rowCount();
 
  // Check and report the result
    if($passwordUpdateOutcome){
