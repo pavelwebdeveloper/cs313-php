@@ -136,15 +136,18 @@ $userUpdatedData = $getUserUpdatedData->fetch(PDO::FETCH_ASSOC);
    // Hash the checked password
    
    $hashedPassword = password_hash($userPassword, PASSWORD_DEFAULT);
+   var_dump($hashedPassword);
+  echo "<br>";
    
    // Send the data to the model
    $passwordUpdate = $db->prepare('UPDATE storeuser SET password = :password WHERE id = :userId'); 
+   var_dump($passwordUpdate);
+  echo "<br>";
  $passwordUpdate->bindValue(':password', $hashedPassword, PDO::PARAM_STR);
  $passwordUpdate->bindValue(':userId', $userId, PDO::PARAM_INT);
 $passwordUpdate->execute();
 $passwordUpdateOutcome = $passwordUpdate->rowCount();
-var_dump($passwordUpdateOutcome);
-  echo "<br>";
+
   
 
  // Check and report the result
