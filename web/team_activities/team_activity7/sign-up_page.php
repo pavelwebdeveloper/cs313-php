@@ -26,7 +26,7 @@ session_start();
 <input type="text" id="userName" name="userName" pattern="[A-Za-z ]{3,}" required><br>
 <label for="userPassword">Password:</label><br>
 <span class="passworddescription">Passwords must be at least 7 characters and contain at least 1 number</span><br>
-<input type="password" name="userPassword" id="userPassword" pattern="(?=^.{7,}$)(?=.*\d)(?=.*[A-Z])(?=.*[a-z]).*$" required><br><br>
+<input type="password" name="userPassword" id="userPassword" pattern="([\d+]{1,})([A-Za-z]{7,})" required><br><br>
 <input type="submit" value="Sign Up">
 <input type="hidden" name="SignUp" value="signUp">
 </form>
