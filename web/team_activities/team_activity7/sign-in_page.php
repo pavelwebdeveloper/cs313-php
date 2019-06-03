@@ -73,7 +73,7 @@ if(isset($_POST['LogIn'])) {
 	echo "<br>";
 	echo "<br>";
 	echo "<br>";
-$getUser->bindValue(':username', $userName, PDO::PARAM_STR);
+$getUser->bindValue(':userName', $userName, PDO::PARAM_STR);
 $getUser->execute();
 $userData = $getUser->fetch(PDO::FETCH_ASSOC);
 
