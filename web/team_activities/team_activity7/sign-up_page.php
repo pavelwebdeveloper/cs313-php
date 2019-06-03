@@ -21,7 +21,7 @@ session_start();
     echo $_SESSION['message'];
    }
    ?>
- <form method="post" action="signup_page.php">
+ <form method="post" action="sign-up_page.php">
 <label for="userName">Name:</label><br>
 <input type="text" id="userName" name="userName" pattern="[A-Za-z ]{3,}" required><br>
 <label for="userPassword">Password:</label><br>

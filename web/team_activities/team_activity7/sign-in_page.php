@@ -21,7 +21,7 @@ session_start();
     echo $_SESSION['message'];
    }
    ?>
- <form method="post" action="login_page.php">
+ <form method="post" action="sign-in_page.php">
  <label for="userName">Name:</label><br>
 <input type="text" id="userName" name="userName" pattern="[A-Za-z ]{2,}" <?php if(isset($userName)){echo "value='$userName'";} ?> required><br>
 <label for="userPassword">Password:</label><br>
