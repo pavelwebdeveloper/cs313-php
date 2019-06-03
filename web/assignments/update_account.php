@@ -1,4 +1,5 @@
 <?php
+if(!($_SESSION['loggedin'])){header('Location: home.php');}
 // Start the session
 session_start();
 // Create an array for the shopping cart in the session
@@ -142,6 +143,9 @@ $userUpdatedData = $getUserUpdatedData->fetch(PDO::FETCH_ASSOC);
  $passwordUpdate->bindValue(':userId', $userId, PDO::PARAM_INT);
 $passwordUpdate->execute();
 $passwordUpdateOutcome = $passwordUpdate->rowCount();
+var_dump($passwordUpdateOutcome);
+  echo "<br>";
+  
 
  // Check and report the result
    if($passwordUpdateOutcome){
