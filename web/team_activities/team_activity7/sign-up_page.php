@@ -40,6 +40,14 @@ if(isset($_POST['SignUp'])) {
     
    $pattern = '/^(?=.*[[:digit:]])(?=.*[A-Z])(?=.*[a-z]){7,}$/';
  $checkedUserPassword = preg_match($pattern, $userPassword);
+ 
+ // If the password doesn't match the pattern
+   // and return to the login view
+   if($checkedUserPassword == 0) {
+    $_SESSION['message'] = "<p class='messagefailure'>Please, check your password and try again.</p>";
+    header("Location: sign-in_page.php");
+    exit;
+   }
        
    // Hash the checked password
    $hashedPassword = password_hash($checkedUserPassword, PASSWORD_DEFAULT);
