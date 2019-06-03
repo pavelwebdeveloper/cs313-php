@@ -22,7 +22,7 @@ session_start();
    }
    ?>
  <form method="post" action="login_page.php">
- <label for="userName">Full name:</label><br>
+ <label for="userName">Name:</label><br>
 <input type="text" id="userName" name="userName" pattern="[A-Za-z ]{2,}" <?php if(isset($userName)){echo "value='$userName'";} ?> required><br>
 <label for="userPassword">Password:</label><br>
 <input type="password" name="userPassword" id="userPassword" pattern="(?=^.{7,}$)(?=.*\d).*$" required><br><br>

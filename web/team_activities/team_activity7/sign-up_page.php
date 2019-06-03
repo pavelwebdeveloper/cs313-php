@@ -22,10 +22,10 @@ session_start();
    }
    ?>
  <form method="post" action="signup_page.php">
-<label for="userName">Full name:</label><br>
-<input type="text" id="userName" name="userName" pattern="[A-Za-z ]{2,}" required><br>
+<label for="userName">Name:</label><br>
+<input type="text" id="userName" name="userName" pattern="[A-Za-z ]{3,}" required><br>
 <label for="userPassword">Password:</label><br>
-<span class="passworddescription">Passwords must be at least 7 characters and contain at least 1 number</span>
+<span class="passworddescription">Passwords must be at least 7 characters and contain at least 1 number</span><br>
 <input type="password" name="userPassword" id="userPassword" pattern="(?=^.{7,}$)(?=.*\d).*$" required><br><br>
 <input type="submit" value="Sign Up">
 <input type="hidden" name="SignUp" value="signUp">
@@ -33,8 +33,6 @@ session_start();
  </div>
  
  <?php
- var_dump($_POST);
-  echo "<br>";
 if(isset($_POST['SignUp'])) {
 	// Filter and store the data
    $userName = filter_input(INPUT_POST, 'userName', FILTER_SANITIZE_STRING);
