@@ -35,7 +35,7 @@ if (!isset($_SESSION['shoppingCart'])) {
 
 <input type="text" id="userName" name="userName" pattern="[A-Za-z ]{2,}" value="<?php if(isset($_SESSION['userData']['username'])){echo $_SESSION['userData']['username'];} ?>" required><br>
 <label for="userEmail">E-mail:</label><br>
-<input type="email" id="userEmail" name="userEmail" placeholder="someone@gmail.com" pattern="[a-z0-9._%+-]+@[a-z0-9.]+\.[a-z]{2,}$" value="<?php if(isset($_SESSION['userData']['email'])){echo $_SESSION['userData']['email'];} ?>" required><br>
+<input type="email" id="userEmail" name="userEmail" placeholder="someone@gmail.com" pattern="[a-z0-9._%+-]+@[a-z0-9.]+\.[a-z]{2,}$" value="<?php if(isset($_SESSION['userData']['email'])){echo $_SESSION['userData']['email'];} ?>" required><br><br>
 <input type="submit" value="Update Account">
 <input type="hidden" name="updateAccount" value="updateAccount">
 <input type="hidden" name="userId" value="<?php if(isset($_SESSION['userData']['id'])){echo $_SESSION['userData']['id'];} ?>">
@@ -44,7 +44,7 @@ if (!isset($_SESSION['shoppingCart'])) {
    <p>You can use this form to update your password. Entering and submitting a new password in this field you will change the current password.</p>
 <form method="post" action="update_account.php">
 <label for="userPassword">Password:</label><br>
-<span class="passworddescription">Passwords must be at least 8 characters and contain at least 1 number, 1 capital letter, 1 lower case letter and 1 special character</span>
+<span class="passworddescription">Passwords must be at least 8 characters and contain at least 1 number, 1 capital letter, 1 lower case letter and 1 special character</span><br>
 <input type="password" name="userPassword" id="userPassword" pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required><br><br>
 <input type="submit" value="Change Password">
 <input type="hidden" name="updatePassword" value="updatePassword">
