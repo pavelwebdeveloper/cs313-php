@@ -52,7 +52,7 @@ if(isset($_POST['SignUp'])) {
    $userPassword = filter_input(INPUT_POST, 'userPassword', FILTER_SANITIZE_STRING);
     // Check for missing data
    if(empty($userName) || empty($userEmail) || empty($userPassword)){
-    $message = '<p>Please, provide information correctly for all form fields.</p>';
+    $message = '<p class="messagefailure">Please, provide information correctly for all form fields.</p>';
 	header("Location: signup_page.php");
     exit;
    }
@@ -76,11 +76,11 @@ $signUpOutcome = $stmt->rowCount();
    
    // Check and report the result and create the cookie when the individual registers with the site
    if($signUpOutcome === 1){
-    $_SESSION['message'] = "<p>Thanks for registering. Please, use your email and password to login.</p>";
+    $_SESSION['message'] = "<p class='messagesuccess'>Thanks for registering. Please, use your email and password to login.</p>";
     header("Location: login_page.php");
    exit;
    } else {
-    $message = "<p>Sorry, but the registration failed. Please, try again.</p>";
+    $message = "<p class='messagefailure'>Sorry, but the registration failed. Please, try again.</p>";
 	header("Location: signup_page.php");
     exit;
    }

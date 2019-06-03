@@ -54,7 +54,7 @@ if(isset($_POST['LogIn'])) {
    
    // Check for missing data
    if(empty($userEmail) || empty($userPassword)){
-    $_SESSION['message'] = "<p>Please, provide a valid email address and password.</p>";
+    $_SESSION['message'] = "<p class='messagefailure'>Please, provide a valid email address and password.</p>";
 	header("Location: login_page.php");
     exit;
    }
@@ -75,7 +75,7 @@ $userData = $getUserData->fetch(PDO::FETCH_ASSOC);
    // If the hashes don't match create an error
    // and return to the login view
    if(!$hashCheck) {
-    $_SESSION['message'] = "<p>Please, check your password and try again.</p>";
+    $_SESSION['message'] = "<p class='messagefailure'>Please, check your password and try again.</p>";
     header("Location: login_page.php");
     exit;
    }
