@@ -44,25 +44,18 @@ if (!isset($_SESSION['shoppingCart'])) {
  </div>
  
  <?php
- var_dump($_POST);
-  echo "<br>";
-	  echo "<br>";
+ 
 if(isset($_POST['LogIn'])) {
 	// Filter and store the data
    $userEmail = filter_input(INPUT_POST, 'userEmail', FILTER_SANITIZE_EMAIL);
    $userPassword = filter_input(INPUT_POST, 'userPassword', FILTER_SANITIZE_STRING);
 
-   var_dump($userEmail);
-	  echo "<br>";
-	  echo "<br>";
-	  var_dump($userPassword);
-	  echo "<br>";
-	  echo "<br>";
+   
    
    // Check for missing data
    if(empty($userEmail) || empty($userPassword)){
     $_SESSION['message'] = "<p>Please, provide a valid email address and password.</p>";
-	header("Location: logIn_page.php");
+	header("Location: login_page.php");
     exit;
    }
    
@@ -71,23 +64,19 @@ if(isset($_POST['LogIn'])) {
 $getUserData->bindValue(':userEmail', $userEmail, PDO::PARAM_STR);
 $getUserData->execute();
 $userData = $getUserData->fetch(PDO::FETCH_ASSOC);
-var_dump($userData);
-	  echo "<br>";
-	  echo "<br>";
+
 	  
    
    // Compare the password just submitted against
    // the hashed password for the matching client
    $hashCheck = password_verify($userPassword, $userData['password']);
-   var_dump($hashCheck);
-	  echo "<br>";
-	  echo "<br>";
+   
 	  
    // If the hashes don't match create an error
    // and return to the login view
    if(!$hashCheck) {
     $_SESSION['message'] = "<p>Please, check your password and try again.</p>";
-    header("Location: logIn_page.php");
+    header("Location: login_page.php");
     exit;
    }
     // A valid user exists, log them in

@@ -53,21 +53,11 @@ if(isset($_POST['SignUp'])) {
     // Check for missing data
    if(empty($userName) || empty($userEmail) || empty($userPassword)){
     $message = '<p>Please, provide information correctly for all form fields.</p>';
-	header("Location: signUp_page.php");
+	header("Location: signup_page.php");
     exit;
    }
    
-    var_dump($userName);
-	 echo "<br>";
-	  echo "<br>";
-	  var_dump($userEmail);
-	  echo "<br>";
-	  echo "<br>";
-	  var_dump($userPassword);
-	  echo "<br>";
-	  echo "<br>";
-	
-   
+       
    // Hash the checked password
    $hashedPassword = password_hash($userPassword, PASSWORD_DEFAULT);
    var_dump($hashedPassword);
@@ -80,22 +70,18 @@ if(isset($_POST['SignUp'])) {
 $stmt->bindValue(':useremail', $userEmail, PDO::PARAM_STR);
  $stmt->bindValue(':userpassword', $hashedPassword, PDO::PARAM_STR);
 $stmt->execute();
-var_dump($stmt);
-	  echo "<br>";
-	  echo "<br>";
+
 $signUpOutcome = $stmt->rowCount();
-var_dump($signUpOutcome);
-	  echo "<br>";
-	  echo "<br>";
+
    
    // Check and report the result and create the cookie when the individual registers with the site
    if($signUpOutcome === 1){
     $_SESSION['message'] = "<p>Thanks for registering. Please, use your email and password to login.</p>";
-    header("Location: logIn_page.php");
+    header("Location: login_page.php");
    exit;
    } else {
     $message = "<p>Sorry, but the registration failed. Please, try again.</p>";
-	header("Location: signUp_page.php");
+	header("Location: signup_page.php");
     exit;
    }
    

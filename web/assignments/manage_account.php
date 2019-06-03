@@ -1,7 +1,7 @@
 <?php
-if(!($_SESSION['loggedin'])){header('Location: home.php');}
 // Start the session
 session_start();
+if(!($_SESSION['loggedin'])){header('Location: home.php');}
 // Create an array for the shopping cart in the session
 if (!isset($_SESSION['shoppingCart'])) {
  $_SESSION['shoppingCart'] = array();

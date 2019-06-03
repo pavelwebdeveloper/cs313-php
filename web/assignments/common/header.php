@@ -18,8 +18,8 @@
 <?php if(!($_SESSION['loggedin'])){
 	echo '<div>
 </div><div id="logInOrSignUp">
-<a href="logIn_page.php" title="a link to log in">Log In</a>
-<a href="signUp_page.php" title="a link to sign up">Sign Up</a>
+<a href="login_page.php" title="a link to log in">Log In</a>
+<a href="signup_page.php" title="a link to sign up">Sign Up</a>
 </div>';
 } else {
 	echo '<div><p>You are logged in as ' . $_SESSION['userData']['username'] . '</p>
