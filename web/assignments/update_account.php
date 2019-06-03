@@ -48,6 +48,7 @@ if (!isset($_SESSION['shoppingCart'])) {
 <input type="password" name="userPassword" id="userPassword" pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required><br><br>
 <input type="submit" value="Change Password">
 <input type="hidden" name="updatePassword" value="updatePassword">
+<input type="hidden" name="userId" value="<?php if(isset($_SESSION['userData']['id'])){echo $_SESSION['userData']['id'];} ?>">
 </form>
  </div>
  
