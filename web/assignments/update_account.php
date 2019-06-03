@@ -53,14 +53,6 @@ if (!isset($_SESSION['shoppingCart'])) {
  </div>
  
  <?php
- var_dump($_POST);
-  echo "<br>";
-  var_dump($_SESSION['userData']['username']);
-  echo "<br>";
-  var_dump($_SESSION['userData']['email']);
-  echo "<br>";
-  var_dump($_SESSION['userData']['id']);
-  echo "<br>";
   
 if(isset($_POST['updateAccount'])) {
 	
@@ -137,14 +129,10 @@ $userUpdatedData = $getUserUpdatedData->fetch(PDO::FETCH_ASSOC);
    // Hash the checked password
    
    $hashedPassword = password_hash($userPassword, PASSWORD_DEFAULT);
-   var_dump($hashedPassword);
-  echo "<br>";
    
    // Send the data to the model
    $passwordUpdate = $db->prepare('UPDATE storeuser SET password = :password WHERE id = :userId'); 
-   var_dump($passwordUpdate);
-  echo "<br>";
- $passwordUpdate->bindValue(':password', $hashedPassword, PDO::PARAM_STR);
+    $passwordUpdate->bindValue(':password', $hashedPassword, PDO::PARAM_STR);
  $passwordUpdate->bindValue(':userId', $userId, PDO::PARAM_INT);
 $passwordUpdate->execute();
 $passwordUpdateOutcome = $passwordUpdate->rowCount();
@@ -157,7 +145,7 @@ $passwordUpdateOutcome = $passwordUpdate->rowCount();
     header("Location: update_account.php");
    exit;
    } else {
-    $_SESSION['message'] = "<p>Sorry, but the password update failed. Please, try again.</p>";
+    $_SESSION['message'] = "<p class='messagefailure'>Sorry, but the password update failed. Please, try again.</p>";
             header("Location: update_account.php");
     exit;
    }
