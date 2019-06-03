@@ -78,6 +78,10 @@ $userData = $getUserData->fetch(PDO::FETCH_ASSOC);
    // Compare the password just submitted against
    // the hashed password for the matching client
    $hashCheck = password_verify($checkedUserPassword, $userData['password']);
+   var_dump($hashCheck);
+	echo "<br>";
+	echo "<br>";
+	echo "<br>";
    
 	  
    // If the hashes don't match create an error
