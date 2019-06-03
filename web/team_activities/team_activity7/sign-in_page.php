@@ -69,13 +69,14 @@ if(isset($_POST['LogIn'])) {
    
    // Query the client data based on the email address
    $getUserData = $db->prepare('SELECT id, username, password FROM useraccounts WHERE username=:userName');
+   var_dump($userData);
+	echo "<br>";
+	echo "<br>";
+	echo "<br>";
 $getUserData->bindValue(':username', $userName, PDO::PARAM_STR);
 $getUserData->execute();
 $userData = $getUserData->fetch(PDO::FETCH_ASSOC);
-var_dump($userData);
-	echo "<br>";
-	echo "<br>";
-	echo "<br>";
+
 	  
    
    // Compare the password just submitted against
