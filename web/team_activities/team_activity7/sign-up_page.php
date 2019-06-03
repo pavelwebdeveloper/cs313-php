@@ -45,7 +45,7 @@ if(isset($_POST['SignUp'])) {
    // and return to the login view
    if($checkedUserPassword == 0) {
     $_SESSION['message'] = "<p class='messagefailure'>Please, check your password and try again.</p>";
-    header("Location: sign-in_page.php");
+    header("Location: sign-up_page.php");
     exit;
    }
        
