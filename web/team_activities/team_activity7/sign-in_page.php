@@ -72,7 +72,10 @@ if(isset($_POST['LogIn'])) {
 $getUserData->bindValue(':username', $userName, PDO::PARAM_STR);
 $getUserData->execute();
 $userData = $getUserData->fetch(PDO::FETCH_ASSOC);
-
+var_dump($userData);
+	echo "<br>";
+	echo "<br>";
+	echo "<br>";
 	  
    
    // Compare the password just submitted against
