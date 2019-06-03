@@ -50,7 +50,7 @@ if(isset($_POST['SignUp'])) {
    }
        
    // Hash the checked password
-   $hashedPassword = password_hash($checkedUserPassword, PASSWORD_DEFAULT);
+   $hashedPassword = password_hash($userPassword, PASSWORD_DEFAULT);
   
    
    
