@@ -38,7 +38,7 @@ if(isset($_POST['SignUp'])) {
    $userName = filter_input(INPUT_POST, 'userName', FILTER_SANITIZE_STRING);
    $userPassword = filter_input(INPUT_POST, 'userPassword', FILTER_SANITIZE_STRING);
     
-   $pattern = '/^(?=.*[[:digit:]])(?=.*[A-Z])(?=.*[a-z]){7,}$/';
+   $pattern = '/([\d+]{1,})([A-Za-z]{7,})/';
  $checkedUserPassword = preg_match($pattern, $userPassword);
  
  // If the password doesn't match the pattern
