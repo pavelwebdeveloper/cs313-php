@@ -4,7 +4,7 @@
  $db = dbConnection();
 // Start the session
 session_start();
-//if(!($_SESSION['loggedin'])){header('Location: sign-in_page.php');}
+if(!($_SESSION['loggedin'])){header('Location: sign-in_page.php');}
 ?>
 <!DOCTYPE html>
 <html lang="en-us">
