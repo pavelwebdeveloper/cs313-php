@@ -25,7 +25,7 @@ session_start();
  <label for="userName">Name:</label><br>
 <input type="text" id="userName" name="userName" pattern="[A-Za-z ]{2,}" <?php if(isset($userName)){echo "value='$userName'";} ?> required><br>
 <label for="userPassword">Password:</label><br>
-<input type="password" name="userPassword" id="userPassword" pattern="(?=^.{7,}$)(?=.*\d).*$" required><br><br>
+<input type="password" name="userPassword" id="userPassword" pattern="(?=^.{7,}$)(?=.*\d)(?=.*[A-Z])(?=.*[a-z]).*$" required><br><br>
 <input class="submitButton" type="submit" value="Log in">
 <input type="hidden" name="LogIn" value="logIn">
 <br>
@@ -43,6 +43,19 @@ if(isset($_POST['LogIn'])) {
 
    $pattern = '/^(?=.*[[:digit:]])(?=.*[A-Z])(?=.*[a-z]){7,}$/';
  $checkedUserPassword = preg_match($pattern, $userPassword);
+ 
+ var_dump($userName);
+	echo "<br>";
+	echo "<br>";
+	echo "<br>";
+	var_dump($userPassword);
+	echo "<br>";
+	echo "<br>";
+	echo "<br>";
+	var_dump($checkedUserPassword);
+	echo "<br>";
+	echo "<br>";
+	echo "<br>";
    
    
    
