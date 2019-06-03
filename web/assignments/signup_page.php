@@ -29,7 +29,7 @@ if (!isset($_SESSION['shoppingCart'])) {
     echo $_SESSION['message'];
    }
    ?>
- <form method="post" action="signUp_page.php">
+ <form method="post" action="signup_page.php">
 <label for="userName">Full name:</label><br>
 <input type="text" id="userName" name="userName" pattern="[A-Za-z ]{2,}" required><br>
 <label for="userEmail">E-mail:</label><br>
