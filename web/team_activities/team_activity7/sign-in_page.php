@@ -25,7 +25,7 @@ session_start();
  <label for="userName">Name:</label><br>
 <input type="text" id="userName" name="userName" pattern="[A-Za-z ]{2,}" <?php if(isset($userName)){echo "value='$userName'";} ?> required><br>
 <label for="userPassword">Password:</label><br>
-<input type="password" name="userPassword" id="userPassword" pattern="([\d+]{1,})([A-Za-z]{7,})" required><br><br>
+<input type="password" name="userPassword" id="userPassword" pattern="([\d+]{1,}[A-Za-z]{7,})" required><br><br>
 <input class="submitButton" type="submit" value="Log in">
 <input type="hidden" name="LogIn" value="logIn">
 <br>
@@ -41,7 +41,7 @@ if(isset($_POST['LogIn'])) {
    $userName = filter_input(INPUT_POST, 'userName', FILTER_SANITIZE_STRING);
    $userPassword = filter_input(INPUT_POST, 'userPassword', FILTER_SANITIZE_STRING);
 
-   $pattern = '/([\d+]{1,})([A-Za-z]{7,})/';
+   $pattern = '/([\d+]{1,}[A-Za-z]{7,})/';
  $checkedUserPassword = preg_match($pattern, $userPassword);
  
  // If the password doesn't match the pattern

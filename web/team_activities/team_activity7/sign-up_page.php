@@ -26,7 +26,7 @@ session_start();
 <input type="text" id="userName" name="userName" pattern="[A-Za-z ]{3,}" required><br>
 <label for="userPassword">Password:</label><br>
 <span class="passworddescription">Passwords must be at least 7 characters and contain at least 1 number</span><br>
-<input type="password" name="userPassword" id="userPassword" pattern="([\d+]{1,})([A-Za-z]{7,})" required><br><br>
+<input type="password" name="userPassword" id="userPassword" pattern="([\d+]{1,}[A-Za-z]{7,})" required><br><br>
 <input type="submit" value="Sign Up">
 <input type="hidden" name="SignUp" value="signUp">
 </form>
@@ -38,7 +38,7 @@ if(isset($_POST['SignUp'])) {
    $userName = filter_input(INPUT_POST, 'userName', FILTER_SANITIZE_STRING);
    $userPassword = filter_input(INPUT_POST, 'userPassword', FILTER_SANITIZE_STRING);
     
-   $pattern = '/([\d+]{1,})([A-Za-z]{7,})/';
+   $pattern = '/([\d+]{1,}[A-Za-z]{7,})/';
  $checkedUserPassword = preg_match($pattern, $userPassword);
  
  // If the password doesn't match the pattern
