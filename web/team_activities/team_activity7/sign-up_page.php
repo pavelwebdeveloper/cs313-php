@@ -50,6 +50,8 @@ session_start();
  var b = document.getElementById("duplicateUserPassword").value;
  if (a != b) {
 	 document.getElementById("message").innerHTML = "The passwords that you have entered do not match. Please, check your password and try again.";
+ } else {
+	 document.getElementById("message").innerHTML = "The passwords that you have entered match.";
  }
  }
  </script>
