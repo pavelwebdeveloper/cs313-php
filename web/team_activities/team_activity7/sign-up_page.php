@@ -53,10 +53,10 @@ session_start();
 	 document.getElementById("message").style.color = "red";
 	 document.getElementById("asterix").innerHTML = "*";
 	 document.getElementById("asterix").style.color = "red";
- } //else {
-	// document.getElementById("message").innerHTML = "The passwords that you have entered match.";
-	// document.getElementById("message").style.color = "green";
- //}
+ } else {
+	document.getElementById("message").innerHTML = "";
+	document.getElementById("asterix").innerHTML = "";
+ }
  }
  </script>
  
