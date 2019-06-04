@@ -26,22 +26,33 @@ session_start();
     echo $_SESSION['nomatchmessage'];
    }
    ?>
+   <p id="message"></p>
  <form method="post" action="sign-up_page.php">
 <label for="userName">Name:</label><br>
 <input type="text" id="userName" name="userName" pattern="[A-Za-z ]{3,}" required><br>
 <label for="userPassword">Password:</label><br>
 <span class="passworddescription">Password must be at least 7 characters and contain at least 1 number</span><br>
-<input type="password" name="userPassword" id="userPassword" pattern="[A-Za-z\d]{7,}" required><?php if(isset($_SESSION['nomatchmessage'])) {
+<input onchange="myFunction()" type="password" name="userPassword" id="userPassword" pattern="[A-Za-z\d]{7,}" required><?php if(isset($_SESSION['nomatchmessage'])) {
 	echo '<span style="color:red">*</span>';
 } ?><br><br>
 <label for="duplicateUserPassword">Please, input the password one more time:</label><br>
-<input type="password" name="duplicateUserPassword" id="duplicateUserPassword" pattern="[A-Za-z\d]{7,}" required><?php if(isset($_SESSION['nomatchmessage'])) {
+<input onchange="myFunction()" type="password" name="duplicateUserPassword" id="duplicateUserPassword" pattern="[A-Za-z\d]{7,}" required><?php if(isset($_SESSION['nomatchmessage'])) {
 	echo '<span style="color:red">*</span>';
 } ?><br><br>
 <input type="submit" value="Sign Up">
 <input type="hidden" name="SignUp" value="signUp">
 </form>
  </div>
+ 
+ <script>
+ function myFunction() {
+ var a = document.getElementById("userPassword").value;
+ var b = document.getElementById("duplicateUserPassword").value;
+ if (a != b) {
+	 document.getElementById("message").innerHTML = "The passwords that you have entered do not match. Please, check your password and try again.";
+ }
+ }
+ </script>
  
  <?php
 if(isset($_POST['SignUp'])) {
