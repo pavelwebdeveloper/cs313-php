@@ -30,7 +30,7 @@ session_start();
 <label for="userName">Name:</label><br>
 <input type="text" id="userName" name="userName" pattern="[A-Za-z ]{3,}" required><br>
 <label for="userPassword">Password:</label><br>
-<span class="passworddescription">Passwords must be at least 7 characters and contain at least 1 number</span><br>
+<span class="passworddescription">Password must be at least 7 characters and contain at least 1 number</span><br>
 <input type="password" name="userPassword" id="userPassword" pattern="[A-Za-z\d]{7,}" required><?php if(isset($_SESSION['nomatchmessage'])) {
 	echo '<span style="color:red">*</span>';
 } ?><br><br>
@@ -52,6 +52,8 @@ if(isset($_POST['SignUp'])) {
    
    if ($userPassword != $duplicateUserPassword) {
 	   $_SESSION['nomatchmessage'] = "<p class='messagefailure' style='color:red'>The passwords that you have entered do not match. Please, check your password and try again.</p>";
+	   header("Location: sign-up_page.php");
+    exit;
    }
     
    $pattern = '/[A-Za-z\d]{7,}/';
