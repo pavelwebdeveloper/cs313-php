@@ -32,11 +32,11 @@ session_start();
 <input type="text" id="userName" name="userName" pattern="[A-Za-z ]{3,}" required><br>
 <label for="userPassword">Password:</label><br>
 <span class="passworddescription">Password must be at least 7 characters and contain at least 1 number</span><br>
-<input oninput="myFunction()" type="password" name="userPassword" id="userPassword" pattern="[A-Za-z0-9]{7,}" required><p class="asterix"></p><?php if(isset($_SESSION['nomatchmessage'])) {
+<input oninput="myFunction()" type="password" name="userPassword" id="userPassword" pattern="[A-Za-z0-9]{7,}" required><span class="asterix"></span><?php if(isset($_SESSION['nomatchmessage'])) {
 	echo '<span style="color:red">*</span>';
 } ?><br><br>
 <label for="duplicateUserPassword">Please, input the password one more time:</label><br>
-<input oninput="myFunction()" type="password" name="duplicateUserPassword" id="duplicateUserPassword" pattern="[A-Za-z0-9]{7,}" required><p class="asterix"></p><?php if(isset($_SESSION['nomatchmessage'])) {
+<input oninput="myFunction()" type="password" name="duplicateUserPassword" id="duplicateUserPassword" pattern="[A-Za-z0-9]{7,}" required><span class="asterix"></span><?php if(isset($_SESSION['nomatchmessage'])) {
 	echo '<span style="color:red">*</span>';
 } ?><br><br>
 <input type="submit" value="Sign Up">
@@ -51,11 +51,11 @@ session_start();
  if (a != b) {
 	 document.getElementById("message").innerHTML = "The passwords that you have entered do not match. Please, check your passwords and try again.";
 	 document.getElementById("message").style.color = "red";
-	 document.getElementById("asterix").innerHTML = "*";
-	 document.getElementById("asterix").style.color = "red";
+	 document.getElementByClassName("asterix").innerHTML = "*";
+	 document.getElementByClassName("asterix").style.color = "red";
  } else {
 	document.getElementById("message").innerHTML = "";
-	document.getElementById("asterix").innerHTML = "";
+	document.getElementByClassName("asterix").innerHTML = "";
  }
  }
  </script>
