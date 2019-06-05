@@ -40,7 +40,7 @@ if(isset($_POST['LogIn'])) {
 	// Filter and store the data
    $userName = filter_input(INPUT_POST, 'userName', FILTER_SANITIZE_STRING);
    $userPassword = filter_input(INPUT_POST, 'userPassword', FILTER_SANITIZE_STRING);
-/*
+
    $pattern = '/[A-Za-z\d]{7,}/';
  $checkedUserPassword = preg_match($pattern, $userPassword);
  
@@ -51,7 +51,7 @@ if(isset($_POST['LogIn'])) {
     header("Location: sign-in_page.php");
     exit;
    }
-   */
+   
  
  var_dump($userName);
 	echo "<br>";
