@@ -35,14 +35,51 @@ if (!isset($_SESSION['shoppingCart'])) {
    ?>
    <form action="manage_departmentgroup.php" method="post">
     <fieldset>
-     <label for="departmentName">New Department Name</label>
-     <input type="text" name="departmentName" id="departmentName" pattern="[A-Z][a-z]{3,}" required>
+	<legend>Add or remove product department</legend>
+     <label for="departmentName">Department Name</label>
+     <input type="text" name="departmentName" id="departmentName" pattern="[A-Z][a-z]{3,}" required><br>
      <input class="submitBtn" type="submit" value="Add Department">
      <!-- Add the action name - value pair -->
      <input type="hidden" name="action" value="newDepartment">
 	 <input class="submitBtn" type="submit" value="Remove Department">
      <!-- Add the action name - value pair -->
      <input type="hidden" name="action" value="removeDepartment">
+    </fieldset>
+   </form>
+   
+   <form action="manage_departmentgroup.php" method="post">
+    <fieldset>
+	<legend>Add or remove product group</legend>
+	<?php
+	// Query the product department data based on the email address
+   $getDepartment = $db->prepare('SELECT * FROM productdepartment');
+$getDepartment->execute();
+$departments = $getDepartment->fetchAll(PDO::FETCH_ASSOC);
+	// Build a dynamic drop-down select list using the $categories array
+ $departmentList .= '<select name="departmentId" id="departmentId">';
+ $departmentList .= '<option disabled selected>Choose a department</option>';
+ foreach ($departments as $department) {
+ /*$catList .= "<option value=".urlencode($category['categoryId']).">".urlencode($category['categoryName'])."</option>";*/
+  $departmentList .= "<option value='$department[id]'";
+  if(isset($departmentId)) {
+   
+   if($department['id'] === $departmentId){
+    $departmentList .= ' selected ';
+   }
+  }
+  
+  $departmentList .= ">$department[productdepartmentname]</option>";
+ }
+ $departmentList .= '</select>';
+ ?>
+     <label for="productGroupName">Product Group Name</label>
+     <input type="text" name="productGroupName" id="productGroupName" pattern="[A-Z][a-z]{3,}" required><br>
+     <input class="submitBtn" type="submit" value="Add Product Group">
+     <!-- Add the action name - value pair -->
+     <input type="hidden" name="action" value="newProductGroup">
+	 <input class="submitBtn" type="submit" value="Remove Product Group">
+     <!-- Add the action name - value pair -->
+     <input type="hidden" name="action" value="removeProductGroup">
     </fieldset>
    </form>
    </div>
