@@ -7,6 +7,26 @@ if(!$_SESSION['userData']['userlevel'] > 1) {header('Location: manage_account.ph
 if (!isset($_SESSION['shoppingCart'])) {
  $_SESSION['shoppingCart'] = array();
  $_SESSION['products'] = array();
+ // Query the product department data based on the email address
+   $getDepartment = $db->prepare('SELECT * FROM productdepartment');
+$getDepartment->execute();
+$departments = $getDepartment->fetchAll(PDO::FETCH_ASSOC);
+ // Build a dynamic drop-down select list using the $departments array
+ $departmentList .= '<select name="departmentId" id="departmentId">';
+ $departmentList .= '<option disabled selected>Choose a department</option>';
+ foreach ($departments as $department) {
+ /*$catList .= "<option value=".urlencode($category['categoryId']).">".urlencode($category['categoryName'])."</option>";*/
+  $departmentList .= "<option value='$department[id]'";
+  if(isset($departmentId)) {
+   
+   if($department['id'] === $departmentId){
+    $departmentList .= ' selected ';
+   }
+  }
+  
+  $departmentList .= ">$department[productdepartmentname]</option>";
+ }
+ $departmentList .= '</select>';
  }
 ?>
 <!DOCTYPE html>
@@ -51,27 +71,7 @@ if (!isset($_SESSION['shoppingCart'])) {
     <fieldset>
 	<legend>Add or remove product group</legend>
 	<?php
-	// Query the product department data based on the email address
-   $getDepartment = $db->prepare('SELECT * FROM productdepartment');
-$getDepartment->execute();
-$departments = $getDepartment->fetchAll(PDO::FETCH_ASSOC);
-var_dump($departments);
-	// Build a dynamic drop-down select list using the $departments array
- $departmentList .= '<select name="departmentId" id="departmentId">';
- $departmentList .= '<option disabled selected>Choose a department</option>';
- foreach ($departments as $department) {
- /*$catList .= "<option value=".urlencode($category['categoryId']).">".urlencode($category['categoryName'])."</option>";*/
-  $departmentList .= "<option value='$department[id]'";
-  if(isset($departmentId)) {
-   
-   if($department['id'] === $departmentId){
-    $departmentList .= ' selected ';
-   }
-  }
-  
-  $departmentList .= ">$department[productdepartmentname]</option>";
- }
- $departmentList .= '</select>';
+	echo $departmentList;
  ?>
      <label for="productGroupName">Product Group Name</label>
      <input type="text" name="productGroupName" id="productGroupName" pattern="[A-Z][a-z]{3,}" required><br>
