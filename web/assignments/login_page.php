@@ -84,6 +84,8 @@ $userData = $getUserData->fetch(PDO::FETCH_ASSOC);
    // Remove the password from the array
    // the array_pop function removes the last
    // element from an array
+   var_dump($userData);
+   echo "<br>";
    array_splice($userData,3,1);
    echo "userData:";
    echo "<br>";
