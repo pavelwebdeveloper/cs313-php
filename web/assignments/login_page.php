@@ -60,7 +60,7 @@ if(isset($_POST['LogIn'])) {
    }
    
    // Query the client data based on the email address
-   $getUserData = $db->prepare('SELECT id, username, email, password FROM storeuser WHERE email=:userEmail');
+   $getUserData = $db->prepare('SELECT id, username, email, password, userlevel FROM storeuser WHERE email=:userEmail');
 $getUserData->bindValue(':userEmail', $userEmail, PDO::PARAM_STR);
 $getUserData->execute();
 $userData = $getUserData->fetch(PDO::FETCH_ASSOC);
@@ -84,6 +84,8 @@ $userData = $getUserData->fetch(PDO::FETCH_ASSOC);
    // Remove the password from the array
    // the array_pop function removes the last
    // element from an array
+   
+   var_dump($userData);
    array_pop($userData);
    // Store the array into the session
    $_SESSION['userData'] = $userData;
