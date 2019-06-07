@@ -12,7 +12,7 @@ if (!isset($_SESSION['shoppingCart'])) {
 <!DOCTYPE html>
 <html lang="en-us" id="logInRegister">
  <head>
-  <title>Home Page</title>
+  <title>Manage Product Department and Product Group Page</title>
   <link href="css/online_store_styles.css" rel="stylesheet" media="screen">
   <link href="css/normalize.css" rel="stylesheet" media="screen">
  </head>
@@ -54,7 +54,7 @@ if(isset($_POST['newDepartment'])) {
    
    // validate the categoryName variable using a custom function from functions.php
    $pattern = '/^[A-Z][a-z]{3,}$/';
- $checkedDepartmentName = return preg_match($pattern, $departmentName);
+ $checkedDepartmentName = preg_match($pattern, $departmentName);
    
    
    // Check for missing data
