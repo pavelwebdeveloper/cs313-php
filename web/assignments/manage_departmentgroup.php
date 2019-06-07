@@ -14,8 +14,10 @@ $departments = $getDepartment->fetchAll(PDO::FETCH_ASSOC);
  // Build a dynamic drop-down select list using the $departments array
  $departmentList .= '<select name="departmentId" id="departmentId">';
  $departmentList .= '<option disabled selected>Choose a department</option>';
+ /*
  foreach ($departments as $department) {
  /*$catList .= "<option value=".urlencode($category['categoryId']).">".urlencode($category['categoryName'])."</option>";*/
+ /*
   $departmentList .= "<option value='$department[id]'";
   if(isset($departmentId)) {
    
@@ -27,7 +29,7 @@ $departments = $getDepartment->fetchAll(PDO::FETCH_ASSOC);
   $departmentList .= ">$department[productdepartmentname]</option>";
  }
  $departmentList .= '</select>';
- }
+ }*/
  echo $departmentList;
 ?>
 <!DOCTYPE html>
