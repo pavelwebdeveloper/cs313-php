@@ -89,8 +89,8 @@ $userData = $getUserData->fetch(PDO::FETCH_ASSOC);
    var_dump($userData);
    array_pop($userData);
    // Store the array into the session
-   $_SESSION['userData'] = $userData;
-   $_SESSION['message'] = '';
+   //$_SESSION['userData'] = $userData;
+   //$_SESSION['message'] = '';
    // Send them to the admin view
    header("Location: login_page.php");
    exit;
