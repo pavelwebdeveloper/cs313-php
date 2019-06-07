@@ -84,10 +84,11 @@ $userData = $getUserData->fetch(PDO::FETCH_ASSOC);
    // Remove the password from the array
    // the array_pop function removes the last
    // element from an array
+   array_splice($userData,3,1);
    echo "userData:";
    echo "<br>";
    var_dump($userData);
-   array_pop($userData);
+  
    // Store the array into the session
    //$_SESSION['userData'] = $userData;
    //$_SESSION['message'] = '';
