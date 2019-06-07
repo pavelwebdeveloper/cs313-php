@@ -92,7 +92,7 @@ $userData = $getUserData->fetch(PDO::FETCH_ASSOC);
    $_SESSION['userData'] = $userData;
    $_SESSION['message'] = '';
    // Send them to the admin view
-   header("Location: login_page.php");
+   header("Location: home.php");
    exit;
    
 }
