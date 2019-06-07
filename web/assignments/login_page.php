@@ -99,5 +99,8 @@ $userData = $getUserData->fetch(PDO::FETCH_ASSOC);
  
  
  </main>
+ <footer>
+  <?php include $_SERVER[ 'DOCUMENT_ROOT' ].'/assignments/common/footer.php'; ?>
+  </footer>
  </body>
 </html>
