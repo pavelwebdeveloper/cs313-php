@@ -55,7 +55,8 @@ if (!isset($_SESSION['shoppingCart'])) {
    $getDepartment = $db->prepare('SELECT * FROM productdepartment');
 $getDepartment->execute();
 $departments = $getDepartment->fetchAll(PDO::FETCH_ASSOC);
-	// Build a dynamic drop-down select list using the $categories array
+var_dump($departments);
+	// Build a dynamic drop-down select list using the $departments array
  $departmentList .= '<select name="departmentId" id="departmentId">';
  $departmentList .= '<option disabled selected>Choose a department</option>';
  foreach ($departments as $department) {
