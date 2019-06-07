@@ -28,6 +28,7 @@ $departments = $getDepartment->fetchAll(PDO::FETCH_ASSOC);
  }
  $departmentList .= '</select>';
  }
+ echo $departmentList;
 ?>
 <!DOCTYPE html>
 <html lang="en-us" id="logInRegister">
