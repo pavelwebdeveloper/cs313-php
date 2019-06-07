@@ -1,4 +1,6 @@
 <?php
+// Get the database connection file
+ require_once '../library/connections.php';
 // Start the session
 session_start();
 if(!($_SESSION['loggedin'])){header('Location: home.php');}
@@ -41,11 +43,6 @@ $departments = $getDepartment->fetchAll(PDO::FETCH_ASSOC);
  <?php include $_SERVER[ 'DOCUMENT_ROOT' ].'/assignments/common/header.php'; ?>
  </header>
  <main>
- 
- <?php
- // Get the database connection file
- require_once '../library/connections.php';
- ?>
  
  <div>
  <?php
