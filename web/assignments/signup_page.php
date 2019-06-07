@@ -43,8 +43,6 @@ if (!isset($_SESSION['shoppingCart'])) {
  </div>
  
  <?php
- var_dump($_POST);
-  echo "<br>";
 if(isset($_POST['SignUp'])) {
 	// Filter and store the data
    $userName = filter_input(INPUT_POST, 'userName', FILTER_SANITIZE_STRING);
@@ -60,9 +58,6 @@ if(isset($_POST['SignUp'])) {
        
    // Hash the checked password
    $hashedPassword = password_hash($userPassword, PASSWORD_DEFAULT);
-   var_dump($hashedPassword);
-	  echo "<br>";
-	  echo "<br>";
    
    
    $stmt = $db->prepare('INSERT INTO storeuser (username, email, password, userlevel) VALUES (:username, :useremail, :userpassword, 1)'); 
@@ -70,6 +65,7 @@ if(isset($_POST['SignUp'])) {
 $stmt->bindValue(':useremail', $userEmail, PDO::PARAM_STR);
  $stmt->bindValue(':userpassword', $hashedPassword, PDO::PARAM_STR);
 $stmt->execute();
+
 
 $signUpOutcome = $stmt->rowCount();
 
