@@ -82,20 +82,17 @@ $userData = $getUserData->fetch(PDO::FETCH_ASSOC);
     // A valid user exists, log them in
    $_SESSION['loggedin'] = TRUE;
    // Remove the password from the array
-   // the array_pop function removes the last
+   // the array_splice function removes the specified
    // element from an array
-   var_dump($userData);
-   echo "<br>";
+   
    array_splice($userData,3,1);
-   echo "userData:";
-   echo "<br>";
-   var_dump($userData);
+   
   
    // Store the array into the session
-   //$_SESSION['userData'] = $userData;
-   //$_SESSION['message'] = '';
+   $_SESSION['userData'] = $userData;
+   $_SESSION['message'] = '';
    // Send them to the admin view
-   //header("Location: login_page.php");
+   header("Location: login_page.php");
    exit;
    
 }
