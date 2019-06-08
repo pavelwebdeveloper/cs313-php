@@ -25,6 +25,12 @@ if (!isset($_SESSION['shoppingCart'])) {
  <?php
  // Get the database connection file
  require_once '../library/connections.php';
+ var_dump($_POST);
+echo "<br>";
+echo "<br>";
+echo "<br>";
+echo "<br>";
+echo "Hi";
  // Query the product department data based on the email address
    $getDepartment = $db->prepare('SELECT * FROM productdepartment');
 $getDepartment->execute();
