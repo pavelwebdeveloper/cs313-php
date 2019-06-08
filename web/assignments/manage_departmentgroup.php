@@ -230,7 +230,7 @@ echo "<br>";
     header('location: manage_departmentgroup.php');
     exit;
    }   
-   $stmt = $db->prepare('INSERT INTO productgroup (productgroupname, productdepartmentId) VALUES (:productGroupName, departmentId)'); 
+   $stmt = $db->prepare('INSERT INTO productgroup (productgroupname, productdepartmentId) VALUES (:productGroupName, :departmentId)'); 
  $stmt->bindValue(':productGroupName', $productGroupName, PDO::PARAM_STR);
  $stmt->bindValue(':departmentId', $departmentId, PDO::PARAM_INT);
 $stmt->execute();
