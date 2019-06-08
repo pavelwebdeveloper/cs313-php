@@ -30,6 +30,26 @@ echo "<br>";
 echo "<br>";
 echo "<br>";
 echo "Hi";
+// Query the product department data based on the email address
+   $getDepartment = $db->prepare('SELECT * FROM productdepartment');
+$getDepartment->execute();
+$departments = $getDepartment->fetchAll(PDO::FETCH_ASSOC);
+ // Build a dynamic drop-down select list using the $departments array
+ $departmentList .= '<select name="departmentId" id="departmentId">';
+ $departmentList .= '<option disabled selected>Choose a department</option>';
+ foreach ($departments as $department) {
+ /*$catList .= "<option value=".urlencode($category['categoryId']).">".urlencode($category['categoryName'])."</option>";*/
+  $departmentList .= "<option value='$department[id]'";
+  if(isset($departmentId)) {
+   
+   if($department['id'] === $departmentId){
+    $departmentList .= ' selected ';
+   }
+  }
+  
+  $departmentList .= ">$department[productdepartmentname]</option>";
+ }
+ $departmentList .= '</select>';
  
  ?>
  
@@ -52,13 +72,12 @@ echo "Hi";
    
    <?php
 if(isset($_POST['NewDepartment'])) {
-	
+	/*
 	echo "<br>";
 echo "HIHIHI";
 echo "<br>";	
-} 
+*/
 
-/*else {
 	// Filter and store the data
 	$departmentName = filter_input(INPUT_POST, 'departmentName', FILTER_SANITIZE_STRING);	
 	echo "$departmentName";
@@ -86,7 +105,7 @@ echo "<br>";
 echo "<br>";
 echo "Hi";
 */
-   /*
+   
    // Send the data to the model
    $adddepartmentOutcome = $stmt->rowCount();
    
@@ -100,40 +119,40 @@ echo "Hi";
             header('location: manage_departmentgroup.php');
     exit;
    }
-}*/
+}
 	
 	?>
    
-   <!--
+  
    <form action="manage_departmentgroup.php" method="post">
     <fieldset>
 	<legend>Remove product department</legend>
      <label for="departmentName">Department Name</label>
-     
+     <?php
+	echo $departmentList;
+ ?>
 	 <input class="submitBtn" type="submit" value="Remove Department">
      <!-- Add the action name - value pair -->
-	 <!--
-     <input type="hidden" name="action" value="removeDepartment">
+     <input type="hidden" name="RemoveDepartment" value="removeDepartment">
     </fieldset>
    </form>
    
    <form action="manage_departmentgroup.php" method="post">
     <fieldset>
 	<legend>Add or remove product group</legend>
-	
+	<?php
+	echo $departmentList;
+ ?>
      <label for="productGroupName">Product Group Name</label>
      <input type="text" name="productGroupName" id="productGroupName" pattern="[A-Z][a-z]{3,}" required><br>
      <input class="submitBtn" type="submit" value="Add Product Group">
      <!-- Add the action name - value pair -->
-	 <!--
      <input type="hidden" name="action" value="newProductGroup">
 	 <input class="submitBtn" type="submit" value="Remove Product Group">
      <!-- Add the action name - value pair -->
-	 <!--
      <input type="hidden" name="action" value="removeProductGroup">
     </fieldset>
    </form>
-   -->
    </div>
    
    
