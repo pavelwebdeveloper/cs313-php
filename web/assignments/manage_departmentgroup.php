@@ -163,7 +163,7 @@ $departmentName = $getName->fetch(PDO::FETCH_ASSOC);
  $stmt->bindValue(':departmentId', $departmentId, PDO::PARAM_INT);
 $stmt->execute();
 
-/
+
 var_dump($departmentId);
 echo "<br>";
 echo "<br>";
