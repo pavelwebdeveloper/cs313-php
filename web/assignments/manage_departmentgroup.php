@@ -133,7 +133,7 @@ echo "Hi";
    // Check and report the result
    if($adddepartmentOutcome === 1){
 	   $_SESSION['message'] = "<p class='messagesuccess'>The new department " . $departmentName . " has successfully been added.</p>";
-   header('location: manage_departmentgroup.php');
+	   header('location: manage_departmentgroup.php');
    exit;
    } else {
     $_SESSION['message'] = "<p class='messagefailure'>Sorry, adding the new department " . $departmentName . " has failed. Please, try again.</p>";
@@ -321,6 +321,7 @@ $productGroupName = $getGroupName->fetch(PDO::FETCH_ASSOC);
    if(empty($productGroupId)){
     $_SESSION['message'] = '<p class="message">Please, choose a product group name for removal.</p>';
     header('location: manage_departmentgroup.php');
+	die();
     exit;
    }   
    $stmt = $db->prepare('DELETE FROM productgroup WHERE id=:productGroupId'); 
@@ -355,11 +356,13 @@ echo "<br>";
 // Check and report the result
    if($deleteProductGroupOutcome == 1){
 	   $_SESSION['message'] = "<p class='messagesuccess'>The product group " . $productGroupName['productgroupname'] . " has successfully been deleted.</p>";
-   header('location: manage_departmentgroup.php');
+	   header('location: manage_departmentgroup.php');
+	   die();
    exit;
    } else {
     $_SESSION['message'] = "<p class='messagefailure'>Sorry, deleting the product group " . $productGroupName['productgroupname'] . " has failed. Please, try again.</p>";
             header('location: manage_departmentgroup.php');
+			die();
     exit;
    }
    
