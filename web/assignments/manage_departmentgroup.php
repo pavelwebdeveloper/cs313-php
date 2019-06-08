@@ -355,6 +355,7 @@ $image_dir_path = $_SERVER['DOCUMENT_ROOT'] . $image_dir;
  // Moves the file to the target folder
  $fileUploadResult = move_uploaded_file($source, $target);
  }
+ }
    
    
    // Check and report the result
