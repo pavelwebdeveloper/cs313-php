@@ -137,6 +137,19 @@ echo "Hi";
     </fieldset>
    </form>
    
+   <?php
+if(isset($_POST['RemoveDepartment'])) {
+	/*
+	echo "<br>";
+echo "HIHIHI";
+echo "<br>";	
+*/
+
+	
+}
+	
+	?>
+   
    <form action="manage_departmentgroup.php" method="post">
     <fieldset>
 	<legend>Add or remove product group</legend>
