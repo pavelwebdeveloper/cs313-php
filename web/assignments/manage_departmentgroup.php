@@ -83,8 +83,8 @@ $productGroups = $getProductGroups->fetchAll(PDO::FETCH_ASSOC);
    <form action="manage_departmentgroup.php" method="post">
     <fieldset>
 	<legend>Add product department</legend>
-     <label for="departmentName">Department Name</label>
-     <input type="text" name="departmentName" id="departmentName" pattern="[A-Za-z]{3,}" required><br>
+     <label for="departmentName">Department Name</label><br>
+     <input type="text" name="departmentName" id="departmentName" pattern="[A-Za-z]{3,}" required><br><br>
      <input class="submitBtn" type="submit" value="Add Department">
      <!-- Add the action name - value pair -->
      <input type="hidden" name="NewDepartment" value="newDepartment">
@@ -148,10 +148,10 @@ echo "Hi";
    <form action="manage_departmentgroup.php" method="post">
     <fieldset>
 	<legend>Remove product department</legend>
-     <label for="departmentName">Department Name</label>
+     <label for="departmentName">Department Name</label><br>
      <?php
 	echo $departmentList;
- ?>
+ ?><br>
 	 <input class="submitBtn" type="submit" value="Remove Department">
      <!-- Add the action name - value pair -->
      <input type="hidden" name="RemoveDepartment" value="removeDepartment">
