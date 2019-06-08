@@ -124,6 +124,7 @@ echo "Hi";
 	
 	?>
    
+   <!--
    <form action="manage_departmentgroup.php" method="post">
     <fieldset>
 	<legend>Remove product department</legend>
@@ -133,6 +134,7 @@ echo "Hi";
  ?>
 	 <input class="submitBtn" type="submit" value="Remove Department">
      <!-- Add the action name - value pair -->
+	 <!--
      <input type="hidden" name="action" value="removeDepartment">
     </fieldset>
    </form>
@@ -147,12 +149,15 @@ echo "Hi";
      <input type="text" name="productGroupName" id="productGroupName" pattern="[A-Z][a-z]{3,}" required><br>
      <input class="submitBtn" type="submit" value="Add Product Group">
      <!-- Add the action name - value pair -->
+	 <!--
      <input type="hidden" name="action" value="newProductGroup">
 	 <input class="submitBtn" type="submit" value="Remove Product Group">
      <!-- Add the action name - value pair -->
+	 <!--
      <input type="hidden" name="action" value="removeProductGroup">
     </fieldset>
    </form>
+   -->
    </div>
    
    
