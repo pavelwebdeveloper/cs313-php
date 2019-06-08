@@ -341,23 +341,7 @@ $image_dir_path = $_SERVER['DOCUMENT_ROOT'] . $image_dir;
   
   if  (empty($productGroupId) || empty($imgName)) {
    $_SESSION['message'] = '<p class="warningmessage">You must select both a product and an image file for the product.</p>';
-  } else {
-  
-  // Gets the paths, full and local directory
- global $image_dir, $image_dir_path;
- if (isset($_FILES[$name])){
-  // Gets the actual file name
-  $filename = $_FILES[$name]['name'];
-  if (empty($filename)) {
-   return;
-  }
-  // Get the file from the temp folder on the server
- $source = $_FILES[$name]['tmp_name'];
- // Sets the new path - images folder in this directory
- $target = $image_dir_path . '/' . $filename;
- // Moves the file to the target folder
- $fileUploadResult = move_uploaded_file($source, $target);
- }
+  } 
    
    
    // Check and report the result
