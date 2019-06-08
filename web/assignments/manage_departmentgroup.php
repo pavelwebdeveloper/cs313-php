@@ -148,7 +148,7 @@ echo "<br>";
 	// Filter and store the data
 	$departmentId = filter_input(INPUT_POST, 'departmentId', FILTER_SANITIZE_NUMBER_INT);	
 	 
-	 $getName = $db->prepare('SELECT productdepartmentname FROM productdepartment WHERE id = departmentId'); 
+	 $getName = $db->prepare('SELECT productdepartmentname FROM productdepartment WHERE id=:departmentId'); 
  $getName->bindValue(':departmentId', $departmentId, PDO::PARAM_INT);
 $getName->execute();
 $departmentName = $getName->fetch(PDO::FETCH_ASSOC);
@@ -159,7 +159,7 @@ $departmentName = $getName->fetch(PDO::FETCH_ASSOC);
     header('location: manage_departmentgroup.php');
     exit;
    }   
-   $stmt = $db->prepare('DELETE FROM productdepartment WHERE id = departmentId'); 
+   $stmt = $db->prepare('DELETE FROM productdepartment WHERE id=:departmentId'); 
  $stmt->bindValue(':departmentId', $departmentId, PDO::PARAM_INT);
 $stmt->execute();
 /*
