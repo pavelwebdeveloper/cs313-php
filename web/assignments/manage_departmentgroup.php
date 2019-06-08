@@ -346,17 +346,12 @@ echo "Hi";
    var_dump($deleteProductGroupOutcome);
 echo "<br>";
 echo "<br>";
+
+$_SESSION['deleteProductGroupOutcome'] = $deleteProductGroupOutcome;
+
+header('location: delete_productgroup.php');
    
- // Check and report the result
-   if($deleteProductGroupOutcome === 0){
-	   $_SESSION['message'] = "<p class='messagefailure'>Sorry, deleting the product group " . $productGroupName['productgroupname'] . " has failed. Please, try again.</p>";
-            header('location: manage_departmentgroup.php');
-    exit;
-   } else {
-	   $_SESSION['message'] = "<p class='messagesuccess'>The product group " . $productGroupName['productgroupname'] . " has successfully been deleted.</p>";
-   header('location: manage_departmentgroup.php');
-   exit;
-   }
+ 
    
    
 }
