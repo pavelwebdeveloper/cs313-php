@@ -30,7 +30,7 @@ echo "<br>";
 echo "<br>";
 echo "<br>";
 echo "Hi";
-// Query the product department data based on the email address
+// Query the product department data
    $getDepartment = $db->prepare('SELECT * FROM productdepartment');
 $getDepartment->execute();
 $departments = $getDepartment->fetchAll(PDO::FETCH_ASSOC);
@@ -50,6 +50,27 @@ $departments = $getDepartment->fetchAll(PDO::FETCH_ASSOC);
   $departmentList .= ">$department[productdepartmentname]</option>";
  }
  $departmentList .= '</select>';
+ 
+ // Query the product groups data
+   $getProductGroups = $db->prepare('SELECT * FROM productgroup');
+$getProductGroups->execute();
+$productGroups = $getProductGroups->fetchAll(PDO::FETCH_ASSOC);
+ // Build a dynamic drop-down select list using the $productGroups array
+ $productGroupsList .= '<select name="$productGroupId" id="productGroupId">';
+ $productGroupsList .= '<option disabled selected>Choose a product group</option>';
+ foreach ($productGroups as $productGroup) {
+ /*$catList .= "<option value=".urlencode($category['categoryId']).">".urlencode($category['categoryName'])."</option>";*/
+  $productGroupsList .= "<option value='$productGroup[id]'";
+  if(isset($productGroupId)) {
+   
+   if($productGroup[id] === $productGroupId){
+    $productGroupsList .= ' selected ';
+   }
+  }
+  
+  $productGroupsList .= ">$productGroup[productgroupname]</option>";
+ }
+ $productGroupsList .= '</select>';
  
  ?>
  
@@ -261,22 +282,75 @@ echo "Hi";
    
    <form action="manage_departmentgroup.php" method="post">
     <fieldset>
-	<legend>Add or remove product group</legend>
-	<?php
-	echo $departmentList;
- ?>
+	<legend>Remove product group</legend>	
      <label for="productGroupName">Product Group Name</label>
-     <input type="text" name="productGroupName" id="productGroupName" pattern="[A-Z][a-z]{3,}" required><br>
-     <input class="submitBtn" type="submit" value="Add Product Group">
-     <!-- Add the action name - value pair -->
-     <input type="hidden" name="action" value="newProductGroup">
+	 <?php
+	echo $productGroupsList;
+ ?>
 	 <input class="submitBtn" type="submit" value="Remove Product Group">
      <!-- Add the action name - value pair -->
-     <input type="hidden" name="action" value="removeProductGroup">
+     <input type="hidden" name="RemoveProductGroup" value="removeProductGroup">
     </fieldset>
    </form>
    </div>
    
+   <?php
+if(isset($_POST['RemoveProductGroup'])) {
+	/*
+	echo "<br>";
+echo "HIHIHI";
+echo "<br>";	
+*/
+
+	// Filter and store the data
+	$productGroupId = filter_input(INPUT_POST, 'productGroupId', FILTER_SANITIZE_NUMBER_INT);	
+	
+	 
+	 $getName = $db->prepare('SELECT productgroupname FROM productgroup WHERE id=:productGroupId'); 
+ $getName->bindValue(':productGroupId', $productGroupId, PDO::PARAM_INT);
+$getName->execute();
+$productGroupName = $getName->fetch(PDO::FETCH_ASSOC);
+
+
+// Check for missing data
+   if(empty($productGroupId)){
+    $_SESSION['message'] = '<p class="message">Please, choose a product group name for removal.</p>';
+    header('location: manage_departmentgroup.php');
+    exit;
+   }   
+   $stmt = $db->prepare('DELETE FROM productgroup WHERE id=:productGroupId'); 
+ $stmt->bindValue(':productGroupId', $productGroupId, PDO::PARAM_INT);
+$stmt->execute();
+
+
+
+
+/*
+var_dump($stmt);
+echo "<br>";
+echo "<br>";
+echo "<br>";
+echo "<br>";
+echo "Hi";
+*/
+   
+   // Send the data to the model
+   $deleteProductGroupOutcome = $stmt->rowCount();
+   
+   // Check and report the result
+   if($deleteProductGroupOutcome === 1){
+	   $_SESSION['message'] = "<p class='messagesuccess'>The product group " . $productGroupName['productgroupname'] . " has successfully been deleted.</p>";
+   header('location: manage_departmentgroup.php');
+   exit;
+   } else {
+    $_SESSION['message'] = "<p class='messagefailure'>Sorry, deleting the product group " . $productGroupName['productgroupname'] . " has failed. Please, try again.</p>";
+            header('location: manage_departmentgroup.php');
+    exit;
+   }
+   
+}
+	
+	?>
    
    
  
