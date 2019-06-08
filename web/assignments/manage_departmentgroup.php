@@ -164,7 +164,7 @@ $departmentName = $getName->fetch(PDO::FETCH_ASSOC);
 $stmt->execute();
 
 
-var_dump($departmentId);
+var_dump($departmentName);
 echo "<br>";
 echo "<br>";
 echo "<br>";
