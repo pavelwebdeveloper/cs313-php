@@ -348,7 +348,7 @@ echo "<br>";
 echo "<br>";
    
  // Check and report the result
-   if($deleteProductGroupOutcome == 1){
+   if($deleteProductGroupOutcome != 0){
 	   $_SESSION['message'] = "<p class='messagesuccess'>The product group " . $productGroupName['productgroupname'] . " has successfully been deleted.</p>";
    header('location: manage_departmentgroup.php');
    exit;
