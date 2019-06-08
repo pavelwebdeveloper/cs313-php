@@ -228,7 +228,7 @@ echo "<br>";
 	echo $departmentList;
  ?><br><br>
      <label for="productGroupName">New Product Group Name</label><br>
-     <input type="text" name="productGroupName" id="productGroupName" pattern="[A-Z][a-z]{3,}" required><br>
+     <input type="text" name="productGroupName" id="productGroupName" pattern="[A-Z][a-z]{3,}" required><br><br>
 	 <label for="imageFilePath">Image File Path for the New Product Group Name</label><br>
      <input type="text" name="imageFilePath" id="imageFilePath" pattern="[A-Za-z/_.]{3,}" value="/images/product_subgroup_images/" required><br><br>
      <input class="submitBtn" type="submit" value="Add Product Group">
@@ -295,10 +295,10 @@ echo "Hi";
    <form action="delete_productgroup.php" method="post">
     <fieldset>
 	<legend>Remove product group</legend>	
-     <label for="productGroupName">Product Group Name</label>
+     <label for="productGroupName">Product Group Name</label><br>
 	 <?php
 	echo $productGroupsList;
- ?>
+ ?><br><br>
 	 <input class="submitBtn" type="submit" value="Remove Product Group">
      <!-- Add the action name - value pair -->
      <!--<input type="hidden" name="RemoveProductGroup" value="removeProductGroup">-->
@@ -310,12 +310,12 @@ echo "Hi";
    <form action="manage_departmentgroup.php" method="post" enctype="multipart/form-data">
    <fieldset>
 	<legend>Upload a product group image</legend>
- <label for="invId">Product Group</label>
+ <label for="invId">Product Group</label><br>
  <?php
 	echo $productGroupsList;
  ?><br><br>
- <label for="uploadfile">Upload Image</label>
- <input id="uploadfile" type="file" name="file1"><br>
+ <label for="uploadfile">Upload Image</label><br>
+ <input id="uploadfile" type="file" name="file1"><br><br>
  <input type="submit" class="submitBtn" value="Upload">
  <input type="hidden" name="Upload" value="upload">
  </fieldset>
