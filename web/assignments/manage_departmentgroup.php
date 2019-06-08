@@ -148,10 +148,10 @@ echo "<br>";
 	// Filter and store the data
 	$departmentId = filter_input(INPUT_POST, 'departmentId', FILTER_SANITIZE_NUMBER_INT);	
 	 
-	 $stmt = $db->prepare('SELECT productdepartmentname FROM productdepartment WHERE id = departmentId'); 
- $stmt->bindValue(':departmentId', $departmentId, PDO::PARAM_INT);
-$stmt->execute();
-$departmentName = $stmt->fetch(PDO::FETCH_ASSOC);
+	 $getName = $db->prepare('SELECT productdepartmentname FROM productdepartment WHERE id = departmentId'); 
+ $getName->bindValue(':departmentId', $departmentId, PDO::PARAM_INT);
+$getName->execute();
+$departmentName = $getName->fetch(PDO::FETCH_ASSOC);
    
    // Check for missing data
    if(empty($departmentId)){
