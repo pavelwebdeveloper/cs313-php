@@ -43,15 +43,15 @@ echo "Hi";
     <fieldset>
 	<legend>Add product department</legend>
      <label for="departmentName">Department Name</label>
-     <input type="text" name="departmentName" id="departmentName" pattern="[A-Z][a-z]{3,}" required><br>
+     <input type="text" name="departmentName" id="departmentName" pattern="[A-Za-z]{3,}" required><br>
      <input class="submitBtn" type="submit" value="Add Department">
      <!-- Add the action name - value pair -->
-     <input type="hidden" name="action" value="newDepartment">
+     <input type="hidden" name="NewDepartment" value="newDepartment">
     </fieldset>
    </form>
    
    <?php
-if(isset($_POST['newDepartment'])) {
+if(isset($_POST['NewDepartment'])) {
 	
 	echo "<br>";
 echo "HIHIHI";
@@ -67,7 +67,7 @@ echo "<br>";
 echo "<br>";
 echo "<br>";   
    // validate the categoryName variable using a custom function from functions.php
-   $pattern = '/^[A-Z][a-z]{3,}$/';
+   $pattern = '/^[A-Za-z]{3,}$/';
  $checkedDepartmentName = preg_match($pattern, $departmentName);   
    // Check for missing data
    if(empty($checkedDepartmentName)){
