@@ -72,7 +72,7 @@ echo "Hi";
    }
    
    $stmt = $db->prepare('INSERT INTO productdepartment (productdepartmentname) VALUES (:departmentName)'); 
- $stmt->bindValue(':departmentName', $departmentName, PDO::PARAM_STR);
+ $stmt->bindValue(':departmentName', $checkedDepartmentName, PDO::PARAM_STR);
 $stmt->execute();
 
 
