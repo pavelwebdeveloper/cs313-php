@@ -380,6 +380,9 @@ echo "Hi";
 	echo "<br>";
 	var_dump($_FILES['file1']);
 	echo "<br>";
+	var_dump($source);
+	echo "<br>";
+	var_dump($target);
    
    // Check and report the result
    if($fileUploadResult){
