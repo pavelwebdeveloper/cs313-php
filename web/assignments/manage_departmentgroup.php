@@ -325,7 +325,7 @@ $prodList = '<select name="id" id="id">';
  <input type="submit" class="submitBtn" value="Upload">
  <input type="hidden" name="Upload" value="upload">
 </form>
-   </div>
+   
    
   <?php
 if(isset($_POST['Upload'])) {
@@ -333,11 +333,7 @@ if(isset($_POST['Upload'])) {
 $image_dir = $products['image'];
 // The path is the full path from the server root
 $image_dir_path = $_SERVER['DOCUMENT_ROOT'] . $image_dir;
-	/*
-	echo "<br>";
-echo "HIHIHI";
-echo "<br>";	
-*/
+	
 
 	// Store the incoming product id
   $id = filter_input(INPUT_POST, 'id', FILTER_VALIDATE_INT);
@@ -377,7 +373,7 @@ echo "<br>";
    }
 }
 ?> 
-   
+  </div> 
    
  
    
