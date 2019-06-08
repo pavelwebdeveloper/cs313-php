@@ -86,6 +86,13 @@ $departments = $getDepartment->fetchAll(PDO::FETCH_ASSOC);
 if(isset($_POST['newDepartment'])) {
 	// Filter and store the data
 	$departmentName = filter_input(INPUT_POST, 'departmentName', FILTER_SANITIZE_STRING);
+	
+	var_dump($departmentName);
+echo "<br>";
+echo "<br>";
+echo "<br>";
+echo "<br>";
+echo "Hi";
    
    // validate the categoryName variable using a custom function from functions.php
    $pattern = '/^[A-Z][a-z]{3,}$/';
@@ -103,12 +110,7 @@ if(isset($_POST['newDepartment'])) {
  $stmt->bindValue(':departmentName', $departmentName, PDO::PARAM_STR);
 $stmt->execute();
 
-var_dump($stmt);
-echo "<br>";
-echo "<br>";
-echo "<br>";
-echo "<br>";
-echo "Hi";
+
    
    // Send the data to the model
    $adddepartmentOutcome = $stmt->rowCount();
