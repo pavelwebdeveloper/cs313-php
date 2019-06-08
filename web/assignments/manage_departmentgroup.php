@@ -102,6 +102,13 @@ if(isset($_POST['newDepartment'])) {
    $stmt = $db->prepare('INSERT INTO productdepartment (productdepartmentname) VALUES (:departmentName)'); 
  $stmt->bindValue(':departmentName', $departmentName, PDO::PARAM_STR);
 $stmt->execute();
+
+var_dump($stmt);
+echo "<br>";
+echo "<br>";
+echo "<br>";
+echo "<br>";
+echo "Hi";
    
    // Send the data to the model
    $adddepartmentOutcome = $stmt->rowCount();
