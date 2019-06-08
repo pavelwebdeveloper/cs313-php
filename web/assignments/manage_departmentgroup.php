@@ -230,7 +230,7 @@ echo "<br>";
      <label for="productGroupName">New Product Group Name</label>
      <input type="text" name="productGroupName" id="productGroupName" pattern="[A-Z][a-z]{3,}" required><br>
 	 <label for="imageFilePath">Image File Path for the New Product Group Name</label>
-     <input type="text" name="imageFilePath" id="imageFilePath" pattern="[A-Za-z/_.]{3,}" value="images/product_subgroup_images/" required><br>
+     <input type="text" name="imageFilePath" id="imageFilePath" pattern="[A-Za-z/_.]{3,}" value="/images/product_subgroup_images/" required><br>
      <input class="submitBtn" type="submit" value="Add Product Group">
      <!-- Add the action name - value pair -->
      <input type="hidden" name="AddNewProductGroup" value="addNewProductGroup">
