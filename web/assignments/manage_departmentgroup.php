@@ -145,7 +145,45 @@ echo "HIHIHI";
 echo "<br>";	
 */
 
-	
+	// Filter and store the data
+	$departmentId = filter_input(INPUT_POST, 'departmentId', FILTER_SANITIZE_NUMBER_INT);	
+	 
+	 $stmt = $db->prepare('SELECT productdepartmentname FROM productdepartment WHERE id = departmentId'); 
+ $stmt->bindValue(':departmentId', $departmentId, PDO::PARAM_INT);
+$stmt->execute();
+$departmentName = $stmt->fetch(PDO::FETCH_ASSOC);
+   
+   // Check for missing data
+   if(empty($departmentId)){
+    $_SESSION['message'] = '<p class="message">Please, a department name for removal.</p>';
+    header('location: manage_departmentgroup.php');
+    exit;
+   }   
+   $stmt = $db->prepare('DELETE FROM productdepartment WHERE id = departmentId'); 
+ $stmt->bindValue(':departmentId', $departmentId, PDO::PARAM_INT);
+$stmt->execute();
+/*
+var_dump($stmt);
+echo "<br>";
+echo "<br>";
+echo "<br>";
+echo "<br>";
+echo "Hi";
+*/
+   
+   // Send the data to the model
+   $deleteDepartmentOutcome = $stmt->rowCount();
+   
+   // Check and report the result
+   if($deleteDepartmentOutcome === 1){
+	   $_SESSION['message'] = "<p class='messagesuccess'>The department " . $departmentName . " has successfully been deleted.</p>";
+   header('location: manage_departmentgroup.php');
+   exit;
+   } else {
+    $_SESSION['message'] = "<p class='messagefailure'>Sorry, deleting the department " . $departmentName . " has failed. Please, try again.</p>";
+            header('location: manage_departmentgroup.php');
+    exit;
+   }
 }
 	
 	?>
