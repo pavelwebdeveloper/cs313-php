@@ -323,6 +323,9 @@ echo "Hi";
    
    <?php
 if(isset($_POST['Upload'])) {
+	// Filter and store the data
+	$productGroupId = filter_input(INPUT_POST, 'productGroupId', FILTER_SANITIZE_NUMBER_INT);	
+	
 	$getImagePath = $db->prepare('SELECT image FROM productgroup WHERE id = :productGroupId'); 
 	$getImagePath->bindValue(':productGroupId', $productGroupId, PDO::PARAM_INT);
 $getImagePath->execute();
@@ -334,7 +337,8 @@ $image_dir_path = $_SERVER['DOCUMENT_ROOT'] . $image_dir;
 	
 	echo "Photos";
 	echo "<br>";
-	var_dump($imagePath);
+	var_dump($getImagePath);
+	echo "<br>";
 var_dump($image_dir);
 echo "<br>";
 var_dump($image_dir_path);
@@ -344,8 +348,7 @@ echo "<br>";
 echo "<br>";
 echo "Hi";
 	
-  // Filter and store the data
-	$productGroupId = filter_input(INPUT_POST, 'productGroupId', FILTER_SANITIZE_NUMBER_INT);	
+  
   // Store the name of the uploaded image
   $imgName = $_FILES['file1']['name'];
   
