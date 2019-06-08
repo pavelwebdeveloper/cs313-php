@@ -347,9 +347,37 @@ echo "Hi";
 echo "<br>";
 echo "<br>";
 
-$_SESSION['deleteProductGroupOutcome'] = $deleteProductGroupOutcome;
+// Query the product groups data
+   $getProductGroups = $db->prepare('SELECT * FROM productgroup');
+$getProductGroups->execute();
+$productGroups = $getProductGroups->fetchAll(PDO::FETCH_ASSOC);
+ // Build a dynamic drop-down select list using the $productGroups array
+ $productGroupsList .= '<select name="productGroupId" id="productGroupId">';
+ $productGroupsList .= '<option disabled selected>Choose a product group</option>';
+ foreach ($productGroups as $productGroup) {
+ /*$catList .= "<option value=".urlencode($category['categoryId']).">".urlencode($category['categoryName'])."</option>";*/
+  $productGroupsList .= "<option value='$productGroup[id]'";
+  if(isset($productGroupId)) {
+   
+   if($productGroup['id'] === $productGroupId){
+    $productGroupsList .= ' selected ';
+   }
+  }
+  
+  $productGroupsList .= ">$productGroup[productgroupname]</option>";
+ }
+ $productGroupsList .= '</select>';
 
-header('location: delete_productgroup.php');
+// Check and report the result
+   if($deleteProductGroupOutcome === 1){
+	   $_SESSION['message'] = "<p class='messagesuccess'>The product group " . $productGroupName['productgroupname'] . " has successfully been deleted.</p>";
+   header('location: manage_departmentgroup.php');
+   exit;
+   } else {
+    $_SESSION['message'] = "<p class='messagefailure'>Sorry, deleting the product group " . $productGroupName['productgroupname'] . " has failed. Please, try again.</p>";
+            header('location: manage_departmentgroup.php');
+    exit;
+   }
    
  
    
