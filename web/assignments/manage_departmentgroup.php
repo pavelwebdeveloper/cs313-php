@@ -56,7 +56,7 @@ $departments = $getDepartment->fetchAll(PDO::FETCH_ASSOC);
 $getProductGroups->execute();
 $productGroups = $getProductGroups->fetchAll(PDO::FETCH_ASSOC);
  // Build a dynamic drop-down select list using the $productGroups array
- $productGroupsList .= '<select name="$productGroupId" id="productGroupId">';
+ $productGroupsList .= '<select name="productGroupId" id="productGroupId">';
  $productGroupsList .= '<option disabled selected>Choose a product group</option>';
  foreach ($productGroups as $productGroup) {
  /*$catList .= "<option value=".urlencode($category['categoryId']).">".urlencode($category['categoryName'])."</option>";*/
