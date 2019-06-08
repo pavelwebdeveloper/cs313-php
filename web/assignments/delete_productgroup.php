@@ -1,5 +1,5 @@
 <?php
-if(isset($_POST['RemoveProductGroup'])) {
+/*if(isset($_POST['RemoveProductGroup'])) {
 	/*
 	echo "<br>";
 echo "HIHIHI";
@@ -68,7 +68,7 @@ echo "<br>";
    
  
    
-   
-}
+ 
+//}
 	
 	?>

@@ -294,7 +294,7 @@ echo "Hi";
  ?>
 	 <input class="submitBtn" type="submit" value="Remove Product Group">
      <!-- Add the action name - value pair -->
-     <input type="hidden" name="RemoveProductGroup" value="removeProductGroup">
+     <!--<input type="hidden" name="RemoveProductGroup" value="removeProductGroup">-->
     </fieldset>
    </form>
    </div>
