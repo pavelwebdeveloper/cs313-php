@@ -339,6 +339,7 @@ $image_dir_path = $_SERVER['DOCUMENT_ROOT'] . $image_dir;
   // Store the name of the uploaded image
   $imgName = $_FILES['file1']['name'];
 }
+?>
    
   
   </div> 
