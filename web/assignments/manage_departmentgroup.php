@@ -360,14 +360,14 @@ echo "Hi";
   if(empty($productGroupId) || empty($imgName)) {
    $_SESSION['message'] = '<p class="warningmessage">You must select both a product and an image file for the product.</p>';
   } else {
- if (isset($_FILES[$name])){
+ if (isset($_FILES['file1'])){
   // Gets the actual file name
-  $filename = $_FILES[$name]['name'];
+  $filename = $_FILES['file1']['name'];
   if (empty($filename)) {
    return;
   }
   // Get the file from the temp folder on the server
- $source = $_FILES[$name]['tmp_name'];
+ $source = $_FILES['file1']['tmp_name'];
  // Sets the new path - images folder in this directory
  $target = $image_dir_path . '/' . $filename;
  // Moves the file to the target folder
