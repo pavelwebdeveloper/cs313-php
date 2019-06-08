@@ -378,7 +378,7 @@ echo "Hi";
  echo "<br>";
    echo "evenfurtherPhotos";
 	echo "<br>";
-	var_dump($_FILES[$name]);
+	var_dump($_FILES['file1']);
 	echo "<br>";
    
    // Check and report the result
