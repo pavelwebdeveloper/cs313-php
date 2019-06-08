@@ -338,7 +338,41 @@ $image_dir_path = $_SERVER['DOCUMENT_ROOT'] . $image_dir;
 	$productGroupId = filter_input(INPUT_POST, 'productGroupId', FILTER_SANITIZE_NUMBER_INT);	
   // Store the name of the uploaded image
   $imgName = $_FILES['file1']['name'];
+  
+  if  (empty($productGroupId) || empty($imgName)) {
+   $_SESSION['message'] = '<p class="warningmessage">You must select both a product and an image file for the product.</p>';
+  } else {
+  
+  // Gets the paths, full and local directory
+ global $image_dir, $image_dir_path;
+ if (isset($_FILES[$name])){
+  // Gets the actual file name
+  $filename = $_FILES[$name]['name'];
+  if (empty($filename)) {
+   return;
+  }
+  // Get the file from the temp folder on the server
+ $source = $_FILES[$name]['tmp_name'];
+ // Sets the new path - images folder in this directory
+ $target = $image_dir_path . '/' . $filename;
+ // Moves the file to the target folder
+ $fileUploadResult = move_uploaded_file($source, $target);
+ }
+   
+   
+   // Check and report the result
+   if($fileUploadResult){
+	   $_SESSION['message'] = "<p class='messagesuccess'>The upload succeeded.</p>";
+   header('location: manage_departmentgroup.php');
+   exit;
+   } else {
+    $_SESSION['message'] = "<p class='messagefailure'>Sorry, the upload failed.</p>";
+            header('location: manage_departmentgroup.php');
+    exit;
+   }
 }
+
+
 ?>
    
   
