@@ -229,6 +229,8 @@ echo "<br>";
  ?>
      <label for="productGroupName">New Product Group Name</label>
      <input type="text" name="productGroupName" id="productGroupName" pattern="[A-Z][a-z]{3,}" required><br>
+	 <label for="imageFilePath">Image File Path for the New Product Group Name</label>
+     <input type="text" name="imageFilePath" id="imageFilePath" pattern="[A-Za-z/_.]{3,}" value="images\product_subgroup_images\" required><br>
      <input class="submitBtn" type="submit" value="Add Product Group">
      <!-- Add the action name - value pair -->
      <input type="hidden" name="AddNewProductGroup" value="addNewProductGroup">
@@ -246,19 +248,24 @@ echo "<br>";
 	// Filter and store the data
 	$departmentId = filter_input(INPUT_POST, 'departmentId', FILTER_SANITIZE_NUMBER_INT);	
 	$productGroupName = filter_input(INPUT_POST, 'productGroupName', FILTER_SANITIZE_STRING);	
+	$imageFilePath = filter_input(INPUT_POST, 'imageFilePath', FILTER_SANITIZE_STRING);	
 	  
    // validate the categoryName variable using a custom function from functions.php
    $pattern = '/^[A-Za-z]{3,}$/';
- $checkedproductGroupName = preg_match($pattern, $productGroupName);   
+ $checkedproductGroupName = preg_match($pattern, $productGroupName); 
+// validate the categoryName variable using a custom function from functions.php
+   $patternImagePath = '/^[A-Za-z/_.]{3,}$/';
+ $checkedimageFilePath = preg_match($patternImagePath, $imageFilePath);    
    // Check for missing data
-   if(empty($checkedproductGroupName) || empty($departmentId)){
+   if(empty($checkedproductGroupName) || empty($departmentId) || empty($imageFilePath)){
     $_SESSION['message'] = '<p class="message">Please, choose a department name and provide a new product group name.</p>';
     header('location: manage_departmentgroup.php');
     exit;
    }   
-   $stmt = $db->prepare('INSERT INTO productgroup (productgroupname, productdepartmentId) VALUES (:productGroupName, :departmentId)'); 
+   $stmt = $db->prepare('INSERT INTO productgroup (productgroupname, productdepartmentId, image) VALUES (:productGroupName, :departmentId, :imageFilePath)'); 
  $stmt->bindValue(':productGroupName', $productGroupName, PDO::PARAM_STR);
  $stmt->bindValue(':departmentId', $departmentId, PDO::PARAM_INT);
+ $stmt->bindValue(':imageFilePath', $imageFilePath, PDO::PARAM_STR);
 $stmt->execute();
 /*
 var_dump($stmt);
