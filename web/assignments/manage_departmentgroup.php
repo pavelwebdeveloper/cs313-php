@@ -269,11 +269,11 @@ echo "Hi";
    
    // Check and report the result
    if($addProductGroupOutcome === 1){
-	   $_SESSION['message'] = "<p class='messagesuccess'>The new department " . $productGroupName . " has successfully been added.</p>";
+	   $_SESSION['message'] = "<p class='messagesuccess'>The new product group " . $productGroupName . " has successfully been added.</p>";
    header('location: manage_departmentgroup.php');
    exit;
    } else {
-    $_SESSION['message'] = "<p class='messagefailure'>Sorry, adding the new department " . $productGroupName . " has failed. Please, try again.</p>";
+    $_SESSION['message'] = "<p class='messagefailure'>Sorry, adding the new product group " . $productGroupName . " has failed. Please, try again.</p>";
             header('location: manage_departmentgroup.php');
     exit;
    }
@@ -337,16 +337,11 @@ echo "Hi";
    // Send the data to the model
    $deleteProductGroupOutcome = $stmt->rowCount();
    
-   // Check and report the result
-   if($deleteProductGroupOutcome === 1){
-	   $_SESSION['message'] = "<p class='messagesuccess'>The product group " . $productGroupName['productgroupname'] . " has successfully been deleted.</p>";
-   header('location: manage_departmentgroup.php');
-   exit;
-   } else {
-    $_SESSION['message'] = "<p class='messagefailure'>Sorry, deleting the product group " . $productGroupName['productgroupname'] . " has failed. Please, try again.</p>";
-            header('location: manage_departmentgroup.php');
-    exit;
-   }
+ var_dump($deleteProductGroupOutcome);
+echo "<br>";
+echo "<br>";  
+   
+   
    
 }
 	
