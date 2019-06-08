@@ -332,7 +332,14 @@ $image_dir = $imagePath['image'];
 // The path is the full path from the server root
 $image_dir_path = $_SERVER['DOCUMENT_ROOT'] . $image_dir;
 	
-
+	echo "Photos";
+var_dump($image_dir);
+var_dump($image_dir_path);
+echo "<br>";
+echo "<br>";
+echo "<br>";
+echo "<br>";
+echo "Hi";
 	
   // Filter and store the data
 	$productGroupId = filter_input(INPUT_POST, 'productGroupId', FILTER_SANITIZE_NUMBER_INT);	
