@@ -383,6 +383,8 @@ echo "Hi";
 	var_dump($source);
 	echo "<br>";
 	var_dump($target);
+	echo "<br>";
+	var_dump($fileUploadResult);
    
    // Check and report the result
    if($fileUploadResult){
