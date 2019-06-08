@@ -76,7 +76,9 @@ if(isset($_POST['newDepartment'])) {
 	echo "<br>";
 echo "HIHIHI";
 echo "<br>";	
-} else {
+} 
+
+/*else {
 	// Filter and store the data
 	$departmentName = filter_input(INPUT_POST, 'departmentName', FILTER_SANITIZE_STRING);	
 	echo "$departmentName";
@@ -104,7 +106,7 @@ echo "<br>";
 echo "<br>";
 echo "Hi";
 */
-   
+   /*
    // Send the data to the model
    $adddepartmentOutcome = $stmt->rowCount();
    
@@ -118,7 +120,7 @@ echo "Hi";
             header('location: manage_departmentgroup.php');
     exit;
    }
-}
+}*/
 	
 	?>
    
