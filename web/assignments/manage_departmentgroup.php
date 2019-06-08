@@ -321,7 +321,6 @@ $productGroupName = $getGroupName->fetch(PDO::FETCH_ASSOC);
    if(empty($productGroupId)){
     $_SESSION['message'] = '<p class="message">Please, choose a product group name for removal.</p>';
     header('location: manage_departmentgroup.php');
-	die();
     exit;
    }   
    $stmt = $db->prepare('DELETE FROM productgroup WHERE id=:productGroupId'); 
@@ -357,12 +356,10 @@ echo "<br>";
    if($deleteProductGroupOutcome == 1){
 	   $_SESSION['message'] = "<p class='messagesuccess'>The product group " . $productGroupName['productgroupname'] . " has successfully been deleted.</p>";
 	   header('location: manage_departmentgroup.php');
-	   die();
    exit;
    } else {
     $_SESSION['message'] = "<p class='messagefailure'>Sorry, deleting the product group " . $productGroupName['productgroupname'] . " has failed. Please, try again.</p>";
             header('location: manage_departmentgroup.php');
-			die();
     exit;
    }
    
