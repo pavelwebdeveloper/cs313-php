@@ -201,6 +201,11 @@ echo "Hi";
    // Send the data to the model
    $deleteDepartmentOutcome = $stmt->rowCount();
    
+   echo "DELETEDDEPARTMENT";
+   var_dump($deleteDepartmentOutcome);
+echo "<br>";
+echo "<br>";
+   
    // Check and report the result
    if($deleteDepartmentOutcome === 1){
 	   $_SESSION['message'] = "<p class='messagesuccess'>The department " . $departmentName['productdepartmentname'] . " has successfully been deleted.</p>";
@@ -342,7 +347,16 @@ echo "Hi";
 echo "<br>";
 echo "<br>";
    
- 
+ // Check and report the result
+   if($deleteProductGroupOutcome === 1){
+	   $_SESSION['message'] = "<p class='messagesuccess'>The product group " . $productGroupName['productgroupname'] . " has successfully been deleted.</p>";
+   header('location: manage_departmentgroup.php');
+   exit;
+   } else {
+    $_SESSION['message'] = "<p class='messagefailure'>Sorry, deleting the product group " . $productGroupName['productgroupname'] . " has failed. Please, try again.</p>";
+            header('location: manage_departmentgroup.php');
+    exit;
+   }
    
    
 }
