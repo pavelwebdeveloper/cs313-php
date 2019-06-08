@@ -342,34 +342,17 @@ echo "Hi";
    // Send the data to the model
    $deleteProductGroupOutcome = $stmt->rowCount();
    
+   $deleteProductGroupOutcome *= 2;
+   
    echo "DELETED";
    var_dump($deleteProductGroupOutcome);
 echo "<br>";
 echo "<br>";
 
-// Query the product groups data
-   $getProductGroups = $db->prepare('SELECT * FROM productgroup');
-$getProductGroups->execute();
-$productGroups = $getProductGroups->fetchAll(PDO::FETCH_ASSOC);
- // Build a dynamic drop-down select list using the $productGroups array
- $productGroupsList .= '<select name="productGroupId" id="productGroupId">';
- $productGroupsList .= '<option disabled selected>Choose a product group</option>';
- foreach ($productGroups as $productGroup) {
- /*$catList .= "<option value=".urlencode($category['categoryId']).">".urlencode($category['categoryName'])."</option>";*/
-  $productGroupsList .= "<option value='$productGroup[id]'";
-  if(isset($productGroupId)) {
-   
-   if($productGroup['id'] === $productGroupId){
-    $productGroupsList .= ' selected ';
-   }
-  }
-  
-  $productGroupsList .= ">$productGroup[productgroupname]</option>";
- }
- $productGroupsList .= '</select>';
+
 
 // Check and report the result
-   if($deleteProductGroupOutcome === 1){
+   if($deleteProductGroupOutcome === 2){
 	   $_SESSION['message'] = "<p class='messagesuccess'>The product group " . $productGroupName['productgroupname'] . " has successfully been deleted.</p>";
    header('location: manage_departmentgroup.php');
    exit;
