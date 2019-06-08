@@ -162,6 +162,15 @@ $departmentName = $getName->fetch(PDO::FETCH_ASSOC);
    $stmt = $db->prepare('DELETE FROM productdepartment WHERE id=:departmentId'); 
  $stmt->bindValue(':departmentId', $departmentId, PDO::PARAM_INT);
 $stmt->execute();
+
+/
+var_dump($departmentId);
+echo "<br>";
+echo "<br>";
+echo "<br>";
+echo "<br>";
+echo "Hi";
+
 /*
 var_dump($stmt);
 echo "<br>";
