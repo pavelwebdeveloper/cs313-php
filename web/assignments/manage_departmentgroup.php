@@ -357,7 +357,7 @@ echo "Hi";
 	var_dump($imgName);
 	echo "<br>";
   
-  if  (empty($productGroupId) || empty($imgName)) {
+  if(empty($productGroupId) || empty($imgName)) {
    $_SESSION['message'] = '<p class="warningmessage">You must select both a product and an image file for the product.</p>';
   } else {
  if (isset($_FILES[$name])){
@@ -374,7 +374,12 @@ echo "Hi";
  $fileUploadResult = move_uploaded_file($source, $target);
  }
  }
-   
+ echo "<br>";
+ echo "<br>";
+   echo "evenfurtherPhotos";
+	echo "<br>";
+	var_dump($_FILES[$name]);
+	echo "<br>";
    
    // Check and report the result
    if($fileUploadResult){
