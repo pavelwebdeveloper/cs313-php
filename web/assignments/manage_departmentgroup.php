@@ -305,27 +305,36 @@ echo "Hi";
     </fieldset>
    </form>
    
-   <?php
-   $getProducts = $db->prepare('SELECT id, product, image FROM product ORDER BY product ASC'); 
-$getProducts->execute();
-$products = $getProducts->fetchAll(PDO::FETCH_ASSOC);
-$prodList = '<select name="id" id="id">';
- $prodList .= '<option>Choose a Product</option>';
- foreach ($products as $product) {
- $prodList .= "<option value='$product[id]'>$product[product]</option>";
- }
- $prodList .= '</select>';
-   ?>
+   
    
    <form action="manage_departmentgroup.php" method="post" enctype="multipart/form-data">
- <label for="invId">Product</label>
- <?php echo $prodList; ?><br><br>
+   <fieldset>
+	<legend>Upload a product group image</legend>
+ <label for="invId">Product Group</label>
+ <?php
+	echo $productGroupsList;
+ ?><br><br>
  <label for="uploadfile">Upload Image</label>
  <input id="uploadfile" type="file" name="file1"><br>
  <input type="submit" class="submitBtn" value="Upload">
  <input type="hidden" name="Upload" value="upload">
+ </fieldset>
 </form>
    
+   <?php
+if(isset($_POST['Upload'])) {
+	// directory name where uploaded images are stored
+$image_dir = $products['image'];
+// The path is the full path from the server root
+$image_dir_path = $_SERVER['DOCUMENT_ROOT'] . $image_dir;
+	
+
+	
+  // Filter and store the data
+	$productGroupId = filter_input(INPUT_POST, 'productGroupId', FILTER_SANITIZE_NUMBER_INT);	
+  // Store the name of the uploaded image
+  $imgName = $_FILES['file1']['name'];
+}
    
   
   </div> 
