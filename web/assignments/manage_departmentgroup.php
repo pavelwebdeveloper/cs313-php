@@ -304,9 +304,79 @@ echo "Hi";
      <!--<input type="hidden" name="RemoveProductGroup" value="removeProductGroup">-->
     </fieldset>
    </form>
+   
+   <?php
+   $getProducts = $db->prepare('SELECT id, product, image FROM product ORDER BY product ASC'); 
+$getProducts->execute();
+$products = $getProducts->fetchAll(PDO::FETCH_ASSOC);
+$prodList = '<select name="id" id="id">';
+ $prodList .= '<option>Choose a Product</option>';
+ foreach ($products as $product) {
+ $prodList .= "<option value='$product[id]'>$product[product]</option>";
+ }
+ $prodList .= '</select>';
+   ?>
+   
+   <form action="manage_departmentgroup.php" method="post" enctype="multipart/form-data">
+ <label for="invId">Product</label>
+ <?php echo $prodList; ?><br><br>
+ <label for="uploadfile">Upload Image</label>
+ <input id="uploadfile" type="file" name="file1"><br>
+ <input type="submit" class="submitBtn" value="Upload">
+ <input type="hidden" name="Upload" value="upload">
+</form>
    </div>
    
+  <?php
+if(isset($_POST['Upload'])) {
+	// directory name where uploaded images are stored
+$image_dir = $products['image'];
+// The path is the full path from the server root
+$image_dir_path = $_SERVER['DOCUMENT_ROOT'] . $image_dir;
+	/*
+	echo "<br>";
+echo "HIHIHI";
+echo "<br>";	
+*/
+
+	// Store the incoming product id
+  $id = filter_input(INPUT_POST, 'id', FILTER_VALIDATE_INT);
+  // Store the name of the uploaded image
+  $imgName = $_FILES['file1']['name'];
+  
+  if  (empty($id) || empty($imgName)) {
+   $_SESSION['message'] = '<p class="warningmessage">You must select both a product and an image file for the product.</p>';
+  } else {
+  
+  // Gets the paths, full and local directory
+ global $image_dir, $image_dir_path;
+ if (isset($_FILES[$name])){
+  // Gets the actual file name
+  $filename = $_FILES[$name]['name'];
+  if (empty($filename)) {
+   return;
+  }
+  // Get the file from the temp folder on the server
+ $source = $_FILES[$name]['tmp_name'];
+ // Sets the new path - images folder in this directory
+ $target = $image_dir_path . '/' . $filename;
+ // Moves the file to the target folder
+ $fileUploadResult = move_uploaded_file($source, $target);
+ }
    
+   
+   // Check and report the result
+   if($fileUploadResult){
+	   $_SESSION['message'] = "<p class='messagesuccess'>The upload succeeded.</p>";
+   header('location: manage_departmentgroup.php');
+   exit;
+   } else {
+    $_SESSION['message'] = "<p class='messagefailure'>Sorry, the upload failed.</p>";
+            header('location: manage_departmentgroup.php');
+    exit;
+   }
+}
+?> 
    
    
  
