@@ -338,7 +338,7 @@ echo "Hi";
    $deleteProductGroupOutcome = $stmt->rowCount();
    
  // Check and report the result
-   if($deleteProductGroupOutcome === 1){
+   if($deleteProductGroupOutcome){
 	   $_SESSION['message'] = "<p class='messagesuccess'>The product group " . $productGroupName['productgroupname'] . " has successfully been deleted.</p>";
    header('location: manage_departmentgroup.php');
    exit;
