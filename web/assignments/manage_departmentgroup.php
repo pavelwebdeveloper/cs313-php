@@ -105,6 +105,12 @@ $departments = $getDepartment->fetchAll(PDO::FETCH_ASSOC);
 if(isset($_POST['newDepartment'])) {
 	// Filter and store the data
 	$departmentName = filter_input(INPUT_POST, 'departmentName', FILTER_SANITIZE_STRING);
+	
+	echo "$departmentName";
+	var_dump($departmentName);
+echo "<br>";
+echo "<br>";
+echo "<br>";
    
    // validate the categoryName variable using a custom function from functions.php
    $pattern = '/^[A-Z][a-z]{3,}$/';
