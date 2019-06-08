@@ -197,6 +197,70 @@ echo "Hi";
    
    <form action="manage_departmentgroup.php" method="post">
     <fieldset>
+	<legend>Add product group</legend>
+	<?php
+	echo $departmentList;
+ ?>
+     <label for="productGroupName">New Product Group Name</label>
+     <input type="text" name="productGroupName" id="productGroupName" pattern="[A-Z][a-z]{3,}" required><br>
+     <input class="submitBtn" type="submit" value="Add Product Group">
+     <!-- Add the action name - value pair -->
+     <input type="hidden" name="AddNewProductGroup" value="addNewProductGroup">
+    </fieldset>
+   </form>
+   
+   <?php
+if(isset($_POST['AddNewProductGroup'])) {
+	/*
+	echo "<br>";
+echo "HIHIHI";
+echo "<br>";	
+*/
+
+	// Filter and store the data
+	$departmentId = filter_input(INPUT_POST, 'departmentId', FILTER_SANITIZE_NUMBER_INT);	
+	$productGroupName = filter_input(INPUT_POST, 'productGroupName', FILTER_SANITIZE_STRING);	
+	  
+   // validate the categoryName variable using a custom function from functions.php
+   $pattern = '/^[A-Za-z]{3,}$/';
+ $checkedproductGroupName = preg_match($pattern, $productGroupName);   
+   // Check for missing data
+   if(empty($checkedproductGroupName) || empty($departmentId)){
+    $_SESSION['message'] = '<p class="message">Please, choose a department name and provide a new product group name.</p>';
+    header('location: manage_departmentgroup.php');
+    exit;
+   }   
+   $stmt = $db->prepare('INSERT INTO productgroup (productgroupname, productdepartmentId) VALUES (:productGroupName, departmentId)'); 
+ $stmt->bindValue(':productGroupName', $productGroupName, PDO::PARAM_STR);
+ $stmt->bindValue(':departmentId', $departmentId, PDO::PARAM_INT);
+$stmt->execute();
+/*
+var_dump($stmt);
+echo "<br>";
+echo "<br>";
+echo "<br>";
+echo "<br>";
+echo "Hi";
+*/
+   
+   // Send the data to the model
+   $addProductGroupOutcome = $stmt->rowCount();
+   
+   // Check and report the result
+   if($addProductGroupOutcome === 1){
+	   $_SESSION['message'] = "<p class='messagesuccess'>The new department " . $productGroupName . " has successfully been added.</p>";
+   header('location: manage_departmentgroup.php');
+   exit;
+   } else {
+    $_SESSION['message'] = "<p class='messagefailure'>Sorry, adding the new department " . $productGroupName . " has failed. Please, try again.</p>";
+            header('location: manage_departmentgroup.php');
+    exit;
+   }
+}
+?>
+   
+   <form action="manage_departmentgroup.php" method="post">
+    <fieldset>
 	<legend>Add or remove product group</legend>
 	<?php
 	echo $departmentList;
