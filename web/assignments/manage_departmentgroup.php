@@ -44,6 +44,56 @@ $departments = $getDepartment->fetchAll(PDO::FETCH_ASSOC);
  </header>
  <main>
  
+ <?php
+if(isset($_POST['newDepartment'])) {
+	/*
+	var_dump($_POST);
+echo "<br>";
+echo "<br>";
+echo "<br>";
+echo "<br>";
+echo "Hi";
+*/
+	// Filter and store the data
+	$departmentName = filter_input(INPUT_POST, 'departmentName', FILTER_SANITIZE_STRING);
+	
+	
+   
+   // validate the categoryName variable using a custom function from functions.php
+   $pattern = '/^[A-Z][a-z]{3,}$/';
+ $checkedDepartmentName = preg_match($pattern, $departmentName);
+   
+   
+   // Check for missing data
+   if(empty($checkedDepartmentName)){
+    $_SESSION['message'] = '<p class="message">Please, provide a new department name.</p>';
+    header('location: manage_departmentgroup.php');
+    exit;
+   }
+   
+   $stmt = $db->prepare('INSERT INTO productdepartment (productdepartmentname) VALUES (:departmentName)'); 
+ $stmt->bindValue(':departmentName', $departmentName, PDO::PARAM_STR);
+$stmt->execute();
+
+
+   
+   // Send the data to the model
+   $adddepartmentOutcome = $stmt->rowCount();
+   
+   // Check and report the result
+   if($adddepartmentOutcome === 1){
+	   $_SESSION['message'] = "<p class='messagesuccess'>The new department " . $departmentName . " has successfully been added.</p>";
+   header('location: manage_departmentgroup.php');
+   exit;
+   } else {
+    $_SESSION['message'] = "<p class='messagefailure'>Sorry, adding the new department " . $departmentName . " has failed. Please, try again.</p>";
+            header('location: manage_departmentgroup.php');
+    exit;
+   }
+}
+	
+	?>
+ 
  <div>
  <?php
    if (isset($_SESSION['message'])) {
@@ -102,55 +152,7 @@ $departments = $getDepartment->fetchAll(PDO::FETCH_ASSOC);
    </form>
    </div>
    
-   <?php
-if(isset($_POST['newDepartment'])) {
-	/*
-	var_dump($_POST);
-echo "<br>";
-echo "<br>";
-echo "<br>";
-echo "<br>";
-echo "Hi";
-*/
-	// Filter and store the data
-	$departmentName = filter_input(INPUT_POST, 'departmentName', FILTER_SANITIZE_STRING);
-	
-	
    
-   // validate the categoryName variable using a custom function from functions.php
-   $pattern = '/^[A-Z][a-z]{3,}$/';
- $checkedDepartmentName = preg_match($pattern, $departmentName);
-   
-   
-   // Check for missing data
-   if(empty($checkedDepartmentName)){
-    $_SESSION['message'] = '<p class="message">Please, provide a new department name.</p>';
-    header('location: manage_departmentgroup.php');
-    exit;
-   }
-   
-   $stmt = $db->prepare('INSERT INTO productdepartment (productdepartmentname) VALUES (:departmentName)'); 
- $stmt->bindValue(':departmentName', $departmentName, PDO::PARAM_STR);
-$stmt->execute();
-
-
-   
-   // Send the data to the model
-   $adddepartmentOutcome = $stmt->rowCount();
-   
-   // Check and report the result
-   if($adddepartmentOutcome === 1){
-	   $_SESSION['message'] = "<p class='messagesuccess'>The new department " . $departmentName . " has successfully been added.</p>";
-   header('location: manage_departmentgroup.php');
-   exit;
-   } else {
-    $_SESSION['message'] = "<p class='messagefailure'>Sorry, adding the new department " . $departmentName . " has failed. Please, try again.</p>";
-            header('location: manage_departmentgroup.php');
-    exit;
-   }
-}
-	
-	?>
    
  
    
