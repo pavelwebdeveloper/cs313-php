@@ -153,13 +153,43 @@ echo "<br>";
  $getName->bindValue(':departmentId', $departmentId, PDO::PARAM_INT);
 $getName->execute();
 $departmentName = $getName->fetch(PDO::FETCH_ASSOC);
-var_dump($departmentName);
+
+
+// Check for missing data
+   if(empty($departmentId)){
+    $_SESSION['message'] = '<p class="message">Please, choose a department name for removal.</p>';
+    header('location: manage_departmentgroup.php');
+    exit;
+   }   
+   $stmt = $db->prepare('DELETE FROM productdepartment WHERE id=:departmentId'); 
+ $stmt->bindValue(':departmentId', $departmentId, PDO::PARAM_INT);
+$stmt->execute();
+
+
+
+
+/*
+var_dump($stmt);
 echo "<br>";
 echo "<br>";
 echo "<br>";
 echo "<br>";
 echo "Hi";
+*/
    
+   // Send the data to the model
+   $deleteDepartmentOutcome = $stmt->rowCount();
+   
+   // Check and report the result
+   if($deleteDepartmentOutcome === 1){
+	   $_SESSION['message'] = "<p class='messagesuccess'>The department " . $departmentName['productdepartmentname'] . " has successfully been deleted.</p>";
+   header('location: manage_departmentgroup.php');
+   exit;
+   } else {
+    $_SESSION['message'] = "<p class='messagefailure'>Sorry, deleting the department " . $departmentName['productdepartmentname'] . " has failed. Please, try again.</p>";
+            header('location: manage_departmentgroup.php');
+    exit;
+   }
    
 }
 	
