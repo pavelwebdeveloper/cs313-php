@@ -164,12 +164,7 @@ $departmentName = $getName->fetch(PDO::FETCH_ASSOC);
 $stmt->execute();
 
 
-var_dump($departmentName);
-echo "<br>";
-echo "<br>";
-echo "<br>";
-echo "<br>";
-echo "Hi";
+
 
 /*
 var_dump($stmt);
@@ -187,6 +182,12 @@ echo "Hi";
    if($deleteDepartmentOutcome === 1){
 	   $_SESSION['message'] = "<p class='messagesuccess'>The department " . $departmentName . " has successfully been deleted.</p>";
    header('location: manage_departmentgroup.php');
+   var_dump($departmentName);
+echo "<br>";
+echo "<br>";
+echo "<br>";
+echo "<br>";
+echo "Hi";
    exit;
    } else {
     $_SESSION['message'] = "<p class='messagefailure'>Sorry, deleting the department " . $departmentName . " has failed. Please, try again.</p>";
