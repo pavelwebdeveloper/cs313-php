@@ -333,7 +333,10 @@ $image_dir = $imagePath['image'];
 $image_dir_path = $_SERVER['DOCUMENT_ROOT'] . $image_dir;
 	
 	echo "Photos";
+	echo "<br>";
+	var_dump($imagePath);
 var_dump($image_dir);
+echo "<br>";
 var_dump($image_dir_path);
 echo "<br>";
 echo "<br>";
