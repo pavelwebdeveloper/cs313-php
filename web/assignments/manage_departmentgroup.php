@@ -63,7 +63,7 @@ $productGroups = $getProductGroups->fetchAll(PDO::FETCH_ASSOC);
   $productGroupsList .= "<option value='$productGroup[id]'";
   if(isset($productGroupId)) {
    
-   if($productGroup[id] === $productGroupId){
+   if($productGroup['id'] === $productGroupId){
     $productGroupsList .= ' selected ';
    }
   }
@@ -306,10 +306,10 @@ echo "<br>";
 	$productGroupId = filter_input(INPUT_POST, 'productGroupId', FILTER_SANITIZE_NUMBER_INT);	
 	
 	 
-	 $getName = $db->prepare('SELECT productgroupname FROM productgroup WHERE id=:productGroupId'); 
- $getName->bindValue(':productGroupId', $productGroupId, PDO::PARAM_INT);
-$getName->execute();
-$productGroupName = $getName->fetch(PDO::FETCH_ASSOC);
+	 $getGroupName = $db->prepare('SELECT productgroupname FROM productgroup WHERE id=:productGroupId'); 
+ $getGroupName->bindValue(':productGroupId', $productGroupId, PDO::PARAM_INT);
+$getGroupName->execute();
+$productGroupName = $getGroupName->fetch(PDO::FETCH_ASSOC);
 
 
 // Check for missing data
