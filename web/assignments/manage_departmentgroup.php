@@ -71,10 +71,12 @@ $departments = $getDepartment->fetchAll(PDO::FETCH_ASSOC);
    </form>
    
    <?php
-if(isset($_POST['newDepartment'])) {	
+if(isset($_POST['newDepartment'])) {
+	
 	echo "<br>";
 echo "HIHIHI";
 echo "<br>";	
+} else {
 	// Filter and store the data
 	$departmentName = filter_input(INPUT_POST, 'departmentName', FILTER_SANITIZE_STRING);	
 	echo "$departmentName";
