@@ -352,6 +352,11 @@ echo "Hi";
   // Store the name of the uploaded image
   $imgName = $_FILES['file1']['name'];
   
+  echo "furtherPhotos";
+	echo "<br>";
+	var_dump($imgName);
+	echo "<br>";
+  
   if  (empty($productGroupId) || empty($imgName)) {
    $_SESSION['message'] = '<p class="warningmessage">You must select both a product and an image file for the product.</p>';
   } else {
