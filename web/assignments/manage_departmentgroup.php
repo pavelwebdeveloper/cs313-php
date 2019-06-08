@@ -323,8 +323,12 @@ echo "Hi";
    
    <?php
 if(isset($_POST['Upload'])) {
+	$getImagePath = $db->prepare('SELECT image FROM productgroup WHERE id = :productGroupId'); 
+	$getImagePath->bindValue(':productGroupId', $productGroupId, PDO::PARAM_INT);
+$getImagePath->execute();
+$imagePath = $getImagePath->fetch(PDO::FETCH_ASSOC);
 	// directory name where uploaded images are stored
-$image_dir = $products['image'];
+$image_dir = $imagePath['image'];
 // The path is the full path from the server root
 $image_dir_path = $_SERVER['DOCUMENT_ROOT'] . $image_dir;
 	
