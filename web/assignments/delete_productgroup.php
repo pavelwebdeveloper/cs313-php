@@ -6,6 +6,9 @@ echo "HIHIHI";
 echo "<br>";	
 */
 
+// Start the session
+session_start();
+
 	// Filter and store the data
 	$productGroupId = filter_input(INPUT_POST, 'productGroupId', FILTER_SANITIZE_NUMBER_INT);	
 	
