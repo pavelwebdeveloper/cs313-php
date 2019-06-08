@@ -103,6 +103,11 @@ $departments = $getDepartment->fetchAll(PDO::FETCH_ASSOC);
    
    <?php
 if(isset($_POST['newDepartment'])) {
+	
+	echo "<br>";
+echo "HIHIHI";
+echo "<br>";
+	
 	// Filter and store the data
 	$departmentName = filter_input(INPUT_POST, 'departmentName', FILTER_SANITIZE_STRING);
 	
