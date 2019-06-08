@@ -342,17 +342,18 @@ echo "Hi";
    // Send the data to the model
    $deleteProductGroupOutcome = $stmt->rowCount();
    
-   $deleteProductGroupOutcome *= 2;
+   
    
    echo "DELETED";
    var_dump($deleteProductGroupOutcome);
+   var_dump($productGroupName);
 echo "<br>";
 echo "<br>";
 
 
 
 // Check and report the result
-   if($deleteProductGroupOutcome === 2){
+   if($deleteProductGroupOutcome == 1){
 	   $_SESSION['message'] = "<p class='messagesuccess'>The product group " . $productGroupName['productgroupname'] . " has successfully been deleted.</p>";
    header('location: manage_departmentgroup.php');
    exit;
