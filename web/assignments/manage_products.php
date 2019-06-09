@@ -51,7 +51,7 @@ $departments = $getDepartment->fetchAll(PDO::FETCH_ASSOC);
     echo $_SESSION['message'];
    }
    ?>
-   
+   <div>
    <form action="add_product.php" method="post">
     <fieldset>
 	<legend>Choose department in which you want to add a product</legend>
@@ -64,6 +64,7 @@ $departments = $getDepartment->fetchAll(PDO::FETCH_ASSOC);
      <input type="hidden" name="AddProduct" value="addProduct">
     </fieldset>
    </form>
+   </div>
    
    <br>
    <br>
@@ -86,6 +87,7 @@ $prodList = '<table>';
     $prodList .= '</tbody></table>';
  ?>
  
+ <div>
  <h2>Product List</h2>
  
  <?php
@@ -94,6 +96,7 @@ echo $prodList;
 
  ?>
  
+ </div>
  </main>
  <footer>
   <?php include $_SERVER[ 'DOCUMENT_ROOT' ].'/assignments/common/footer.php'; ?>
