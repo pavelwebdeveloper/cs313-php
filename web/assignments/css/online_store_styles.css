@@ -263,6 +263,14 @@ p.messagefailure {
 	color: red;
 }
 
+a.adminlink {
+	text-decoration: none;
+}
+a.adminlink:hover {
+	color: purple;
+	text-decoration: underline;
+}
+
 /*===========TABLE LAYOUT==============*/
 table {
     margin: 10px;

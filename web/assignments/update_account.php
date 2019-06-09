@@ -16,7 +16,9 @@ if (!isset($_SESSION['shoppingCart'])) {
   <link href="css/normalize.css" rel="stylesheet" media="screen">
  </head>
  <body>
- 
+ <header>
+ <?php include $_SERVER[ 'DOCUMENT_ROOT' ].'/assignments/common/header.php'; ?>
+ </header>
  <main>
  
  <?php
@@ -153,5 +155,6 @@ $passwordUpdateOutcome = $passwordUpdate->rowCount();
  ?>
  
  </main>
+ <?php include $_SERVER[ 'DOCUMENT_ROOT' ].'/assignments/common/footer.php'; ?>
  </body>
 </html>
