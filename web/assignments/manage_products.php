@@ -66,7 +66,7 @@ echo "<br>";
  ?><br><br>
 	 <input class="submitBtn" type="submit" value="Add product">
      <!-- Add the action name - value pair -->
-     <input type="hidden" name="AddProduct" value="addProduct">
+     <!--<input type="hidden" name="AddProduct" value="addProduct">-->
     </fieldset>
    </form>
    </div>
@@ -76,15 +76,7 @@ echo "<br>";
    
    <?php
    
-   if(isset($_POST['AddProduct'])) {
-	   
-	   // Filter and store the data
-	$departmentId = filter_input(INPUT_POST, 'departmentId', FILTER_SANITIZE_NUMBER_INT);	
-	
-	if(isset($departmentId)) {
-		header('location: add_product.php');
-   }
-   }
+   
    
  $getProducts = $db->prepare('SELECT id, product, image FROM product ORDER BY product ASC'); 
 $getProducts->execute();
