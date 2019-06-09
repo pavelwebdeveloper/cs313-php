@@ -83,6 +83,12 @@ $prodList = '<table>';
     $prodList .= '</tbody></table>';
  ?>
  
+ <?php
+
+echo $prodList;
+
+ ?>
+ 
  </main>
  <footer>
   <?php include $_SERVER[ 'DOCUMENT_ROOT' ].'/assignments/common/footer.php'; ?>
