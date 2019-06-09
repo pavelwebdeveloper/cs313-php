@@ -10,7 +10,7 @@ if (!isset($_SESSION['shoppingCart'])) {
  }
 ?>
 <!DOCTYPE html>
-<html lang="en-us" id="logInRegister">
+<html lang="en-us">
  <head>
   <title>Add Product Page</title>
   <link href="css/online_store_styles.css" rel="stylesheet" media="screen">
