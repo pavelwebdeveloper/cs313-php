@@ -17,7 +17,9 @@ if (!isset($_SESSION['shoppingCart'])) {
   <link href="css/normalize.css" rel="stylesheet" media="screen">
  </head>
  <body>
- 
+ <header>
+ <?php include $_SERVER[ 'DOCUMENT_ROOT' ].'/assignments/common/header.php'; ?>
+ </header>
  <main>
  
  <?php
@@ -61,14 +63,14 @@ $productGroups = $getProductGroups->fetchAll(PDO::FETCH_ASSOC);
  ?><br><br>
  <label for="productName">Product Name</label><br>
      <input type="text" name="productName" id="productName" pattern="[A-Za-z]{3,}" required><br><br>
-	 <label for="productDescription">Product Description:</label>
+	 <label for="productDescription">Product Description:</label><br>
 <textarea name="productDescription" id="productDescription" rows="10" cols="100"></textarea><br><br>
 <label for="imageFilePath">Image File Path for the New Product</label><br>
      <input type="text" name="imageFilePath" id="imageFilePath" pattern="[A-Za-z/_.]{3,}" value="/images/product_images/" required><br><br>
 	 <label for="productPrice">Product Price</label><br>
 	 <input type="number" name="productPrice" id="productPrice"><br><br>
 	 <label for="productStock">Product Stock</label><br>
-	 <input type="number" name="productStock" id="productStock"><br>
+	 <input type="number" name="productStock" id="productStock"><br><br>
 	 <input class="submitBtn" type="submit" value="Add product">
      <!-- Add the action name - value pair -->
 	 <input type="hidden" name="productDepartmentId" value="$_POST['departmentId']">
