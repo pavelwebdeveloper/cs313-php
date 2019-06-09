@@ -52,7 +52,13 @@ $productGroups = $getProductGroups->fetchAll(PDO::FETCH_ASSOC);
    if (isset($_SESSION['message'])) {
     echo $_SESSION['message'];
    }
+   
+   var_dump($_POST);
+
+echo "<br>";
    ?>
+   
+   
    
    <form action="add_product.php" method="post">
     <fieldset>
