@@ -124,7 +124,7 @@ echo "Hi";
     exit;
    }  
    
-   $stmt = $db->prepare('INSERT INTO product (product, productgroupId, productdepartmentId, productDescription, image, price, stock) VALUES (:productGroupName, :departmentId, :imageFilePath)'); 
+   $stmt = $db->prepare('INSERT INTO product (product, productgroupId, productdepartmentId, productDescription, image, price, stock) VALUES (:productName, :productgroupId, :productdepartmentId, :productDescription, :imageFilePath, :productPrice, :productStock)'); 
  $stmt->bindValue(':productName', $productName, PDO::PARAM_STR);
  $stmt->bindValue(':productgroupId', $productgroupId, PDO::PARAM_INT);
  $stmt->bindValue(':productdepartmentId', $productdepartmentId, PDO::PARAM_INT);
@@ -139,7 +139,7 @@ $stmt->execute();
    $addProductOutcome = $stmt->rowCount();
    
    
-var_dump($productStock);
+var_dump($addProductOutcome);
 echo "<br>";
 echo "<br>";
 echo "<br>";
@@ -154,7 +154,7 @@ echo "Hi";
    exit;
    } else {
     $_SESSION['message'] = "<p class='messagefailure'>Sorry, adding the new product " . $productName . " has failed. Please, try again.</p>";
-            header('location: add_product.php.php');
+            header('location: add_product.php');
     exit;
    }
 	
