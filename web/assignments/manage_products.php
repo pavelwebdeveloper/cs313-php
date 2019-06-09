@@ -65,6 +65,9 @@ $departments = $getDepartment->fetchAll(PDO::FETCH_ASSOC);
     </fieldset>
    </form>
    
+   <br>
+   <br>
+   
    <?php
    
  $getProducts = $db->prepare('SELECT id, product, image FROM product ORDER BY product ASC'); 
@@ -72,7 +75,7 @@ $getProducts->execute();
 $products = $getProducts->fetchAll(PDO::FETCH_ASSOC);
 $prodList = '<table>';
     $prodList .= '<thead>';
-    $prodList .= '<tr><th>Product Name</th><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>';
+    $prodList .= '<tr><th>Product Name</th><td>&nbsp;</td><td>&nbsp;</td></tr>';
     $prodList .= '</thead>';
     $prodList .= '<tbody>';
     foreach ($products as $product) {
@@ -82,6 +85,8 @@ $prodList = '<table>';
     }
     $prodList .= '</tbody></table>';
  ?>
+ 
+ <h2>Product List</h2>
  
  <?php
 
