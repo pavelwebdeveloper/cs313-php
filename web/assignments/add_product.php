@@ -85,12 +85,31 @@ if(isset($_POST['AddProduct'])) {
 	// Filter and store the data
 	$productName = filter_input(INPUT_POST, 'productName', FILTER_SANITIZE_STRING);
 	$productGroupId = filter_input(INPUT_POST, 'productGroupId', FILTER_SANITIZE_NUMBER_INT);	
-	$departmentId = filter_input(INPUT_POST, 'departmentId', FILTER_SANITIZE_NUMBER_INT);	
-	
+	$departmentId = filter_input(INPUT_POST, 'departmentId', FILTER_SANITIZE_NUMBER_INT);		
 	$imageFilePath = filter_input(INPUT_POST, 'imageFilePath', FILTER_SANITIZE_STRING);	
 	$productDescription = filter_input(INPUT_POST, 'productDescription', FILTER_SANITIZE_STRING);
 $productPrice = filter_input(INPUT_POST, 'productPrice', FILTER_SANITIZE_NUMBER_FLOAT);
-$productStock = filter_input(INPUT_POST, 'productStock', FILTER_SANITIZE_NUMBER_INT);	
+$productStock = filter_input(INPUT_POST, 'productStock', FILTER_SANITIZE_NUMBER_INT);
+
+
+var_dump($productName);
+
+echo "<br>";
+var_dump($productGroupId);
+echo "<br>";
+var_dump($departmentId);
+echo "<br>";
+var_dump($imageFilePath);
+echo "<br>";
+echo "<br>";
+var_dump($productDescription);
+echo "<br>";
+var_dump($productPrice);
+echo "<br>";
+var_dump($productStock);
+echo "<br>";
+echo "Hi";
+	
 
 // Check for missing data
    if(empty($productName) || empty($productGroupId) || empty($imageFilePath) || empty($productDescription) || empty($productPrice) || empty($productStock)){
@@ -108,17 +127,19 @@ $productStock = filter_input(INPUT_POST, 'productStock', FILTER_SANITIZE_NUMBER_
  $stmt->bindValue(':productPrice', $productPrice, PDO::PARAM_INT);
  $stmt->bindValue(':productStock', $productStock, PDO::PARAM_INT);
 $stmt->execute();
-/*
-var_dump($stmt);
+
+   
+   // Send the data to the model
+   $addProductOutcome = $stmt->rowCount();
+   
+   
+var_dump($productStock);
 echo "<br>";
 echo "<br>";
 echo "<br>";
 echo "<br>";
 echo "Hi";
-*/
-   
-   // Send the data to the model
-   $addProductOutcome = $stmt->rowCount();
+
    
    // Check and report the result
    if($addProductOutcome === 1){
@@ -136,24 +157,6 @@ echo "Hi";
 
    ?>
    
-   <?php
-   
- $getProducts = $db->prepare('SELECT id, product, image FROM product ORDER BY product ASC'); 
-$getProducts->execute();
-$products = $getProducts->fetchAll(PDO::FETCH_ASSOC);
-$prodList = '<table>';
-    $prodList .= '<thead>';
-    $prodList .= '<tr><th>Product Name</th><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>';
-    $prodList .= '</thead>';
-    $prodList .= '<tbody>';
-    foreach ($products as $product) {
-     $prodList .= "<tr><td>$product[product]</td>";
-     $prodList .= "<td><a class='tablelink' href='modify_product.php?id=$product[id]' title='Click to modify'>Modify</a></td>";
-     $prodList .= "<td><a class='tablelink' href='manage_products.php?action=del&id=$product[id]' title='Click to delete'>Delete</a></td>";
-    }
-    $prodList .= '</tbody></table>';
-	
- ?>
  
  </main>
  <footer>
