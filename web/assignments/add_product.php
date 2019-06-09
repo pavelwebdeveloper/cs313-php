@@ -79,7 +79,7 @@ echo "<br>";
 	 <input type="number" name="productStock" id="productStock"><br><br>
 	 <input class="submitBtn" type="submit" value="Add product">
      <!-- Add the action name - value pair -->
-	 <input type="hidden" name="productDepartmentId" value="$_POST['departmentId']">
+	 <input type="hidden" name="departmentId" value="$_POST['departmentId']">
      <input type="hidden" name="AddProduct" value="addProduct">
     </fieldset>
    </form>
