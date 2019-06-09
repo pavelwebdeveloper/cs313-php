@@ -62,13 +62,13 @@ $productGroups = $getProductGroups->fetchAll(PDO::FETCH_ASSOC);
  <label for="productName">Product Name</label><br>
      <input type="text" name="productName" id="productName" pattern="[A-Za-z]{3,}" required><br><br>
 	 <label for="productDescription">Product Description:</label>
-<textarea name="productDescription" id="productDescription" rows="10" cols="100"></textarea><br>
+<textarea name="productDescription" id="productDescription" rows="10" cols="100"></textarea><br><br>
 <label for="imageFilePath">Image File Path for the New Product</label><br>
      <input type="text" name="imageFilePath" id="imageFilePath" pattern="[A-Za-z/_.]{3,}" value="/images/product_images/" required><br><br>
-	 <label for="productPrice">Product Price</label>
-	 <input type="number" name="productPrice" id="productPrice">
-	 <label for="productStock">Product Stock</label>
-	 <input type="number" name="productStock" id="productStock">
+	 <label for="productPrice">Product Price</label><br>
+	 <input type="number" name="productPrice" id="productPrice"><br><br>
+	 <label for="productStock">Product Stock</label><br>
+	 <input type="number" name="productStock" id="productStock"><br>
 	 <input class="submitBtn" type="submit" value="Add product">
      <!-- Add the action name - value pair -->
 	 <input type="hidden" name="productDepartmentId" value="$_POST['departmentId']">
