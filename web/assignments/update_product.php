@@ -43,10 +43,11 @@ $productId = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
 $getProductInfo = $db->prepare('SELECT * FROM product WHERE id = ' . $productId . ''); 
 $getProductInfo->execute();
 $productInfo = $getProductInfo->fetch(PDO::FETCH_ASSOC);
-}
 var_dump($productInfo);
    echo "<br>";
 echo "<br>";
+}
+
    
    ?>
    
