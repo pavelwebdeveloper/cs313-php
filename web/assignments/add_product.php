@@ -138,6 +138,10 @@ $stmt->execute();
    // Send the data to the model
    $addProductOutcome = $stmt->rowCount();
    
+   var_dump($addProductOutcome);
+
+echo "<br>";
+   
    
 var_dump($addProductOutcome);
 echo "<br>";
