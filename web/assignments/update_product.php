@@ -12,7 +12,7 @@ if (!isset($_SESSION['shoppingCart'])) {
 <!DOCTYPE html>
 <html lang="en-us">
  <head>
-  <title>Add Product Page</title>
+  <title>Update Product Page</title>
   <link href="css/online_store_styles.css" rel="stylesheet" media="screen">
   <link href="css/normalize.css" rel="stylesheet" media="screen">
  </head>
@@ -25,26 +25,7 @@ if (!isset($_SESSION['shoppingCart'])) {
  <?php
  // Get the database connection file
  require_once '../library/connections.php';
- // Query the product groups data
-   $getProductGroups = $db->prepare('SELECT * FROM productgroup WHERE productdepartmentid = ' . $_POST["departmentId"] . '');
-$getProductGroups->execute();
-$productGroups = $getProductGroups->fetchAll(PDO::FETCH_ASSOC);
- // Build a dynamic drop-down select list using the $productGroups array
- $productGroupsList .= '<select name="productGroupId" id="productGroupId">';
- $productGroupsList .= '<option disabled selected>Choose a product group</option>';
- foreach ($productGroups as $productGroup) {
- /*$catList .= "<option value=".urlencode($category['categoryId']).">".urlencode($category['categoryName'])."</option>";*/
-  $productGroupsList .= "<option value='$productGroup[id]'";
-  if(isset($productGroupId)) {
-   
-   if($productGroup['id'] === $productGroupId){
-    $productGroupsList .= ' selected ';
-   }
-  }
-  
-  $productGroupsList .= ">$productGroup[productgroupname]</option>";
- }
- $productGroupsList .= '</select>';
+ 
  ?>
  
  
@@ -52,22 +33,22 @@ $productGroups = $getProductGroups->fetchAll(PDO::FETCH_ASSOC);
    if (isset($_SESSION['message'])) {
     echo $_SESSION['message'];
    }
-   
    var_dump($_POST);
-
+   echo "<br>";
 echo "<br>";
+echo "<br>";
+$getProductInfo = $db->prepare('SELECT * FROM product'); 
+$getProductInfo->execute();
+$productInfo = $getProductInfo->fetch(PDO::FETCH_ASSOC);
+   
    ?>
    
    
    
    <form action="add_product.php" method="post">
     <fieldset>
-	<legend>Add product</legend>
-     <label for="productGroupName">Choose Product Group Name</label><br>
-     <?php
-	echo $productGroupsList;
- ?><br><br>
- <label for="productName">Product Name</label><br>
+	<legend>Update product</legend>
+     <label for="productName">Product Name</label><br>
      <input type="text" name="productName" id="productName" pattern="[A-Za-z0-9]{3,}" required><br><br>
 	 <label for="productDescription">Product Description:</label><br>
 <textarea name="productDescription" id="productDescription" rows="10" cols="100"></textarea><br><br>
@@ -77,17 +58,17 @@ echo "<br>";
 	 <input type="number" name="productPrice" id="productPrice"><br><br>
 	 <label for="productStock">Product Stock</label><br>
 	 <input type="number" name="productStock" id="productStock"><br><br>
-	 <input class="submitBtn" type="submit" value="Add product">
+	 <input class="submitBtn" type="submit" value="Update product">
      <!-- Add the action name - value pair -->
-	 <input type="hidden" name="departmentId" <?php if(isset($_POST['departmentId'])){echo "value='$_POST[departmentId]'";} ?>>
-     <input type="hidden" name="AddProduct" value="addProduct">
+	 <!--<input type="hidden" name="departmentId" <?php if(isset($_POST['departmentId'])){echo "value='$_POST[departmentId]'";} ?>>-->
+     <input type="hidden" name="UpdateProduct" value="updateProduct">
     </fieldset>
    </form>
    
    
    <?php
 
-if(isset($_POST['AddProduct'])) {
+if(isset($_POST['UpdateProduct'])) {
 	// Filter and store the data
 	$productName = filter_input(INPUT_POST, 'productName', FILTER_SANITIZE_STRING);
 	$productGroupId = (int)(filter_input(INPUT_POST, 'productGroupId', FILTER_SANITIZE_NUMBER_INT));	
@@ -127,7 +108,7 @@ echo "<br>";
    }  
    
    
-   $stmt = $db->prepare('INSERT INTO product (product, productgroupId, productdepartmentId, productdescription, image, price, stock) VALUES (:productName, :productGroupId, :departmentId, :productDescription, :imageFilePath, :productPrice, :productStock)');
+   $stmt = $db->prepare('UPDATE product SET product = :productName, productgroupId = :productGroupId, productdepartmentId = :departmentId, productdescription = :productDescription, image = :imageFilePath, price = :productPrice, stock = :productStock WHERE ');
  $stmt->bindValue(':productName', $productName, PDO::PARAM_STR);
  $stmt->bindValue(':productGroupId', $productGroupId, PDO::PARAM_INT);
  $stmt->bindValue(':departmentId', $departmentId, PDO::PARAM_INT);
