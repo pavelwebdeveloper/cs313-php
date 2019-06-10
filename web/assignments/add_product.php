@@ -156,8 +156,15 @@ echo "<br>";
 echo "<br>";
 $stmt->execute();
 */
-
+/*
 $stmt = $db->prepare('INSERT INTO product (product, productgroupId, productdepartmentId, productdescription, image, price, stock) VALUES (' . $productName . ', ' . $productgroupId . ', ' . $productdepartmentId . ', ' . $productDescription . ', ' . $imageFilePath . ', ' . $productPrice . ', ' . $productStock . ')');
+$stmt->execute();
+*/
+
+$stmt = $db->prepare('INSERT INTO product (productgroupId, productdepartmentId, stock) VALUES (' . $productgroupId . ', ' . $productdepartmentId . ', ' . $productStock . ')');
+var_dump($stmt);
+echo "<br>";
+echo "<br>";
 $stmt->execute();
    
    // Send the data to the model
