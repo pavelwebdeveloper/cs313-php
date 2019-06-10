@@ -150,7 +150,7 @@ var_dump($stmt);
 echo "<br>";
 echo "<br>";
 $stmt->execute();
-*/
+
    
    // Send the data to the model
    $updateProductOutcome = $stmt->rowCount();
