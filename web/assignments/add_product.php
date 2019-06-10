@@ -26,7 +26,7 @@ if (!isset($_SESSION['shoppingCart'])) {
  // Get the database connection file
  require_once '../library/connections.php';
  // Query the product groups data
-   $getProductGroups = $db->prepare('SELECT * FROM productgroup JOIN productdepartment ON productgroup.productdepartmentId = productdepartment.id');
+   $getProductGroups = $db->prepare('SELECT * FROM productgroup WHERE productdepartmentid = ' . $_POST("departmentId") . '');
 $getProductGroups->execute();
 $productGroups = $getProductGroups->fetchAll(PDO::FETCH_ASSOC);
  // Build a dynamic drop-down select list using the $productGroups array
