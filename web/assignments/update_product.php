@@ -57,20 +57,20 @@ echo "<br>";
     <fieldset>
 	<legend>Update product</legend>
      <label for="productName">Product Name</label><br>
-     <input type="text" name="productName" id="productName" pattern="[A-Za-z0-9]{3,}"  required><br><br>
+     <input type="text" name="productName" id="productName" pattern="[A-Za-z0-9]{3,}" <?php if(isset($productInfo['product'])){echo "value='$productInfo[product]'";} ?> required><br><br>
 	 <label for="productDescription">Product Description:</label><br>
-<textarea name="productDescription" id="productDescription" rows="10" cols="100"></textarea><br><br>
+<textarea name="productDescription" id="productDescription" rows="10" cols="100"><?php if(isset($productInfo['productdescription'])){echo "$productInfo[productdescription]";} ?></textarea><br><br>
 <label for="imageFilePath">Image File Path for the New Product</label><br>
-     <input type="text" name="imageFilePath" id="imageFilePath" pattern="[A-Za-z/_.]{3,}"  required><br><br>
+     <input type="text" name="imageFilePath" id="imageFilePath" pattern="[A-Za-z/_.]{3,}" <?php if(isset($productInfo['image'])){echo "value='$productInfo[image]'";} ?> required><br><br>
 	 <label for="productPrice">Product Price</label><br>
-	 <input type="number" name="productPrice" id="productPrice" <br><br>
+	 <input type="number" name="productPrice" id="productPrice" <?php if(isset($productInfo['price'])){echo "value='$productInfo[price]'";} ?>><br><br>
 	 <label for="productStock">Product Stock</label><br>
-	 <input type="number" name="productStock" id="productStock" ><br><br>
+	 <input type="number" name="productStock" id="productStock" <?php if(isset($productInfo['stock'])){echo "value='$productInfo[stock]'";} ?>><br><br>
 	 <input class="submitBtn" type="submit" value="Update product">
      <!-- Add the action name - value pair -->
-	 <input type="hidden" name="productId">
-	 <input type="hidden" name="departmentId">
-	 <input type="hidden" name="productGroupId">
+	 <input type="hidden" name="productId" <?php if(isset($productInfo['id'])){echo "value='$productInfo[id]'";} ?>>
+	 <input type="hidden" name="departmentId" <?php if(isset($productInfo['productdepartmentid'])){echo "value='$productInfo[productdepartmentid]'";} ?>>
+	 <input type="hidden" name="productGroupId" <?php if(isset($productInfo['productgroupid'])){echo "value='$productInfo[productgroupid]'";} ?>>
      <input type="hidden" name="UpdateProduct" value="updateProduct">
     </fieldset>
    </form>
