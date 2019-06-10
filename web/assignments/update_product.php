@@ -64,9 +64,9 @@ echo "<br>";
 	 <input type="number" name="productStock" id="productStock" <?php if(isset($productInfo['stock'])){echo "value='$productInfo[stock]'";} ?>><br><br>-->
 	 <input class="submitBtn" type="submit" value="Update product">
      <!-- Add the action name - value pair -->
-	 <input type="hidden" name="productId" <?php if(isset($productInfo['id'])){echo "value='$productInfo[id]'";} ?>>
+	 <!--<input type="hidden" name="productId" <?php if(isset($productInfo['id'])){echo "value='$productInfo[id]'";} ?>>
 	 <input type="hidden" name="departmentId" <?php if(isset($productInfo['productdepartmentid'])){echo "value='$productInfo[productdepartmentid]'";} ?>>
-	 <input type="hidden" name="productGroupId" <?php if(isset($productInfo['productgroupid'])){echo "value='$productInfo[productgroupid]'";} ?>>
+	 <input type="hidden" name="productGroupId" <?php if(isset($productInfo['productgroupid'])){echo "value='$productInfo[productgroupid]'";} ?>>-->
      <input type="hidden" name="UpdateProduct" value="updateProduct">
     </fieldset>
    </form>
