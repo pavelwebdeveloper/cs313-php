@@ -124,7 +124,13 @@ echo "Hi";
     exit;
    }  
    
-   $stmt = $db->prepare('INSERT INTO product (product, productgroupId, productdepartmentId, productDescription, image, price, stock) VALUES (:productName, :productgroupId, :productdepartmentId, :productDescription, :imageFilePath, :productPrice, :productStock)'); 
+   $stmt = $db->prepare('INSERT INTO product (product, productgroupId, productdepartmentId, productDescription, image, price, stock) VALUES (:productName, :productgroupId, :productdepartmentId, :productDescription, :imageFilePath, :productPrice, :productStock)');
+var_dump($stmt);
+echo "<br>";
+echo "<br>";
+echo "<br>";
+echo "<br>";
+echo "Hi";   
  $stmt->bindValue(':productName', $productName, PDO::PARAM_STR);
  $stmt->bindValue(':productgroupId', $productgroupId, PDO::PARAM_INT);
  $stmt->bindValue(':productdepartmentId', $productdepartmentId, PDO::PARAM_INT);
@@ -141,12 +147,7 @@ $stmt->execute();
    
    
    
-var_dump($addProductOutcome);
-echo "<br>";
-echo "<br>";
-echo "<br>";
-echo "<br>";
-echo "Hi";
+
 
    
    // Check and report the result
