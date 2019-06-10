@@ -138,9 +138,7 @@ $stmt->execute();
    // Send the data to the model
    $addProductOutcome = $stmt->rowCount();
    
-   var_dump($addProductOutcome);
-
-echo "<br>";
+   
    
    
 var_dump($addProductOutcome);
@@ -152,6 +150,7 @@ echo "Hi";
 
    
    // Check and report the result
+   /*
    if($addProductOutcome === 1){
 	   $_SESSION['message'] = "<p class='messagesuccess'>The new product " . $productName . " has successfully been added.</p>";
    header('location: add_product.php');
@@ -162,7 +161,7 @@ echo "Hi";
     exit;
    }
 	
-	
+	*/
 }
 
    ?>
