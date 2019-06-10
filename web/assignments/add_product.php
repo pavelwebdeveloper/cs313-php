@@ -119,11 +119,13 @@ echo "<br>";
 echo "<br>";	
 
 // Check for missing data
+/*
    if(empty($productName) || empty($productGroupId) || empty($imageFilePath) || empty($productDescription) || empty($productPrice) || empty($productStock)){
     $_SESSION['message'] = '<p class="message">Please, specify the information for all fields.</p>';
     header('location: add_product.php');
     exit;
    }  
+   */
    /*
    $stmt = $db->prepare('INSERT INTO product (product, productgroupId, productdepartmentId, productdescription, image, price, stock) VALUES (:productName, :productgroupId, :productdepartmentId, :productDescription, :imageFilePath, :productPrice, :productStock)');
  $stmt->bindValue(':productName', $productName, PDO::PARAM_STR);
