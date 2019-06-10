@@ -115,7 +115,8 @@ echo "<br>";
 var_dump($productStock);
 echo "<br>";
 echo "Hi";
-	
+echo "<br>";
+echo "<br>";	
 
 // Check for missing data
    if(empty($productName) || empty($productGroupId) || empty($imageFilePath) || empty($productDescription) || empty($productPrice) || empty($productStock)){
@@ -124,13 +125,15 @@ echo "Hi";
     exit;
    }  
    
-   $stmt = $db->prepare('INSERT INTO product (product, productgroupId, productdepartmentId, productDescription, image, price, stock) VALUES (:productName, :productgroupId, :productdepartmentId, :productDescription, :imageFilePath, :productPrice, :productStock)');
+   $stmt = $db->prepare('INSERT INTO product (product, productgroupId, productdepartmentId, productdescription, image, price, stock) VALUES (:productName, :productgroupId, :productdepartmentId, :productDescription, :imageFilePath, :productPrice, :productStock)');
 var_dump($stmt);
 echo "<br>";
 echo "<br>";
 echo "<br>";
 echo "<br>";
-echo "Hi";   
+echo "Hi"; 
+echo "<br>";
+echo "<br>";  
  $stmt->bindValue(':productName', $productName, PDO::PARAM_STR);
  $stmt->bindValue(':productgroupId', $productgroupId, PDO::PARAM_INT);
  $stmt->bindValue(':productdepartmentId', $productdepartmentId, PDO::PARAM_INT);
@@ -144,7 +147,12 @@ $stmt->execute();
    // Send the data to the model
    $addProductOutcome = $stmt->rowCount();
    
-   
+   var_dump($addProductOutcome);
+echo "<br>";
+echo "<br>";
+echo "<br>";
+echo "<br>";
+echo "Hi";
    
    
 
