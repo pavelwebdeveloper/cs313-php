@@ -126,14 +126,6 @@ echo "<br>";
    }  
    
    $stmt = $db->prepare('INSERT INTO product (product, productgroupid, productdepartmentid, productdescription, image, price, stock) VALUES (:productName, :productgroupId, :productdepartmentId, :productDescription, :imageFilePath, :productPrice, :productStock)');
-var_dump($stmt);
-echo "<br>";
-echo "<br>";
-echo "<br>";
-echo "<br>";
-echo "Hi"; 
-echo "<br>";
-echo "<br>";  
  $stmt->bindValue(':productName', $productName, PDO::PARAM_STR);
  $stmt->bindValue(':productgroupId', $productgroupId, PDO::PARAM_INT);
  $stmt->bindValue(':productdepartmentId', $productdepartmentId, PDO::PARAM_INT);
@@ -142,6 +134,15 @@ echo "<br>";
  $stmt->bindValue(':productPrice', $productPrice, PDO::PARAM_INT);
  $stmt->bindValue(':productStock', $productStock, PDO::PARAM_INT);
 $stmt->execute();
+
+var_dump($stmt);
+echo "<br>";
+echo "<br>";
+echo "<br>";
+echo "<br>";
+echo "Hi"; 
+echo "<br>";
+echo "<br>";
 
    
    // Send the data to the model
