@@ -91,11 +91,11 @@ if(isset($_POST['AddProduct'])) {
 	// Filter and store the data
 	$productName = filter_input(INPUT_POST, 'productName', FILTER_SANITIZE_STRING);
 	$productGroupId = (int)(filter_input(INPUT_POST, 'productGroupId', FILTER_SANITIZE_NUMBER_INT));	
-	$departmentId = filter_input(INPUT_POST, 'departmentId', FILTER_SANITIZE_NUMBER_INT);		
+	$departmentId = (int)(filter_input(INPUT_POST, 'departmentId', FILTER_SANITIZE_NUMBER_INT));		
 	$imageFilePath = filter_input(INPUT_POST, 'imageFilePath', FILTER_SANITIZE_STRING);	
 	$productDescription = filter_input(INPUT_POST, 'productDescription', FILTER_SANITIZE_STRING);
-$productPrice = filter_input(INPUT_POST, 'productPrice', FILTER_SANITIZE_NUMBER_INT);
-$productStock = filter_input(INPUT_POST, 'productStock', FILTER_SANITIZE_NUMBER_INT);
+$productPrice = (int)(filter_input(INPUT_POST, 'productPrice', FILTER_SANITIZE_NUMBER_INT));
+$productStock = (int)(filter_input(INPUT_POST, 'productStock', FILTER_SANITIZE_NUMBER_INT));
 
 
 var_dump($productName);
