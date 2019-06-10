@@ -33,13 +33,17 @@ if (!isset($_SESSION['shoppingCart'])) {
    if (isset($_SESSION['message'])) {
     echo $_SESSION['message'];
    }
-   var_dump($_POST);
+   var_dump($_GET);
    echo "<br>";
 echo "<br>";
 echo "<br>";
-$getProductInfo = $db->prepare('SELECT * FROM product'); 
+$productId = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
+$getProductInfo = $db->prepare('SELECT * FROM product WHERE id = ' . $productId . ''); 
 $getProductInfo->execute();
 $productInfo = $getProductInfo->fetch(PDO::FETCH_ASSOC);
+var_dump($productInfo);
+   echo "<br>";
+echo "<br>";
    
    ?>
    
