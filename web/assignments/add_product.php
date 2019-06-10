@@ -137,13 +137,14 @@ echo "<br>";
  $stmt->bindValue(':productStock', $productStock, PDO::PARAM_INT);
  */
  
+ /*
  $stmt = $db->prepare('INSERT INTO product (productgroupId, productdepartmentId, stock) VALUES (:productgroupId, :productdepartmentId, :productStock)');
- //$stmt->bindValue(':productName', $productName, PDO::PARAM_STR);
+ $stmt->bindValue(':productName', $productName, PDO::PARAM_STR);
  $stmt->bindValue(':productgroupId', $productgroupId, PDO::PARAM_INT);
  $stmt->bindValue(':productdepartmentId', $productdepartmentId, PDO::PARAM_INT);
- //$stmt->bindValue(':productDescription', $productDescription, PDO::PARAM_STR);
- //$stmt->bindValue(':imageFilePath', $imageFilePath, PDO::PARAM_STR);
- //$stmt->bindValue(':productPrice', $productPrice, PDO::PARAM_INT);
+ $stmt->bindValue(':productDescription', $productDescription, PDO::PARAM_STR);
+ $stmt->bindValue(':imageFilePath', $imageFilePath, PDO::PARAM_STR);
+ $stmt->bindValue(':productPrice', $productPrice, PDO::PARAM_INT);
  $stmt->bindValue(':productStock', $productStock, PDO::PARAM_INT);
  var_dump($stmt);
 echo "<br>";
@@ -154,9 +155,10 @@ echo "Hi";
 echo "<br>";
 echo "<br>";
 $stmt->execute();
+*/
 
-
-
+$stmt = $db->prepare('INSERT INTO product (product, productgroupId, productdepartmentId, productdescription, image, price, stock) VALUES ('plane', 82, 14, 'fast plane', '/images/product_images/toys/planes/', 10, 5)');
+$stmt->execute();
    
    // Send the data to the model
    $addProductOutcome = $stmt->rowCount();
