@@ -133,9 +133,7 @@ echo "<br>";
  $stmt->bindValue(':imageFilePath', $imageFilePath, PDO::PARAM_STR);
  $stmt->bindValue(':productPrice', $productPrice, PDO::PARAM_INT);
  $stmt->bindValue(':productStock', $productStock, PDO::PARAM_INT);
-$stmt->execute();
-
-var_dump($stmt);
+ var_dump($stmt);
 echo "<br>";
 echo "<br>";
 echo "<br>";
@@ -143,6 +141,9 @@ echo "<br>";
 echo "Hi"; 
 echo "<br>";
 echo "<br>";
+$stmt->execute();
+
+
 
    
    // Send the data to the model
