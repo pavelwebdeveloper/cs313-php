@@ -137,13 +137,13 @@ echo "<br>";
  $stmt->bindValue(':productStock', $productStock, PDO::PARAM_INT);
  */
  
- $stmt = $db->prepare('INSERT INTO product (productgroupId, productdepartmentId, price, stock) VALUES (:productgroupId, :productdepartmentId, :productPrice, :productStock)');
+ $stmt = $db->prepare('INSERT INTO product (productgroupId, productdepartmentId, stock) VALUES (:productgroupId, :productdepartmentId, :productStock)');
  //$stmt->bindValue(':productName', $productName, PDO::PARAM_STR);
  $stmt->bindValue(':productgroupId', $productgroupId, PDO::PARAM_INT);
  $stmt->bindValue(':productdepartmentId', $productdepartmentId, PDO::PARAM_INT);
  //$stmt->bindValue(':productDescription', $productDescription, PDO::PARAM_STR);
  //$stmt->bindValue(':imageFilePath', $imageFilePath, PDO::PARAM_STR);
- $stmt->bindValue(':productPrice', $productPrice, PDO::PARAM_INT);
+ //$stmt->bindValue(':productPrice', $productPrice, PDO::PARAM_INT);
  $stmt->bindValue(':productStock', $productStock, PDO::PARAM_INT);
  var_dump($stmt);
 echo "<br>";
