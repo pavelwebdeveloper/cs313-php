@@ -34,7 +34,7 @@ if (!isset($_SESSION['shoppingCart'])) {
     echo $_SESSION['message'];
    }
    
-if(isset($_GET)) {
+if(!empty($_GET)) {
 	var_dump($_GET);
    echo "<br>";
 echo "<br>";
