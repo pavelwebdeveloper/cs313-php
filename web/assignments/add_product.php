@@ -119,23 +119,23 @@ echo "<br>";
 echo "<br>";	
 
 // Check for missing data
-/*
+
    if(empty($productName) || empty($productGroupId) || empty($imageFilePath) || empty($productDescription) || empty($productPrice) || empty($productStock)){
     $_SESSION['message'] = '<p class="message">Please, specify the information for all fields.</p>';
     header('location: add_product.php');
     exit;
    }  
-   */
-   /*
-   $stmt = $db->prepare('INSERT INTO product (product, productgroupId, productdepartmentId, productdescription, image, price, stock) VALUES (:productName, :productgroupId, :productdepartmentId, :productDescription, :imageFilePath, :productPrice, :productStock)');
+   
+   
+   $stmt = $db->prepare('INSERT INTO product (product, productgroupId, productdepartmentId, productdescription, image, price, stock) VALUES (:productName, :productgGroupId, :departmentId, :productDescription, :imageFilePath, :productPrice, :productStock)');
  $stmt->bindValue(':productName', $productName, PDO::PARAM_STR);
- $stmt->bindValue(':productgroupId', $productgroupId, PDO::PARAM_INT);
- $stmt->bindValue(':productdepartmentId', $productdepartmentId, PDO::PARAM_INT);
+ $stmt->bindValue(':productGroupId', $productGroupId, PDO::PARAM_INT);
+ $stmt->bindValue(':departmentId', $departmentId, PDO::PARAM_INT);
  $stmt->bindValue(':productDescription', $productDescription, PDO::PARAM_STR);
  $stmt->bindValue(':imageFilePath', $imageFilePath, PDO::PARAM_STR);
  $stmt->bindValue(':productPrice', $productPrice, PDO::PARAM_INT);
  $stmt->bindValue(':productStock', $productStock, PDO::PARAM_INT);
- */
+ 
  
  /*
  $stmt = $db->prepare('INSERT INTO product (productgroupId, productdepartmentId, stock) VALUES (:productgroupId, :productdepartmentId, :productStock)');
@@ -146,6 +146,7 @@ echo "<br>";
  $stmt->bindValue(':imageFilePath', $imageFilePath, PDO::PARAM_STR);
  $stmt->bindValue(':productPrice', $productPrice, PDO::PARAM_INT);
  $stmt->bindValue(':productStock', $productStock, PDO::PARAM_INT);
+ */
  var_dump($stmt);
 echo "<br>";
 echo "<br>";
@@ -160,12 +161,13 @@ $stmt->execute();
 $stmt = $db->prepare('INSERT INTO product (product, productgroupId, productdepartmentId, productdescription, image, price, stock) VALUES (' . $productName . ', ' . $productgroupId . ', ' . $productdepartmentId . ', ' . $productDescription . ', ' . $imageFilePath . ', ' . $productPrice . ', ' . $productStock . ')');
 $stmt->execute();
 */
-
+/*
 $stmt = $db->prepare('INSERT INTO product (productgroupId, productdepartmentId, stock) VALUES (' . $productgroupId . ', ' . $productdepartmentId . ', ' . $productStock . ')');
 var_dump($stmt);
 echo "<br>";
 echo "<br>";
 $stmt->execute();
+*/
    
    // Send the data to the model
    $addProductOutcome = $stmt->rowCount();
