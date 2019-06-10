@@ -57,20 +57,20 @@ echo "<br>";
     <fieldset>
 	<legend>Update product</legend>
      <label for="productName">Product Name</label><br>
-     <input type="text" name="productName" id="productName" pattern="[A-Za-z0-9]{3,}" <?php if(isset($productInfo['product'])){echo "value='$productInfo[product]'";} ?> required><br><br>
+     <input type="text" name="productName" id="productName" pattern="[A-Za-z0-9]{3,}" <?php if(isset($productInfo['product'])){echo "value='$productInfo[product]'";} elseif(isset($_POST['productName'])) {echo "value='$_POST[productName]'"; } ?> required><br><br>
 	 <label for="productDescription">Product Description:</label><br>
-<textarea name="productDescription" id="productDescription" rows="10" cols="100"><?php if(isset($productInfo['productdescription'])){echo "$productInfo[productdescription]";} ?></textarea><br><br>
+<textarea name="productDescription" id="productDescription" rows="10" cols="100"><?php if(isset($productInfo['productdescription'])){echo "$productInfo[productdescription]";} elseif(isset($_POST['productDescription'])) {echo "value='$_POST[productDescription]'"; } ?></textarea><br><br>
 <label for="imageFilePath">Image File Path for the New Product</label><br>
-     <input type="text" name="imageFilePath" id="imageFilePath" pattern="[A-Za-z/_.]{3,}" <?php if(isset($productInfo['image'])){echo "value='$productInfo[image]'";} ?> required><br><br>
+     <input type="text" name="imageFilePath" id="imageFilePath" pattern="[A-Za-z/_.]{3,}" <?php if(isset($productInfo['image'])){echo "value='$productInfo[image]'";} elseif(isset($_POST['imageFilePath'])) {echo "value='$_POST[imageFilePath]'" ?> required><br><br>
 	 <label for="productPrice">Product Price</label><br>
-	 <input type="number" name="productPrice" id="productPrice" <?php if(isset($productInfo['price'])){echo "value='$productInfo[price]'";} ?>><br><br>
+	 <input type="number" name="productPrice" id="productPrice" <?php if(isset($productInfo['price'])){echo "value='$productInfo[price]'";} elseif(isset($_POST['productPrice'])) {echo "value='$_POST[productPrice]'" ?>><br><br>
 	 <label for="productStock">Product Stock</label><br>
-	 <input type="number" name="productStock" id="productStock" <?php if(isset($productInfo['stock'])){echo "value='$productInfo[stock]'";} ?>><br><br>
+	 <input type="number" name="productStock" id="productStock" <?php if(isset($productInfo['stock'])){echo "value='$productInfo[stock]'";} elseif(isset($_POST['productStock'])) {echo "value='$_POST[productStock]'" ?>><br><br>
 	 <input class="submitBtn" type="submit" value="Update product">
      <!-- Add the action name - value pair -->
-	 <input type="hidden" name="productId" <?php if(isset($productInfo['id'])){echo "value='$productInfo[id]'";} ?>>
-	 <input type="hidden" name="departmentId" <?php if(isset($productInfo['productdepartmentid'])){echo "value='$productInfo[productdepartmentid]'";} ?>>
-	 <input type="hidden" name="productGroupId" <?php if(isset($productInfo['productgroupid'])){echo "value='$productInfo[productgroupid]'";} ?>>
+	 <input type="hidden" name="productId" <?php if(isset($productInfo['id'])){echo "value='$productInfo[id]'";} elseif(isset($_POST['productId'])) {echo "value='$_POST[productId]'" ?>>
+	 <input type="hidden" name="departmentId" <?php if(isset($productInfo['productdepartmentid'])){echo "value='$productInfo[productdepartmentid]'";} elseif(isset($_POST['departmentId'])) {echo "value='$_POST[departmentId]'" ?>>
+	 <input type="hidden" name="productGroupId" <?php if(isset($productInfo['productgroupid'])){echo "value='$productInfo[productgroupid]'";} elseif(isset($_POST['productGroupId'])) {echo "value='$_POST[productGroupId]'" ?>>
      <input type="hidden" name="UpdateProduct" value="updateProduct">
     </fieldset>
    </form>
@@ -83,7 +83,7 @@ if(isset($_POST['UpdateProduct'])) {
 
 echo "<br>";
 	// Filter and store the data
-	/*
+	
 	$prodId = filter_input(INPUT_POST, 'productId', FILTER_SANITIZE_NUMBER_INT);
 	$productName = filter_input(INPUT_POST, 'productName', FILTER_SANITIZE_STRING);
 	$productGroupId = (int)(filter_input(INPUT_POST, 'productGroupId', FILTER_SANITIZE_NUMBER_INT));	
@@ -122,7 +122,7 @@ echo "<br>";
     exit;
    }  
    
-   /*
+   
    $stmt = $db->prepare('UPDATE product SET product = :productName, productgroupId = :productGroupId, productdepartmentId = :departmentId, productdescription = :productDescription, image = :imageFilePath, price = :productPrice, stock = :productStock WHERE id = :prodId');
   $stmt->bindValue(':prodId', $prodId, PDO::PARAM_INT);
  $stmt->bindValue(':productName', $productName, PDO::PARAM_STR);
@@ -134,16 +134,7 @@ echo "<br>";
  $stmt->bindValue(':productStock', $productStock, PDO::PARAM_INT);
  
  
- /*
- $stmt = $db->prepare('INSERT INTO product (productgroupId, productdepartmentId, stock) VALUES (:productgroupId, :productdepartmentId, :productStock)');
- $stmt->bindValue(':productName', $productName, PDO::PARAM_STR);
- $stmt->bindValue(':productgroupId', $productgroupId, PDO::PARAM_INT);
- $stmt->bindValue(':productdepartmentId', $productdepartmentId, PDO::PARAM_INT);
- $stmt->bindValue(':productDescription', $productDescription, PDO::PARAM_STR);
- $stmt->bindValue(':imageFilePath', $imageFilePath, PDO::PARAM_STR);
- $stmt->bindValue(':productPrice', $productPrice, PDO::PARAM_INT);
- $stmt->bindValue(':productStock', $productStock, PDO::PARAM_INT);
- */
+ 
  var_dump($stmt);
 echo "<br>";
 echo "<br>";
@@ -154,12 +145,7 @@ echo "<br>";
 echo "<br>";
 $stmt->execute();
 
-/*
-$stmt = $db->prepare('INSERT INTO product (product, productgroupId, productdepartmentId, productdescription, image, price, stock) VALUES (' . $productName . ', ' . $productgroupId . ', ' . $productdepartmentId . ', ' . $productDescription . ', ' . $imageFilePath . ', ' . $productPrice . ', ' . $productStock . ')');
-$stmt->execute();
-*/
-/*
-$stmt = $db->prepare('INSERT INTO product (productgroupId, productdepartmentId, stock) VALUES (' . $productgroupId . ', ' . $productdepartmentId . ', ' . $productStock . ')');
+
 var_dump($stmt);
 echo "<br>";
 echo "<br>";
@@ -167,22 +153,22 @@ $stmt->execute();
 */
    
    // Send the data to the model
-   //$updateProductOutcome = $stmt->rowCount();
-   /*
+   $updateProductOutcome = $stmt->rowCount();
+   
    var_dump($updateProductOutcome);
 echo "<br>";
 echo "<br>";
 echo "<br>";
 echo "<br>";
 echo "Hi";
-*/
+
    
    
 
 
    
    // Check and report the result
-   /*
+   
    if($updateProductOutcome === 1){
 	   $_SESSION['message'] = "<p class='messagesuccess'>The product " . $productName . " has successfully been updated.</p>";
    header('location: manage_products.php');
@@ -192,7 +178,7 @@ echo "Hi";
             header('location: update_product.php');
     exit;
    }
-	*/
+	
 	
 }
 
