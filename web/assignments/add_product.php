@@ -157,7 +157,7 @@ echo "<br>";
 $stmt->execute();
 */
 
-$stmt = $db->prepare('INSERT INTO product (product, productgroupId, productdepartmentId, productdescription, image, price, stock) VALUES ("plane", 82, 14, "fast plane", "/images/product_images/toys/planes/", 10, 5)');
+$stmt = $db->prepare('INSERT INTO product (product, productgroupId, productdepartmentId, productdescription, image, price, stock) VALUES (' . $productName . ', ' . $productgroupId . ', ' . $productdepartmentId . ', ' . $productDescription . ', ' . $imageFilePath . ', ' . $productPrice . ', ' . $productStock . ')');
 $stmt->execute();
    
    // Send the data to the model
