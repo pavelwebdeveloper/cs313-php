@@ -52,9 +52,7 @@ $departments = $getDepartment->fetchAll(PDO::FETCH_ASSOC);
    if (isset($_SESSION['message'])) {
     echo $_SESSION['message'];
    }
-   var_dump($departments);
-
-echo "<br>";
+   
    ?>
    <div>
    <form action="add_product.php" method="post">

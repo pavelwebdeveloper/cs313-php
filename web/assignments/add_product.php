@@ -184,10 +184,10 @@ echo "Hi";
 
    
    // Check and report the result
-   /*
+   
    if($addProductOutcome === 1){
 	   $_SESSION['message'] = "<p class='messagesuccess'>The new product " . $productName . " has successfully been added.</p>";
-   header('location: add_product.php');
+   header('location: manage_products.php');
    exit;
    } else {
     $_SESSION['message'] = "<p class='messagefailure'>Sorry, adding the new product " . $productName . " has failed. Please, try again.</p>";
@@ -195,7 +195,7 @@ echo "Hi";
     exit;
    }
 	
-	*/
+	
 }
 
    ?>
