@@ -125,7 +125,7 @@ echo "<br>";
     exit;
    }  
    
-   $stmt = $db->prepare('INSERT INTO product (product, productgroupId, productdepartmentId, productdescription, image, price, stock) VALUES (:productName, :productgroupId, :productdepartmentId, :productDescription, :imageFilePath, :productPrice, :productStock)');
+   $stmt = $db->prepare('INSERT INTO product (product, productgroupid, productdepartmentid, productdescription, image, price, stock) VALUES (:productName, :productgroupId, :productdepartmentId, :productDescription, :imageFilePath, :productPrice, :productStock)');
 var_dump($stmt);
 echo "<br>";
 echo "<br>";
