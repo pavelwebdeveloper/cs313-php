@@ -75,7 +75,11 @@ echo "<br>";
    <?php
 
 if(isset($_POST['UpdateProduct'])) {
+	var_dump($_POST);
+
+echo "<br>";
 	// Filter and store the data
+	/*
 	$prodId = filter_input(INPUT_POST, 'productId', FILTER_SANITIZE_NUMBER_INT);
 	$productName = filter_input(INPUT_POST, 'productName', FILTER_SANITIZE_STRING);
 	$productGroupId = (int)(filter_input(INPUT_POST, 'productGroupId', FILTER_SANITIZE_NUMBER_INT));	
@@ -159,14 +163,15 @@ $stmt->execute();
 */
    
    // Send the data to the model
-   $updateProductOutcome = $stmt->rowCount();
-   
+   //$updateProductOutcome = $stmt->rowCount();
+   /*
    var_dump($updateProductOutcome);
 echo "<br>";
 echo "<br>";
 echo "<br>";
 echo "<br>";
 echo "Hi";
+*/
    
    
 
