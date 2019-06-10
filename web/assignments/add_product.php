@@ -124,13 +124,23 @@ echo "<br>";
     header('location: add_product.php');
     exit;
    }  
-   
+   /*
    $stmt = $db->prepare('INSERT INTO product (product, productgroupId, productdepartmentId, productdescription, image, price, stock) VALUES (:productName, :productgroupId, :productdepartmentId, :productDescription, :imageFilePath, :productPrice, :productStock)');
  $stmt->bindValue(':productName', $productName, PDO::PARAM_STR);
  $stmt->bindValue(':productgroupId', $productgroupId, PDO::PARAM_INT);
  $stmt->bindValue(':productdepartmentId', $productdepartmentId, PDO::PARAM_INT);
  $stmt->bindValue(':productDescription', $productDescription, PDO::PARAM_STR);
  $stmt->bindValue(':imageFilePath', $imageFilePath, PDO::PARAM_STR);
+ $stmt->bindValue(':productPrice', $productPrice, PDO::PARAM_INT);
+ $stmt->bindValue(':productStock', $productStock, PDO::PARAM_INT);
+ */
+ 
+ $stmt = $db->prepare('INSERT INTO product (productgroupId, productdepartmentId, price, stock) VALUES (:productgroupId, :productdepartmentId, :productPrice, :productStock)');
+ //$stmt->bindValue(':productName', $productName, PDO::PARAM_STR);
+ $stmt->bindValue(':productgroupId', $productgroupId, PDO::PARAM_INT);
+ $stmt->bindValue(':productdepartmentId', $productdepartmentId, PDO::PARAM_INT);
+ //$stmt->bindValue(':productDescription', $productDescription, PDO::PARAM_STR);
+ //$stmt->bindValue(':imageFilePath', $imageFilePath, PDO::PARAM_STR);
  $stmt->bindValue(':productPrice', $productPrice, PDO::PARAM_INT);
  $stmt->bindValue(':productStock', $productStock, PDO::PARAM_INT);
  var_dump($stmt);
