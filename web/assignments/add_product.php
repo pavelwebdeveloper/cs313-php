@@ -127,7 +127,7 @@ echo "<br>";
    }  
    
    
-   $stmt = $db->prepare('INSERT INTO product (product, productgroupId, productdepartmentId, productdescription, image, price, stock) VALUES (:productName, :productgGroupId, :departmentId, :productDescription, :imageFilePath, :productPrice, :productStock)');
+   $stmt = $db->prepare('INSERT INTO product (product, productgroupId, productdepartmentId, productdescription, image, price, stock) VALUES (:productName, :productGroupId, :departmentId, :productDescription, :imageFilePath, :productPrice, :productStock)');
  $stmt->bindValue(':productName', $productName, PDO::PARAM_STR);
  $stmt->bindValue(':productGroupId', $productGroupId, PDO::PARAM_INT);
  $stmt->bindValue(':departmentId', $departmentId, PDO::PARAM_INT);
