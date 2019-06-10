@@ -33,11 +33,12 @@ if (!isset($_SESSION['shoppingCart'])) {
    if (isset($_SESSION['message'])) {
     echo $_SESSION['message'];
    }
-   var_dump($_GET);
+   
+if(isset($_GET)) {
+	var_dump($_GET);
    echo "<br>";
 echo "<br>";
 echo "<br>";
-if(isset($_GET)) {
 $productId = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
 $getProductInfo = $db->prepare('SELECT * FROM product WHERE id = ' . $productId . ''); 
 $getProductInfo->execute();
