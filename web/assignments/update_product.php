@@ -55,9 +55,9 @@ echo "<br>";
      <label for="productName">Product Name</label><br>
      <input type="text" name="productName" id="productName" pattern="[A-Za-z0-9]{3,}" <?php if(isset($productInfo['product'])){echo "value='$productInfo[product]'";} ?> required><br><br>
 	 <label for="productDescription">Product Description:</label><br>
-<textarea name="productDescription" id="productDescription" rows="10" cols="100"><?php if(isset($productInfo['productdescription'])){echo "value='$productInfo[productdescription]'";} ?></textarea><br><br>
+<textarea name="productDescription" id="productDescription" rows="10" cols="100"><?php if(isset($productInfo['productdescription'])){echo "$productInfo[productdescription]";} ?></textarea><br><br>
 <label for="imageFilePath">Image File Path for the New Product</label><br>
-     <input type="text" name="imageFilePath" id="imageFilePath" pattern="[A-Za-z/_.]{3,}" value="/images/product_images/" <?php if(isset($productInfo['image'])){echo "value='$productInfo[image]'";} ?> required><br><br>
+     <input type="text" name="imageFilePath" id="imageFilePath" pattern="[A-Za-z/_.]{3,}" <?php if(isset($productInfo['image'])){echo "value='$productInfo[image]'";} ?> required><br><br>
 	 <label for="productPrice">Product Price</label><br>
 	 <input type="number" name="productPrice" id="productPrice" <?php if(isset($productInfo['price'])){echo "value='$productInfo[price]'";} ?>><br><br>
 	 <label for="productStock">Product Stock</label><br>
