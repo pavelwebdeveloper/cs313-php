@@ -176,6 +176,10 @@ section article div img {
 	max-height: 267px;
 }
 
+header form {
+	margin: 10px 5px;
+}
+
 main form {
 	margin: 10px 5px;
 }
