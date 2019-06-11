@@ -83,7 +83,7 @@ if(isset($_POST['UpdateProduct'])) {
 
 echo "<br>";
 	// Filter and store the data
-	
+	/*
 	$prodId = filter_input(INPUT_POST, 'productId', FILTER_SANITIZE_NUMBER_INT);
 	$productName = filter_input(INPUT_POST, 'productName', FILTER_SANITIZE_STRING);
 	$productGroupId = (int)(filter_input(INPUT_POST, 'productGroupId', FILTER_SANITIZE_NUMBER_INT));	
@@ -115,7 +115,7 @@ echo "<br>";
 echo "<br>";	
 
 // Check for missing data
-
+/*
    if(empty($productName) || empty($productGroupId) || empty($imageFilePath) || empty($productDescription) || empty($productPrice) || empty($productStock)){
     $_SESSION['message'] = '<p class="message">Please, specify the information for all fields.</p>';
     header('location: add_product.php');
