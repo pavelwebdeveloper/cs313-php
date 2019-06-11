@@ -144,6 +144,7 @@ echo "<br>";
  $stmt->bindValue(':productPrice', $productPrice, PDO::PARAM_INT);
  $stmt->bindValue(':productStock', $productStock, PDO::PARAM_INT);
  */
+ /*
  var_dump($stmt);
 echo "<br>";
 echo "<br>";
