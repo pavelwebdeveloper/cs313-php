@@ -26,6 +26,11 @@ if (!isset($_SESSION['shoppingCart'])) {
  // Get the database connection file
  require_once '../library/connections.php';
  // Query the product groups data
+ if(!isset($_POST["departmentId"])) {
+	 $_SESSION['message'] = "<p class='messagefailure'>Please, choose department in which you want to add a product.</p>";
+   header('location: manage_products.php');
+   exit;
+ }
    $getProductGroups = $db->prepare('SELECT * FROM productgroup WHERE productdepartmentid = ' . $_POST["departmentId"] . '');
 $getProductGroups->execute();
 $productGroups = $getProductGroups->fetchAll(PDO::FETCH_ASSOC);
@@ -55,9 +60,6 @@ $productGroups = $getProductGroups->fetchAll(PDO::FETCH_ASSOC);
     echo $message;
    }
    
-   var_dump($_POST);
-
-echo "<br>";
    ?>
    
    
@@ -117,53 +119,11 @@ $productStock = (int)(filter_input(INPUT_POST, 'productStock', FILTER_SANITIZE_N
  $stmt->bindValue(':imageFilePath', $imageFilePath, PDO::PARAM_STR);
  $stmt->bindValue(':productPrice', $productPrice, PDO::PARAM_INT);
  $stmt->bindValue(':productStock', $productStock, PDO::PARAM_INT);
- 
- 
- /*
- $stmt = $db->prepare('INSERT INTO product (productgroupId, productdepartmentId, stock) VALUES (:productgroupId, :productdepartmentId, :productStock)');
- $stmt->bindValue(':productName', $productName, PDO::PARAM_STR);
- $stmt->bindValue(':productgroupId', $productgroupId, PDO::PARAM_INT);
- $stmt->bindValue(':productdepartmentId', $productdepartmentId, PDO::PARAM_INT);
- $stmt->bindValue(':productDescription', $productDescription, PDO::PARAM_STR);
- $stmt->bindValue(':imageFilePath', $imageFilePath, PDO::PARAM_STR);
- $stmt->bindValue(':productPrice', $productPrice, PDO::PARAM_INT);
- $stmt->bindValue(':productStock', $productStock, PDO::PARAM_INT);
- */
- var_dump($stmt);
-echo "<br>";
-echo "<br>";
-echo "<br>";
-echo "<br>";
-echo "Hi"; 
-echo "<br>";
-echo "<br>";
-$stmt->execute();
+ $stmt->execute();
 
-/*
-$stmt = $db->prepare('INSERT INTO product (product, productgroupId, productdepartmentId, productdescription, image, price, stock) VALUES (' . $productName . ', ' . $productgroupId . ', ' . $productdepartmentId . ', ' . $productDescription . ', ' . $imageFilePath . ', ' . $productPrice . ', ' . $productStock . ')');
-$stmt->execute();
-*/
-/*
-$stmt = $db->prepare('INSERT INTO product (productgroupId, productdepartmentId, stock) VALUES (' . $productgroupId . ', ' . $productdepartmentId . ', ' . $productStock . ')');
-var_dump($stmt);
-echo "<br>";
-echo "<br>";
-$stmt->execute();
-*/
-   
+ 
    // Send the data to the model
    $addProductOutcome = $stmt->rowCount();
-   
-   var_dump($addProductOutcome);
-echo "<br>";
-echo "<br>";
-echo "<br>";
-echo "<br>";
-echo "Hi";
-   
-   
-
-
    
    // Check and report the result
    
@@ -172,7 +132,7 @@ echo "Hi";
    header('location: manage_products.php');
    exit;
    } else {
-    $_SESSION['message'] = "<p class='messagefailure'>Sorry, adding the new product " . $productName . " has failed. Please, try again.</p>";
+    $message = "<p class='messagefailure'>Sorry, adding the new product " . $productName . " has failed. Please, try again.</p>";
             header('location: add_product.php');
     exit;
    }
