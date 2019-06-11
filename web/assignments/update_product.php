@@ -22,6 +22,8 @@ if (!isset($_SESSION['shoppingCart'])) {
  </header>
  <main>
  
+ <h1>Product Update</h1>
+ 
  <?php
  // Get the database connection file
  require_once '../library/connections.php';
@@ -32,23 +34,16 @@ if (!isset($_SESSION['shoppingCart'])) {
  <?php
    if (isset($_SESSION['message'])) {
     echo $_SESSION['message'];
+   } elseif (isset($message)) {
+    echo $message;
    }
    
-if(!empty($_GET)) {
-	var_dump($_GET);
-   echo "<br>";
-echo "<br>";
-echo "<br>";
+if(!empty($_GET)) {	
 $productId = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
 $getProductInfo = $db->prepare('SELECT * FROM product WHERE id = ' . $productId . ''); 
 $getProductInfo->execute();
 $productInfo = $getProductInfo->fetch(PDO::FETCH_ASSOC);
-var_dump($productInfo);
-   echo "<br>";
-echo "<br>";
-}
-
-   
+}   
    ?>
    
    
@@ -79,9 +74,6 @@ echo "<br>";
    <?php
 
 if(isset($_POST['UpdateProduct'])) {
-	var_dump($_POST);
-
-echo "<br>";
 	// Filter and store the data
 	
 	$prodId = filter_input(INPUT_POST, 'productId', FILTER_SANITIZE_NUMBER_INT);
@@ -93,26 +85,6 @@ echo "<br>";
 $productPrice = (int)(filter_input(INPUT_POST, 'productPrice', FILTER_SANITIZE_NUMBER_INT));
 $productStock = (int)(filter_input(INPUT_POST, 'productStock', FILTER_SANITIZE_NUMBER_INT));
 
-
-var_dump($productName);
-
-echo "<br>";
-var_dump($productGroupId);
-echo "<br>";
-var_dump($departmentId);
-echo "<br>";
-var_dump($imageFilePath);
-echo "<br>";
-echo "<br>";
-var_dump($productDescription);
-echo "<br>";
-var_dump($productPrice);
-echo "<br>";
-var_dump($productStock);
-echo "<br>";
-echo "Hi";
-echo "<br>";
-echo "<br>";	
 
 // Check for missing data
 
@@ -132,37 +104,14 @@ echo "<br>";
  $stmt->bindValue(':imageFilePath', $imageFilePath, PDO::PARAM_STR);
  $stmt->bindValue(':productPrice', $productPrice, PDO::PARAM_INT);
  $stmt->bindValue(':productStock', $productStock, PDO::PARAM_INT);
- 
- 
- 
- 
- var_dump($stmt);
-echo "<br>";
-echo "<br>";
-echo "<br>";
-echo "<br>";
-echo "Hi"; 
-echo "<br>";
-echo "<br>";
-$stmt->execute();
+ $stmt->execute();
 
 
    
    // Send the data to the model
    $updateProductOutcome = $stmt->rowCount();
    
-   var_dump($updateProductOutcome);
-echo "<br>";
-echo "<br>";
-echo "<br>";
-echo "<br>";
-echo "Hi";
-
-   
-   
-
-
-   
+      
    // Check and report the result
    
    if($updateProductOutcome === 1){
@@ -170,7 +119,7 @@ echo "Hi";
    header('location: manage_products.php');
    exit;
    } else {
-    $_SESSION['message'] = "<p class='messagefailure'>Sorry, updating the product " . $productName . " has failed. Please, try again.</p>";
+    $message = "<p class='messagefailure'>Sorry, updating the product " . $productName . " has failed. Please, try again.</p>";
             header('location: update_product.php');
     exit;
    }

@@ -12,7 +12,7 @@ if (!isset($_SESSION['shoppingCart'])) {
 <!DOCTYPE html>
 <html lang="en-us">
  <head>
-  <title>Home Page</title>
+  <title>Manage Products Page</title>
   <link href="css/online_store_styles.css" rel="stylesheet" media="screen">
   <link href="css/normalize.css" rel="stylesheet" media="screen">
  </head>
@@ -21,6 +21,8 @@ if (!isset($_SESSION['shoppingCart'])) {
  <?php include $_SERVER[ 'DOCUMENT_ROOT' ].'/assignments/common/header.php'; ?>
  </header>
  <main>
+ 
+ <h1>Manage Products Page</h1>
  
  <?php
  // Get the database connection file
@@ -51,6 +53,8 @@ $departments = $getDepartment->fetchAll(PDO::FETCH_ASSOC);
  <?php
    if (isset($_SESSION['message'])) {
     echo $_SESSION['message'];
+   } elseif (isset($message)) {
+    echo $message;
    }
    
    ?>

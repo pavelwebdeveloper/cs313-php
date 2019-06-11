@@ -12,7 +12,7 @@ if (!isset($_SESSION['shoppingCart'])) {
 <!DOCTYPE html>
 <html lang="en-us">
  <head>
-  <title>Manage Product Department and Product Group Page</title>
+  <title>Manage Product Departments and Product Groups Page</title>
   <link href="css/online_store_styles.css" rel="stylesheet" media="screen">
   <link href="css/normalize.css" rel="stylesheet" media="screen">
  </head>
@@ -21,15 +21,13 @@ if (!isset($_SESSION['shoppingCart'])) {
  <?php include $_SERVER[ 'DOCUMENT_ROOT' ].'/assignments/common/header.php'; ?>
  </header>
  <main>
+ 
+ <h1>Manage Product Departments and Product Groups</h1>
+ 
  <?php
  // Get the database connection file
  require_once '../library/connections.php';
- var_dump($_POST);
-echo "<br>";
-echo "<br>";
-echo "<br>";
-echo "<br>";
-echo "Hi";
+ 
 // Query the product department data
    $getDepartment = $db->prepare('SELECT * FROM productdepartment');
 $getDepartment->execute();
@@ -78,6 +76,8 @@ $productGroups = $getProductGroups->fetchAll(PDO::FETCH_ASSOC);
  <?php
    if (isset($_SESSION['message'])) {
     echo $_SESSION['message'];
+   } elseif (isset($message)) {
+    echo $message;
    }
    ?>
    <form action="manage_departmentgroup.php" method="post">
@@ -93,50 +93,34 @@ $productGroups = $getProductGroups->fetchAll(PDO::FETCH_ASSOC);
    
    <?php
 if(isset($_POST['NewDepartment'])) {
-	/*
-	echo "<br>";
-echo "HIHIHI";
-echo "<br>";	
-*/
-
+	
 	// Filter and store the data
 	$departmentName = filter_input(INPUT_POST, 'departmentName', FILTER_SANITIZE_STRING);	
-	echo "$departmentName";
-	var_dump($departmentName);
-echo "<br>";
-echo "<br>";
-echo "<br>";   
+	  
    // validate the categoryName variable using a custom function from functions.php
    $pattern = '/^[A-Za-z]{3,}$/';
  $checkedDepartmentName = preg_match($pattern, $departmentName);   
    // Check for missing data
    if(empty($checkedDepartmentName)){
-    $_SESSION['message'] = '<p class="message">Please, provide a new department name.</p>';
+    $message = '<p class="message">Please, provide a new department name.</p>';
     header('location: manage_departmentgroup.php');
     exit;
    }   
    $stmt = $db->prepare('INSERT INTO productdepartment (productdepartmentname) VALUES (:departmentName)'); 
  $stmt->bindValue(':departmentName', $departmentName, PDO::PARAM_STR);
 $stmt->execute();
-/*
-var_dump($stmt);
-echo "<br>";
-echo "<br>";
-echo "<br>";
-echo "<br>";
-echo "Hi";
-*/
+
    
    // Send the data to the model
    $adddepartmentOutcome = $stmt->rowCount();
    
    // Check and report the result
    if($adddepartmentOutcome === 1){
-	   $_SESSION['message'] = "<p class='messagesuccess'>The new department " . $departmentName . " has successfully been added.</p>";
+	   $message = "<p class='messagesuccess'>The new department " . $departmentName . " has successfully been added.</p>";
 	   header('location: manage_departmentgroup.php');
    exit;
    } else {
-    $_SESSION['message'] = "<p class='messagefailure'>Sorry, adding the new department " . $departmentName . " has failed. Please, try again.</p>";
+    $message = "<p class='messagefailure'>Sorry, adding the new department " . $departmentName . " has failed. Please, try again.</p>";
             header('location: manage_departmentgroup.php');
     exit;
    }
@@ -160,12 +144,7 @@ echo "Hi";
    
    <?php
 if(isset($_POST['RemoveDepartment'])) {
-	/*
-	echo "<br>";
-echo "HIHIHI";
-echo "<br>";	
-*/
-
+	
 	// Filter and store the data
 	$departmentId = filter_input(INPUT_POST, 'departmentId', FILTER_SANITIZE_NUMBER_INT);	
 	
@@ -178,7 +157,7 @@ $departmentName = $getName->fetch(PDO::FETCH_ASSOC);
 
 // Check for missing data
    if(empty($departmentId)){
-    $_SESSION['message'] = '<p class="message">Please, choose a department name for removal.</p>';
+    $message = '<p class="message">Please, choose a department name for removal.</p>';
     header('location: manage_departmentgroup.php');
     exit;
    }   
@@ -186,33 +165,19 @@ $departmentName = $getName->fetch(PDO::FETCH_ASSOC);
  $stmt->bindValue(':departmentId', $departmentId, PDO::PARAM_INT);
 $stmt->execute();
 
-
-
-
-/*
-var_dump($stmt);
-echo "<br>";
-echo "<br>";
-echo "<br>";
-echo "<br>";
-echo "Hi";
-*/
-   
+  
    // Send the data to the model
    $deleteDepartmentOutcome = $stmt->rowCount();
    
-   echo "DELETEDDEPARTMENT";
-   var_dump($deleteDepartmentOutcome);
-echo "<br>";
-echo "<br>";
+   
    
    // Check and report the result
    if($deleteDepartmentOutcome === 1){
-	   $_SESSION['message'] = "<p class='messagesuccess'>The department " . $departmentName['productdepartmentname'] . " has successfully been deleted.</p>";
+	   $message = "<p class='messagesuccess'>The department " . $departmentName['productdepartmentname'] . " has successfully been deleted.</p>";
    header('location: manage_departmentgroup.php');
    exit;
    } else {
-    $_SESSION['message'] = "<p class='messagefailure'>Sorry, deleting the department " . $departmentName['productdepartmentname'] . " has failed. Please, try again.</p>";
+    $message = "<p class='messagefailure'>Sorry, deleting the department " . $departmentName['productdepartmentname'] . " has failed. Please, try again.</p>";
             header('location: manage_departmentgroup.php');
     exit;
    }
@@ -239,12 +204,7 @@ echo "<br>";
    
    <?php
 if(isset($_POST['AddNewProductGroup'])) {
-	/*
-	echo "<br>";
-echo "HIHIHI";
-echo "<br>";	
-*/
-
+	
 	// Filter and store the data
 	$departmentId = filter_input(INPUT_POST, 'departmentId', FILTER_SANITIZE_NUMBER_INT);	
 	$productGroupName = filter_input(INPUT_POST, 'productGroupName', FILTER_SANITIZE_STRING);	
@@ -258,7 +218,7 @@ echo "<br>";
  $checkedimageFilePath = preg_match($patternImagePath, $imageFilePath);    
    // Check for missing data
    if(empty($checkedproductGroupName) || empty($departmentId) || empty($imageFilePath)){
-    $_SESSION['message'] = '<p class="message">Please, choose a department name and provide a new product group name.</p>';
+    $message = '<p class="message">Please, choose a department name and provide a new product group name.</p>';
     header('location: manage_departmentgroup.php');
     exit;
    }   
@@ -267,25 +227,18 @@ echo "<br>";
  $stmt->bindValue(':departmentId', $departmentId, PDO::PARAM_INT);
  $stmt->bindValue(':imageFilePath', $imageFilePath, PDO::PARAM_STR);
 $stmt->execute();
-/*
-var_dump($stmt);
-echo "<br>";
-echo "<br>";
-echo "<br>";
-echo "<br>";
-echo "Hi";
-*/
+
    
    // Send the data to the model
    $addProductGroupOutcome = $stmt->rowCount();
    
    // Check and report the result
    if($addProductGroupOutcome === 1){
-	   $_SESSION['message'] = "<p class='messagesuccess'>The new product group " . $productGroupName . " has successfully been added.</p>";
+	   $message = "<p class='messagesuccess'>The new product group " . $productGroupName . " has successfully been added.</p>";
    header('location: manage_departmentgroup.php');
    exit;
    } else {
-    $_SESSION['message'] = "<p class='messagefailure'>Sorry, adding the new product group " . $productGroupName . " has failed. Please, try again.</p>";
+    $message = "<p class='messagefailure'>Sorry, adding the new product group " . $productGroupName . " has failed. Please, try again.</p>";
             header('location: manage_departmentgroup.php');
     exit;
    }
@@ -335,30 +288,14 @@ $image_dir = $imagePath['image'];
 // The path is the full path from the server root
 $image_dir_path = $_SERVER['DOCUMENT_ROOT'] . $image_dir;
 	
-	echo "Photos";
-	echo "<br>";
-	var_dump($getImagePath);
-	echo "<br>";
-var_dump($image_dir);
-echo "<br>";
-var_dump($image_dir_path);
-echo "<br>";
-echo "<br>";
-echo "<br>";
-echo "<br>";
-echo "Hi";
 	
   
   // Store the name of the uploaded image
   $imgName = $_FILES['file1']['name'];
   
-  echo "furtherPhotos";
-	echo "<br>";
-	var_dump($imgName);
-	echo "<br>";
-  
+    
   if(empty($productGroupId) || empty($imgName)) {
-   $_SESSION['message'] = '<p class="warningmessage">You must select both a product and an image file for the product.</p>';
+   $message = '<p class="warningmessage">You must select both a product and an image file for the product.</p>';
   } else {
  if (isset($_FILES['file1'])){
   // Gets the actual file name
@@ -374,25 +311,14 @@ echo "Hi";
  $fileUploadResult = move_uploaded_file($source, $target);
  }
  }
- echo "<br>";
- echo "<br>";
-   echo "evenfurtherPhotos";
-	echo "<br>";
-	var_dump($_FILES['file1']);
-	echo "<br>";
-	var_dump($source);
-	echo "<br>";
-	var_dump($target);
-	echo "<br>";
-	var_dump($fileUploadResult);
-   
+    
    // Check and report the result
    if($fileUploadResult){
-	   $_SESSION['message'] = "<p class='messagesuccess'>The upload succeeded.</p>";
+	   $message = "<p class='messagesuccess'>The upload succeeded.</p>";
    header('location: manage_departmentgroup.php');
    exit;
    } else {
-    $_SESSION['message'] = "<p class='messagefailure'>Sorry, the upload failed.</p>";
+    $message = "<p class='messagefailure'>Sorry, the upload failed.</p>";
             header('location: manage_departmentgroup.php');
     exit;
    }

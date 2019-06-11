@@ -22,6 +22,8 @@ if (!isset($_SESSION['shoppingCart'])) {
  </header>
  <main>
  
+ <h1>Product Delete</h1>
+ 
  <?php
  // Get the database connection file
  require_once '../library/connections.php';
@@ -31,6 +33,8 @@ if (!isset($_SESSION['shoppingCart'])) {
  <?php
    if (isset($_SESSION['message'])) {
     echo $_SESSION['message'];
+   } elseif (isset($message)) {
+    echo $message;
    }
    
 if(!empty($_GET)) {
@@ -41,7 +45,7 @@ $productInfo = $getProductInfo->fetch(PDO::FETCH_ASSOC);
 }
 ?>
    <?php
-   echo "<h2>Please, confirm that you really want to delete the product " . $productInfo['product'] . ". After deletion you will not be able to undo it.</h2>"
+   echo "<h3>Please, confirm that you really want to delete the product " . $productInfo['product'] . ". After deletion you will not be able to undo it.</h3>"
    ?>
    
    
