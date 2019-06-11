@@ -26,7 +26,7 @@ if (!isset($_SESSION['shoppingCart'])) {
  // Get the database connection file
  require_once '../library/connections.php';
  // Query the product groups data
- if(!isset($_POST["departmentId"])) {
+ if(empty($_POST["departmentId"])) {
 	 $_SESSION['message'] = "<p class='messagefailure'>Please, choose department in which you want to add a product.</p>";
    header('location: manage_products.php');
    exit;
