@@ -45,7 +45,7 @@ $productInfo = $getProductInfo->fetch(PDO::FETCH_ASSOC);
    ?>
    
    
-   <form action="update_product.php" method="post">
+   <form action="delete_product.php" method="post">
     <fieldset>
 	<legend>Delete product</legend>
      <label for="productName">Product Name</label><br>
