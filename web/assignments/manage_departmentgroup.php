@@ -103,7 +103,7 @@ if(isset($_POST['NewDepartment'])) {
  $checkedDepartmentName = preg_match($pattern, $departmentName);   
    // Check for missing data
    if(empty($checkedDepartmentName)){
-    $message = '<p class="message">Please, provide a new department name.</p>';
+    $_SESSION['message'] = '<p class="message">Please, provide a new department name.</p>';
     header('location: manage_departmentgroup.php');
     exit;
    }   
@@ -158,7 +158,7 @@ $departmentName = $getName->fetch(PDO::FETCH_ASSOC);
 
 // Check for missing data
    if(empty($departmentId)){
-    $message = '<p class="message">Please, choose a department name for removal.</p>';
+    $_SESSION['message'] = '<p class="message">Please, choose a department name for removal.</p>';
     header('location: manage_departmentgroup.php');
     exit;
    }   
@@ -219,7 +219,7 @@ if(isset($_POST['AddNewProductGroup'])) {
  $checkedimageFilePath = preg_match($patternImagePath, $imageFilePath);    
    // Check for missing data
    if(empty($checkedproductGroupName) || empty($departmentId) || empty($imageFilePath)){
-    $message = '<p class="message">Please, choose a department name and provide a new product group name.</p>';
+    $_SESSION['message'] = '<p class="message">Please, choose a department name and provide a new product group name.</p>';
     header('location: manage_departmentgroup.php');
     exit;
    }   
