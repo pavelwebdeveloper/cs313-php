@@ -26,11 +26,13 @@ if (!isset($_SESSION['shoppingCart'])) {
  // Get the database connection file
  require_once '../library/connections.php';
  // Query the product groups data
+ /*
  if(!isset($_GET['id'])) {
 	 $_SESSION['message'] = "<p class='messagefailure'>Please, choose department in which you want to add a product.</p>";
    header('location: manage_products.php');
    exit;
  }
+ */
    $getProductGroups = $db->prepare('SELECT * FROM productgroup WHERE productdepartmentid = ' . $_POST["departmentId"] . '');
 $getProductGroups->execute();
 $productGroups = $getProductGroups->fetchAll(PDO::FETCH_ASSOC);
