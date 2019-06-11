@@ -117,11 +117,11 @@ $stmt->execute();
    
    // Check and report the result
    if($adddepartmentOutcome === 1){
-	   $message = "<p class='messagesuccess'>The new department " . $departmentName . " has successfully been added.</p>";
+	   $_SESSION['message'] = "<p class='messagesuccess'>The new department " . $departmentName . " has successfully been added.</p>";
 	   header('location: manage_departmentgroup.php');
    exit;
    } else {
-    $message = "<p class='messagefailure'>Sorry, adding the new department " . $departmentName . " has failed. Please, try again.</p>";
+    $_SESSION['message'] = "<p class='messagefailure'>Sorry, adding the new department " . $departmentName . " has failed. Please, try again.</p>";
             header('location: manage_departmentgroup.php');
     exit;
    }
