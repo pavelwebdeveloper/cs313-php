@@ -122,7 +122,7 @@ echo "<br>";
     exit;
    }  
    
-   
+   /*
    $stmt = $db->prepare('UPDATE product SET product = :productName, productgroupId = :productGroupId, productdepartmentId = :departmentId, productdescription = :productDescription, image = :imageFilePath, price = :productPrice, stock = :productStock WHERE id = :prodId');
   $stmt->bindValue(':prodId', $prodId, PDO::PARAM_INT);
  $stmt->bindValue(':productName', $productName, PDO::PARAM_STR);
@@ -134,7 +134,7 @@ echo "<br>";
  $stmt->bindValue(':productStock', $productStock, PDO::PARAM_INT);
  
  
- 
+ /*
  var_dump($stmt);
 echo "<br>";
 echo "<br>";
@@ -150,14 +150,15 @@ $stmt->execute();
 
    
    // Send the data to the model
-   $updateProductOutcome = $stmt->rowCount();
-   
+  // $updateProductOutcome = $stmt->rowCount();
+   /*
    var_dump($updateProductOutcome);
 echo "<br>";
 echo "<br>";
 echo "<br>";
 echo "<br>";
 echo "Hi";
+*/
 
    
    
@@ -165,7 +166,7 @@ echo "Hi";
 
    
    // Check and report the result
-   
+   /*
    if($updateProductOutcome === 1){
 	   $_SESSION['message'] = "<p class='messagesuccess'>The product " . $productName . " has successfully been updated.</p>";
    header('location: manage_products.php');
@@ -175,7 +176,7 @@ echo "Hi";
             header('location: update_product.php');
     exit;
    }
-	
+	*/
 	
 }
 
