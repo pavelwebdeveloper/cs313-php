@@ -23,6 +23,14 @@ header div#lowerblock div#logInOrSignUp a {
 	margin: 10px;
 }
 
+header form {
+	margin: 10px 5px;
+}
+
+header div p {
+	color: white;
+}
+
 nav {
 	height: 50px;
 	padding-top: 10px;
@@ -174,10 +182,6 @@ p.price {
 section article div img {
 	max-width: 400px;
 	max-height: 267px;
-}
-
-header form {
-	margin: 10px 5px;
 }
 
 main form {
