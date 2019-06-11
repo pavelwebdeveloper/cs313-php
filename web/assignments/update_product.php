@@ -122,7 +122,7 @@ echo "<br>";
     exit;
    }  
    
-   /*
+   
    $stmt = $db->prepare('UPDATE product SET product = :productName, productgroupId = :productGroupId, productdepartmentId = :departmentId, productdescription = :productDescription, image = :imageFilePath, price = :productPrice, stock = :productStock WHERE id = :prodId');
   $stmt->bindValue(':prodId', $prodId, PDO::PARAM_INT);
  $stmt->bindValue(':productName', $productName, PDO::PARAM_STR);
@@ -134,17 +134,8 @@ echo "<br>";
  $stmt->bindValue(':productStock', $productStock, PDO::PARAM_INT);
  
  
- /*
- $stmt = $db->prepare('INSERT INTO product (productgroupId, productdepartmentId, stock) VALUES (:productgroupId, :productdepartmentId, :productStock)');
- $stmt->bindValue(':productName', $productName, PDO::PARAM_STR);
- $stmt->bindValue(':productgroupId', $productgroupId, PDO::PARAM_INT);
- $stmt->bindValue(':productdepartmentId', $productdepartmentId, PDO::PARAM_INT);
- $stmt->bindValue(':productDescription', $productDescription, PDO::PARAM_STR);
- $stmt->bindValue(':imageFilePath', $imageFilePath, PDO::PARAM_STR);
- $stmt->bindValue(':productPrice', $productPrice, PDO::PARAM_INT);
- $stmt->bindValue(':productStock', $productStock, PDO::PARAM_INT);
- */
- /*
+ 
+ 
  var_dump($stmt);
 echo "<br>";
 echo "<br>";
@@ -155,28 +146,18 @@ echo "<br>";
 echo "<br>";
 $stmt->execute();
 
-/*
-$stmt = $db->prepare('INSERT INTO product (product, productgroupId, productdepartmentId, productdescription, image, price, stock) VALUES (' . $productName . ', ' . $productgroupId . ', ' . $productdepartmentId . ', ' . $productDescription . ', ' . $imageFilePath . ', ' . $productPrice . ', ' . $productStock . ')');
-$stmt->execute();
-*/
-/*
-$stmt = $db->prepare('INSERT INTO product (productgroupId, productdepartmentId, stock) VALUES (' . $productgroupId . ', ' . $productdepartmentId . ', ' . $productStock . ')');
-var_dump($stmt);
-echo "<br>";
-echo "<br>";
-$stmt->execute();
-*/
+
    
    // Send the data to the model
-   //$updateProductOutcome = $stmt->rowCount();
-   /*
+   $updateProductOutcome = $stmt->rowCount();
+   
    var_dump($updateProductOutcome);
 echo "<br>";
 echo "<br>";
 echo "<br>";
 echo "<br>";
 echo "Hi";
-*/
+
    
    
 
