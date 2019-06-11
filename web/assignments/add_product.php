@@ -68,7 +68,7 @@ echo "<br>";
 	echo $productGroupsList;
  ?><br><br>
  <label for="productName">Product Name</label><br>
-     <input type="text" name="productName" id="productName" pattern="[A-Za-z0-9]{3,}" required><br><br>
+     <input type="text" name="productName" id="productName" pattern="[A-Za-z0-9 ]{3,}" required><br><br>
 	 <label for="productDescription">Product Description:</label><br>
 <textarea name="productDescription" id="productDescription" rows="10" cols="100"></textarea><br><br>
 <label for="imageFilePath">Image File Path for the New Product</label><br>
