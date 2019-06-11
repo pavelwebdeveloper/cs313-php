@@ -69,7 +69,7 @@ $departments = $getDepartment->fetchAll(PDO::FETCH_ASSOC);
  ?><br><br>
 	 <input class="submitBtn" type="submit" value="Add product">
      <!-- Add the action name - value pair -->
-     <input type="hidden" name="AddProduct" value="addProduct">
+     <!--<input type="hidden" name="AddProduct" value="addProduct">-->
     </fieldset>
    </form>
    </div>
