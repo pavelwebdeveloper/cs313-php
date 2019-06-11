@@ -37,7 +37,9 @@ nav a {
 	cursor: pointer;
 }
 
-
+h1 {
+	text-align: center;
+}
 
 
 #products #flexlayout {

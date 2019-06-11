@@ -20,9 +20,10 @@ if (!isset($_SESSION['shoppingCart'])) {
  <header>
  <?php include $_SERVER[ 'DOCUMENT_ROOT' ].'/assignments/common/header.php'; ?>
  </header>
+ <h1>Manage Product Departments and Product Groups</h1>
  <main>
  
- <h1>Manage Product Departments and Product Groups</h1>
+ 
  
  <?php
  // Get the database connection file

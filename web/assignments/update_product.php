@@ -22,7 +22,7 @@ if (!isset($_SESSION['shoppingCart'])) {
  </header>
  <main>
  
- <h1>Product Update</h1>
+ 
  
  <?php
  // Get the database connection file
