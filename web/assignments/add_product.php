@@ -30,7 +30,8 @@ if (!isset($_SESSION['shoppingCart'])) {
 	 $_SESSION['message'] = "<p class='messagefailure'>Please, choose department in which you want to add a product.</p>";
    header('location: manage_products.php');
    exit;
- }
+ } else {
+	 $_SESSION['message'] = "";
    $getProductGroups = $db->prepare('SELECT * FROM productgroup WHERE productdepartmentid = ' . $_POST["departmentId"] . '');
 $getProductGroups->execute();
 $productGroups = $getProductGroups->fetchAll(PDO::FETCH_ASSOC);
@@ -50,6 +51,7 @@ $productGroups = $getProductGroups->fetchAll(PDO::FETCH_ASSOC);
   $productGroupsList .= ">$productGroup[productgroupname]</option>";
  }
  $productGroupsList .= '</select>';
+ }
  ?>
  
  
