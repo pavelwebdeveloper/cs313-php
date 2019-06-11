@@ -87,7 +87,7 @@ $prodList = '<table>';
     foreach ($products as $product) {
      $prodList .= "<tr><td>$product[product]</td>";
      $prodList .= "<td><a class='tablelink' href='update_product.php?id=$product[id]' title='Click to modify'>Update</a></td>";
-     $prodList .= "<td><a class='tablelink' href='manage_products.php?id=$product[id]' title='Click to delete'>Delete</a></td>";
+     $prodList .= "<td><a class='tablelink' href='delete_product.php?id=$product[id]' title='Click to delete'>Delete</a></td>";
     }
     $prodList .= '</tbody></table>';
  ?>
