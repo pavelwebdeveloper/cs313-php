@@ -164,7 +164,7 @@ echo "Hi";
 
    
    // Check and report the result
-   /*
+   
    if($updateProductOutcome === 1){
 	   $_SESSION['message'] = "<p class='messagesuccess'>The product " . $productName . " has successfully been updated.</p>";
    header('location: manage_products.php');
@@ -174,7 +174,7 @@ echo "Hi";
             header('location: update_product.php');
     exit;
    }
-	*/
+	
 	
 }
 
