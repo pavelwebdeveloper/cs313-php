@@ -20,7 +20,7 @@ height: 50px;
 }
 
 header div#lowerblock div#logInOrSignUp a {
-	margin: 10px;
+	margin: 15px 10px;
 }
 
 header form {
@@ -29,6 +29,10 @@ header form {
 
 header div p {
 	color: white;
+}
+
+header div a {
+	margin: 15px 5px;
 }
 
 nav {
