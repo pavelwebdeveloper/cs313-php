@@ -174,11 +174,11 @@ $stmt->execute();
    
    // Check and report the result
    if($deleteDepartmentOutcome === 1){
-	   $message = "<p class='messagesuccess'>The department " . $departmentName['productdepartmentname'] . " has successfully been deleted.</p>";
+	   $_SESSION['message'] = "<p class='messagesuccess'>The department " . $departmentName['productdepartmentname'] . " has successfully been deleted.</p>";
    header('location: manage_departmentgroup.php');
    exit;
    } else {
-    $message = "<p class='messagefailure'>Sorry, deleting the department " . $departmentName['productdepartmentname'] . " has failed. Please, try again.</p>";
+    $_SESSION['message'] = "<p class='messagefailure'>Sorry, deleting the department " . $departmentName['productdepartmentname'] . " has failed. Please, try again.</p>";
             header('location: manage_departmentgroup.php');
     exit;
    }
@@ -235,11 +235,11 @@ $stmt->execute();
    
    // Check and report the result
    if($addProductGroupOutcome === 1){
-	   $message = "<p class='messagesuccess'>The new product group " . $productGroupName . " has successfully been added.</p>";
+	   $_SESSION['message'] = "<p class='messagesuccess'>The new product group " . $productGroupName . " has successfully been added.</p>";
    header('location: manage_departmentgroup.php');
    exit;
    } else {
-    $message = "<p class='messagefailure'>Sorry, adding the new product group " . $productGroupName . " has failed. Please, try again.</p>";
+    $_SESSION['message'] = "<p class='messagefailure'>Sorry, adding the new product group " . $productGroupName . " has failed. Please, try again.</p>";
             header('location: manage_departmentgroup.php');
     exit;
    }
@@ -296,7 +296,7 @@ $image_dir_path = $_SERVER['DOCUMENT_ROOT'] . $image_dir;
   
     
   if(empty($productGroupId) || empty($imgName)) {
-   $message = '<p class="warningmessage">You must select both a product and an image file for the product.</p>';
+   $_SESSION['message'] = '<p class="warningmessage">You must select both a product and an image file for the product.</p>';
   } else {
  if (isset($_FILES['file1'])){
   // Gets the actual file name
@@ -315,11 +315,11 @@ $image_dir_path = $_SERVER['DOCUMENT_ROOT'] . $image_dir;
     
    // Check and report the result
    if($fileUploadResult){
-	   $message = "<p class='messagesuccess'>The upload succeeded.</p>";
+	   $_SESSION['message'] = "<p class='messagesuccess'>The upload succeeded.</p>";
    header('location: manage_departmentgroup.php');
    exit;
    } else {
-    $message = "<p class='messagefailure'>Sorry, the upload failed.</p>";
+    $_SESSION['message'] = "<p class='messagefailure'>Sorry, the upload failed.</p>";
             header('location: manage_departmentgroup.php');
     exit;
    }
