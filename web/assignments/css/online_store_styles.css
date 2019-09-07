@@ -175,7 +175,7 @@ section {
 
 section article {
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	justify-content: space-between;
 }
 section article div {
@@ -313,10 +313,7 @@ main.productpages table a.tablelink {
 
 @media only screen and (min-width: 37.5em) {
 	
-	section article {
-	flex-direction: column;
-	justify-content: space-between;
-}
+	
 	
 }
 
@@ -335,6 +332,9 @@ header div#upperblock{
 
 }
 
-
+section article {
+	flex-direction: row;
+	justify-content: space-between;
+}
 
 }
