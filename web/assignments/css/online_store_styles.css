@@ -12,7 +12,7 @@ header div#upperblock{
 	flex-direction: column;
 	justify-content: space-between;
 	background-color: #000066;
-height: 50px;
+height: 150px;
 }
 
 header div#lowerblock{
@@ -330,7 +330,7 @@ main.productpages table a.tablelink {
 
 header div#upperblock{
 	flex-direction: row;
-
+	height: 50px;
 }
 
 section article {
