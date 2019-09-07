@@ -1,8 +1,10 @@
 <div id="upperblock">
+<div>
 <nav>
 <a href="home.php" title="a link to Home page">Home</a>
 <a href="browse_products.php" title="a link to Browse Products page">Products</a>
 </nav>
+</div>
 <div>
 <form method="post" action="browse_products.php">
 <label for="name"></label>
