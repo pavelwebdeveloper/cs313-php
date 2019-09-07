@@ -336,7 +336,7 @@ header div#upperblock{
 }
 
 section article {
-	flex-direction: row;
+	flex-direction: column;
 	justify-content: space-between;
 }
 
