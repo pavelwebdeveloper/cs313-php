@@ -12,7 +12,7 @@ header div#upperblock{
 	flex-direction: column;
 	justify-content: space-between;
 	background-color: #000066;
-height: 150px;
+height: 100px;
 }
 
 header div#lowerblock{
@@ -60,7 +60,7 @@ h1 {
 
 #products #flexlayout {
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 }
 
 #products #flexlayout div#flexlayoutleft {
@@ -328,9 +328,15 @@ main.productpages table a.tablelink {
 
 @media only screen and (min-width: 64em) {
 
+
 header div#upperblock{
 	flex-direction: row;
 	height: 50px;
+}
+
+#products #flexlayout {
+	display: flex;
+	flex-direction: row;
 }
 
 section article {
