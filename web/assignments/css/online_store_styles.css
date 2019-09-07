@@ -166,7 +166,7 @@ header div a {
 header a:hover {
 	text-decoration: underline;
 }
-
+/*
 section {
 	border: 1px solid #A9A9A9;
 	padding: 5px;
@@ -180,7 +180,7 @@ section article {
 	flex-direction: column;
 	justify-content: space-between;
 }
-
+*/
 section article div {
 	margin: 10px;
 }
@@ -334,10 +334,10 @@ header div#upperblock{
 	flex-direction: row;
 
 }
-
+/*
 section article {
 	flex-direction: column;
 	justify-content: space-between;
 }
-
+*/
 }
