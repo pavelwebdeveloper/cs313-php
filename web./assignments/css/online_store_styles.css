@@ -1,9 +1,43 @@
+
+/* git add -f ../web./assignments/css/online_store_styles.css         */
+
+@media only screen and (max-width: 37.5em) {
+
 header {
+	display: flex;
+	flex-direction: column;
+}
+
+header div#upperblock{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	background-color: #000066;
+height: 50px;
+}
+
+header div#lowerblock{
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
-background-color: #000066;
+background-color: #00BFFF;
 height: 50px;
+}
+
+header div#lowerblock div#logInOrSignUp a {
+	margin: 15px 10px;
+}
+
+header form {
+	margin: 10px 5px;
+}
+
+header div p {
+	color: white;
+}
+
+header div a {
+	margin: 15px 5px;
 }
 
 nav {
@@ -17,14 +51,116 @@ nav a {
 	height: 50px;
 	font-size: 25px;
 	margin-left: 10px;
-	
+	cursor: pointer;
 }
+
+h1 {
+	text-align: center;
+}
+
+
+#products #flexlayout {
+	display: flex;
+	flex-direction: row;
+}
+
+#products #flexlayout div#flexlayoutleft {
+	margin: 10px;
+}
+
+#products #flexlayout div#flexlayoutleft ul {
+	border: 2px solid #696969;
+}
+
+#products #flexlayout div#flexlayoutleft h2#departmentsMenuHeading {
+	font-size: 25px;
+	list-style-type: none;
+	background-color: #AFEEEE;
+	color: #4B0082;
+}
+
+#products #flexlayout div#flexlayoutleft ul li {
+	list-style-type: none;
+	background-color: #ffffff;
+	border: 1px solid white;
+}
+
+
+
+#products #flexlayout div#flexlayoutleft ul a {
+	text-decoration: none;
+	color: blue;
+	height: 50px;
+	font-size: 20px;
+	cursor: pointer;
+}
+
+#products #flexlayout div#flexlayoutleft ul a:hover {
+	text-decoration: underline;
+	color: #8B008B;
+	cursor: pointer;
+}
+
+#products #flexlayout div#flexlayoutright {
+	flex-grow: 3;
+	border: 1px solid black;
+}
+
+#products #flexlayout div#flexlayoutright a {
+	text-decoration: none;
+	color: black;
+	font-size: 25px;
+	cursor: pointer;
+}
+
+
+#products #flexlayout div#flexlayoutright img#productGroupImage {
+	width: 400px;
+	height: 263px;
+}
+
+
+
+h2 {
+	text-align: center;
+}
+
+html#logInRegister main {
+  display: flex;
+  align-items: center;
+}
+
+html#logInRegister main div {
+	border: 2px solid gray;
+  margin: auto;  
+}
+
+html#logInRegister main div form {
+	margin: 20px;
+}
+
+html#logInRegister main div form button:hover {
+	cursor: pointer;
+}
+
+html#logInRegister main div form input.submitButton:hover {
+	cursor: pointer;
+}
+
+html#logInRegister main div form button a {
+	text-decoration: none;
+}
+
+
+
 
 header div a {
 	text-decoration: none;
+	margin: 10px;
 	color: white;
 	height: 50px;
 	font-size: 25px;
+	cursor: pointer;
 }
 
 header a:hover {
@@ -41,9 +177,10 @@ section {
 
 section article {
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	justify-content: space-between;
 }
+
 section article div {
 	margin: 10px;
 }
@@ -57,6 +194,52 @@ section article div img {
 	max-height: 267px;
 }
 
+main form {
+	margin: 20px 5px;
+}
+
+main form label.address input {
+    -webkit-appearance: none;
+    display: block;
+    font-size: 1rem;
+    border: 1px solid #4253BA;
+    padding: .75rem;
+    color: #444;
+    width: 100%;
+    max-width: 19rem;
+    background-color: rgba(0,0,0,0.05);
+}
+
+main form input.submitBtn {
+    border: none;
+    background-color: #4253BA;
+    color: white;
+    border-radius: 7px;
+    padding: .75rem 1.5rem;
+    margin: 0 0 2rem 3%;
+    width: 100%;
+    max-width: 19rem;
+    cursor: pointer;
+}
+
+main div.bottomNavigationLinks {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+main div.bottomNavigationLinks div form input.navigationButton {
+	border: none;
+    background-color: #4253BA;
+    color: white;
+    border-radius: 7px;
+    padding: .75rem 1.5rem;
+    margin: 0 0 2rem 3%;
+    width: 100%;
+    max-width: 19rem;
+    cursor: pointer;
+}
+
 footer {
 background-color: #000066;
 height: 50px;
@@ -68,6 +251,59 @@ footer p {
 	color: white;
 	text-align: center;
 	padding-top: 10px;
+}
+
+p.messagesuccess {
+	color: green;
+}
+
+p.messagefailure {
+	color: red;
+}
+
+a.adminlink {
+	text-decoration: none;
+}
+a.adminlink:hover {
+	color: purple;
+	text-decoration: underline;
+}
+
+/*===========TABLE LAYOUT==============*/
+table {
+    margin: 10px;
+    box-shadow: 8px 8px 10px grey;
+    max-width: 100%;
+}
+
+table, th, td {
+    border: 1px solid #aaa;
+    padding: 10px;
+    border-collapse: collapse;
+    text-align: center;
+    font-family: Noto Sans, sans-serif;
+    font-size: 1em;
+}
+
+th {
+    background-color: #808080;
+    color: #0000ee;
+}
+
+tr:nth-child(odd) {
+    background-color: #808080;
+    color: #990033;
+}
+
+tr:nth-child(even) {
+    background-color: #e7ffed;
+    color: #990033;
+}
+
+main.productpages table a.tablelink {
+ font-size: 1em;
+}
+
 }
 
 /**********************************************************************************/
@@ -94,6 +330,14 @@ footer p {
 
 @media only screen and (min-width: 64em) {
 
+header div#upperblock{
+	flex-direction: row;
 
+}
+
+section article {
+	flex-direction: row;
+	justify-content: space-between;
+}
 
 }
