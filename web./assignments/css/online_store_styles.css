@@ -119,7 +119,7 @@ h1 {
 	height: 263px;
 }
 
-
+/*
 
 h2 {
 	text-align: center;
@@ -334,10 +334,10 @@ header div#upperblock{
 	flex-direction: row;
 
 }
-
+/*
 section article {
 	flex-direction: column;
 	justify-content: space-between;
 }
-
+*/
 }

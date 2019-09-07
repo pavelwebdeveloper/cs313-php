@@ -46,6 +46,18 @@ h3 {
 	font-size: 25px;
 }
 
+div#activities {
+	display: flex;
+	flex-direction: column;
+	margin: auto;
+	justify-content: space-between;
+}
+
+h2.heading {
+	color: purple;
+	text-shadow: 0 0 1px black, 0 0 25px green;
+}
+
 section {
 	display: flex;
 	flex-direction: column;
@@ -135,6 +147,10 @@ h2 {
 
 h3 {
 	font-size: 30px;
+}
+
+div#activities {	
+	flex-direction:row;
 }
 
 img {
