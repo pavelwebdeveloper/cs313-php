@@ -1,3 +1,4 @@
+ 
 <?php
 // Start the session
 session_start();
@@ -234,4 +235,5 @@ session_start();
   <?php include $_SERVER[ 'DOCUMENT_ROOT' ].'/assignments/common/footer.php'; ?>
   </footer>
  </body>
+</html>
 </html>
