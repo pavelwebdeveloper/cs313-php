@@ -1,7 +1,10 @@
 
 header div#upperblock{
+	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
+	background-color: #000066;
+height: 50px;
 }
 
 /**********************************************************************************/
@@ -34,11 +37,8 @@ header {
 }
 
 header div#upperblock{
-	display: flex;
 	flex-direction: row;
-	justify-content: space-between;
-background-color: #000066;
-height: 50px;
+
 }
 
 header div#lowerblock{
