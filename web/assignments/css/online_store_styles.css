@@ -1,5 +1,5 @@
 
-
+@media only screen and (max-width: 37.5em) {
 
 header {
 	display: flex;
@@ -299,6 +299,8 @@ tr:nth-child(even) {
 
 main.productpages table a.tablelink {
  font-size: 1em;
+}
+
 }
 
 /**********************************************************************************/
