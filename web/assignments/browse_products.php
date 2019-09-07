@@ -11,7 +11,7 @@ if (!isset($_SESSION['shoppingCart'])) {
 <html lang="en-us" id="products">
  <head>
   <title>Browse Products Page</title>
-  <!--<link href="css/online_store_styles.css" rel="stylesheet" media="screen">-->
+  <link href="css/online_store_styles.css" rel="stylesheet" media="screen">
  </head>
  <body>
  <header>
