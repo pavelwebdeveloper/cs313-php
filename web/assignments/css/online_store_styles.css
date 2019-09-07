@@ -1,4 +1,8 @@
 
+header div#upperblock{
+	flex-direction: column;
+	justify-content: space-between;
+}
 
 /**********************************************************************************/
 /****************THE END OF LAYOUT FOR SMALL SCREENS******************************/
@@ -26,7 +30,7 @@
 
 header {
 	display: flex;
-	flex-direction: column;
+	flex-direction: ;
 }
 
 header div#upperblock{
