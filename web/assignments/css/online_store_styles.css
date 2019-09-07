@@ -23,6 +23,7 @@ header div#lowerblock{
 	flex-direction: row;
 	justify-content: space-between;
 background-color: #00BFFF;
+padding-top: 5px;
 height: 50px;
 }
 
@@ -318,7 +319,15 @@ main.productpages table a.tablelink {
 
 @media only screen and (min-width: 37.5em) {
 	
-	
+	#products #flexlayout div#flexlayoutright img#productGroupImage {
+	width: 400px;
+	height: 263px;
+}
+
+section article div img {
+	max-width: 400px;
+	max-height: 267px;
+}
 	
 }
 
@@ -358,14 +367,6 @@ section article {
 	justify-content: space-between;
 }
 
-#products #flexlayout div#flexlayoutright img#productGroupImage {
-	width: 400px;
-	height: 263px;
-}
 
-section article div img {
-	max-width: 400px;
-	max-height: 267px;
-}
 
 }
