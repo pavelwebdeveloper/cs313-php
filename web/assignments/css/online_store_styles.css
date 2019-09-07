@@ -12,7 +12,6 @@ header div#upperblock{
 	flex-direction: column;
 	justify-content: space-between;
 	background-color: #000066;
-height: 100px;
 }
 
 header div#upperblock div{
@@ -173,8 +172,6 @@ header a:hover {
 section {
 	border: 1px solid #A9A9A9;
 	padding: 5px;
-	width: 700px;
-	height:500px;
 	margin: 10px;
 }
 
@@ -334,11 +331,21 @@ main.productpages table a.tablelink {
 /************************************************************************************/
 
 @media only screen and (min-width: 64em) {
+	
+	
 
 
 header div#upperblock{
 	flex-direction: row;
 	height: 50px;
+}
+
+section {
+	border: 1px solid #A9A9A9;
+	padding: 5px;
+	width: 700px;
+	height:500px;
+	margin: 10px;
 }
 
 #products #flexlayout {
