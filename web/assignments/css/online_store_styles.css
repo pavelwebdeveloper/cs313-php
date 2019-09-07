@@ -15,6 +15,10 @@ header div#upperblock{
 height: 100px;
 }
 
+header div#upperblock div{
+height: 50px;
+}
+
 header div#lowerblock{
 	display: flex;
 	flex-direction: row;
@@ -112,11 +116,12 @@ h1 {
 	cursor: pointer;
 }
 
-
 #products #flexlayout div#flexlayoutright img#productGroupImage {
-	width: 400px;
-	height: 263px;
+	max-width: 100%;
+	height: auto;
 }
+
+
 
 
 h2 {
@@ -188,9 +193,11 @@ p.price {
 }
 
 section article div img {
-	max-width: 400px;
-	max-height: 267px;
+	max-width: 100%;
+	max-height: auto;
 }
+
+
 
 main form {
 	margin: 20px 5px;
@@ -342,6 +349,16 @@ header div#upperblock{
 section article {
 	flex-direction: row;
 	justify-content: space-between;
+}
+
+#products #flexlayout div#flexlayoutright img#productGroupImage {
+	width: 400px;
+	height: 263px;
+}
+
+section article div img {
+	max-width: 400px;
+	max-height: 267px;
 }
 
 }
