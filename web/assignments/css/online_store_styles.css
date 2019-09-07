@@ -2,7 +2,7 @@
 /* git add -f ../web./assignments/css/online_store_styles.css         */
 
 @media only screen and (max-width: 37.5em) {
-/*
+
 header {
 	display: flex;
 	flex-direction: column;
@@ -268,7 +268,6 @@ a.adminlink:hover {
 	color: purple;
 	text-decoration: underline;
 }
-*/
 
 /*===========TABLE LAYOUT==============*/
 table {
