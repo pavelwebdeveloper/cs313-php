@@ -17,7 +17,7 @@ session_start();
  <h1>This is Product Details Page</h1>
  
  <?php
- /*
+ 
  var_dump($_SESSION);
  echo "<br>";
  echo "<br>";
@@ -35,7 +35,7 @@ session_start();
  echo "<br>";
  echo "<br>";
  echo "<br>";
-*/
+
  
  
 
