@@ -41,7 +41,7 @@ if (!isset($_SESSION['shoppingCart'])) {
 <input type="hidden" name="LogIn" value="logIn">
 <br>
 <p id="login">Not registered yet?</p>
-<button type="button"><a id="aregister" href="signUp_page.php" title="a link to a sign_up page">Sign Up</a></button>
+<button type="button"><a id="aregister" href="signup_page.php" title="a link to a sign_up page">Sign Up</a></button>
 </form>
  </div>
  
