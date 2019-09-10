@@ -27,6 +27,28 @@ if (!isset($_SESSION['shoppingCart'])) {
  <h1>This is View Cart Page</h1>
  
  <?php
+ 
+ echo "<br>";
+ echo "<br>";
+ var_dump($_SESSION);
+ echo "<br>";
+ echo "<br>";
+	var_dump($_SESSION['customerCountry']);
+	echo "<br>";
+ echo "<br>";
+		var_dump($_SESSION['customerCity']);
+		echo "<br>";
+ echo "<br>";
+		var_dump($_SESSION['customerStreet']);
+		echo "<br>";
+ echo "<br>";
+		var_dump($_SESSION['customerHouseNumber']);
+		echo "<br>";
+ echo "<br>";
+		var_dump($_SESSION['customerZipCode']);
+		echo "<br>";
+ echo "<br>";
+ 
  /*
  echo "<br><h1>1</h1>";
  var_dump($_SESSION);

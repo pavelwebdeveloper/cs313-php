@@ -23,6 +23,27 @@ if (!isset($_SESSION['shoppingCart'])) {
  
  <?php 
  
+  echo "<br>";
+ echo "<br>";
+ var_dump($_SESSION);
+ echo "<br>";
+ echo "<br>";
+	var_dump($_SESSION['customerCountry']);
+	echo "<br>";
+ echo "<br>";
+		var_dump($_SESSION['customerCity']);
+		echo "<br>";
+ echo "<br>";
+		var_dump($_SESSION['customerStreet']);
+		echo "<br>";
+ echo "<br>";
+		var_dump($_SESSION['customerHouseNumber']);
+		echo "<br>";
+ echo "<br>";
+		var_dump($_SESSION['customerZipCode']);
+		echo "<br>";
+ echo "<br>";
+ 
 		$customerCountry = $_SESSION['customerCountry'];
 		$customerCity = $_SESSION['customerCity'];
 		$customerStreet = $_SESSION['customerStreet'];
