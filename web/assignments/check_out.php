@@ -23,11 +23,6 @@ if (!isset($_SESSION['shoppingCart'])) {
  
  <?php 
  
-		$_SESSION['customerCountry'] = '';
-		$_SESSION['customerCity'] = '';
-		$_SESSION['customerStreet'] = '';
-		$_SESSION['customerHouseNumber'] = '';
-		$_SESSION['customerZipCode'] = '';
 		$customerCountry = $_SESSION['customerCountry'];
 		$customerCity = $_SESSION['customerCity'];
 		$customerStreet = $_SESSION['customerStreet'];
