@@ -186,8 +186,20 @@ session_start();
  
  // Upade product stock
 if(isset($_POST['addToShoppingCart'])) {
-	$productStock = $_SESSION['stock'] - 1;
+	$productStock = $_SESSION['stock'];
 	$productName = $_SESSION['product'];
+	echo "<br>";
+	echo "<br>";
+	echo "In the if we have:";
+	echo "<br>";
+	echo "<br>";
+	echo $productStock;
+	echo "<br>";
+	echo "<br>";
+	echo $productName;
+	echo "<br>";
+	echo "<br>";
+	echo "<br>";
 	
 	
 	// Update the product stock data when adding a product to the shopping cart
