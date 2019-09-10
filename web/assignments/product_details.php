@@ -64,8 +64,6 @@ session_start();
 		$_SESSION['stock'] = $_POST['stock'];
 		$_SESSION['addedToCart'] = 0;
 		
-		$productStock = $_POST['stock'] - 1;
-	$productName = $_POST['product'];
 	}
  
  $productNumber = (int)$_SESSION['productNumber'];
@@ -159,10 +157,25 @@ session_start();
 	"</p><input type='hidden' name='productNumber' value='".$_SESSION['productNumber']."'><form action='product_details.php' method='post'><input type='submit' name='addToShoppingCart' value='Add to Shopping Cart'></form></div></article></section>";
 	
  
- function updateProductStock($productStock, $productName){
+ 
+ echo "<br>";
+	echo "<br>";
+	echo "<br>";
+	echo "Post";
+	echo $_POST;
+	echo "sessionstock";
+	echo $_SESSION['stock'];
+	echo "sessionproduct";
+	echo $_SESSION['product'];
+	echo "<br>";
+	echo "<br>";
+	echo "<br>";
+ 
+ 
  // Upade product stock
 if(isset($_POST['addToShoppingCart'])) {
-	
+	$productStock = $_SESSION['stock'] - 1;
+	$productName = $_SESSION['product'];
 	
 	
 	// Update the product stock data when adding a product to the shopping cart
@@ -183,9 +196,7 @@ echo "<br>";
 	echo "<br>";
 	echo "<br>";
 	echo "<br>";
- }
  
- updateProductStock($productStock, $productName);
 
 	// Filter and store the data
 	/*
