@@ -159,6 +159,7 @@ session_start();
 	"</p><input type='hidden' name='productNumber' value='".$_SESSION['productNumber']."'><form action='product_details.php' method='post'><input type='submit' name='addToShoppingCart' value='Add to Shopping Cart'></form></div></article></section>";
 	
  
+ function updateProductStock($productStock, $productName){
  // Upade product stock
 if(isset($_POST['addToShoppingCart'])) {
 	
@@ -182,6 +183,9 @@ echo "<br>";
 	echo "<br>";
 	echo "<br>";
 	echo "<br>";
+ }
+ 
+ updateProductStock($productStock, $productName);
 
 	// Filter and store the data
 	/*
