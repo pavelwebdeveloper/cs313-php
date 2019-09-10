@@ -33,7 +33,6 @@ if (!isset($_SESSION['shoppingCart'])) {
 		$customerStreet = $_SESSION['customerStreet'];
 		$customerHouseNumber = $_SESSION['customerHouseNumber'];
 		$customerZipCode = $_SESSION['customerZipCode'];
- 
  ?>
  
  <h1>This is Checkout Page</h1>
@@ -63,6 +62,7 @@ if(isset($_POST['ReturnToShoppingCart'])) {
 		$_SESSION['customerStreet'] = $_POST['street'];
 		$_SESSION['customerHouseNumber'] = $_POST['houseNumber'];
 		$_SESSION['customerZipCode'] = $_POST['zipCode'];
+}
  
  ?>
 
