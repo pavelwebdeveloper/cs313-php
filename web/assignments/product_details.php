@@ -163,7 +163,7 @@ session_start();
 	"</p><input type='hidden' name='productNumber' value='".$_SESSION['productNumber']."'><form action='product_details.php' method='post'><input type='submit' name='addToShoppingCart' value='Add to Shopping Cart'></form></div></article></section>";
 	
  
- 
+ /*
  echo "<br>";
 	echo "<br>";
 	echo "<br>";
@@ -188,7 +188,7 @@ session_start();
 	echo "<br>";
 	echo "<br>";
 	echo "<br>";
- 
+ */
  
  // Upade product stock
 if(isset($_POST['addToShoppingCart'])) {
