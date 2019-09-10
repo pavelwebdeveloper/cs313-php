@@ -68,13 +68,8 @@ echo "action='view_cart.php'";
 <label class="address" for="zipCode">Zipcode: <input type="text" name="zipCode" <?php if(isset($customerZipCode)){echo "value='$customerZipCode'";} else {echo "value=''";} ?> required></label><br>
 
 <input class="submitBtn" type="submit" name="btn_submit" value="Complete the purchase">
+<input class="navigationButton" type="submit" name="btn_submit" value="Return to the Shopping Cart">
 
-
-<div class="bottomNavigationLinks">
- <div>
- <input class="navigationButton" type="submit" name="btn_submit" value="Return to the Shopping Cart">
-</div>
-</div>
 
 
 </form>
