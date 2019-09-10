@@ -19,6 +19,10 @@ if (!isset($_SESSION['shoppingCart'])) {
  <?php include $_SERVER[ 'DOCUMENT_ROOT' ].'/assignments/common/header.php'; ?>
  </header>
  <main>
+ <?php
+ // Get the database connection file
+ require_once '../library/connections.php';
+ ?>
  
  <h1>This is View Cart Page</h1>
  
@@ -160,7 +164,48 @@ if (!isset($_SESSION['shoppingCart'])) {
  };
  
  
- 
+  // Upade product stock
+if(isset($_POST['removeFromShoppingCart'])) {
+	$productStock = $_SESSION['stock'];
+	$productId = $_SESSION['productNumber'];
+	echo "<br>";
+	echo "<br>";
+	echo "In the if we have:";
+	echo "<br>";
+	echo "<br>";
+	echo $productStock;
+	echo "<br>";
+	echo "<br>";
+	echo $productName;
+	echo "<br>";
+	echo "<br>";
+	echo "<br>";
+	
+	echo "In the update we have:";
+	// Update the product stock data when adding a product to the shopping cart
+   $updateProductStock = $db->prepare('UPDATE product SET stock = :productstock WHERE id = :productid;');
+   $updateProductStock->bindValue(':productid', $productId, PDO::PARAM_INT);
+ $updateProductStock->bindValue(':productstock', $productStock, PDO::PARAM_INT);
+ $updateProductStock->execute();
+$updateProductStockOutcome = $updateProductStock->rowCount();
+}
+
+echo "<br>";
+	echo "<br>";
+	echo "<br>";
+	echo "Hello";
+	echo "<br>";
+	echo "<br>";
+	echo $productStock;
+	echo "<br>";
+	echo "<br>";
+	echo $productId;
+	echo "<br>";
+	echo "<br>";
+	echo $updateProductStockOutcome;
+	echo "<br>";
+	echo "<br>";
+	echo "<br>";
 	
 	
  /*
