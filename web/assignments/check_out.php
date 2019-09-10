@@ -54,6 +54,14 @@ if (!isset($_SESSION['shoppingCart'])) {
  <h1>This is Checkout Page</h1>
  <p>Please, input the information about your address. It is required to fill out all the fields.</p>
  <form method="post" <?php 
+ if(isset($_POST['btn_submit'])) {
+ $_SESSION['customerCountry'] = $_POST['country'];
+		$_SESSION['customerCity'] = $_POST['city'];
+		$_SESSION['customerStreet'] = $_POST['street'];
+		$_SESSION['customerHouseNumber'] = $_POST['houseNumber'];
+		$_SESSION['customerZipCode'] = $_POST['zipCode'];
+}
+ 
 if($_REQUEST['btn_submit']=="Complete the purchase")
 {
 echo "action='confirmation_page.php'";
@@ -80,22 +88,13 @@ echo "action='view_cart.php'";
  <form method="post" action="view_cart.php">
 <input class="navigationButton" type="submit" name="ReturnToShoppingCart" value="Return to the Shopping Cart">
 </form>
+
+
+
+
+</div>
+</div>
 -->
-
-<?php 
-if(isset($_POST['btn_submit'])) {
- $_SESSION['customerCountry'] = $_POST['country'];
-		$_SESSION['customerCity'] = $_POST['city'];
-		$_SESSION['customerStreet'] = $_POST['street'];
-		$_SESSION['customerHouseNumber'] = $_POST['houseNumber'];
-		$_SESSION['customerZipCode'] = $_POST['zipCode'];
-}
- 
- ?>
-
-</div>
-</div>
-
 <!--
 <form method="post" action="view_cart.php">
 <input type="submit" value="Return to the cart">
