@@ -56,9 +56,9 @@ if (!isset($_SESSION['shoppingCart'])) {
  <form method="post" <?php 
 if($_REQUEST['btn_submit']=="Complete the purchase")
 {
-"action='confirmation_page.php'";
+echo "action='confirmation_page.php'";
 } else {
-"action='view_cart.php'";	
+echo "action='view_cart.php'";	
 }
 ?>>
 <label class="address" for="country">Country: <input type="text" name="country" <?php if(isset($customerCountry)){echo "value='$customerCountry'";} else {echo "value=''";} ?> required></label><br>
