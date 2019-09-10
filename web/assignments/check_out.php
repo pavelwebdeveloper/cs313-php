@@ -26,7 +26,7 @@ if (!isset($_SESSION['shoppingCart'])) {
  <h1>This is Checkout Page</h1>
  <p>Please, input the information about your address. It is required to fill out all the fields.</p>
  <form method="post" action="confirmation_page.php">
-<label class="address" for="country">Country: <input type="text" name="country" <?php if(isset($_SESSION['customerCountry'])){echo "value='$_SESSION['customerCountry']'";} else {echo "value=''";} ?> required></label><br>
+<label class="address" for="country">Country: <input type="text" name="country" <?php if(isset($_SESSION['customerCountry'])){echo "value='$_SESSION["customerCountry"]'";} else {echo "value=''";} ?> required></label><br>
 <label class="address" for="city">City: <input type="text" name="city" <?php if(isset($_SESSION['customerCity'])){echo "value='$_SESSION['customerCity']'";} else {echo "value=''";} ?> required></label><br>
 <label class="address" for="street">Street: <input type="text" name="street" <?php if(isset($_SESSION['customerStreet'])){echo "value='$_SESSION['customerStreet']'";} else {echo "value=''";} ?> required></label><br>
 <label class="address" for="houseNumber">House number: <input type="text" name="houseNumber" <?php if(isset($_SESSION['customerHouseNumber'])){echo "value='$_SESSION['customerHouseNumber']'";} else {echo "value=''";} ?> required></label><br>
