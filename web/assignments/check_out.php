@@ -28,17 +28,22 @@ if (!isset($_SESSION['shoppingCart'])) {
 		$_SESSION['customerStreet'] = '';
 		$_SESSION['customerHouseNumber'] = '';
 		$_SESSION['customerZipCode'] = '';
+		$customerCountry = $_SESSION['customerCountry'];
+		$customerCity = $_SESSION['customerCity'];
+		$customerStreet = $_SESSION['customerStreet'];
+		$customerHouseNumber = $_SESSION['customerHouseNumber'];
+		$customerZipCode = $_SESSION['customerZipCode'];
  
  ?>
  
  <h1>This is Checkout Page</h1>
  <p>Please, input the information about your address. It is required to fill out all the fields.</p>
  <form method="post" action="confirmation_page.php">
-<label class="address" for="country">Country: <input type="text" name="country" <?php if(isset($_SESSION['customerCountry'])){echo "value='$_SESSION['customerCountry']'";} else {echo "value=''";} ?> required></label><br>
-<label class="address" for="city">City: <input type="text" name="city" <?php if(isset($_SESSION['customerCity'])){echo "value='$_SESSION['customerCity']'";} else {echo "value=''";} ?> required></label><br>
-<label class="address" for="street">Street: <input type="text" name="street" <?php if(isset($_SESSION['customerStreet'])){echo "value='$_SESSION['customerStreet']'";} else {echo "value=''";} ?> required></label><br>
-<label class="address" for="houseNumber">House number: <input type="text" name="houseNumber" <?php if(isset($_SESSION['customerHouseNumber'])){echo "value='$_SESSION['customerHouseNumber']'";} else {echo "value=''";} ?> required></label><br>
-<label class="address" for="zipCode">Zipcode: <input type="text" name="zipCode" <?php if(isset($_SESSION['customerZipCode'])){echo "value='$_SESSION['customerZipCode']'";} else {echo "value=''";} ?> required></label><br>
+<label class="address" for="country">Country: <input type="text" name="country" <?php if(isset($customerCountry)){echo "value='$customerCountry'";} else {echo "value=''";} ?> required></label><br>
+<label class="address" for="city">City: <input type="text" name="city" <?php if(isset($customerCity)){echo "value='$customerCity'";} else {echo "value=''";} ?> required></label><br>
+<label class="address" for="street">Street: <input type="text" name="street" <?php if(isset($customerStreet)){echo "value='$customerStreet'";} else {echo "value=''";} ?> required></label><br>
+<label class="address" for="houseNumber">House number: <input type="text" name="houseNumber" <?php if(isset($customerHouseNumber)){echo "value='$customerHouseNumber'";} else {echo "value=''";} ?> required></label><br>
+<label class="address" for="zipCode">Zipcode: <input type="text" name="zipCode" <?php if(isset($customerZipCode)){echo "value='$customerZipCode'";} else {echo "value=''";} ?> required></label><br>
 
 <input class="submitBtn" type="submit" name="CompletePurchase" value="Complete the purchase">
 
