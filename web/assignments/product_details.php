@@ -155,6 +155,30 @@ session_start();
 	$_SESSION['price']."</p><p><span>Description: </span>".$_SESSION['description']."</p><p><span>Stock: </span>".$_SESSION['stock'].
 	"</p><input type='hidden' name='productNumber' value='".$_SESSION['productNumber']."'><form action='product_details.php' method='post'><input type='submit' name='addToShoppingCart' value='Add to Shopping Cart'></form></div></article></section>";
 	
+ 
+ // Upade product stock
+if(isset($_POST['addToShoppingCart'])) {
+	
+	$productStock = $_SESSION['stock'] - 1;
+	$productName = $_SESSION['product'];
+	
+	// Update the product stock data when adding a product to the shopping cart
+   $updateProductStock = $db->prepare('UPDATE product SET stock = :productstock WHERE product = :productname;');
+   $updateProductStock->bindValue(':productname', $productName, PDO::PARAM_STR);
+ $updateProductStock->bindValue(':productstock', $productStock, PDO::PARAM_INT);
+ $updateProductStock->execute();
+$updateProductStockOutcome = $updateProductStock->rowCount();
+}
+
+echo "<br>";
+	echo "<br>";
+	echo "<br>";
+	echo $updateProductStockOutcome;
+	echo "<br>";
+	echo "<br>";
+	echo "<br>";
+
+	// Filter and store the data
 	/*
 	echo "<section><h2>".$_SESSION['products'][0][$productNumber - 1]['title']."</h2><article><div><img src=".$_SESSION['products'][0][$productNumber - 1]['image']."></div><div><p class='price'><span>Price: </span>".
 	$_SESSION['products'][0][$productNumber - 1]['price']."</p><p><span>Description: </span>".$_SESSION['products'][0][$productNumber - 1]['description']."</p><p><span>Stock: </span>".$_SESSION['products'][0][$productNumber - 1]['stock'].
