@@ -14,6 +14,12 @@ session_start();
  <?php include $_SERVER[ 'DOCUMENT_ROOT' ].'/assignments/common/header.php'; ?>
  </header>
  <main>
+ <?php
+ // Get the database connection file
+ require_once '../library/connections.php';
+ ?>
+ 
+ 
  <h1>This is Product Details Page</h1>
  
  <?php
@@ -201,12 +207,15 @@ if(isset($_POST['addToShoppingCart'])) {
 	echo "<br>";
 	echo "<br>";
 	
-	
+	echo "In the update we have:";
 	// Update the product stock data when adding a product to the shopping cart
    $updateProductStock = $db->prepare('UPDATE product SET stock = :productstock WHERE product = :productname;');
    $updateProductStock->bindValue(':productname', $productName, PDO::PARAM_STR);
  $updateProductStock->bindValue(':productstock', $productStock, PDO::PARAM_INT);
  $updateProductStock->execute();
+ echo "<br>";
+	echo "<br>";
+	echo $updateProductStock;
 $updateProductStockOutcome = $updateProductStock->rowCount();
 }
 
