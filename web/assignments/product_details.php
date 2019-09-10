@@ -63,6 +63,9 @@ session_start();
 		$_SESSION['description'] = $_POST['productdescription'];
 		$_SESSION['stock'] = $_POST['stock'];
 		$_SESSION['addedToCart'] = 0;
+		
+		$productStock = $_POST['stock'] - 1;
+	$productName = $_POST['product'];
 	}
  
  $productNumber = (int)$_SESSION['productNumber'];
@@ -159,8 +162,7 @@ session_start();
  // Upade product stock
 if(isset($_POST['addToShoppingCart'])) {
 	
-	$productStock = $_SESSION['stock'] - 1;
-	$productName = $_SESSION['product'];
+	
 	
 	// Update the product stock data when adding a product to the shopping cart
    $updateProductStock = $db->prepare('UPDATE product SET stock = :productstock WHERE product = :productname;');
