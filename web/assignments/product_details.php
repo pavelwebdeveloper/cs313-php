@@ -193,7 +193,7 @@ session_start();
  // Upade product stock
 if(isset($_POST['addToShoppingCart'])) {
 	$productStock = $_SESSION['stock'];
-	$productName = $_SESSION['product'];
+	$productId = $_SESSION['productNumber'];
 	echo "<br>";
 	echo "<br>";
 	echo "In the if we have:";
@@ -209,13 +209,10 @@ if(isset($_POST['addToShoppingCart'])) {
 	
 	echo "In the update we have:";
 	// Update the product stock data when adding a product to the shopping cart
-   $updateProductStock = $db->prepare('UPDATE product SET stock = :productstock WHERE product = :productname;');
-   $updateProductStock->bindValue(':productname', $productName, PDO::PARAM_STR);
+   $updateProductStock = $db->prepare('UPDATE product SET stock = :productstock WHERE id = :productid;');
+   $updateProductStock->bindValue(':productid', $productId, PDO::PARAM_INT);
  $updateProductStock->bindValue(':productstock', $productStock, PDO::PARAM_INT);
  $updateProductStock->execute();
- echo "<br>";
-	echo "<br>";
-	echo $updateProductStock;
 $updateProductStockOutcome = $updateProductStock->rowCount();
 }
 
@@ -224,7 +221,7 @@ echo "<br>";
 	echo "<br>";
 	echo "Hello";
 	echo $productStock;
-	echo $productName;
+	echo $productId;
 	echo $updateProductStockOutcome;
 	echo "<br>";
 	echo "<br>";
