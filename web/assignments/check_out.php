@@ -88,7 +88,7 @@ echo "action='view_cart.php'";
 -->
 
 <?php 
-if(isset($_POST['ReturnToShoppingCart'])) {
+if(isset($_POST['btn_submit'])) {
  $_SESSION['customerCountry'] = $_POST['country'];
 		$_SESSION['customerCity'] = $_POST['city'];
 		$_SESSION['customerStreet'] = $_POST['street'];
