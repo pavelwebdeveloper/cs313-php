@@ -56,11 +56,11 @@ if (!isset($_SESSION['shoppingCart'])) {
  <form method="post" <?php 
 if($_REQUEST['btn_submit']=="Complete the purchase")
 {
-$actionChoice="confirmation_page.php";
+"action='confirmation_page.php'";
 } else {
-$actionChoice="view_cart.php";	
+"action='view_cart.php'";	
 }
-?> action=".$actionChoice.">
+?>>
 <label class="address" for="country">Country: <input type="text" name="country" <?php if(isset($customerCountry)){echo "value='$customerCountry'";} else {echo "value=''";} ?> required></label><br>
 <label class="address" for="city">City: <input type="text" name="city" <?php if(isset($customerCity)){echo "value='$customerCity'";} else {echo "value=''";} ?> required></label><br>
 <label class="address" for="street">Street: <input type="text" name="street" <?php if(isset($customerStreet)){echo "value='$customerStreet'";} else {echo "value=''";} ?> required></label><br>
