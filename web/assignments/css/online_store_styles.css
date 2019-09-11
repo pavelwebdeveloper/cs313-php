@@ -59,7 +59,13 @@ nav a {
 
 h1 {
 	text-align: center;
+	font-size: 35px;
 }
+
+p{
+	font-size: 30px;
+}
+
 
 
 #products #flexlayout {
@@ -332,6 +338,10 @@ main.productpages table a.tablelink {
 
 @media only screen and (min-width: 37.5em) {
 	
+	header div a {
+	font-size: 25px;
+}
+	
 	#products #flexlayout div#flexlayoutright img#productGroupImage {
 	width: 400px;
 	height: 263px;
@@ -341,6 +351,8 @@ section article div img {
 	max-width: 400px;
 	max-height: 267px;
 }
+
+
 	
 }
 
