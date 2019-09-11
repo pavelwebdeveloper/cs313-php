@@ -1,7 +1,14 @@
  
 <?php
+
+
 // Start the session
 session_start();
+
+ if($_SESSION['purchaseCompleted'] == true){  
+ // remove all session variables
+session_unset();
+ }
 ?>
 <!DOCTYPE html>
 <html lang="en-us">
