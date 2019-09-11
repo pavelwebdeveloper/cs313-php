@@ -53,6 +53,13 @@ if (!isset($_SESSION['shoppingCart'])) {
  echo "<br>";
  echo "<br>";
  */
+ if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['returnToShoppingCart'])) {
+		$_SESSION['orderCountry'] = $_POST['country'];
+		$_SESSION['orderCity'] = $_POST['city'];
+		$_SESSION['orderStreet'] = $_POST['street'];
+		$_SESSION['orderHouseNumber'] = $_POST['houseNumber'];
+		$_SESSION['orderZipCode'] = $_POST['zipCode'];
+ }
  
  if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['number'])) {
 		
