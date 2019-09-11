@@ -59,14 +59,20 @@ nav a {
 
 h1 {
 	text-align: center;
-	font-size: 35px;
+	font-size: 45px;
+}
+
+h2 {
+	font-size: 40px;
 }
 
 p{
-	font-size: 30px;
+	font-size: 35px;
 }
 
-
+input{
+	font-size: 35px;
+}
 
 #products #flexlayout {
 	display: flex;
@@ -340,6 +346,22 @@ main.productpages table a.tablelink {
 	
 	header div a {
 	font-size: 25px;
+}
+
+h1 {
+	font-size: 25px;
+}
+
+h2 {
+	font-size: 20px;
+}
+
+input{
+	font-size: 16px;
+}
+
+p{
+	font-size: 16px;
 }
 	
 	#products #flexlayout div#flexlayoutright img#productGroupImage {
