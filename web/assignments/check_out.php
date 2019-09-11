@@ -30,9 +30,12 @@ if (!isset($_SESSION['shoppingCart'])) {
 <label class="address" for="zipCode">Zipcode: <input type="text" name="zipCode" required></label><br>
 
 <input class="submitBtn" type="submit" value="Complete the purchase">
+<input class="submitBtn" type="submit" value="Return to the Shopping Cart" formaction="view_cart.php">
 
 </form>
 
+
+<!--
 <div class="bottomNavigationLinks">
  <div>
  <form method="post" action="view_cart.php">
@@ -40,6 +43,7 @@ if (!isset($_SESSION['shoppingCart'])) {
 </form>
 </div>
 </div>
+-->
 
 <!--
 <form method="post" action="view_cart.php">
