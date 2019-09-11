@@ -52,7 +52,7 @@ nav a {
 	text-decoration: none;
 	color: white;
 	height: 50px;
-	font-size: 25px;
+	font-size: 35px;
 	margin-left: 10px;
 	cursor: pointer;
 }
@@ -76,7 +76,7 @@ h1 {
 }
 
 #products #flexlayout div#flexlayoutleft h2#departmentsMenuHeading {
-	font-size: 25px;
+	font-size: 35px;
 	list-style-type: none;
 	background-color: #AFEEEE;
 	color: #4B0082;
@@ -94,7 +94,7 @@ h1 {
 	text-decoration: none;
 	color: blue;
 	height: 50px;
-	font-size: 20px;
+	font-size: 30px;
 	cursor: pointer;
 }
 
@@ -112,7 +112,7 @@ h1 {
 #products #flexlayout div#flexlayoutright a {
 	text-decoration: none;
 	color: black;
-	font-size: 25px;
+	font-size: 35px;
 	cursor: pointer;
 }
 
@@ -163,7 +163,7 @@ header div a {
 	margin-top: 20px;
 	color: white;
 	height: 50px;
-	font-size: 25px;
+	font-size: 35px;
 	cursor: pointer;
 }
 
@@ -207,7 +207,7 @@ main form {
 main form label.address input {
     -webkit-appearance: none;
     display: block;
-    font-size: 1rem;
+    font-size: 1.5rem;
     border: 1px solid #4253BA;
     padding: .75rem;
     color: #444;
@@ -215,6 +215,7 @@ main form label.address input {
     max-width: 19rem;
     background-color: rgba(0,0,0,0.05);
 }
+
 
 main form input.submitBtn {
     border: none;
@@ -227,6 +228,11 @@ main form input.submitBtn {
     max-width: 19rem;
     cursor: pointer;
 }
+
+main form input.completePurchase {
+    background-color: #008000;
+}
+
 
 main div.bottomNavigationLinks {
 	display: flex;
@@ -247,7 +253,7 @@ main div.bottomNavigationLinks div form input.navigationButton {
 }
 
 span.passworddescription {
-	font-size: 12px;
+	font-size: 22px;
 }
 
 footer {
@@ -257,7 +263,7 @@ vertical-align: center;
 }
 
 footer p {
-	font-size: 15px;
+	font-size: 25px;
 	color: white;
 	text-align: center;
 	padding-top: 10px;
@@ -292,7 +298,7 @@ table, th, td {
     border-collapse: collapse;
     text-align: center;
     font-family: Noto Sans, sans-serif;
-    font-size: 1em;
+    font-size: 1.5em;
 }
 
 th {
@@ -311,7 +317,7 @@ tr:nth-child(even) {
 }
 
 main.productpages table a.tablelink {
- font-size: 1em;
+ font-size: 1.5em;
 }
 
 
