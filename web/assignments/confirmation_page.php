@@ -42,15 +42,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 
+echo var_dump($_SESSION['shoppingCart']);
+
 if (empty($_SESSION['shoppingCart'])) {
 	 echo "<h1>The Shopping Cart is empty</h1>";
  } else {
 	 echo "<h1>These are the products that you have purchased</h1><br><br>";
 
 foreach ($_SESSION['shoppingCart'] as $product) {
-	echo '<section><h2>'.$product["title"].'</h2><article><div><img src='.$product["image"].'></div><div><p class="price"><span>Price: </span>'.$product["price"].
-	'</p><p><span>Description: </span>'.$product["description"].'</p><p><span>Stock: </span>'.$product["stock"].
-	'</p><p><span>Added to Cart: </span>'.$product["addedToCart"].'</p></div></article></section>';
+	echo '<section><h2>'.$product["title"].'</h2><article><div><img src='.$product["image"].'></div><div><p class="price"><span>Price per item: </span>'.$product["price"].
+	'</p><p><span>Description: </span>'.$product["description"].'</p><p><span>Purchased: </span>'.$product["addedToCart"].'</p></div></article></section>';
  };
  
  echo "<h1>The products that you have purchased will be shipped to the following address</h1><br><br>";
