@@ -41,9 +41,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	
 }
 
-
-echo var_dump($_SESSION['shoppingCart']);
-
 if (empty($_SESSION['shoppingCart'])) {
 	 echo "<h1>The Shopping Cart is empty</h1>";
  } else {
