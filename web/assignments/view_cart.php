@@ -275,12 +275,12 @@ echo "<br>";
  <div class="bottomNavigationLinks">
  <div>
  <form method="post" action="browse_products.php">
-<input class="navigationButton" type="submit" value="Return to the Browse Products Page">
+<input class="navigationButton" type="submit" value="Browse Products">
 </form>
 </div>
 <div>
  <form method="post" action="check_out.php">
-<input class="navigationButton" type="submit" value="Continue to the Checkout Page">
+<input class="navigationButton" type="submit" value="Checkout">
 </form>
 </div>
 </div>

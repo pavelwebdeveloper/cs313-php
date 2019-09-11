@@ -40,7 +40,7 @@ if (!isset($_SESSION['shoppingCart'])) {
 <label class="address" for="zipCode">Zipcode: <input type="text" name="zipCode" <?php if(isset($zipCode)){ echo "value='$zipCode'"; } else {echo "value=''"; } ?> required></label><br>
 
 <input class="submitBtn completePurchase" type="submit" name="completePurchase" value="Complete the purchase"><br>
-<input class="submitBtn" type="submit" name="returnToShoppingCart" value="Return to the Shopping Cart" formaction="view_cart.php">
+<input class="submitBtn" type="submit" name="returnToShoppingCart" value="Return to Shopping Cart" formaction="view_cart.php">
 
 </form>
 
