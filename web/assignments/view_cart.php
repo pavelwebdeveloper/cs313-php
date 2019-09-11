@@ -1,6 +1,12 @@
 <?php
 // Start the session
 session_start();
+
+if($_SESSION['purchaseCompleted'] == true){  
+ // remove all session variables
+session_unset();
+ }
+ 
 // Create an array for the shopping cart in the session
 /*
 if (!isset($_SESSION['shoppingCart'])) {
