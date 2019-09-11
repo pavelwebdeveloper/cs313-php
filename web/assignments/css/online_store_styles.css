@@ -196,7 +196,9 @@ section article div img {
 	max-height: auto;
 }
 
-
+main {
+	min-height: calc(100vh - 50px);
+}
 
 main form {
 	margin: 20px 5px;
