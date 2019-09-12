@@ -1,7 +1,6 @@
 
 /* git add -f ../web./assignments/css/online_store_styles.css         */
 
-@media screen and (max-width: 500px) {
 
 header {
 	display: flex;
@@ -333,7 +332,6 @@ main.productpages table a.tablelink {
  font-size: 1.5em;
 }
 
-}
 
 /**********************************************************************************/
 /****************THE END OF LAYOUT FOR SMALL SCREENS******************************/
