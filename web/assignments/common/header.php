@@ -5,7 +5,7 @@
 <a href="browse_products.php" title="a link to Browse Products page">Products</a>
 </nav>
 </div>
-<div>
+<div class="searchproducts">
 <form method="post" action="browse_products.php">
 <label for="name"></label>
 <input type="text" id="name" name="searchProduct" placeholder="Product name">

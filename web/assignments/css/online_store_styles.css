@@ -74,6 +74,14 @@ form input{
 	font-size: 35px;
 }
 
+#upperblock div.searchproducts {
+	height: 100px;
+}
+
+#upperblock div.searchproducts form input#name {
+	width: auto;
+}
+
 #products #flexlayout {
 	display: flex;
 	flex-direction: column;
@@ -270,7 +278,7 @@ span.passworddescription {
 
 footer {
 background-color: #000066;
-height: 50px;
+height: 100px;
 vertical-align: center;
 }
 
@@ -343,7 +351,9 @@ main.productpages table a.tablelink {
 
 @media only screen and (min-width: 37.5em) {
 	
-	
+footer {
+	height: 50px;
+}
 
 
 	
