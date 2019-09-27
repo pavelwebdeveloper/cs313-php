@@ -14,7 +14,9 @@ session_unset();
 <html lang="en-us">
  <head>
   <title>Product Details Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="css/online_store_styles.css" rel="stylesheet" media="screen">
+  <link href="css/normalize.css" rel="stylesheet" media="screen">
  </head>
  <body>
  <header>

@@ -11,6 +11,7 @@ if (!isset($_SESSION['shoppingCart'])) {
 <html lang="en-us" id="logInRegister">
  <head>
   <title>Login Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="css/online_store_styles.css" rel="stylesheet" media="screen">
   <link href="css/normalize.css" rel="stylesheet" media="screen">
  </head>
