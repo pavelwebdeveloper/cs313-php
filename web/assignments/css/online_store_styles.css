@@ -76,6 +76,7 @@ form input{
 
 #upperblock div.searchproducts {
 	height: 100px;
+	max-width: 100%;
 }
 
 #upperblock div.searchproducts form input#name {
