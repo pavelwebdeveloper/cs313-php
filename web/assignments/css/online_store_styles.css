@@ -256,7 +256,7 @@ main form input.completePurchase {
 
 main div.bottomNavigationLinks {
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	justify-content: space-between;
 }
 
@@ -429,6 +429,10 @@ main div.bottomNavigationLinks div form input.navigationButton {
 
 main form input.submitBtn {
     max-width: 19rem;
+}
+
+main div.bottomNavigationLinks {
+	flex-direction: row;
 }
 
 }
