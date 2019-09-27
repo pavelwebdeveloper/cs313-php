@@ -57,11 +57,11 @@ foreach ($_SESSION['shoppingCart'] as $product) {
  };
  
  echo "<h1>The products that you have purchased will be shipped to the following address</h1><br><br>";
-echo "<span><b>Country:</b></span> ".$country."<br>";
+echo "<div id='customerInformation'><span><b>Country:</b></span> ".$country."<br>";
 echo "<span><b>City:</b></span> ".$city."<br>";
 echo "<span><b>Street:</b></span> ".$street."<br>";
 echo "<span><b>House number:</b></span> ".$houseNumber."<br>";
-echo "<span><b>Zip code:</b></span> ".$zipCode."<br>";
+echo "<span><b>Zip code:</b></span> </div>".$zipCode."<br>";
 
 $_SESSION['purchaseCompleted'] = true;
  }
