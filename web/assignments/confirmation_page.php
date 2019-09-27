@@ -61,7 +61,7 @@ echo "<div id='customerInformation'><span><b>Country:</b></span> ".$country."<br
 echo "<span><b>City:</b></span> ".$city."<br>";
 echo "<span><b>Street:</b></span> ".$street."<br>";
 echo "<span><b>House number:</b></span> ".$houseNumber."<br>";
-echo "<span><b>Zip code:</b></span> </div>".$zipCode."<br>";
+echo "<span><b>Zip code:</b></span> ".$zipCode."<br></div>";
 
 $_SESSION['purchaseCompleted'] = true;
  }
