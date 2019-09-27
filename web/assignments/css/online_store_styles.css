@@ -75,12 +75,11 @@ form input{
 }
 
 #upperblock div.searchproducts {
-	height: 100px;
-	max-width: 100%;
+	height: 100px;	
 }
 
 #upperblock div.searchproducts form input#name {
-	width: auto;
+	max-width: 100%;
 }
 
 #products #flexlayout {
